@@ -21,7 +21,7 @@ A `spec` object containing only the outputs matching `filter_expr`
 Filter a spec object
 }
 \examples{
-spec_file <- system.file("spec.yml", package = "autoslideR")
+spec_file <- system.file("spec.yml", package = "autoslider.core")
 spec <- spec_file \%>\% read_spec()
 ## Keep only outputs belonging to batch 2
 \dontrun{

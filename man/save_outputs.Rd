@@ -41,7 +41,7 @@ data <- list(
 )
 
 filters::load_filters(
-  yaml_file = system.file("filters.yml", package = "autoslideR"),
+  yaml_file = system.file("filters.yml", package = "autoslider.core"),
   overwrite = TRUE
 )
 
@@ -49,7 +49,7 @@ filters::load_filters(
 ## production run this should be the reporting event's 'output' folder instead.
 output_dir <- tempdir()
 
-spec_file <- system.file("spec.yml", package = "autoslideR")
+spec_file <- system.file("spec.yml", package = "autoslider.core")
 read_spec(spec_file) \%>\%
   filter_spec(program == "t_dm_slide") \%>\%
   generate_outputs(datasets = data) \%>\%

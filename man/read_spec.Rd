@@ -19,7 +19,7 @@ to one output, e.g. `t_dm_IT`.
 Read yaml spec file and split according to filter lists
 }
 \examples{
-spec_file <- system.file("spec.yml", package = "autoslideR")
+spec_file <- system.file("spec.yml", package = "autoslider.core")
 
 ## Take a look at the 'raw' content of the spec file
 cat(readLines(spec_file)[1:24], sep = "\n")
