@@ -53,7 +53,6 @@ Imports:
     rvg (>= 0.2.5),
     stringr,
     survival,
-    tibble,
     tidyr,
     yaml
 Suggests:
