@@ -55,12 +55,12 @@ data <- list(
 
 
 filters::load_filters(
-  yaml_file = system.file("filters.yml", package = "autoslideR"),
+  yaml_file = system.file("filters.yml", package = "autoslider.core"),
   overwrite = TRUE
 )
 
 
-spec_file <- system.file("spec.yml", package = "autoslideR")
+spec_file <- system.file("spec.yml", package = "autoslider.core")
 spec_file \%>\%
   read_spec() \%>\%
   filter_spec(program \%in\% c("t_dm_slide")) \%>\% # removed "l_dsl01_slide" atm

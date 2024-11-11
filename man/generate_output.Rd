@@ -28,11 +28,11 @@ By default, `2` will show all filter messages and show output generation message
 }
 \examples{
 filters::load_filters(
-  yaml_file = system.file("filters.yml", package = "autoslideR"),
+  yaml_file = system.file("filters.yml", package = "autoslider.core"),
   overwrite = TRUE
 )
 
-spec_file <- system.file("spec.yml", package = "autoslideR")
+spec_file <- system.file("spec.yml", package = "autoslider.core")
 spec <- spec_file \%>\% read_spec()
 
 data <- list(

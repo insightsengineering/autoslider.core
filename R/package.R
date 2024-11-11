@@ -1,4 +1,4 @@
-#' autoslideR Package
+#' autoslider.core Package
 #'
 "_PACKAGE"
 

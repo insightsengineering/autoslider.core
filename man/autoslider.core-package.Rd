@@ -4,7 +4,7 @@
 \name{autoslider.core-package}
 \alias{autoslider.core}
 \alias{autoslider.core-package}
-\title{autoslideR Package}
+\title{autoslider.core Package}
 \description{
 Slides automation with R.
 }
