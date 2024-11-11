@@ -19,6 +19,8 @@ t_ae_slide(
 
 \item{arm}{Arm variable, character, "`TRT01A" by default.}
 
+\item{split_by_study}{Split by study, building structured header for tables}
+
 \item{side_by_side}{should table be displayed side by side}
 }
 \value{

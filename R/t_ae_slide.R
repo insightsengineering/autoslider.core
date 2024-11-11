@@ -3,6 +3,7 @@
 #' @param adae ADAE data set, dataframe
 #' @param adsl ADSL data set, dataframe
 #' @param arm Arm variable, character, "`TRT01A" by default.
+#' @param split_by_study Split by study, building structured header for tables
 #' @param side_by_side should table be displayed side by side
 #' @return rtables object
 #' @inherit gen_notes note
