@@ -53,7 +53,6 @@ t_dm_slide <- function(adsl,
   result <- lyt_to_side_by_side(lyt, adsl1, side_by_side)
 
   if (is.null(side_by_side)) {
-    attr(result, "df") <- t_dm_slide_to_df(result)
 
     # adding "N" attribute
     arm <- col_paths(result)[[1]][1]
