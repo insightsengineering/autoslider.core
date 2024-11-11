@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">autoslider.core</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9016</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9017</span>
       </span>
     </div>
 
@@ -75,48 +75,97 @@ to one output, e.g. `t_dm_IT`.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">spec_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"spec.yml"</span>, package <span class="op">=</span> <span class="st">"autoslideR"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">spec_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"spec.yml"</span>, package <span class="op">=</span> <span class="st">"autoslider.core"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Take a look at the 'raw' content of the spec file</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">spec_file</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">24</span><span class="op">]</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>file("") only supports open = "w+" and open = "w+b": using the former</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> - program: l_dsl01_slide</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   titles: Analysis Sets ({filter_titles("adsl")})</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   footnotes: 'Analysis Sets footer'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   paper: L6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   suffix: SE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> - program: t_pop_slide</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   titles: Analysis Sets ({filter_titles("adsl")})</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   footnotes: 'Analysis Sets footer'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   paper: L6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   suffix: FAS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> - program: t_ds_slide</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   titles: Patient Disposition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   footnotes: 't_ds footnotes'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   paper: L6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   suffix: FAS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> - program: t_ds_trt_slide</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   titles: Patients Who Discontinued From Study Treatment</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   footnotes: 'ds trt footnotes'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   paper: L6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   suffix: SE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   args:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     arm: "TRT01A"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     colcount: FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     drug_vars: ["A: Drug X", "B: Placebo", "C: Combination"]</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## This is how it looks once read into R</span></span></span>
 <span class="r-in"><span><span class="va">spec</span> <span class="op">&lt;-</span> <span class="fu">read_spec</span><span class="op">(</span><span class="va">spec_file</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>file("") only supports open = "w+" and open = "w+b": using the former</span>
 <span class="r-in"><span><span class="va">spec</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $&lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $l_dsl01_slide_SE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $l_dsl01_slide_SE$program</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "l_dsl01_slide"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $&lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $l_dsl01_slide_SE$titles</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Analysis Sets ({filter_titles(\"adsl\")})"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $&lt;NA&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $l_dsl01_slide_SE$footnotes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Analysis Sets footer"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $l_dsl01_slide_SE$paper</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "L6"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $l_dsl01_slide_SE$suffix</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "SE"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $l_dsl01_slide_SE$output</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "l_dsl01_slide_SE"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_pop_slide_FAS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_pop_slide_FAS$program</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "t_pop_slide"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_pop_slide_FAS$titles</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Analysis Sets ({filter_titles(\"adsl\")})"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_pop_slide_FAS$footnotes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Analysis Sets footer"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_pop_slide_FAS$paper</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "L6"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_pop_slide_FAS$suffix</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "FAS"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_pop_slide_FAS$output</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "t_pop_slide_FAS"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_ds_slide_FAS</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_ds_slide_FAS$program</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "t_ds_slide"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_ds_slide_FAS$titles</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Patient Disposition"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_ds_slide_FAS$footnotes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "t_ds footnotes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_ds_slide_FAS$paper</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "L6"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_ds_slide_FAS$suffix</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "FAS"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $t_ds_slide_FAS$output</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "t_ds_slide_FAS"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
