@@ -6,8 +6,8 @@
 \usage{
 generate_slides(
   outputs,
-  outfile = "slide_EnableRF.pptx",
-  template = file.path(system.file(package = "autoslideR"), "theme/roche_theme.pptx"),
+  outfile = "output.pptx",
+  template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
   fig_width = 9,
   fig_height = 6,
   t_lpp = 20,

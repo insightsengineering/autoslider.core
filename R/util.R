@@ -451,32 +451,6 @@ map_chr <- function(x, f, ...) {
   vapply(x, f, character(1L), ..., USE.NAMES = FALSE)
 }
 
-get_version_label_att <- function() {
-  if (in_enabler_repo() && on_master_branch()) {
-    "APPROVED"
-  } else {
-    "DRAFT"
-  }
-}
-
-get_version_label_output <- function() {
-  if (in_enabler_repo() && on_master_branch()) {
-    NULL
-  } else {
-    "DRAFT"
-  }
-}
-
-in_enabler_repo <- function() {
-  if (!is_in_repository()) {
-    return(FALSE)
-  }
-  repo_url <- get_remote_url()
-  any(
-    grepl("^https://github\\.roche\\.com/enabler/\\w+\\.git$", repo_url) |
-      grepl("^git@github\\.roche\\.com:enabler/\\w+\\.git$", repo_url)
-  )
-}
 
 on_master_branch <- function() {
   get_repo_head_name() == "master"
