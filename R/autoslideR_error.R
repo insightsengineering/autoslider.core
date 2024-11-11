@@ -7,7 +7,6 @@
 #' @param x character scaler
 #' @param spec spec should be a list containing "program" and "suffix"
 #' @param step step is a character indicating in which step the pipeline encounter error
-#' @noRd
 #' @export
 autoslider_error <- function(x, spec, step) {
   assert_is_character_scalar(x)

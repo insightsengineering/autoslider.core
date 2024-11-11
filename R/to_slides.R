@@ -33,7 +33,7 @@
 #' spec_file <- system.file("spec.yml", package = "autoslider.core")
 #' spec_file %>%
 #'   read_spec() %>%
-#'   filter_spec(program %in% c("t_dm_slide")) %>% # removed "l_dsl01_slide" atm
+#'   filter_spec(program %in% c("t_dm_slide")) %>%
 #'   generate_outputs(datasets = data) %>%
 #'   decorate_outputs() %>%
 #'   generate_slides()
@@ -42,8 +42,6 @@
 #' adsl <- eg_adsl
 #' t_dm_slide(adsl, "TRT01P", c("SEX", "AGE")) %>%
 #'   generate_slides()
-#'
-#' l_dsl01_slide(adsl) %>% generate_slides()
 generate_slides <- function(outputs,
                             outfile = "output.pptx",
                             template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
@@ -124,9 +122,6 @@ generate_slides <- function(outputs,
 #' library(dplyr)
 #' adsl <- eg_adsl
 #' t_dm_slide(adsl, "TRT01P", c("SEX", "AGE")) %>% slides_preview()
-#'
-#' # Example 2. preview listing
-#' l_dsl01_slide(adsl) %>% slides_preview()
 slides_preview <- function(x) {
   if (is(x, "VTableTree")) {
     ret <- to_flextable(paginate_table(x, lpp = 20)[[1]])
