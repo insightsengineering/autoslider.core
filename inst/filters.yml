@@ -1,0 +1,150 @@
+INVET:
+  title: Best Confirmed Overall Response Rates per RECIST v1.1 - Investigator
+  condition: PARAMCD=='INVET'
+  target: adrs
+  type: anl
+CBORDF:
+  title: Best Confirmed Overall Response Rates per RECIST v1.1 - IRF
+  condition: PARAMCD=='CBORDF'
+  target: adrs
+  type: anl
+DORINV:
+  title: Duration of Response by Investigator (Confirmed)
+  condition: PARAMCD == "CRSD"
+  target: adtte
+  type: anl
+DORIRF:
+  title: Duration of Response by IRF (Confirmed)
+  condition: PARAMCD == "CRSDDF"
+  target: adtte
+  type: anl
+FAS:
+  title: Full Analysis Set
+  condition: FASFL=='Y'
+  target: adsl
+  type: slref
+G34:
+  title: Grade 3-4 Adverse Events
+  condition: AETOXGR %in% c('3', '4')
+  target: adae
+  type: anl
+G5:
+  title: Grade 5 Adverse Events within 30 days of last dose of study treatment
+  condition: 1==1
+  target: adae
+  type: anl
+GRADE5:
+  title: Grade 5 Adverse Events
+  condition: AETOXGR == '5'
+  target: adae
+  type: anl
+IT:
+  title: Intent-to-Treat Population
+  condition: ITTFL=='Y'
+  target: adsl
+  type: slref
+MDIS:
+  title: Patients with Measurable Disease at Baseline by Investigator
+  condition: PARAMCD == 'MDIS' & AVALC == "Y"
+  target: adsub
+  type: anl
+MDISF:
+  title: Patients with Measurable Disease at Baseline by IRF
+  condition: PARAMCD == 'MDISF' & AVALC == "Y"
+  target: adsub
+  type: anl
+OS:
+  title: Overall Survival
+  condition: PARAMCD=='OS'
+  target: adtte
+  type: anl
+PAS:
+  title: Primary Analysis Set
+  condition: PASFL == 'Y'
+  target: adsl
+  type: slref
+PFSINV:
+  title: Progression Free Survival by Investigator
+  condition: PARAMCD=='PFS'
+  target: adtte
+  type: anl
+PFSIRF:
+  title: Progression Free Survival by IRF
+  condition: PARAMCD=='PFSDF'
+  target: adtte
+  type: anl
+PRO:
+  title: PRO Evaluable Population
+  condition: 1==1
+  target: adsl
+  type: slref
+REL:
+  title: Adverse Events Related to Any Study Treatment
+  condition: AEREL == 'Y'
+  target: adae
+  type: anl
+SAS:
+  title: Secondary Analysis Set
+  condition: SASFL == 'Y'
+  target: adsl
+  type: slref
+SE:
+  title: Safety Evaluable Population
+  condition: SAFFL=='Y'
+  target: adsl
+  type: slref
+SER:
+  title: Serious Adverse Events
+  condition: AESER == 'Y'
+  target: adae
+  type: anl
+SP142:
+  title: SP142-High Analysis Set
+  condition: TTFL=='Y' & SP142=='TC 3 OR IC 3'
+  target: adsl
+  type: slref
+CN:
+  title: Chinese
+  condition: COUNTRY %in% c("CHN", "HKG", "TWN")
+  target: adsl
+  type: slref
+X10PER:
+  title: NA_character_
+  condition: 1==1
+  target: adae
+  type: anl
+X20PER:
+  title: NA_character_
+  condition: 1==1
+  target: adae
+  type: anl
+X2PER:
+  title: NA_character_
+  condition: 1==1
+  target: adae
+  type: anl
+X5PER:
+  title: NA_character_
+  condition: 1==1
+  target: adae
+  type: anl
+SYSBP:
+  title: Filter values of systolic blood pressure
+  condition: PARAMCD == "SYSBP"
+  target: advs
+  type: anl
+LBCRP:
+  title: filtered CRP in LB
+  condition: PARAMCD == "CRP"
+  target: adlb
+  type: anl
+EGHR:
+  title: filtered HR in EG
+  condition: PARAMCD == "HR"
+  target: adeg
+  type: anl
+FEWSBJ:
+  title: Select only 5 subjects
+  condition: SUBJID %in% c("id-267", "id-206", "id-188", "id-389", "id-140")
+  target: adsl
+  type: anl

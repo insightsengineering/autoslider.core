@@ -1,0 +1,341 @@
+- program: l_dsl01_slide
+  titles: Analysis Sets ({filter_titles("adsl")})
+  footnotes: 'Analysis Sets footer'
+  paper: L6
+  suffix: SE
+- program: t_pop_slide
+  titles: Analysis Sets ({filter_titles("adsl")})
+  footnotes: 'Analysis Sets footer'
+  paper: L6
+  suffix: FAS
+- program: t_ds_slide
+  titles: Patient Disposition
+  footnotes: 't_ds footnotes'
+  paper: L6
+  suffix: FAS
+- program: t_ds_trt_slide
+  titles: Patients Who Discontinued From Study Treatment
+  footnotes: 'ds trt footnotes'
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+    colcount: FALSE
+    drug_vars: ["A: Drug X", "B: Placebo", "C: Combination"]
+    drug_names: ["Drug X", "Placebo", "Combination"]
+    drug_sdt: [TRTSDT, TRTSDT, TRTSDT]
+    drug_discfl: [DTRFL, DTRFL, DTRFL]
+    drug_discst: [EOTSTT, EOTSTT, EOTSTT]
+    drug_discrs: [DCSREAS, DCSREAS, DCSREAS]
+- program: t_dm_slide
+  titles: Patient Demographics and Baseline Characteristics
+  footnotes: 't_dm_slide footnote'
+  paper: L6
+  suffix: FAS
+  args:
+    arm: "TRT01A"
+    vars: ["SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"]
+- program: t_dm_tx
+  titles: Baseline Disease Characteristics
+  footnotes: ''
+  paper: L6
+  suffix: FAS
+- program: t_tte_slide
+  titles: Time to Event Summary for {filter_titles("adsl", "adtte")}
+  footnotes: ''
+  paper: L6
+  suffix: PFSINV_FAS
+  args:
+    arm: "TRT01P"
+    refgroup: "B: Placebo"
+- program: t_tte_slide
+  titles: Time to Event Summary for {filter_titles("adsl", "adtte")}
+  footnotes: ''
+  paper: L6
+  suffix: PFSINV_FAS
+  args:
+    arm: "TRT01P"
+    refgroup: "B: Placebo"
+    strata: ["STRATA1", "STRATA2"]
+- program: g_km_slide
+  titles: KM for {filter_titles("adsl", "adtte")}
+  footnotes: ''
+  paper: L6
+  suffix: OS_SE
+- program: g_km_annotation_surv
+  titles: Median Survival Table for {filter_titles("adsl", "adtte")}
+  footnotes: ''
+  paper: L6
+  suffix: OS_SE
+- program: g_km_annotation_coxph
+  titles: CoxPH Table for {filter_titles("adsl", "adtte")}
+  footnotes: ''
+  paper: L6
+  suffix: OS_SE
+- program: t_tte_slide
+  titles: Time to Event Summary for {filter_titles("adsl", "adtte")}
+  footnotes: ''
+  paper: L6
+  suffix: OS_FAS
+  args:
+    arm: "TRT01P"
+    refgroup: "B: Placebo"
+- program: t_orr_slide
+  titles: '{filter_titles("adsl", "adtte")}'
+  paper: L6
+  suffix: INVET
+  args:
+    arm: "TRT01A"
+    method: "clopper-pearson"
+  footnotes: 't_orr_slide footnotes'
+- program: t_orr_slide
+  titles: '{filter_titles("adsl", "adtte")}'
+  footnotes: 't_orr_slide footnotes'
+  paper: L6
+  suffix: INVET
+  args:
+    arm: "TRT01A"
+    refgroup: "A: Drug X"
+- program: t_orr_dor_slide
+  titles: '{filter_titles("adsl", "adtte")}'
+  footnotes: ''
+  paper: L6
+  suffix: INVET_PFSINV
+  args:
+    arm: "TRT01A"
+- program: t_orr_dor_slide
+  titles: '{filter_titles("adsl", "adtte")}'
+  footnotes: ''
+  paper: L6
+  suffix: PFSINV_INVET_SE
+  args:
+    arm: "TRT01A"
+    refgroup: "A: Drug X"
+- program: t_dor_slide
+  titles: '{filter_titles("adsl", "adtte")}'
+  footnotes: ''
+  paper: L6
+  suffix: PFSINV_SE
+  args:
+    arm: "TRT01A"
+    refgroup: "A: Drug X"
+- program: t_ex_slide
+  titles: Study Drug Exposure
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+    drug_terms: ['Drug A', 'Drug B']
+    drug_labels: ['Drug A', 'Drug B']
+    total_duration: "TDURD"
+    total_duration_breaks: [3, 6]
+    dose_intensity: 'TDOSINT'
+    number_dose_received: 'TNDOSE'
+    colcount: FALSE
+    stats: ["median", "range", "count_fraction"]
+
+- program: t_ae_summ_slide
+  titles: Overall Summary of Adverse Events
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+    dose_adjust_flags: ['dis_flags', 'dis_flags', 'dis_flags']
+    dose_adjust_labels: ['DRUG WITHDRAWN', 'DOSE REDUCED', 'DRUG INTERRUPTED']
+    gr34_highest_grade_only: TRUE
+- program: t_ae_pt_slide
+  titles: Most Common AEs (Incidence Rate of at Least 10%)
+  footnotes: ''
+  paper: L6
+  suffix: X10PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 10
+- program: t_ae_pt_slide
+  titles: Most Common Grade 3-4 AEs (Incidence Rate of at Least 2%)
+  footnotes: 't_ae_pt_slide footnote'
+  paper: L6
+  suffix: G34_X2PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 2
+- program: t_ae_pt_soc_slide
+  titles: Most Common AEs (Incidence Rate of at Least 10%)
+  footnotes: 't_ae_pt_soc_slide footnote'
+  paper: L6
+  suffix: X10PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 10
+- program: t_ae_pt_soc_slide
+  titles: Most Common Grade 3-4 AEs (Incidence Rate of at Least 2%)
+  footnotes: 't_ae_pt_soc_slide footnote'
+  paper: L6
+  suffix: G34_X2PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 2
+- program: t_ae_diff_slide
+  titles: Adverse Events with Difference of At Least 5% between Arms by Preferred
+    Term
+  footnotes: 't_ae_diff_slide footnote'
+  paper: L6
+  suffix: X5PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 5
+- program: t_ae_diff_slide
+  titles: Grade 3-4 Adverse Events with Difference of At Least 2% between Arms by
+    Preferred Term
+  footnotes: 't_ae_diff_slide footnote'
+  paper: L6
+  suffix: G34_X2PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 2
+- program: t_ae_soc_diff_slide
+  titles: Adverse Events with Difference of At Least 5% between Arms by Preferred
+    Term
+  footnotes: 't_ae_soc_diff_slide footnote'
+  paper: L6
+  suffix: X5PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 5
+- program: t_ae_soc_diff_slide
+  titles: Grade 3-4 Adverse Events with Difference of At Least 2% between Arms by
+    Preferred Term
+  footnotes: 't_ae_soc_diff_slide footnote'
+  paper: L6
+  suffix: G34_X2PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 2
+- program: t_dd_slide
+  titles: Deaths and Causes of Death
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+- program: t_ae_soc_diff_slide
+  titles: Serious AEs with Difference of at Least 2% between Treatment Arms
+  footnotes: 't_ae_soc_diff_slide footnotes'
+  paper: L6
+  suffix: SER_X2PER_SE
+  args:
+    arm: "TRT01A"
+    cutoff: 2
+- program: t_ae_si_slide
+  titles: Immune-mediated Adverse Events
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+- program: t_cm_npt_slide
+  titles: Follow-up Anti-cancer Therapies
+  footnotes: ''
+  paper: L6
+  suffix: FAS
+  args:
+    arm: "TRT01P"
+- program: t_ef_concord_slide
+  titles: Concordance Analysis Between the IRF Determined and the Investigator Determined PD
+  footnotes: ''
+  paper: L6
+  suffix: FAS
+  args:
+    arm: "TRT01P"
+- program: t_lb_slide
+  titles: Laboratory Test Results and Change from Baseline by Visit
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+- program: t_vs_slide
+  titles: Vital Sign Abnormalities
+  footnotes: ''
+  paper: L6
+  suffix: FAS
+  args:
+    arm: "TRT01P"
+- program: g_vs_slide
+  titles: Systolic blood pressure mean plot
+  footnotes: ''
+  paper: L6
+  suffix: FAS_SYSBP
+  args:
+    arm: "TRT01P"
+- program: g_lb_slide
+  titles: mean plot of CRP values
+  footnotes: ''
+  paper: L6
+  suffix: FAS_LBCRP
+  args:
+    arm: "TRT01P"
+- program: g_eg_slide
+  titles:  mean plot of HR values
+  footnotes: ''
+  paper: L6
+  suffix: FAS_EGHR
+  args:
+    arm: "TRT01P"
+- program: t_eg_abn_slide
+  titles: ECG Abnormalities
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+- program: l_ae_slide
+  titles: Listing of Adverse Events
+  footnotes: '(1) Outcome: 1 = fatal; 2 = not recovered/not resolved; 3 = recovered/resolved; 4 = recovered/resolved with sequelae; 5 = recovering/resolving; 6 = unknown. /n (2) Action taken with study drug: 1 = dose increased; 2 = dose not changed; 3 = dose reduced; 4 = drug interrupted; 5 = drug /n withdrawn; 6 = not applicable; 7 = unknown. /n *  Study day derived from imputed onset date. /n ** Duration derived from imputed onset date and/or end date.'
+  paper: L6
+  suffix: SE
+- program: t_ae_sae_slide
+  titles: AEs & Serious AEs
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+- program: t_aesi_slide
+  titles: AESIs
+  footnotes: ''
+  paper: L6
+  suffix: SE
+  args:
+    arm: "TRT01A"
+- program: g_profile_eg_slide
+  titles:  Profile plot of HR values for few subjects
+  footnotes: ''
+  paper: L6
+  suffix: FAS_EGHR_FEWSBJ
+- program: g_profile_lb_slide
+  titles:  Profile plot of CRP values for few subjects
+  footnotes: ''
+  paper: L6
+  suffix: FAS_LBCRP_FEWSBJ
+- program: g_profile_vs_slide
+  titles:  Profile plot of blood pressure values for few subjects
+  footnotes: ''
+  paper: L6
+  suffix: FAS_SYSBP_FEWSBJ
+- program: l_ae02_slide
+  titles: AE Listing
+  paper: L4
+  footnotes: Investigator text for AEs encoded using MedDRA version 26.1. Only treatment emergent AEs leading to study treatment discontinuation are displayed.
+    (1) Outcome - 1 = Fatal; 2 = Not recovered/not resolved; 3 = Recovered/resolved; 4 = Recovered/resolved with sequelae; 5 = Recovering/resolving; 6 = Unknown.
+    (2) Action taken - 1 = Dose increased; 2 = Dose not changed; 3 = Dose reduced; 4 = Drug interrupted; 5 = Drug withdrawn; 6 = Not applicable; 7 = Unknown; 8 = Multiple."'
+  suffix: FEWSBJ_SE
+  args:
+    var_names: ["AESER", "AESEV"]
+    var_labels: ["Serious", "Highest\nSeverity"]
+- program: l_lb_abn_slide
+  titles:  Listing of Laboratory Abnormalities
+  footnotes: ''
+  suffix: LBCRP_FEWSBJ_SE

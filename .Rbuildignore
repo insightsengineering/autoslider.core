@@ -1,2 +1,20 @@
+^renv$
+^renv\.lock$
+ext
 ^.*\.Rproj$
 ^\.Rproj\.user$
+.gitlab-ci.yml
+renv
+renv.lock
+^doc$
+^Meta$
+.lintr
+tests/testthat/Rplots.pdf
+
+# docs
+inst/doc
+docs
+R/util_experimental.R
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
