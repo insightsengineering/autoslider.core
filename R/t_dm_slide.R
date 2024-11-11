@@ -62,7 +62,7 @@ t_dm_slide <- function(adsl,
       N = col_counts(result) %>% as.numeric()
     ) %>%
       `colnames<-`(c(paste(arm), "N")) %>%
-      arrange(get(arm))
+      dplyr::arrange(get(arm))
 
     attr(result, "N") <- n_r
   }
