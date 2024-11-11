@@ -1,5 +1,5 @@
 Type: Package
-Package: autoslideR core package
+Package: autoslider.core 
 Title: Slides automation with R
 Version: 0.0.1.9001
 Authors@R: c(
@@ -26,7 +26,7 @@ Depends:
     R (>= 2.10),
     formatters (>= 0.5.8),
     rlistings (>= 0.2.9),
-    tern (>= 0.9.5)
+    tern (>= 0.9.5),
     flextable (>= 0.9.4),
     officer (>= 0.3.18),
 Imports:
