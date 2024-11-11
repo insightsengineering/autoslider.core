@@ -4,20 +4,21 @@ Title: Slides automation with R
 Version: 0.0.1.9004
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
-    person("Heng", "Wang", , "wangh107@gene.com", role = "aut"),
-    person("Yinqi", "Zhao", , "zhaoy143@gene.com", role = "aut"),
-    person("Bo", "Ci", , "ci.bo@gene.com", role = "aut"),
-    person("Liming", "Li", , "liming.li@roche.com", role = "aut"),
-    person("Laura", "Wang", , "wangl330@gene.com", role = "ctb"),
-    person("Xiaoli", "Duan", , "xiaoli.duan@roche.com", role = "ctb"),
-    person("Stefan Pascal", "Thoma", , "stefan.thoma@roche.com", role = "ctb"),
-    person("Miles", "Almond", , "miles.almond@roche.com", role = "ctb"),
-    person("Mahdi", "About", , "mahdi.about@roche.com", role = "ctb"),
-    person("Kai", "Lim", , "kai.lim@roche.com", role = "ctb"),
-    person("Nolan", "Steed", , "nolan.steed@roche.com", role = "ctb"),
-    person("Daoling", "Pang", , "daolin.pang@roche.com", role = "ctb"),
-    person("Elisabeth", "Deutschmann", , "elisabeth.deutschmann@roche.com", role = "ctb"),
-    person("Chenkai", "Lv", , "chenkai.lv@gene.com", role = "aut")
+    person("Heng", "Wang", , , role = "aut"),
+    person("Yinqi", "Zhao", , , role = "aut"),
+    person("Bo", "Ci", , , role = "aut"),
+    person("Liming", "Li", , , role = "aut"),
+    person("Laura", "Wang", , , role = "ctb"),
+    person("Xiaoli", "Duan", , , role = "aut"),
+    person("Stefan Pascal", "Thoma", , , role = "aut"),
+    person("Thomas", "Neitmann", , , role = "ctb"),
+    person("Miles", "Almond", , , role = "aut"),
+    person("Mahdi", "About", , , role = "ctb"),
+    person("Kai", "Lim", , , role = "ctb"),
+    person("Nolan", "Steed", , , role = "ctb"),
+    person("Daoling", "Pang", , , role = "ctb"),
+    person("Elisabeth", "Deutschmann", , , role = "ctb"),
+    person("Chenkai", "Lv", , , role = "aut")
   )
 Description: Slides automation with R.
 License: file LICENSE

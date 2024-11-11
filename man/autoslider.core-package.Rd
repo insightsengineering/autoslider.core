@@ -20,24 +20,25 @@ Useful links:
 
 Authors:
 \itemize{
-  \item Heng Wang \email{wangh107@gene.com}
-  \item Yinqi Zhao \email{zhaoy143@gene.com}
-  \item Bo Ci \email{ci.bo@gene.com}
-  \item Liming Li \email{liming.li@roche.com}
-  \item Chenkai Lv \email{chenkai.lv@gene.com}
+  \item Heng Wang
+  \item Yinqi Zhao
+  \item Bo Ci
+  \item Liming Li
+  \item Xiaoli Duan
+  \item Stefan Pascal Thoma
+  \item Miles Almond
+  \item Chenkai Lv
 }
 
 Other contributors:
 \itemize{
-  \item Laura Wang \email{wangl330@gene.com} [contributor]
-  \item Xiaoli Duan \email{xiaoli.duan@roche.com} [contributor]
-  \item Stefan Pascal Thoma \email{stefan.thoma@roche.com} [contributor]
-  \item Miles Almond \email{miles.almond@roche.com} [contributor]
-  \item Mahdi About \email{mahdi.about@roche.com} [contributor]
-  \item Kai Lim \email{kai.lim@roche.com} [contributor]
-  \item Nolan Steed \email{nolan.steed@roche.com} [contributor]
-  \item Daoling Pang \email{daolin.pang@roche.com} [contributor]
-  \item Elisabeth Deutschmann \email{elisabeth.deutschmann@roche.com} [contributor]
+  \item Laura Wang [contributor]
+  \item Thomas Neitmann [contributor]
+  \item Mahdi About [contributor]
+  \item Kai Lim [contributor]
+  \item Nolan Steed [contributor]
+  \item Daoling Pang [contributor]
+  \item Elisabeth Deutschmann [contributor]
 }
 
 }
