@@ -42,7 +42,6 @@ t_ae_pt_soc_slide <- function(adsl, adae, arm, cutoff = NA,
   result@main_title <- "Adverse Events table"
 
   if (is.null(side_by_side)) {
-    attr(result, "df") <- t_ae_pt_soc_slide_to_df(result)
 
     # adding "N" attribute
     arm <- col_paths(result)[[1]][1]
