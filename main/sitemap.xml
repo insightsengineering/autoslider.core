@@ -31,6 +31,7 @@
 <url><loc>/reference/eg_advs.html</loc></url>
 <url><loc>/reference/fastDoCall.html</loc></url>
 <url><loc>/reference/figure_to_slide.html</loc></url>
+<url><loc>/reference/filter_spec.html</loc></url>
 <url><loc>/reference/format_3d.html</loc></url>
 <url><loc>/reference/format_date.html</loc></url>
 <url><loc>/reference/func_wrapper.html</loc></url>
@@ -51,8 +52,11 @@
 <url><loc>/reference/preprocess_t_ds.html</loc></url>
 <url><loc>/reference/print.decoratedGrob.html</loc></url>
 <url><loc>/reference/print.decoratedGrobSet.html</loc></url>
+<url><loc>/reference/read_spec.html</loc></url>
 <url><loc>/reference/s_proportion_1.html</loc></url>
 <url><loc>/reference/s_surv_time_1.html</loc></url>
+<url><loc>/reference/save_output.html</loc></url>
+<url><loc>/reference/save_outputs.html</loc></url>
 <url><loc>/reference/slides_preview.html</loc></url>
 <url><loc>/reference/t_ae_slide.html</loc></url>
 <url><loc>/reference/t_ae_summ_slide.html</loc></url>

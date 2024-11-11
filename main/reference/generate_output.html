@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">autoslider.core</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9004</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9005</span>
       </span>
     </div>
 
@@ -94,15 +94,20 @@ By default, `2` will show all filter messages and show output generation message
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">spec_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"spec.yml"</span>, package <span class="op">=</span> <span class="st">"autoslider.core"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">spec</span> <span class="op">&lt;-</span> <span class="va">spec_file</span> <span class="op">%&gt;%</span> <span class="fu">read_spec</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in read_spec(.):</span> could not find function "read_spec"</span>
+<span class="r-in"><span><span class="va">spec</span> <span class="op">&lt;-</span> <span class="va">spec_file</span> <span class="op">%&gt;%</span> <span class="fu"><a href="read_spec.html">read_spec</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  adsl <span class="op">=</span> <span class="va">eg_adsl</span>,</span></span>
 <span class="r-in"><span>  adae <span class="op">=</span> <span class="va">eg_adae</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">generate_output</span><span class="op">(</span><span class="st">"t_ae_slide"</span>, <span class="va">data</span>, <span class="va">spec</span><span class="op">$</span><span class="va">t_ae_slide_SE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> object 'spec' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">❯</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">⚠</span> Error: `ids` must be a character scalar.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "`ids` must be a character scalar."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"step")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "filter dataset"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "autoslider_error"</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -114,7 +119,7 @@ By default, `2` will show all filter messages and show output generation message
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Joe Zhu, Heng Wang, Yinqi Zhao, Bo Ci, Liming Li, Chenkai Lv.</p>
+  <p></p><p>Developed by Joe Zhu, Heng Wang, Yinqi Zhao, Bo Ci, Liming Li, Xiaoli Duan, Stefan Pascal Thoma, Miles Almond, Chenkai Lv.</p>
 </div>
 
 <div class="pkgdown">
