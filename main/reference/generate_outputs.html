@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">autoslider.core</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9005</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9007</span>
       </span>
     </div>
 
@@ -96,7 +96,8 @@ By default, `2` will show all filter messages and show output generation message
 <span class="r-in"><span>  <span class="fu"><a href="read_spec.html">read_spec</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="filter_spec.html">filter_spec</a></span><span class="op">(</span><span class="va">output</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"t_dm_slide_IT"</span>, <span class="st">"t_ae_slide_SE"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
 <span class="r-in"><span>  <span class="fu">generate_outputs</span><span class="op">(</span>datasets <span class="op">=</span> <span class="va">data</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in log_number_of_matched_records(spec, filtered_spec, condition):</span> could not find function "log_number_of_matched_records"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> No output matched the filter condition `output %in% c("t_dm_slide_IT", "t_ae_slide_SE")`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

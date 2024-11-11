@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">autoslider.core</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9005</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9007</span>
       </span>
     </div>
 
@@ -88,27 +88,45 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Keep only the t_dm_IT output</span></span></span>
 <span class="r-in"><span><span class="fu">filter_spec</span><span class="op">(</span><span class="va">spec</span>, <span class="va">output</span> <span class="op">==</span> <span class="st">"t_dm_IT"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in log_number_of_matched_records(spec, filtered_spec, condition):</span> could not find function "log_number_of_matched_records"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> No output matched the filter condition `output == "t_dm_IT"`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "spec" "list"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Same as above but more verbose</span></span></span>
 <span class="r-in"><span><span class="fu">filter_spec</span><span class="op">(</span><span class="va">spec</span>, <span class="va">program</span> <span class="op">==</span> <span class="st">"t_dm"</span> <span class="op">&amp;&amp;</span> <span class="va">suffix</span> <span class="op">==</span> <span class="st">"IT"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in log_number_of_matched_records(spec, filtered_spec, condition):</span> could not find function "log_number_of_matched_records"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> No output matched the filter condition `program == "t_dm" &amp;&amp; suffix == "IT"`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "spec" "list"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Keep all t_ae outputs</span></span></span>
 <span class="r-in"><span><span class="fu">filter_spec</span><span class="op">(</span><span class="va">spec</span>, <span class="va">program</span> <span class="op">==</span> <span class="st">"t_ae"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in log_number_of_matched_records(spec, filtered_spec, condition):</span> could not find function "log_number_of_matched_records"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> No output matched the filter condition `program == "t_ae"`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "spec" "list"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Keep all output run on safety population</span></span></span>
 <span class="r-in"><span><span class="fu">filter_spec</span><span class="op">(</span><span class="va">spec</span>, <span class="st">"SE"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="va">suffix</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in log_number_of_matched_records(spec, filtered_spec, condition):</span> could not find function "log_number_of_matched_records"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> No output matched the filter condition `"SE" %in% suffix`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "spec" "list"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Keep t_dm_CHN_IT and t_dm_CHN_SE</span></span></span>
 <span class="r-in"><span><span class="fu">filter_spec</span><span class="op">(</span><span class="va">spec</span>, <span class="va">program</span> <span class="op">==</span> <span class="st">"t_dm"</span> <span class="op">&amp;&amp;</span> <span class="va">suffix</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CHN_IT"</span>, <span class="st">"CHN_SE"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in log_number_of_matched_records(spec, filtered_spec, condition):</span> could not find function "log_number_of_matched_records"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> No output matched the filter condition `program == "t_dm" &amp;&amp; suffix %in% c("CHN_IT", "CHN_SE")`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "spec" "list"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Keep all tables</span></span></span>
 <span class="r-in"><span><span class="fu">filter_spec</span><span class="op">(</span><span class="va">spec</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"^t_"</span>, <span class="va">program</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in log_number_of_matched_records(spec, filtered_spec, condition):</span> could not find function "log_number_of_matched_records"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> No output matched the filter condition `grepl("^t_", program)`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> named list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "spec" "list"</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
