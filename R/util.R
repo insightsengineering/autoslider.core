@@ -719,3 +719,10 @@ build_table_header <- function(anl,
   }
   return(lyt)
 }
+
+
+get_version_label_output <- function() {
+   NULL
+}
+
+
