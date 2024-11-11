@@ -21,7 +21,6 @@ Flextable
 GlobalAsia
 GlobalAsiaChina
 Lil
-Neitmann
 Powerpoint
 Preprocess
 TRT
@@ -44,9 +43,11 @@ dVTableTree
 decoratedGrob
 decoratedGrobSet
 df
+dm
 dplyr
 ds
 enableRF
+expr
 flextable
 fontsize
 ggplot
@@ -62,13 +63,11 @@ lubridate
 neitmant
 ph
 ppt
+rds
 rtable
 rtables
 surv
 tlg
+yaml
 yml
 yyyy
-dm
-expr
-rds
-yaml
