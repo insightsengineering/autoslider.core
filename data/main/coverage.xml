@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0" branch-rate="0" lines-covered="0" lines-valid="1754" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2024-11-11 05:23:48.07444">
+<coverage line-rate="0" branch-rate="0" lines-covered="0" lines-valid="1754" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2024-11-11 05:33:16.894877">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
@@ -436,7 +436,7 @@
             <line number="303" hits="0" branch="false"/>
           </lines>
         </class>
-        <class name="fastdocall.R" filename="R/fastdocall.R" line-rate="0" branch-rate="0" complexity="0">
+        <class name="fastdocall_chg_name.R" filename="R/fastdocall_chg_name.R" line-rate="0" branch-rate="0" complexity="0">
           <methods>
             <method name="fastDoCall" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
@@ -676,7 +676,7 @@
             <line number="163" hits="0" branch="false"/>
           </lines>
         </class>
-        <class name="func_wrapper.R" filename="R/func_wrapper.R" line-rate="0" branch-rate="0" complexity="0">
+        <class name="func_wrapper_chg_name.R" filename="R/func_wrapper_chg_name.R" line-rate="0" branch-rate="0" complexity="0">
           <methods>
             <method name="func_wrapper" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
@@ -758,7 +758,7 @@
             <line number="50" hits="0" branch="false"/>
           </lines>
         </class>
-        <class name="generate_output.R" filename="R/generate_output.R" line-rate="0" branch-rate="0" complexity="0">
+        <class name="generate_output_chg_name.R" filename="R/generate_output_chg_name.R" line-rate="0" branch-rate="0" complexity="0">
           <methods>
             <method name="generate_output" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
