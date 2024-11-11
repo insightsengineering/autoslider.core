@@ -63,14 +63,14 @@ Suggests:
     knitr,
     mime,
     nestcolor,
-    rice,
-    rmarkdown,
+    rmarkdown (>= 2.23),
     rsvg,
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
     testthat (>= 3.2.0)
 VignetteBuilder:
-    knitr
+    knitr,
+    rmarkdown
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
