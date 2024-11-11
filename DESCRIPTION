@@ -1,7 +1,7 @@
 Type: Package
-Package: autoslider.core 
+Package: autoslider.core
 Title: Slides automation with R
-Version: 0.0.1.9001
+Version: 0.0.1.9002
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
     person("Heng", "Wang", , "wangh107@gene.com", role = "aut"),
@@ -23,12 +23,12 @@ Description: Slides automation with R.
 License: file LICENSE
 URL: https://dss-rac.pages.roche.com/autoslideR/
 Depends:
-    R (>= 2.10),
-    formatters (>= 0.5.8),
-    rlistings (>= 0.2.9),
-    tern (>= 0.9.5),
     flextable (>= 0.9.4),
+    formatters (>= 0.5.8),
     officer (>= 0.3.18),
+    R (>= 2.10),
+    rlistings (>= 0.2.9),
+    tern (>= 0.9.5)
 Imports:
     assertthat,
     checkmate,
