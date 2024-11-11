@@ -22,6 +22,8 @@ t_ae_pt_diff_slide(
 
 \item{cutoff}{Cutoff threshold}
 
+\item{split_by_study}{Split by study, building structured header for tables}
+
 \item{side_by_side}{"GlobalAsia" or "GlobalAsiaChina" to define the side by side requirement}
 }
 \value{

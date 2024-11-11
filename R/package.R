@@ -34,7 +34,7 @@
 #' @importFrom survival Surv survfit coxph survdiff strata
 #' @importFrom tern control_coxph format_xx d_proportion
 #' @importFrom tidyr gather spread unite
-#' @importFrom utils modifyList file.edit
+#' @importFrom utils modifyList file.edit assignInNamespace
 NULL
 
 
