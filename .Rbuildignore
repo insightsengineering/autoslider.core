@@ -9,6 +9,7 @@ renv.lock
 ^doc$
 ^Meta$
 .lintr
+.github
 tests/testthat/Rplots.pdf
 
 # docs
