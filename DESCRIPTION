@@ -1,0 +1,79 @@
+Type: Package
+Package: autoslideR core package
+Title: Slides automation with R
+Version: 0.0.1.9001
+Authors@R: c(
+    person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
+    person("Heng", "Wang", , "wangh107@gene.com", role = "aut"),
+    person("Yinqi", "Zhao", , "zhaoy143@gene.com", role = "aut"),
+    person("Bo", "Ci", , "ci.bo@gene.com", role = "aut"),
+    person("Liming", "Li", , "liming.li@roche.com", role = "aut"),
+    person("Laura", "Wang", , "wangl330@gene.com", role = "ctb"),
+    person("Xiaoli", "Duan", , "xiaoli.duan@roche.com", role = "ctb"),
+    person("Stefan Pascal", "Thoma", , "stefan.thoma@roche.com", role = "ctb"),
+    person("Miles", "Almond", , "miles.almond@roche.com", role = "ctb"),
+    person("Mahdi", "About", , "mahdi.about@roche.com", role = "ctb"),
+    person("Kai", "Lim", , "kai.lim@roche.com", role = "ctb"),
+    person("Nolan", "Steed", , "nolan.steed@roche.com", role = "ctb"),
+    person("Daoling", "Pang", , "daolin.pang@roche.com", role = "ctb"),
+    person("Elisabeth", "Deutschmann", , "elisabeth.deutschmann@roche.com", role = "ctb"),
+    person("Chenkai", "Lv", , "chenkai.lv@gene.com", role = "aut")
+  )
+Description: Slides automation with R.
+License: file LICENSE
+URL: https://dss-rac.pages.roche.com/autoslideR/
+Depends:
+    R (>= 2.10),
+    formatters (>= 0.5.8),
+    rlistings (>= 0.2.9),
+    tern (>= 0.9.5)
+    flextable (>= 0.9.4),
+    officer (>= 0.3.18),
+Imports:
+    assertthat,
+    checkmate,
+    cli,
+    dplyr,
+    filters (>= 0.3.1),
+    forcats,
+    ggplot2,
+    ggpubr,
+    glue,
+    googlesheets4,
+    grid,
+    gridExtra,
+    lubridate,
+    magrittr,
+    methods,
+    purrr,
+    readxl,
+    rlang,
+    rtables (>= 0.6.9),
+    rvg (>= 0.2.5),
+    stringr,
+    survival,
+    tibble,
+    tidyr,
+    yaml
+Suggests:
+    devtools,
+    googledrive,
+    htmltools,
+    httr,
+    knitr,
+    mime,
+    nestcolor,
+    rice,
+    rmarkdown,
+    rsvg,
+    styler (>= 1.10.2),
+    svglite (>= 2.1.2),
+    testthat (>= 3.2.0)
+VignetteBuilder:
+    knitr
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+LazyData: true
+LazyDataCompression: xz
+RoxygenNote: 7.3.2
