@@ -1,1 +1,1 @@
-# autoslider.core 0.0.1.9020
+# autoslider.core 0.0.1.9022

@@ -1,0 +1,49 @@
+---
+title: "Tutorial (Beginner)"
+subtitle: "Slide automation with `AutoslideR`"
+output:
+    rmarkdown::html_document:
+        theme: "spacelab"
+        highlight: "kate"
+        toc: true
+        toc_depth: 2
+        toc_float: true
+author: 
+  - Joe Zhu 
+vignette: >
+  %\VignetteIndexEntry{Guide for Developers}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+# Contents
+
+-   [An autoslideR step by step guide](#an-autoslider-step-by-step-guide)
+-   [Slide automation driven by human readable yaml files](#slide-automation-driven-by-human%20readable-yaml-files)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Consider the following folder structure, 
+
+```         
+.
+├── template.pptx
+├── filters.yml
+├── metadata.yml
+├── programs
+│   ├── some_data_process_script.R
+│   ├── some_output_functions_1.R
+│   ├── some_output_functions_2.R
+│   └── run_slides.R
+└── spec.yml
+```
+
+-   `template.pptx`: The slide theme template. You can replace this file by your own template. The slide master of the theme template should contains the basic layouts: "Title and Content" and "Two Content".
+-   `filters.yml`: To define and store filters.
+-   `spec.yml`: To define the content (TLG) on each slide. Each program corresponds to a TLG. The order of the program in `spec.yml` determines the order of the contents in the final slide deck. User can also specify the title, footnote, filter (using suffix), and argument values to be passed to the program.
+-   `metadata.yml`: Study related metadata information.
+-   `programs`: This folder hosts your R scripts for the automatic slide generation. We recommend to have two separate workflows: one for data pre-processing, the other for executing `spec.yml` to generate slides.
+
