@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">autoslider.core</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9021</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9022</span>
       </span>
     </div>
 
@@ -38,7 +38,13 @@
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"><li>
+  <a href="https://github.com/insightsengineering/autoslider.core/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+
+  </a>
+</li>
+      </ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -48,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Death table</h1>
-
+    <small class="dont-index">Source: <a href="https://github.com/insightsengineering/autoslider.core/blob/main/R/t_dd_slide.R" class="external-link"><code>R/t_dd_slide.R</code></a></small>
     <div class="hidden name"><code>t_dd_slide.Rd</code></div>
     </div>
 
@@ -99,15 +105,14 @@ the side by side requirement.</p></dd>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">out1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Death table</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> —————————————————————————————————————————————————————————————————————————————————</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                          A: Drug X    B: Placebo    C: Combination   All Patients</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> N (%)                     (N=134)       (N=134)        (N=132)         (N=400)   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> —————————————————————————————————————————————————————————————————————————————————</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> All Deaths              25 (18.66%)   23 (17.16%)    22 (16.67%)     70 (17.50%) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Progressive Disease     8 (32%)      6 (26.1%)      6 (27.3%)       20 (28.6%) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Adverse Events          9 (36%)      7 (30.4%)      10 (45.5%)      26 (37.1%) </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   Other                   8 (32%)     10 (43.5%)      6 (27.3%)       24 (34.3%) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> N (%)                    A: Drug X    B: Placebo    C: Combination   All Patients   All Patients</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> ————————————————————————————————————————————————————————————————————————————————————————————————</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> All Deaths              25 (18.66%)   23 (17.16%)    22 (16.67%)     70 (17.50%)    70 (17.50%) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Progressive Disease     8 (32%)      6 (26.1%)      6 (27.3%)       20 (28.6%)     20 (28.6%) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Adverse Events          9 (36%)      7 (30.4%)      10 (45.5%)      26 (37.1%)     26 (37.1%) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   Other                   8 (32%)     10 (43.5%)      6 (27.3%)       24 (34.3%)     24 (34.3%) </span>
 <span class="r-in"><span><span class="fu"><a href="generate_slides.html">generate_slides</a></span><span class="op">(</span><span class="va">out1</span>, <span class="st">"dd.pptx"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Death table"</span>
 <span class="r-in"><span></span></span>
