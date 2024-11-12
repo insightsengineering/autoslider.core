@@ -22,13 +22,13 @@ Authors@R: c(
   )
 Description: Slides automation with R.
 License: file LICENSE
-URL: https://dss-rac.pages.roche.com/autoslideR/
+URL: https://github.com/insightsengineering/autoslider.core
 Depends:
     flextable (>= 0.9.4),
     formatters (>= 0.5.8),
     officer (>= 0.3.18),
     R (>= 2.10),
-    rlistings (>= 0.2.9),
+    rlistings (>= 0.2.8),
     tern (>= 0.9.5)
 Imports:
     assertthat,
@@ -49,7 +49,7 @@ Imports:
     purrr,
     readxl,
     rlang,
-    rtables (>= 0.6.9),
+    rtables (>= 0.6.8),
     rvg (>= 0.2.5),
     stringr,
     survival,
@@ -68,9 +68,6 @@ Suggests:
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
     testthat (>= 3.2.0)
-VignetteBuilder:
-    knitr,
-    rmarkdown
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US

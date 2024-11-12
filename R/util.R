@@ -707,7 +707,7 @@ build_table_header <- function(anl,
     } else {
       lyt <- lyt %>%
         split_cols_by(var = arm, split_fun = add_overall_level("All Patients", first = FALSE)) %>%
-        add_colcounts()
+        add_overall_col("All Patients")
     }
   } else {
     if (split_by_study) {
@@ -715,7 +715,7 @@ build_table_header <- function(anl,
     }
     lyt <- lyt %>%
       split_cols_by(var = arm) %>%
-      add_colcounts()
+      add_overall_col("All Patients")
   }
   return(lyt)
 }

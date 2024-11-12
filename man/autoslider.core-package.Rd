@@ -11,7 +11,7 @@ Slides automation with R.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://dss-rac.pages.roche.com/autoslideR/}
+  \item \url{https://github.com/insightsengineering/autoslider.core}
 }
 
 }
