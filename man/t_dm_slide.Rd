@@ -43,7 +43,8 @@ out1 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"))
 print(out1)
 generate_slides(out1, "dm.pptx")
 
-out2 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"), split_by_study = TRUE)
+out2 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"),
+                   split_by_study = TRUE)
 print(out2)
 
 }

@@ -68,6 +68,8 @@ Suggests:
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
     testthat (>= 3.2.0)
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
