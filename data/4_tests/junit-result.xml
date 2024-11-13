@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="data_snapshot" timestamp="2024-11-13T03:59:13Z" hostname="76d889e1983f" tests="18" skipped="0" failures="0" errors="0" time="1.23">
+    <testcase time="0.0979999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.107" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0740000000000003" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0600000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0409999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0590000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0589999999999997" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0640000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0289999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0550000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0299999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0529999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0330000000000004" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0329999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0680000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.056" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.252" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0590000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
+  </testsuite>
+</testsuites>
