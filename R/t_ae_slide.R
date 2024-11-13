@@ -49,8 +49,9 @@ t_ae_slide <- function(adsl, adae, arm = "TRT01A",
     return(null_report())
   } else {
     lyt <- build_table_header(adsl, arm,
-                              split_by_study = split_by_study,
-                              side_by_side = side_by_side)
+      split_by_study = split_by_study,
+      side_by_side = side_by_side
+    )
 
     lyt <- lyt %>%
       split_rows_by(

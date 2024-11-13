@@ -669,27 +669,10 @@ lyt_to_side_by_side_two_data <- function(lyt, anl, alt_counts_df, side_by_side =
   return(result)
 }
 
-#' Checker of data frame display per patient (or not)
-#'
-#' @param pp per patient
-#' @param colname name of column
-if_display_pp <- function(pp, colname = FALSE) {
-  if (!pp) {
-    if (!colname) {
-      return("USUBJID")
-    }
-    return("Patient ID")
-  }
-  return(NULL)
-}
 
 do_call <- function(fun, ...) {
   args <- list(...)
   do.call(fun, args[intersect(names(args), formalArgs(fun))])
-}
-
-strip_NA <- function(input) {
-  return(input[which(input != "NA")])
 }
 
 
@@ -722,7 +705,5 @@ build_table_header <- function(anl,
 
 
 get_version_label_output <- function() {
-   NULL
+  NULL
 }
-
-

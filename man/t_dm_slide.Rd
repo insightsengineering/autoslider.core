@@ -7,7 +7,7 @@
 t_dm_slide(
   adsl,
   arm = "TRT01P",
-  vars = c("AGEGR1", "SEX", "RACE", "BECOG", "BBMI"),
+  vars = c("AGE", "SEX", "RACE"),
   stats = c("median", "range", "count_fraction"),
   split_by_study = FALSE,
   side_by_side = NULL
@@ -44,7 +44,8 @@ print(out1)
 generate_slides(out1, "dm.pptx")
 
 out2 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"),
-                   split_by_study = TRUE)
+  split_by_study = TRUE
+)
 print(out2)
 
 }

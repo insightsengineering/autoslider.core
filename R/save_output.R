@@ -11,7 +11,8 @@
 #'
 #' @examples
 #' library(dplyr)
-#' adsl <- eg_adsl %>% filter(SAFFL == "Y") %>%
+#' adsl <- eg_adsl %>%
+#'   filter(SAFFL == "Y") %>%
 #'   mutate(TRT01P = factor(TRT01P, levels = c("A: Drug X", "B: Placebo")))
 #' output_dir <- tempdir()
 #' t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY")) %>%

@@ -17,12 +17,13 @@
 #' generate_slides(out1, "dm.pptx")
 #'
 #' out2 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"),
-#'                    split_by_study = TRUE)
+#'   split_by_study = TRUE
+#' )
 #' print(out2)
 #'
 t_dm_slide <- function(adsl,
                        arm = "TRT01P",
-                       vars = c("AGEGR1", "SEX", "RACE", "BECOG", "BBMI"),
+                       vars = c("AGE", "SEX", "RACE"),
                        stats = c("median", "range", "count_fraction"),
                        split_by_study = FALSE,
                        side_by_side = NULL) {
@@ -39,8 +40,10 @@ t_dm_slide <- function(adsl,
   adsl1 <- adsl %>%
     select(all_of(c("STUDYID", "USUBJID", arm, vars, extra)))
 
-  lyt <- build_table_header(adsl1, arm, split_by_study = split_by_study,
-                            side_by_side = side_by_side)
+  lyt <- build_table_header(adsl1, arm,
+    split_by_study = split_by_study,
+    side_by_side = side_by_side
+  )
 
   lyt <- lyt %>%
     analyze_vars(
@@ -55,7 +58,6 @@ t_dm_slide <- function(adsl,
   result <- lyt_to_side_by_side(lyt, adsl1, side_by_side)
 
   if (is.null(side_by_side)) {
-
     # adding "N" attribute
     arm <- col_paths(result)[[1]][1]
 
