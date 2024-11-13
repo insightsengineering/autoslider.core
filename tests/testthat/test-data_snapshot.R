@@ -5,4 +5,3 @@ test_that("Test data snapshot", {
     expect_snapshot(head(get(datai)))
   }
 })
-
