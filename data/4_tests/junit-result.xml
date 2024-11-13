@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="data_snapshot" timestamp="2024-11-13T03:59:23Z" hostname="fdb04c8a2b26" tests="1" skipped="1" failures="0" errors="0" time="0.067">
-    <testcase time="0.0669999999999997" classname="data_snapshot" name="Test_data_snapshot">
-      <skipped message="Reason: On CRAN ('test-data_snapshot.R:4:5')"/>
-    </testcase>
+  <testsuite name="data_snapshot" timestamp="2024-11-13T07:26:15Z" hostname="13cebf74a850" tests="18" skipped="0" failures="0" errors="0" time="1.211">
+    <testcase time="0.0949999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.105" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0720000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0590000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0390000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0579999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0590000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0619999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0270000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0539999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0289999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.052" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0329999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.032" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0680000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.056" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.252" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0590000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
   </testsuite>
 </testsuites>
