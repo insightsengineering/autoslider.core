@@ -30,6 +30,7 @@ Depends:
     R (>= 2.10),
     rlistings (>= 0.2.8),
     tern (>= 0.9.5)
+    rtables (>= 0.6.8),
 Imports:
     assertthat,
     checkmate,
@@ -49,7 +50,6 @@ Imports:
     purrr,
     readxl,
     rlang,
-    rtables (>= 0.6.8),
     rvg (>= 0.2.5),
     stringr,
     survival,
@@ -68,8 +68,13 @@ Suggests:
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
     testthat (>= 3.2.0)
-VignetteBuilder: 
-    knitr
+Config/Needs/verdepcheck: insightsengineering/formatters,
+    tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
+    gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
+    davidgohel/flextable, yihui/knitr, r-lib/lifecycle,
+    davidgohel/officer, Merck/r2rtf, rstudio/rmarkdown, therneau/survival,
+    r-lib/testthat, tidyverse/tibble, tidyverse/tidyr, r-lib/withr,
+    r-lib/xml2
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
