@@ -25,6 +25,12 @@ jobs:
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/formatters
+        insightsengineering/rtables
+        insightsengineering/tern
+        insightsengineering/rlistings
       enforce-note-blocklist: true
       note-blocklist: |
         checking dependencies in R code .* NOTE
@@ -43,6 +49,12 @@ jobs:
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/formatters
+        insightsengineering/rtables
+        insightsengineering/tern
+        insightsengineering/rlistings
       additional-env-vars: |
         NOT_CRAN=true
       enforce-note-blocklist: true
@@ -63,6 +75,12 @@ jobs:
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/formatters
+        insightsengineering/rtables
+        insightsengineering/tern
+        insightsengineering/rlistings
       additional-env-vars: |
         NOT_CRAN=true
   linter:
@@ -75,6 +93,12 @@ jobs:
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/formatters
+        insightsengineering/rtables
+        insightsengineering/tern
+        insightsengineering/rlistings
       auto-update: true
   gitleaks:
     name: gitleaks 💧
