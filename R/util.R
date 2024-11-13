@@ -675,10 +675,6 @@ do_call <- function(fun, ...) {
   do.call(fun, args[intersect(names(args), formalArgs(fun))])
 }
 
-strip_NA <- function(input) {
-  return(input[which(input != "NA")])
-}
-
 
 build_table_header <- function(anl,
                                arm,
@@ -709,7 +705,5 @@ build_table_header <- function(anl,
 
 
 get_version_label_output <- function() {
-   NULL
+  NULL
 }
-
-

@@ -143,5 +143,3 @@ testdata_two_arm <- list(
   "adsl" = adsl_two_arm,
   "adae" = adae_two_arm
 )
-
-
