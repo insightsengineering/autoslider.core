@@ -44,19 +44,16 @@ Tables are saved as RDS file
 }
 \examples{
 library(dplyr)
-adsl <- eg_adsl \%>\%
+adsl <- eg_adsl \%>\% filter(SAFFL == "Y")
   mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
-adae <- eg_adae \%>\%
-  mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
-adae$ATOXGR <- adae$AETOXGR
 output_dir <- tempdir()
-t_ae_pt_slide(adsl, adae, "TRT01A", 2) \%>\%
+t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY")) \%>\%
   decorate(
-    title = "Serious Adverse Events, Safety-Evaluable Patients",
+    title = "Demographic table",
     footnote = ""
   ) \%>\%
   save_output(
-    file_name = file.path(output_dir, "t_ae_SER_SE"),
+    file_name = file.path(output_dir, "t_dm_SE"),
     save_rds = TRUE
   )
 
