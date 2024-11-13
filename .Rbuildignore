@@ -19,3 +19,6 @@ R/util_experimental.R
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+
+# dev
+tmp/
