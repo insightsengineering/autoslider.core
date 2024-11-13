@@ -669,19 +669,6 @@ lyt_to_side_by_side_two_data <- function(lyt, anl, alt_counts_df, side_by_side =
   return(result)
 }
 
-#' Checker of data frame display per patient (or not)
-#'
-#' @param pp per patient
-#' @param colname name of column
-if_display_pp <- function(pp, colname = FALSE) {
-  if (!pp) {
-    if (!colname) {
-      return("USUBJID")
-    }
-    return("Patient ID")
-  }
-  return(NULL)
-}
 
 do_call <- function(fun, ...) {
   args <- list(...)

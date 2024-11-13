@@ -22,7 +22,7 @@
 #'
 t_dm_slide <- function(adsl,
                        arm = "TRT01P",
-                       vars = c("AGEGR1", "SEX", "RACE", "BECOG", "BBMI"),
+                       vars = c("AGE", "SEX", "RACE"),
                        stats = c("median", "range", "count_fraction"),
                        split_by_study = FALSE,
                        side_by_side = NULL) {
