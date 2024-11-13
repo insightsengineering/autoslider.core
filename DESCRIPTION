@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slides automation with R
-Version: 0.0.1.9024
+Version: 0.0.1.9025
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
     person("Heng", "Wang", role = "aut"),
@@ -29,8 +29,8 @@ Depends:
     officer (>= 0.3.18),
     R (>= 2.10),
     rlistings (>= 0.2.9),
-    tern (>= 0.9.6),
-    rtables (>= 0.6.10)
+    rtables (>= 0.6.10),
+    tern (>= 0.9.6)
 Imports:
     assertthat,
     checkmate,
