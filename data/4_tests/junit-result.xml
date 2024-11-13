@@ -1,89 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="data_snapshot" timestamp="2024-11-13T09:02:36Z" hostname="f9698fae323c" tests="1" skipped="1" failures="0" errors="0" time="0.067">
-    <testcase time="0.0670000000000002" classname="data_snapshot" name="Test_data_snapshot">
+  <testsuite name="data_snapshot" timestamp="2024-11-13T13:03:14Z" hostname="8b9f23e1ee1e" tests="1" skipped="1" failures="0" errors="0" time="0.057">
+    <testcase time="0.0569999999999999" classname="data_snapshot" name="Test_data_snapshot">
       <skipped message="Reason: On CRAN ('test-data_snapshot.R:4:5')"/>
     </testcase>
-    <testcase time="0.0529999999999999" classname="character(0)" name="_unnamed_">
-      <error type="error" message="Error in `ggplot(data = sample_df, mapping = aes(x = group, y = value))`: could not find function &quot;ggplot&quot; ('test-decorate.R:12:1')">Error in `ggplot(data = sample_df, mapping = aes(x = group, y = value))`: could not find function "ggplot"</error>
-    </testcase>
   </testsuite>
-  <testsuite name="log" timestamp="2024-11-13T09:02:36Z" hostname="f9698fae323c" tests="3" skipped="0" failures="0" errors="1" time="0.095">
-    <testcase time="0.04" classname="log" name="Test_some_functions_in_log.R"/>
-    <testcase time="0.00199999999999978" classname="log" name="Test_some_functions_in_log.R"/>
-  </testsuite>
-  <testsuite name="save-output" timestamp="2024-11-13T09:02:36Z" hostname="f9698fae323c" tests="1" skipped="0" failures="0" errors="1" time="0.015">
-    <testcase time="0.0150000000000001" classname="save_output" name="save_an_output">
-      <error type="error" message="Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function &quot;t_ds_slide&quot; ('test-save-output.R:2:3')">Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function "t_ds_slide"
+  <testsuite name="decorate" timestamp="2024-11-13T13:03:14Z" hostname="8b9f23e1ee1e" tests="5" skipped="0" failures="0" errors="1" time="0.437">
+    <testcase time="0.0669999999999997" classname="decorate" name="Test_decoreate_not_to_throw">
+      <error type="error" message="&lt;packageNotFoundError/error/condition&gt; ('test-decorate.R:23:3')">&lt;packageNotFoundError/error/condition&gt;
+Error in `loadNamespace(x)`: there is no package called 'autoslideR'
 Backtrace:
     x
- 1. +-t_ds_slide(adsl = testdata$adsl) %&gt;% ... at test-save-output.R:2:3
+ 1. \-base::loadNamespace(x) at test-decorate.R:23:3
+ 2.   \-base::withRestarts(stop(cond), retry_loadNamespace = function() NULL)
+ 3.     \-base (local) withOneRestart(expr, restarts[[1L]])
+ 4.       \-base (local) doWithOneRestart(return(expr), restart)</error>
+    </testcase>
+    <testcase time="0.182" classname="decorate" name="Test_print_not_to_throw"/>
+    <testcase time="0.0590000000000002" classname="decorate" name="Test_print_not_to_throw"/>
+    <testcase time="0.121" classname="decorate" name="Test_print_not_to_throw"/>
+    <testcase time="0.00800000000000001" classname="decorate" name="Test_decoreate_throw"/>
+  </testsuite>
+  <testsuite name="log" timestamp="2024-11-13T13:03:15Z" hostname="8b9f23e1ee1e" tests="2" skipped="0" failures="0" errors="0" time="0.018">
+    <testcase time="0.016" classname="log" name="Test_some_functions_in_log.R"/>
+    <testcase time="0.00200000000000022" classname="log" name="Test_some_functions_in_log.R"/>
+  </testsuite>
+  <testsuite name="save_output" timestamp="2024-11-13T13:03:15Z" hostname="8b9f23e1ee1e" tests="3" skipped="0" failures="0" errors="3" time="0.114">
+    <testcase time="0.00999999999999979" classname="save_output" name="save_an_output">
+      <error type="error" message="Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function &quot;t_ds_slide&quot; ('test-save_output.R:2:3')">Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function "t_ds_slide"
+Backtrace:
+    x
+ 1. +-t_ds_slide(adsl = testdata$adsl) %&gt;% ... at test-save_output.R:2:3
+ 2. +-autoslider.core::decorate(., title = "test title", footnote = "")
+ 3. \-base::.handleSimpleError(...)
+ 4.   \-base (local) h(simpleError(msg, call))</error>
+    </testcase>
+    <testcase time="0.0720000000000001" classname="save_output" name="Test_save_output_Save_an_Output_">
+      <error type="error" message="Error in `h(simpleError(msg, call))`: error in evaluating the argument 'output' in selecting a method for function 'save_output': error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function &quot;t_ae_pt_slide&quot; ('test-save_output.R:22:3')">Error in `h(simpleError(msg, call))`: error in evaluating the argument 'output' in selecting a method for function 'save_output': error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function "t_ae_pt_slide"
+Backtrace:
+    x
+ 1. \-testthat::expect_snapshot(...) at test-save_output.R:22:3
+ 2.   \-rlang::cnd_signal(state$error)</error>
+    </testcase>
+    <testcase time="0.032" classname="save_output" name="save_an_output">
+      <error type="error" message="Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function &quot;t_ds_slide&quot; ('test-save_output.R:36:3')">Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function "t_ds_slide"
+Backtrace:
+    x
+ 1. +-t_ds_slide(adsl = testdata$adsl) %&gt;% ... at test-save_output.R:36:3
  2. +-autoslider.core::decorate(., title = "test title", footnote = "")
  3. \-base::.handleSimpleError(...)
  4.   \-base (local) h(simpleError(msg, call))</error>
     </testcase>
   </testsuite>
-  <testsuite name="save_output" timestamp="2024-11-13T09:02:36Z" hostname="f9698fae323c" tests="2" skipped="0" failures="0" errors="2" time="0.114">
-    <testcase time="0.0939999999999999" classname="save_output" name="Test_save_output_Save_an_Output_">
-      <error type="error" message="Error in `h(simpleError(msg, call))`: error in evaluating the argument 'output' in selecting a method for function 'save_output': error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function &quot;t_ae_pt_slide&quot; ('test-save_output.R:10:3')">Error in `h(simpleError(msg, call))`: error in evaluating the argument 'output' in selecting a method for function 'save_output': error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function "t_ae_pt_slide"
-Backtrace:
-    x
- 1. \-testthat::expect_snapshot(...) at test-save_output.R:10:3
- 2.   \-rlang::cnd_signal(state$error)</error>
+  <testsuite name="t_dd_slide" timestamp="2024-11-13T13:03:15Z" hostname="8b9f23e1ee1e" tests="5" skipped="4" failures="0" errors="1" time="0.849">
+    <testcase time="0.337" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
+      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:2:3')"/>
     </testcase>
-    <testcase time="0.02" classname="save_output" name="save_an_output">
-      <error type="error" message="Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function &quot;t_ds_slide&quot; ('test-save_output.R:24:3')">Error in `h(simpleError(msg, call))`: error in evaluating the argument 'x' in selecting a method for function 'decorate': could not find function "t_ds_slide"
-Backtrace:
-    x
- 1. +-t_ds_slide(adsl = testdata$adsl) %&gt;% ... at test-save_output.R:24:3
- 2. +-autoslider.core::decorate(., title = "test title", footnote = "")
- 3. \-base::.handleSimpleError(...)
- 4.   \-base (local) h(simpleError(msg, call))</error>
-    </testcase>
-  </testsuite>
-  <testsuite name="t_dd_slide" timestamp="2024-11-13T09:02:36Z" hostname="f9698fae323c" tests="5" skipped="1" failures="0" errors="4" time="0.17">
-    <testcase time="0.0649999999999999" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
-      <error type="error" message="Error: object 'testdata' not found ('test-t_dd_slide.R:2:3')">Error: object 'testdata' not found
-Backtrace:
-    x
- 1. \-testthat::expect_snapshot(t_dd_slide(testdata$adsl, "TRT01A")) at test-t_dd_slide.R:2:3
- 2.   \-rlang::cnd_signal(state$error)</error>
-    </testcase>
-    <testcase time="0.0230000000000001" classname="t_dd_slide" name="Test_t_dd_slide_table_with_expected_Error">
+    <testcase time="0.0350000000000001" classname="t_dd_slide" name="Test_t_dd_slide_table_with_expected_Error">
       <skipped message="Reason: On CRAN ('test-t_dd_slide.R:6:3')"/>
     </testcase>
-    <testcase time="0.0249999999999999" classname="t_dd_slide" name="Test_table_creation_of_with_null_report">
-      <error type="error" message="Error: object 'testdata' not found ('test-t_dd_slide.R:10:3')">Error: object 'testdata' not found
+    <testcase time="0.0289999999999999" classname="t_dd_slide" name="Test_table_creation_of_with_null_report">
+      <error type="error" message="Error in `null_report()`: could not find function &quot;null_report&quot; ('test-t_dd_slide.R:10:3')">Error in `null_report()`: could not find function "null_report"
 Backtrace:
     x
  1. \-testthat::expect_snapshot(t_dd_slide(testdata$adsl[0, ], "TRT01A")) at test-t_dd_slide.R:10:3
  2.   \-rlang::cnd_signal(state$error)</error>
     </testcase>
-    <testcase time="0.028" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
-      <error type="error" message="Error: object 'testdata' not found ('test-t_dd_slide.R:15:3')">Error: object 'testdata' not found
-Backtrace:
-    x
- 1. \-testthat::expect_snapshot(...) at test-t_dd_slide.R:15:3
- 2.   \-rlang::cnd_signal(state$error)</error>
+    <testcase time="0.29" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
+      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:15:3')"/>
     </testcase>
-    <testcase time="0.0290000000000004" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
-      <error type="error" message="Error: object 'testdata' not found ('test-t_dd_slide.R:20:3')">Error: object 'testdata' not found
-Backtrace:
-    x
- 1. \-testthat::expect_snapshot(...) at test-t_dd_slide.R:20:3
- 2.   \-rlang::cnd_signal(state$error)</error>
+    <testcase time="0.158" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
+      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:20:3')"/>
     </testcase>
   </testsuite>
-  <testsuite name="t_dm_slide" timestamp="2024-11-13T09:02:36Z" hostname="f9698fae323c" tests="1" skipped="1" failures="0" errors="0" time="0.494">
-    <testcase time="0.494" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide">
+  <testsuite name="t_dm_slide" timestamp="2024-11-13T13:03:16Z" hostname="8b9f23e1ee1e" tests="1" skipped="1" failures="0" errors="0" time="0.403">
+    <testcase time="0.403" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide">
       <skipped message="Reason: On CRAN ('test-t_dm_slide.R:3:3')"/>
     </testcase>
   </testsuite>
-  <testsuite name="t_dor_slide" timestamp="2024-11-13T09:02:37Z" hostname="f9698fae323c" tests="2" skipped="2" failures="0" errors="0" time="0.46">
-    <testcase time="0.306" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_DAYS_">
+  <testsuite name="t_dor_slide" timestamp="2024-11-13T13:03:16Z" hostname="8b9f23e1ee1e" tests="2" skipped="2" failures="0" errors="0" time="0.323">
+    <testcase time="0.167" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_DAYS_">
       <skipped message="Reason: On CRAN ('test-t_dor_slide.R:8:3')"/>
     </testcase>
-    <testcase time="0.154" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_YEARS_">
+    <testcase time="0.156000000000001" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_YEARS_">
       <skipped message="Reason: On CRAN ('test-t_dor_slide.R:19:3')"/>
     </testcase>
   </testsuite>
