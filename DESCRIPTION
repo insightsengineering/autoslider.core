@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slides automation with R
-Version: 0.0.1.9026
+Version: 0.0.1.9027
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
     person("Heng", "Wang", role = "aut"),
