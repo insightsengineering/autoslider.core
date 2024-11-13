@@ -20,7 +20,7 @@ aa <- list(a, a)
 
 test_that("Test decoreate not to throw", {
   # test for decorate.autoslider_error
-  e <- autoslideR:::autoslider_error("error", list(program = "", suffix = ""), step = "test")
+  e <- autoslider_error("error", list(program = "", suffix = ""), step = "test")
   expect_no_error(decorate.autoslider_error(e))
 
   # test for decorate.list
