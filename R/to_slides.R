@@ -18,6 +18,7 @@
 #' @examples
 #'
 #' # Example 1. When applying to the whole pipeline
+#' library(dplyr)
 #' data <- list(
 #'   adsl = eg_adsl %>% dplyr::mutate(FASFL = SAFFL),
 #'   adae = eg_adae
