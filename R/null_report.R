@@ -1,7 +1,6 @@
 #' Null report
 #'
 #' @author Thomas Neitmann (`neitmant`)
-#' @export
 #'
 #' @details
 #' This will create a null report similar as STREAM does. You can use
@@ -32,6 +31,8 @@
 #' data %>%
 #'   apply_filter("SER_SE") %>%
 #'   t_ae()
+#'
+#' @export
 #'
 null_report <- function() {
   rtable(

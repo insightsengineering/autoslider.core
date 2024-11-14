@@ -27,7 +27,7 @@ Death table
  `"TRT01P"` for efficacy output
 }
 \examples{
-
+library(dplyr)
 adsl <- eg_adsl \%>\% preprocess_t_dd()
 out1 <- t_dd_slide(adsl, "TRT01A")
 print(out1)

@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+tests/testthat/Rplots.pdf
+tests/testthat/t_dm_output.rds

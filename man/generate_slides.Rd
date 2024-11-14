@@ -2,7 +2,7 @@
 % Please edit documentation in R/to_slides.R
 \name{generate_slides}
 \alias{generate_slides}
-\title{generate slides based on output from enableRF}
+\title{generate slides based on output}
 \usage{
 generate_slides(
   outputs,
@@ -43,11 +43,12 @@ Specify this optional argument to modify the width of all of the listings displa
 \item{...}{arguments passed to program}
 }
 \description{
-generate slides based on output from enableRF
+generate slides based on output
 }
 \examples{
 
 # Example 1. When applying to the whole pipeline
+library(dplyr)
 data <- list(
   adsl = eg_adsl \%>\% dplyr::mutate(FASFL = SAFFL),
   adae = eg_adae

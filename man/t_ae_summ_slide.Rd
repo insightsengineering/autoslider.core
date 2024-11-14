@@ -42,6 +42,7 @@ an rtables object
 Adverse event summary table
 }
 \examples{
+library(dplyr)
 ADSL <- eg_adsl
 ADAE <- eg_adae
 

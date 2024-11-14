@@ -20,6 +20,7 @@
 #' @export
 #'
 #' @examples
+#' library(dplyr)
 #' ADSL <- eg_adsl
 #' ADAE <- eg_adae
 #'

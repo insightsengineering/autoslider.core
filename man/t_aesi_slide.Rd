@@ -27,6 +27,7 @@ Table of AEs of Special Interest
 adapted from https://insightsengineering.github.io/tlg-catalog/stable/tables/adverse-events/aet01_aesi.html
 }
 \examples{
+library(dplyr)
 adsl <- eg_adsl
 adae <- eg_adae
 adae_atoxgr <- adae \%>\% dplyr::mutate(ATOXGR = AETOXGR)

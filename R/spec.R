@@ -71,6 +71,7 @@ validate_spec <- function(spec) {
 #' @export
 #'
 #' @examples
+#' library(dplyr)
 #' spec_file <- system.file("spec.yml", package = "autoslider.core")
 #' spec <- spec_file %>% read_spec()
 #' ## Keep only outputs belonging to batch 2
