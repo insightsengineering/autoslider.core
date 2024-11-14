@@ -381,7 +381,7 @@ flexi_to_ppt <- function(rdf_flex, themeppt, dir, stack_all = FALSE) {
 
 
 flextable_to_ppt <- function(rdf_flexes, dir = as.character(getwd()),
-                             themeppt = "basic.pptx", stack_all = FALSE, outputppt = "out.pptx") {
+                             themeppt = "basic.theme", stack_all = FALSE, outputppt = "out.pptx") {
   if (stack_all) {
     read_pptx(themeppt) %>%
       remove_slide(index = NULL) %>%

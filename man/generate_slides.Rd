@@ -7,7 +7,7 @@
 generate_slides(
   outputs,
   outfile = "output.pptx",
-  template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
+  template = file.path(system.file(package = "autoslider.core"), "theme/basic.theme"),
   fig_width = 9,
   fig_height = 6,
   t_lpp = 20,
