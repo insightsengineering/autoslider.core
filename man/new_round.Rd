@@ -6,6 +6,11 @@
 \usage{
 new_round(x, digits = 1)
 }
+\arguments{
+\item{x}{number need to be rounded}
+
+\item{digits}{number of digits}
+}
 \description{
 Founding method
 }

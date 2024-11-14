@@ -6,6 +6,15 @@
 \usage{
 build_table_header(anl, arm, split_by_study, side_by_side)
 }
+\arguments{
+\item{anl}{analysis data object}
+
+\item{arm}{Arm variable for column split}
+
+\item{split_by_study, }{if true, construct structured header with the study ID}
+
+\item{side_by_side}{A logical value indicating whether to display the data side by side.}
+}
 \description{
 Build table header, a utility function to help with construct structured header for table layout
 }
