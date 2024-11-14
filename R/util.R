@@ -72,6 +72,8 @@ to_vector <- function(num_list) {
   })
 }
 
+#' Founding method
+#' @export
 new_round <- function(x, digits = 1) {
   posneg <- sign(x)
   z <- abs(x) * 10^digits
@@ -269,110 +271,6 @@ s_coxph_pairwise_1 <- function(df, .ref_group, .in_ref_col, .var, is_event, stra
     rcell(unname(pval), format = "x.xxxx | (<0.0001)"),
     .labels = c(paste0("Stratified HR (", conf_level * 100, "% CI)"), paste0("p-value (", pval_method, ")"))
   )
-}
-
-s_coxph_pairwise_2 <- function(df, .ref_group, .in_ref_col, .var, is_event, strat = NULL) {
-  # assert_that(is_df_with_variables(df, list(tte = .var, is_event = is_event)),
-  #             is.string(.var), is_numeric_vector(df[[.var]]), is_logical_vector(df[[is_event]]))
-  # pval_method <- control$pval_method
-  # ties <- control$ties
-  # conf_level <- control$conf_level
-  pval_method <- "log-rank"
-  ties <- "efron"
-  conf_level <- 0.95
-
-  strat_type <- ifelse(is.null(strat), "Unstratified", "Stratified")
-  if (.in_ref_col) {
-    return(
-      in_rows(
-        rcell(""),
-        rcell(""),
-        .labels = c(paste0(strat_type, " HR (", conf_level * 100, "% CI)"), paste0("p-value (", pval_method, ")"))
-      )
-      # list(hr_ci = with_label("", paste0("Stratified HR (", conf_level*100, "% CI)")),
-      #      pvalue = with_label("", paste0("p-value (", pval_method, ")"))
-      #      )
-    )
-  }
-  data <- rbind(.ref_group, df)
-  group <- factor(rep(c("ref", "x"), c(nrow(.ref_group), nrow(df))),
-    levels = c("ref", "x")
-  )
-  df_cox <- data.frame(
-    tte = data[[.var]], is_event = data[[is_event]],
-    arm = group
-  )
-  if (is.null(strat)) {
-    formula_cox <- Surv(tte, is_event) ~ arm
-  } else {
-    formula_cox <- as.formula(paste0(
-      "Surv(tte, is_event) ~ arm + strata(",
-      paste(strat, collapse = ","), ")"
-    ))
-    df_cox <- cbind(df_cox, data[strat])
-  }
-  cox_fit <- coxph(formula = formula_cox, data = df_cox, ties = ties)
-  sum_cox <- summary(cox_fit, conf.int = conf_level, extend = TRUE)
-  # old_pval <- switch(pval_method, wald = sum_cox$waldtest["pvalue"],
-  #                `log-rank` = sum_cox$sctest["pvalue"], likelihood = sum_cox$logtest["pvalue"])
-  # print(old_pval)
-  a <- survdiff(formula_cox, df_cox)
-  pval <- 1 - pchisq(a$chisq, length(a$n) - 1)
-  # print(pval)
-
-  list(
-    # hr = with_label(sum_cox$conf.int[1, 1], "Hazard Ratio"),
-    # hr_ci = with_label(unname(sum_cox$conf.int[1, 3:4]), f_conf_level(conf_level)),
-    hr_ci = with_label(
-      c(sum_cox$conf.int[1, 1], unname(sum_cox$conf.int[1, 3:4])),
-      paste0("Stratified HR (", conf_level * 100, "% CI)")
-    ),
-    pvalue = with_label(unname(pval), paste0("p-value (", pval_method, ")"))
-  )
-
-  in_rows(
-    rcell(c(sum_cox$conf.int[1, 1], unname(sum_cox$conf.int[1, 3:4])), format = format_3d),
-    rcell(unname(pval), format = "x.xxxx | (<0.0001)"),
-    .labels = c(paste0("Stratified HR (", conf_level * 100, "% CI)"), paste0("p-value (", pval_method, ")"))
-  )
-}
-
-get_trt_dispositin_data <- function(adsl, actarm, armname, armsdtm, armdtrfl, armdsst, armdcrs) {
-  assert_that(is.character(actarm))
-  assert_that(is.character(armname))
-  assert_that(lubridate::is.Date(adsl[[armsdtm]]))
-
-  unique_fl <- unique(adsl[[armdtrfl]])
-  level_len <- length(unique_fl)
-  assert_that(level_len <= 2, msg = "Must be a flag variable with only Y/N")
-
-  adsl_trt <- adsl %>%
-    filter(TRT01A == actarm) %>%
-    mutate(
-      act_trt = armname,
-      rec_trt = ifelse(is.na(!!sym(armsdtm)), "N", "Y"),
-      DTRTxxFL = explicit_na(sas_na(!!sym(armdtrfl))),
-      # drtfl = ifelse(DTRTxxFL == "<Missing>", "N", "Y"),
-      trt_stat = factor(ifelse(is.na(DTRTxxFL), "<Missing>", explicit_na(sas_na(!!sym(armdsst))))),
-      dc_rsn = factor(ifelse(rec_trt == "N", "<Missing>", explicit_na(sas_na(!!sym(armdcrs)))))
-    )
-}
-
-a_count_occur_1 <- function(x, .N_col, .df_row, vars = c("USUBJID")) {
-  count1 <- length(unique(x))
-
-  df_g34 <- .df_row %>%
-    filter(ATOXGR %in% c(3, 4) & # AOCCSPFL == "Y" &
-      USUBJID %in% x)
-  # print(head(df_g34[c("USUBJID", "TRT01A", "AEBODSYS2")]))
-  count2 <- length(unique(df_g34$USUBJID))
-
-  out <- c(
-    counts = ifelse(count1 == 0 && .N_col == 0, 0, count1 / .N_col),
-    grd34 = ifelse(count2 == 0 && .N_col == 0, 0, count2 / .N_col)
-  )
-
-  setNames(with_label(out, as.character(.df_row[["AEBODSYS2"]][1])), as.character(.df_row[["AEBODSYS2"]][1]))
 }
 
 is_in_repository <- function() {
@@ -676,6 +574,8 @@ do_call <- function(fun, ...) {
 }
 
 
+#' Build table header, a utility function to help with construct structured header for table layout
+#' @export
 build_table_header <- function(anl,
                                arm,
                                split_by_study,
