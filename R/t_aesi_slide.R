@@ -12,6 +12,7 @@
 #' @author Kai Xiang Lim (`limk43`)
 #'
 #' @examples
+#' library(dplyr)
 #' adsl <- eg_adsl
 #' adae <- eg_adae
 #' adae_atoxgr <- adae %>% dplyr::mutate(ATOXGR = AETOXGR)
