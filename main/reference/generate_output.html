@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">autoslider.core</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9029</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9030</span>
       </span>
     </div>
 
@@ -44,7 +44,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Generate output and apply filters, titles, and footnotes</h1>
-    <small class="dont-index">Source: <a href="https://github.com/insightsengineering/autoslider.core/blob/main/R/generate_output_chg_name.R" class="external-link"><code>R/generate_output_chg_name.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/insightsengineering/autoslider.core/blob/main/R/generate_output.R" class="external-link"><code>R/generate_output.R</code></a></small>
     <div class="hidden name"><code>generate_output.Rd</code></div>
     </div>
 
@@ -94,13 +94,14 @@ By default, `2` will show all filter messages and show output generation message
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">filters</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/filters/man/load_filters.html" class="external-link">load_filters</a></span><span class="op">(</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">filters</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/filters/man/load_filters.html" class="external-link">load_filters</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  yaml_file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"filters.yml"</span>, package <span class="op">=</span> <span class="st">"autoslider.core"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  overwrite <span class="op">=</span> <span class="cn">TRUE</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">spec_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"spec.yml"</span>, package <span class="op">=</span> <span class="st">"autoslider.core"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">spec</span> <span class="op">&lt;-</span> <span class="va">spec_file</span> <span class="op">%&gt;%</span> <span class="fu"><a href="read_spec.html">read_spec</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">spec</span> <span class="op">&lt;-</span> <span class="va">spec_file</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="read_spec.html">read_spec</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  adsl <span class="op">=</span> <span class="va">eg_adsl</span>,</span></span>
