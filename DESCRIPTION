@@ -24,13 +24,9 @@ Description: Slides automation with R.
 License: file LICENSE
 URL: https://github.com/insightsengineering/autoslider.core
 Depends:
-    flextable (>= 0.9.4),
-    formatters (>= 0.5.9),
-    officer (>= 0.3.18),
     R (>= 2.10),
-    rlistings (>= 0.2.9),
-    rtables (>= 0.6.10),
-    tern (>= 0.9.6)
+    flextable (>= 0.9.4),
+    officer (>= 0.3.18)
 Imports:
     assertthat,
     checkmate,
@@ -38,6 +34,7 @@ Imports:
     dplyr,
     filters (>= 0.3.1),
     forcats,
+    formatters (>= 0.5.9),
     ggplot2,
     ggpubr,
     glue,
@@ -50,10 +47,13 @@ Imports:
     purrr,
     readxl,
     rlang,
+    rlistings (>= 0.2.9),
+    rtables (>= 0.6.10),
     rvg (>= 0.2.5),
     stringr,
     survival,
     tidyr,
+    tern (>= 0.9.6),
     yaml
 Suggests:
     devtools,

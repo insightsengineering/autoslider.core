@@ -73,6 +73,8 @@ to_vector <- function(num_list) {
 }
 
 #' Founding method
+#' @param x number need to be rounded
+#' @param digits number of digits
 #' @export
 new_round <- function(x, digits = 1) {
   posneg <- sign(x)
@@ -575,6 +577,10 @@ do_call <- function(fun, ...) {
 
 
 #' Build table header, a utility function to help with construct structured header for table layout
+#' @param anl analysis data object
+#' @param arm Arm variable for column split
+#' @param split_by_study, if true, construct structured header with the study ID
+#' @param side_by_side A logical value indicating whether to display the data side by side.
 #' @export
 build_table_header <- function(anl,
                                arm,
