@@ -1,4 +1,4 @@
-#' generate slides based on output from enableRF
+#' generate slides based on output
 #'
 #' @param outputs List of output
 #' @param template Template file path
@@ -45,7 +45,7 @@
 #'   generate_slides()
 generate_slides <- function(outputs,
                             outfile = "output.pptx",
-                            template = file.path(system.file(package = "autoslider.core"), "theme/basic.theme"),
+                            template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
                             fig_width = 9, fig_height = 6, t_lpp = 20, t_cpp = 200, l_lpp = 20, l_cpp = 150, ...) {
   if (any(c(
     is(outputs, "VTableTree"),

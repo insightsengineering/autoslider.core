@@ -595,7 +595,7 @@ build_table_header <- function(anl,
         split_cols_by(var = arm)
     } else {
       lyt <- lyt %>%
-        split_cols_by(var = arm, split_fun = add_overall_level("All Patients", first = FALSE)) %>%
+        split_cols_by(var = arm) %>%
         add_overall_col("All Patients")
     }
   } else {

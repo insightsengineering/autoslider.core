@@ -2,12 +2,12 @@
 % Please edit documentation in R/to_slides.R
 \name{generate_slides}
 \alias{generate_slides}
-\title{generate slides based on output from enableRF}
+\title{generate slides based on output}
 \usage{
 generate_slides(
   outputs,
   outfile = "output.pptx",
-  template = file.path(system.file(package = "autoslider.core"), "theme/basic.theme"),
+  template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
   fig_width = 9,
   fig_height = 6,
   t_lpp = 20,
@@ -43,7 +43,7 @@ Specify this optional argument to modify the width of all of the listings displa
 \item{...}{arguments passed to program}
 }
 \description{
-generate slides based on output from enableRF
+generate slides based on output
 }
 \examples{
 
