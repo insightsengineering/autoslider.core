@@ -16,6 +16,7 @@
 #' @export
 #'
 #' @examples
+#' library(dplyr)
 #' filters::load_filters(
 #'   yaml_file = system.file("filters.yml", package = "autoslider.core"),
 #'   overwrite = TRUE
