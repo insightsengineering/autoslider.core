@@ -23,6 +23,7 @@ DOR table
  `"TRT01P"` for efficacy output
 }
 \examples{
+library(dplyr)
 adsl <- eg_adsl \%>\%
   dplyr::mutate(TRT01P = factor(TRT01P, levels = c("A: Drug X", "B: Placebo", "C: Combination")))
 adtte <- eg_adtte \%>\%
