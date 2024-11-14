@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slides automation with R
-Version: 0.0.1.9030
+Version: 0.0.1.9031
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
     person("Heng", "Wang", role = "aut"),
@@ -24,9 +24,9 @@ Description: Slides automation with R.
 License: file LICENSE
 URL: https://github.com/insightsengineering/autoslider.core
 Depends:
-    R (>= 2.10),
     flextable (>= 0.9.4),
-    officer (>= 0.3.18)
+    officer (>= 0.3.18),
+    R (>= 2.10)
 Imports:
     assertthat,
     checkmate,
@@ -52,8 +52,8 @@ Imports:
     rvg (>= 0.2.5),
     stringr,
     survival,
-    tidyr,
     tern (>= 0.9.6),
+    tidyr,
     yaml
 Suggests:
     devtools,
