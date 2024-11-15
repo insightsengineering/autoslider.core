@@ -1,1 +1,4 @@
-# autoslider.core 0.0.1.9031
+# autoslider.core 0.0.1
+
+### Miscellaneous
+ * First release.
