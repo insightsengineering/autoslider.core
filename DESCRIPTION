@@ -1,6 +1,6 @@
 Type: Package
 Package: autoslider.core
-Title: Slide Automation for Tables, Listings And Figures (TLGs)
+Title: Slide Automation for Tables, Listings and Figures (TLGs)
 Version: 0.0.1
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
@@ -21,8 +21,9 @@ Authors@R: c(
     person("Chenkai", "Lv", role = "aut")
   )
 Description: Clinical TLG slide automation empowered by `rtables`, `rlistings` and `ggplot2`.
-License: file LICENSE
+License: Apache License 2.0 | file LICENSE
 URL: https://github.com/insightsengineering/autoslider.core
+BugReports: https://github.com/insightsengineering/autoslider.core/issues
 Depends:
     flextable (>= 0.9.4),
     officer (>= 0.3.18),

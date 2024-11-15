@@ -12,6 +12,7 @@ Clinical TLG slide automation empowered by `rtables`, `rlistings` and `ggplot2`.
 Useful links:
 \itemize{
   \item \url{https://github.com/insightsengineering/autoslider.core}
+  \item Report bugs at \url{https://github.com/insightsengineering/autoslider.core/issues}
 }
 
 }
