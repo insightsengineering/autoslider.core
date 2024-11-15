@@ -15,7 +15,7 @@
 #'   dplyr::mutate(TRT01P = factor(TRT01P, levels = c("A: Drug X", "B: Placebo", "C: Combination")))
 #' out <- t_dor_slide(adsl, adtte)
 #' print(out)
-#' generate_slides(out, "dor.pptx")
+#' generate_slides(out, paste0(tempdir(), "/dor.pptx"))
 t_dor_slide <- function(adsl, adtte, arm = "TRT01P", refgroup = NULL) {
   assert_that(has_name(adsl, arm))
   assert_that(has_name(adtte, "CNSR"))

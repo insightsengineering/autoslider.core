@@ -6,7 +6,7 @@
 \usage{
 generate_slides(
   outputs,
-  outfile = "output.pptx",
+  outfile = paste0(tempdir(), "/output.pptx"),
   template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
   fig_width = 9,
   fig_height = 6,

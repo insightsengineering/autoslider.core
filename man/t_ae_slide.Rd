@@ -44,5 +44,5 @@ adae <- eg_adae \%>\%
   )
 out <- t_ae_slide(adsl, adae, "TRT01A")
 print(out)
-generate_slides(out, "ae.pptx")
+generate_slides(out, paste0(tempdir(), "/ae.pptx"))
 }

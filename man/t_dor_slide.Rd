@@ -31,5 +31,5 @@ adtte <- eg_adtte \%>\%
   dplyr::mutate(TRT01P = factor(TRT01P, levels = c("A: Drug X", "B: Placebo", "C: Combination")))
 out <- t_dor_slide(adsl, adtte)
 print(out)
-generate_slides(out, "dor.pptx")
+generate_slides(out, paste0(tempdir(), "/dor.pptx"))
 }

@@ -19,7 +19,7 @@
 #'   )
 #' out <- t_ae_slide(adsl, adae, "TRT01A")
 #' print(out)
-#' generate_slides(out, "ae.pptx")
+#' generate_slides(out, paste0(tempdir(), "/ae.pptx"))
 t_ae_slide <- function(adsl, adae, arm = "TRT01A",
                        split_by_study = FALSE, side_by_side = NULL) {
   assert_that(has_name(adae, "AEDECOD"))
