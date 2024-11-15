@@ -1,6 +1,6 @@
 Type: Package
 Package: autoslider.core
-Title: Slide automation for tables, listings ans figures (TLGs).  
+Title: Slide Automation for Tables, Listings And Figures (TLGs)
 Version: 0.0.1
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
@@ -20,7 +20,7 @@ Authors@R: c(
     person("Elisabeth", "Deutschmann", role = "ctb"),
     person("Chenkai", "Lv", role = "aut")
   )
-Description: Slides automation with R.
+Description: Clinical TLG slide automation empowered by `rtables`, `rlistings` and `ggplot2`.
 License: file LICENSE
 URL: https://github.com/insightsengineering/autoslider.core
 Depends:
@@ -67,7 +67,8 @@ Suggests:
     rsvg,
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
-    testthat (>= 3.2.0)
+    testthat (>= 3.2.0),
+    withr
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
