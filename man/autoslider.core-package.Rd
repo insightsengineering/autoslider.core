@@ -6,7 +6,7 @@
 \alias{autoslider.core-package}
 \title{autoslider.core Package}
 \description{
-Clinical TLG slide automation empowered by `rtables`, `rlistings` and `ggplot2`.
+Clinical table, listing and figure slide automation.
 }
 \seealso{
 Useful links:
