@@ -13,7 +13,7 @@
 #' adsl <- eg_adsl %>% preprocess_t_dd()
 #' out1 <- t_dd_slide(adsl, "TRT01A")
 #' print(out1)
-#' generate_slides(out1, "dd.pptx")
+#' generate_slides(out1, paste0(tempdir(), "/dd.pptx"))
 #'
 #' out2 <- t_dd_slide(adsl, "TRT01A", split_by_study = TRUE)
 #' print(out2)

@@ -37,11 +37,11 @@ Demographic table
  `"TRT01P"` for efficacy output
 }
 \examples{
-
+library(dplyr)
 adsl <- eg_adsl
 out1 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"))
 print(out1)
-generate_slides(out1, "dm.pptx")
+generate_slides(out1, paste0(tempdir(), "/dm.pptx"))
 
 out2 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"),
   split_by_study = TRUE

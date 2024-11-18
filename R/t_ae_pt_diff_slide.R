@@ -10,7 +10,7 @@
 #' @inherit gen_notes note
 #' @export
 #' @examples
-#'
+#' library(dplyr)
 #' adsl <- eg_adsl %>%
 #'   dplyr::mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
 #' adae <- eg_adae %>%
@@ -20,7 +20,7 @@
 #'   )
 #' out <- t_ae_pt_diff_slide(adsl, adae, "TRT01A", 2)
 #' print(out)
-#' generate_slides(out, "ae_diff.pptx")
+#' generate_slides(out, paste0(tempdir(), "/ae_diff.pptx"))
 t_ae_pt_diff_slide <- function(adsl, adae, arm = "TRT01A", cutoff = NA,
                                split_by_study = FALSE, side_by_side = NULL) {
   cutoff <- check_and_set_cutoff(adae, cutoff)
@@ -32,7 +32,6 @@ t_ae_pt_diff_slide <- function(adsl, adae, arm = "TRT01A", cutoff = NA,
 
   if (!all(dim(result@rowspans) == c(0, 0))) {
     if (is.null(side_by_side)) {
-
       # adding "N" attribute
       arm <- col_paths(result)[[1]][1]
 
@@ -151,8 +150,8 @@ t_ae_pt_core <- function(adsl, adae, arm, cutoff, diff = FALSE, soc = "NULL",
     myh_col_indices <- function(table_row, col_names) {
       NULL
     }
-    environment(myh_col_indices) <- asNamespace("tern")
-    assignInNamespace("h_col_indices", myh_col_indices, ns = "tern")
+    # environment(myh_col_indices) <- asNamespace("tern")
+    # assignInNamespace("h_col_indices", myh_col_indices, ns = "tern")
     # result <- build_table(lyt = lyt, df = anl, alt_counts_df = adsl1)
 
     result <- lyt_to_side_by_side_two_data(lyt, anl, adsl1, side_by_side)
