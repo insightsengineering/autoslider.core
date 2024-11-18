@@ -42,7 +42,6 @@ t_ae_pt_slide <- function(adsl, adae, arm = "TRT01A", cutoff = NA, prune_by_tota
   result@main_title <- "Adverse Events table"
 
   if (is.null(side_by_side)) {
-
     # adding "N" attribute
     arm <- col_paths(result)[[1]][1]
 

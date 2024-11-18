@@ -32,7 +32,6 @@ t_ae_pt_diff_slide <- function(adsl, adae, arm = "TRT01A", cutoff = NA,
 
   if (!all(dim(result@rowspans) == c(0, 0))) {
     if (is.null(side_by_side)) {
-
       # adding "N" attribute
       arm <- col_paths(result)[[1]][1]
 

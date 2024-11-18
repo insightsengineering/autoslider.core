@@ -33,4 +33,3 @@ test_that("Test table creation of t_ae_pt_soc_diff_slide (safety summary table) 
 test_that("Test table creation of t_ae_pt_soc_diff_slide  (safety summary table)", {
   expect_error(t_ae_pt_soc_diff_slide(testdata$adsl, testdata$adae, "TRT01A"))
 })
-

@@ -32,7 +32,6 @@ t_ae_pt_soc_diff_slide <- function(adsl, adae, arm = "TRT01A", cutoff = NA,
   result@main_title <- "Adverse Events with Difference"
 
   if (is.null(side_by_side)) {
-
     # adding "N" attribute
     arm <- col_paths(result)[[1]][1]
 
