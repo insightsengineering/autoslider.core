@@ -70,5 +70,5 @@ out <- t_ae_summ_slide(
   )
 )
 print(out)
-generate_slides(out, "ae_summary.pptx")
+generate_slides(out, paste0(tempdir(), "/ae_summary.pptx"))
 }

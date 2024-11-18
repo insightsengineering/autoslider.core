@@ -10,7 +10,7 @@
 #' @inherit gen_notes note
 #' @export
 #' @examples
-#'
+#' library(dplyr)
 #' adsl <- eg_adsl %>%
 #'   dplyr::mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
 #' adae <- eg_adae %>%
@@ -20,7 +20,7 @@
 #'   )
 #' out <- t_ae_pt_soc_diff_slide(adsl, adae, "TRT01A", 2)
 #' print(out)
-#' generate_slides(out, "ae_diff.pptx")
+#' generate_slides(out, paste0(tempdir(), "/ae_diff.pptx"))
 t_ae_pt_soc_diff_slide <- function(adsl, adae, arm = "TRT01A", cutoff = NA,
                                    split_by_study = FALSE, side_by_side = NULL) {
   cutoff <- check_and_set_cutoff(adae, cutoff)

@@ -53,5 +53,5 @@ generate_slides(out, "ae.pptx")
 # Example 2, prune by total column
 out2 <- t_ae_pt_soc_slide(adsl, adae, "TRT01A", 25, prune_by_total = TRUE)
 print(out2)
-generate_slides(out2, "ae2.pptx")
+generate_slides(out2, paste0(tempdir(), "/ae2.pptx"))
 }

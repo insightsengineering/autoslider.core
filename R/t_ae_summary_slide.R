@@ -48,7 +48,7 @@
 #'   )
 #' )
 #' print(out)
-#' generate_slides(out, "ae_summary.pptx")
+#' generate_slides(out, paste0(tempdir(), "/ae_summary.pptx"))
 t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
                             dose_adjust_flags = NA,
                             dose_adjust_labels = NA,

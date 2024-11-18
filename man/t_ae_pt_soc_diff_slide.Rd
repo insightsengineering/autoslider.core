@@ -37,7 +37,7 @@ Adverse event table
  `"TRT01P"` for efficacy output
 }
 \examples{
-
+library(dplyr)
 adsl <- eg_adsl \%>\%
   dplyr::mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
 adae <- eg_adae \%>\%
@@ -47,5 +47,5 @@ adae <- eg_adae \%>\%
   )
 out <- t_ae_pt_soc_diff_slide(adsl, adae, "TRT01A", 2)
 print(out)
-generate_slides(out, "ae_diff.pptx")
+generate_slides(out, paste0(tempdir(), "/ae_diff.pptx"))
 }
