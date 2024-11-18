@@ -10,7 +10,7 @@
 #' @inherit gen_notes note
 #' @export
 #' @examples
-#'
+#' library(dplyr)
 #' adsl <- eg_adsl %>%
 #'   dplyr::mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
 #' adae <- eg_adae %>%

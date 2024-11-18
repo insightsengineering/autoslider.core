@@ -37,7 +37,7 @@ Adverse event table
  `"TRT01P"` for efficacy output
 }
 \examples{
-
+library(dplyr)
 adsl <- eg_adsl \%>\%
   dplyr::mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
 adae <- eg_adae \%>\%
