@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">autoslider.core</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9031</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1.9032</span>
       </span>
     </div>
 
@@ -103,7 +103,7 @@ the side by side requirement.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Progressive Disease     8 (32%)      6 (26.1%)      6 (27.3%)       20 (28.6%) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Adverse Events          9 (36%)      7 (30.4%)      10 (45.5%)      26 (37.1%) </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Other                   8 (32%)     10 (43.5%)      6 (27.3%)       24 (34.3%) </span>
-<span class="r-in"><span><span class="fu"><a href="generate_slides.html">generate_slides</a></span><span class="op">(</span><span class="va">out1</span>, <span class="st">"dd.pptx"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="generate_slides.html">generate_slides</a></span><span class="op">(</span><span class="va">out1</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"/dd.pptx"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Death table"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">out2</span> <span class="op">&lt;-</span> <span class="fu">t_dd_slide</span><span class="op">(</span><span class="va">adsl</span>, <span class="st">"TRT01A"</span>, split_by_study <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
