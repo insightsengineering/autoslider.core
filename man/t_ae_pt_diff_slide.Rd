@@ -47,5 +47,5 @@ adae <- eg_adae \%>\%
   )
 out <- t_ae_pt_diff_slide(adsl, adae, "TRT01A", 2)
 print(out)
-generate_slides(out, "ae_diff.pptx")
+generate_slides(out, paste0(tempdir(), "/ae_diff.pptx"))
 }

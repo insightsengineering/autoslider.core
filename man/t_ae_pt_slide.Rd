@@ -42,6 +42,7 @@ Adverse event table
 \examples{
 
 # Example 1
+library(dplyr)
 adsl <- eg_adsl \%>\%
   dplyr::mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo")))
 adae <- eg_adae \%>\%
@@ -56,5 +57,5 @@ generate_slides(out, "ae.pptx")
 # Example 2, prune by total column
 out2 <- t_ae_pt_slide(adsl, adae, "TRT01A", 25, prune_by_total = TRUE)
 print(out2)
-generate_slides(out, "ae2.pptx")
+generate_slides(out, paste0(tempdir(), "/ae2.pptx"))
 }

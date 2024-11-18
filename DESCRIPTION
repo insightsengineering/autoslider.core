@@ -67,7 +67,8 @@ Suggests:
     rsvg,
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
-    testthat (>= 3.2.0)
+    testthat (>= 3.2.0),
+    withr
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
