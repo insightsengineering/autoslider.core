@@ -10,6 +10,7 @@ renv.lock
 ^Meta$
 .lintr
 .github
+^\.gitlab-ci\.yml$
 tests/testthat/Rplots.pdf
 
 # docs
