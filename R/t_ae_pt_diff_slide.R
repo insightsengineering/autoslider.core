@@ -151,8 +151,8 @@ t_ae_pt_core <- function(adsl, adae, arm, cutoff, diff = FALSE, soc = "NULL",
     myh_col_indices <- function(table_row, col_names) {
       NULL
     }
-    environment(myh_col_indices) <- asNamespace("tern")
-    assignInNamespace("h_col_indices", myh_col_indices, ns = "tern")
+    # environment(myh_col_indices) <- asNamespace("tern")
+    # assignInNamespace("h_col_indices", myh_col_indices, ns = "tern")
     # result <- build_table(lyt = lyt, df = anl, alt_counts_df = adsl1)
 
     result <- lyt_to_side_by_side_two_data(lyt, anl, adsl1, side_by_side)
