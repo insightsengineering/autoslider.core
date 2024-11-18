@@ -10,7 +10,7 @@
 #' @inherit gen_notes note
 #' @export
 #' @examples
-#'
+#' library(dplyr)
 #' adsl <- eg_adsl
 #' out1 <- t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"))
 #' print(out1)
