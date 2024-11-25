@@ -11,6 +11,9 @@ new_round(x, digits = 1)
 
 \item{digits}{number of digits}
 }
+\value{
+rounded value
+}
 \description{
 Founding method
 }

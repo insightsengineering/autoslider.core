@@ -42,6 +42,9 @@ Specify this optional argument to modify the width of all of the listings displa
 
 \item{...}{arguments passed to program}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 generate slides based on output
 }

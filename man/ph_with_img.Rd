@@ -17,6 +17,9 @@ ph_with_img(ppt, figure, fig_width, fig_height, figure_loc)
 
 \item{figure_loc}{location of figure}
 }
+\value{
+Location for a placeholder
+}
 \description{
 Placeholder for ph_with_img
 }

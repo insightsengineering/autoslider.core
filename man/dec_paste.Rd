@@ -9,6 +9,9 @@ dec_paste(...)
 \arguments{
 \item{...}{arguments passed to program}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Concatenate arguments into a string
 }

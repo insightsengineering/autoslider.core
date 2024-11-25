@@ -6,7 +6,7 @@ format_xx <- function(str) {
 #'
 #' @param data dataframe
 #' @param cutoff cutoff threshold
-#'
+#' @return Set the cutoff value
 #' @export
 check_and_set_cutoff <- function(data, cutoff) {
   if (is.na(cutoff)) {
@@ -25,7 +25,7 @@ check_and_set_cutoff <- function(data, cutoff) {
 #' Replace NAs to NA
 #'
 #' @param table_df Table dataframe
-#'
+#' @return Input dataframe with both column replaced to NA
 #' @export
 na_replace <- function(table_df) {
   if (length(colnames(table_df)) == 2) {
@@ -43,7 +43,7 @@ na_replace <- function(table_df) {
 #' Concatenate arguments into a string
 #'
 #' @param ... arguments passed to program
-#'
+#' @return No return value, called for side effects
 #' @export
 dec_paste <- function(...) {
   arguments <- list(
@@ -60,7 +60,7 @@ dec_paste <- function(...) {
 #' Convert list of numbers to vectors
 #'
 #' @param num_list list of numbers
-#'
+#' @return No return value, called for side effects
 #' @export
 to_vector <- function(num_list) {
   sapply(num_list, function(x) {
@@ -75,6 +75,7 @@ to_vector <- function(num_list) {
 #' Founding method
 #' @param x number need to be rounded
 #' @param digits number of digits
+#' @return rounded value
 #' @export
 new_round <- function(x, digits = 1) {
   posneg <- sign(x)
@@ -89,7 +90,7 @@ new_round <- function(x, digits = 1) {
 #'
 #' @param x input array
 #' @param output output handle
-#'
+#' @return formatted values
 #' @export
 trim_perc1 <- function(x, output) {
   paste0(x[1], " (", new_round(x[2] * 100, 1), ")")
@@ -109,7 +110,7 @@ trim_perc <- function(x, output) {
 #'
 #' @param x input array
 #' @param output output handle
-#'
+#' @return formatted values
 #' @export
 perc_perc <- function(x, output) {
   paste0(round(x[1] * 100, 1), "% (", round(x[2] * 100, 1), "%)")
@@ -119,7 +120,7 @@ perc_perc <- function(x, output) {
 #'
 #' @param x input array
 #' @param output output handle
-#'
+#' @return formatted values
 #' @export
 format_3d <- function(x, output) {
   paste0(round(x[1], 2), " (", round(x[2], 2), ", ", round(x[3], 2), ")")
@@ -132,7 +133,8 @@ format_3d <- function(x, output) {
 #' @param .var variable of interest
 #' @param is_event vector indicating event
 #' @param control `control_surv_time()` by default
-#'
+#' @return A function suitable for use in rtables::analyze() with element selection,
+#' reformatting, and relabeling performed automatically.
 #' @export
 s_surv_time_1 <- function(df, .var, is_event, control = control_surv_time()) {
   # assert_that(is_df_with_variables(df, list(tte = .var, is_event = is_event)),
@@ -171,7 +173,8 @@ s_surv_time_1 <- function(df, .var, is_event, control = control_surv_time()) {
 #' @param conf_level confidence level
 #' @param method type of method for calculation
 #' @param long flag
-#'
+#' @return A function suitable for use in rtables::analyze() with element selection,
+#' reformatting, and relabeling performed automatically.
 #' @export
 s_proportion_1 <- function(x, conf_level = 0.95,
                            method = c(
@@ -581,6 +584,7 @@ do_call <- function(fun, ...) {
 #' @param arm Arm variable for column split
 #' @param split_by_study, if true, construct structured header with the study ID
 #' @param side_by_side A logical value indicating whether to display the data side by side.
+#' @return A `rtables` layout with desired header.
 #' @export
 build_table_header <- function(anl,
                                arm,

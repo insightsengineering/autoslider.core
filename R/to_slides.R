@@ -14,6 +14,7 @@
 #' @param l_cpp An integer specifying the listing columns per page\cr
 #'    Specify this optional argument to modify the width of all of the listings display
 #' @param ... arguments passed to program
+#' @return No return value, called for side effects
 #' @export
 #' @examples
 #'
@@ -117,6 +118,7 @@ generate_slides <- function(outputs,
 #' Generate flextable for preview first page
 #'
 #' @param x rtables or data.frame
+#' @return A flextable or a ggplot object depending to the input.
 #' @export
 #' @examples
 #' # Example 1. preview table
@@ -149,7 +151,6 @@ get_body_bottom_location <- function(ppt) {
 #' @param ft Flextable object
 #' @param ppt_width Powerpoint width
 #' @param ppt_height Powerpoint height
-#'
 #' @return Location for a placeholder
 center_table_loc <- function(ft, ppt_width, ppt_height) {
   top <- 0.17 * ppt_height
@@ -259,7 +260,7 @@ center_figure_loc <- function(fig_width, fig_height, ppt_width, ppt_height) {
 #' @param fig_width width of figure
 #' @param fig_height height of figure
 #' @param figure_loc location of figure
-#'
+#' @return Location for a placeholder
 #' @export
 ph_with_img <- function(ppt, figure, fig_width, fig_height, figure_loc) {
   file_name <- tempfile(fileext = ".svg")
