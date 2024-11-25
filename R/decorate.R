@@ -134,6 +134,7 @@ setMethod(
 #' @param paper paper size. default is "L8".
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments. not used.
+#' @return decorated grob object
 #' @details
 #' The paper default paper size, `L11`, indicate that the fontsize is 11.
 #' The fontsize of the footnotes, is the fontsize of the titles minus 2.
