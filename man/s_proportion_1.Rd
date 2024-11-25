@@ -20,6 +20,10 @@ s_proportion_1(
 
 \item{long}{flag}
 }
+\value{
+A function suitable for use in rtables::analyze() with element selection,
+reformatting, and relabeling performed automatically.
+}
 \description{
 survival proportion afun
 }
