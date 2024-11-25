@@ -13,6 +13,9 @@ autoslider_error(x, spec, step)
 
 \item{step}{step is a character indicating in which step the pipeline encounter error}
 }
+\value{
+autoslider_error object
+}
 \description{
 autoslider_error class
 }
