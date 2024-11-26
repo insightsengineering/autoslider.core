@@ -17,6 +17,9 @@ preprocess_t_dd(
 
 \item{labels}{factor labels}
 }
+\value{
+dataframe
+}
 \description{
 Preprocess t_dd function
 }

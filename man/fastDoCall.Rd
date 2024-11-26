@@ -16,6 +16,9 @@ fastDoCall(what, args, quote = FALSE, envir = parent.frame())
 \item{envir}{an environment within which to evaluate the call. This will be most useful if what is a character
 string and the arguments are symbols or quoted expressions.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 copied from ms showcase app
 }

@@ -519,6 +519,7 @@ warn_about_legacy_paper_size <- function(old_paper_size,
 #' @param lyt layout object
 #' @param anl analysis data object
 #' @param side_by_side A logical value indicating whether to display the data side by side.
+#' @return An `rtables` layout
 #' @export
 lyt_to_side_by_side <- function(lyt, anl, side_by_side = NULL) {
   result <- build_table(lyt = lyt, df = anl)
@@ -546,6 +547,7 @@ lyt_to_side_by_side <- function(lyt, anl, side_by_side = NULL) {
 #' @param anl analysis data object
 #' @param side_by_side A logical value indicating whether to display the data side by side.
 #' @param alt_counts_df alternative data frame for counts
+#' @return An `rtables` layout
 #' @export
 lyt_to_side_by_side_two_data <- function(lyt, anl, alt_counts_df, side_by_side = NULL) {
   result <- build_table(lyt = lyt, df = anl, alt_counts_df = alt_counts_df)

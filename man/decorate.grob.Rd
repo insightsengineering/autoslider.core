@@ -20,7 +20,7 @@ decorate.grob(x, titles, footnotes, paper = "L11", for_test = FALSE, ...)
 \item{...}{Additional arguments. not used.}
 }
 \value{
-decorated grob object
+No return value, called for side effects
 }
 \description{
 decorate grob

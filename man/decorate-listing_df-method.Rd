@@ -19,6 +19,9 @@
 
 \item{...}{Additional arguments. not used.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 decorate listing
 }

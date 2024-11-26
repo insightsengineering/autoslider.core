@@ -20,8 +20,15 @@ Authors@R: c(
     person("Elisabeth", "Deutschmann", role = "ctb"),
     person("Chenkai", "Lv", role = "aut")
   )
-Description: Clinical table, listing and figure slide automation.
-License: Apache License 2.0 
+Description: The normal process of creating clinical study slides is that BioStat
+    manually type in the numbers from outputs and a separate BioStat to QC the typed
+    in numbers. This process is time consuming, resource intensive, and error prone.
+    Automatic slide generation is a solution to address these issues. It reduces the
+    amount of work and the required time when creating slides, and reduces the risk of
+    errors from manually typing or copying numbers from the output to slides. It also
+    helps users to avoid unnecessary stress when creating large amounts of slide decks
+    in a short time window
+License: Apache License 2.0
 URL: https://github.com/insightsengineering/autoslider.core
 BugReports: https://github.com/insightsengineering/autoslider.core/issues
 Depends:

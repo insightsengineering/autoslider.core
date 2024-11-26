@@ -21,6 +21,9 @@ mutate_actarm(
 
 \item{labels}{factor labels}
 }
+\value{
+Dataframe with re-level and re-labelled arm variable.
+}
 \description{
 Refactor active arm
 }

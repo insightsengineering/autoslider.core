@@ -17,6 +17,9 @@ preprocess_t_ds(
 
 \item{labels}{factor labels}
 }
+\value{
+dataframe
+}
 \description{
 Preprocess t_ds function
 }

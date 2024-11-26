@@ -26,6 +26,9 @@ decorate.ggplot(
 
 \item{...}{additional arguments. not used.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Decorate ggplot object
 }

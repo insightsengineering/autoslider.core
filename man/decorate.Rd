@@ -13,6 +13,9 @@ decorate(x, ...)
 
 \item{...}{additional arguments passed to methods}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 generic function decorate
 

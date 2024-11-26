@@ -19,6 +19,9 @@ decorate.list(x, titles, footnotes, paper = "L11", for_test = FALSE, ...)
 
 \item{...}{additional arguments. not used}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 decorate list of grobs
 }
