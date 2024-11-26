@@ -35,6 +35,14 @@ save_output.dlisting(output, file_name, save_rds = TRUE)
 }
 \value{
 The input `object` invisibly
+
+No return value, called for side effects
+
+The input `object` invisibly
+
+The input `object` invisibly
+
+The input `object` invisibly
 }
 \description{
 Save an Output

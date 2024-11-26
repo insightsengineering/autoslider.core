@@ -100,7 +100,7 @@ trim_perc1 <- function(x, output) {
 #'
 #' @param x input array
 #' @param output output handle
-#'
+#' @return formatted values
 #' @export
 trim_perc <- function(x, output) {
   paste0(x[1], " (", new_round(x[2] * 100, 2), ")")

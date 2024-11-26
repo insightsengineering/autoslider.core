@@ -35,6 +35,7 @@ save_output <- function(output, file_name, save_rds = TRUE) {
 }
 
 #' @rdname save_output
+#' @return No return value, called for side effects
 #' @export
 save_output.autoslider_error <- function(output,
                                          file_name,
@@ -53,6 +54,7 @@ setMethod("save_output", "dVTableTree", save_output.dVTableTree <- function(outp
 })
 
 #' @rdname save_output
+#' @return The input `object` invisibly
 #' @export
 save_output.decoratedGrob <- function(output,
                                       file_name,
@@ -65,6 +67,7 @@ save_output.decoratedGrob <- function(output,
 }
 
 #' @rdname save_output
+#' @return The input `object` invisibly
 #' @export
 save_output.decoratedGrobSet <- function(output, file_name, save_rds = TRUE) {
   if (save_rds) {
@@ -76,6 +79,7 @@ save_output.decoratedGrobSet <- function(output, file_name, save_rds = TRUE) {
 
 
 #' @rdname save_output
+#' @return The input `object` invisibly
 #' @export
 save_output.dlisting <- function(output, file_name, save_rds = TRUE) {
   if (save_rds) {
@@ -96,7 +100,7 @@ save_output.dlisting <- function(output, file_name, save_rds = TRUE) {
 #'        in addition to `.out` or `.pdf` files? Defaults to `FALSE`.
 #' @param generic_suffix generic suffix. must be length 1 character or NULL.
 #' @export
-#'
+#' @return The input `object` invisibly
 #' @examples
 #' ## As `save_outputs` is the last step in the pipeline we have to run
 #' ## the 'whole machinery' in order to show its functionality. Also take a look

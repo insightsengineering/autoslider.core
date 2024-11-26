@@ -6,7 +6,7 @@
 \alias{autoslider.core-package}
 \title{autoslider.core Package}
 \description{
-The normal process of creating clinical study slides is that BioStat manually type in the numbers from outputs and a separate BioStat to QC the typed in numbers. This process is time consuming, resource intensive, and error prone. Automatic slide generation is a solution to address these issues. It reduces the amount of work and the required time when creating slides, and reduces the risk of errors from manually typing or copying numbers from the output to slides. It also helps users to avoid unnecessary stress when creating large amounts of slide decks in a short time window.
+The normal process of creating clinical study slides is that a statistician manually type in the numbers from outputs and a separate statistician to double check the typed in numbers. This process is time consuming, resource intensive, and error prone. Automatic slide generation is a solution to address these issues. It reduces the amount of work and the required time when creating slides, and reduces the risk of errors from manually typing or copying numbers from the output to slides. It also helps users to avoid unnecessary stress when creating large amounts of slide decks in a short time window.
 }
 \seealso{
 Useful links:

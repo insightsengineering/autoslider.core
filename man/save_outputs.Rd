@@ -25,6 +25,9 @@ in addition to `.out` or `.pdf` files? Defaults to `FALSE`.}
 \item{verbose_level}{Level of verbose information displayed.
 Default set to `1`.}
 }
+\value{
+The input `object` invisibly
+}
 \description{
 Save a list of outputs
 }
