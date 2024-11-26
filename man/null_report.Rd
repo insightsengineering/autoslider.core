@@ -6,9 +6,6 @@
 \usage{
 null_report()
 }
-\arguments{
-\item{NULL}{no argument}
-}
 \value{
 An empty `rtables` object
 }

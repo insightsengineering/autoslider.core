@@ -5,7 +5,6 @@
 #' @details
 #' This will create a null report similar as STREAM does. You can use
 #' it inside output functions as shown in the example below.
-#' @param NULL no argument
 #' @return An empty `rtables` object
 #' @examples
 #' library(dplyr)
