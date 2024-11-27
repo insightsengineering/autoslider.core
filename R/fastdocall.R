@@ -5,6 +5,7 @@
 #' @param quote a logical value indicating whether to quote the arguments.
 #' @param envir an environment within which to evaluate the call. This will be most useful if what is a character
 #' string and the arguments are symbols or quoted expressions.
+#' @return No return value, called for side effects
 #' @export
 fastDoCall <-
   function(what,

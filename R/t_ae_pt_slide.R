@@ -23,7 +23,7 @@
 #'   )
 #' out <- t_ae_pt_slide(adsl, adae, "TRT01A", 2)
 #' print(out)
-#' generate_slides(out, "ae.pptx")
+#' generate_slides(out, paste0(tempdir(), "/ae.pptx"))
 #'
 #' # Example 2, prune by total column
 #' out2 <- t_ae_pt_slide(adsl, adae, "TRT01A", 25, prune_by_total = TRUE)

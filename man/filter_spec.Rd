@@ -24,10 +24,6 @@ Filter a spec object
 library(dplyr)
 spec_file <- system.file("spec.yml", package = "autoslider.core")
 spec <- spec_file \%>\% read_spec()
-## Keep only outputs belonging to batch 2
-\dontrun{
-filter_spec(spec, batch == 2)
-}
 
 ## Keep only the t_dm_IT output
 filter_spec(spec, output == "t_dm_IT")

@@ -15,6 +15,9 @@ t_dor_slide(adsl, adtte, arm = "TRT01P", refgroup = NULL)
 
 \item{refgroup}{Reference group}
 }
+\value{
+An `rtables` object
+}
 \description{
 DOR table
 }

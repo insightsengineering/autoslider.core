@@ -4,7 +4,7 @@
 #' @param arm Arm variable, character, "`TRT01P" by default.
 #' @param refgroup Reference group
 #' @inherit gen_notes note
-#'
+#' @return An `rtables` object
 #' @export
 #' @examples
 #' library(dplyr)

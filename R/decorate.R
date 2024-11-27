@@ -1,4 +1,5 @@
 #' generic function decorate
+#' @return No return value, called for side effects
 #' @export
 setGeneric("decorate", function(x, ...) standardGeneric("decorate"))
 
@@ -12,7 +13,7 @@ decorate <- function(x, ...) {
 #' default method to decorate
 #' @param x object to decorate
 #' @param ... additional arguments. not used.
-#'
+#' @return No return value, called for side effects
 #' @export
 decorate.default <- function(x, ...) {
   stop("default decorate function does not exist")
@@ -21,7 +22,7 @@ decorate.default <- function(x, ...) {
 #' decorate method for autoslider_error class
 #' @param x object to decorate
 #' @param ... additional arguments. not used.
-#'
+#' @return No return value, called for side effects
 #' @export
 decorate.autoslider_error <- function(x, ...) {
   x
@@ -35,6 +36,7 @@ decorate.autoslider_error <- function(x, ...) {
 #' @param paper Orientation and font size as string, e.g. "P8"; "L11"
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments passed to the decoration function.
+#' @return No return value, called for side effects
 setMethod(
   "decorate", "VTableTree",
   decorate.VTableTree <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
@@ -74,6 +76,7 @@ setMethod(
 #' @param paper Paper size, by default "L11"
 #' @param for_test `logic` CICD parameter
 #' @param ... additional arguments. not used.
+#' @return No return value, called for side effects
 #' @details
 #' The paper default paper size, `L11`, indicate that the fontsize is 11.
 #' The fontsize of the footnotes, is the fontsize of the titles minus 2.
@@ -97,6 +100,7 @@ decorate.ggplot <- function(x, titles = "", footnotes = "", paper = "L11", for_t
 #' @param paper Orientation and font size as string, e.g. "P8"; "L11"
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments. not used.
+#' @return No return value, called for side effects
 setMethod(
   "decorate", "listing_df",
   decorate.listing_df <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
@@ -134,6 +138,7 @@ setMethod(
 #' @param paper paper size. default is "L8".
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments. not used.
+#' @return No return value, called for side effects
 #' @details
 #' The paper default paper size, `L11`, indicate that the fontsize is 11.
 #' The fontsize of the footnotes, is the fontsize of the titles minus 2.
@@ -165,6 +170,7 @@ decorate.grob <-
 #' @details
 #' The paper default paper size, `L11`, indicate that the fontsize is 11.
 #' The fontsize of the footnotes, is the fontsize of the titles minus 2.
+#' @return No return value, called for side effects
 #' @export
 #'
 decorate.list <-
@@ -204,7 +210,7 @@ decorate.list <-
 #' @param generic_footnote `character` vector of footnotes
 #' @param version_label `character`. A version label to be added to the title.
 #' @param for_test `logic` CICD parameter
-#'
+#' @return No return value, called for side effects
 #' @details
 #' `generic_title` and `generic_footnote` will be added to *all* outputs. The use
 #' case is to add information such as protocol number and snapshot date defined
@@ -284,7 +290,7 @@ decorate_outputs <- function(outputs,
 #'
 #' @param x An object of class `decoratedGrob`
 #' @param ... not used.
-#'
+#' @return No return value, called for side effects
 #' @export
 print.decoratedGrob <- function(x, ...) {
   grid::grid.newpage()
@@ -295,7 +301,7 @@ print.decoratedGrob <- function(x, ...) {
 #'
 #' @param x An object of class `decoratedGrobSet`
 #' @param ... not used.
-#'
+#' @return No return value, called for side effects
 #' @export
 print.decoratedGrobSet <- function(x, ...) {
   for (plot in x) {

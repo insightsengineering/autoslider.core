@@ -17,6 +17,9 @@ generate_output(program, datasets, spec, verbose_level = 2, ...)
 
 \item{...}{arguments passed to program}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Generate output and apply filters, titles, and footnotes
 }

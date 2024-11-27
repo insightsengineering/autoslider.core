@@ -6,7 +6,7 @@
 \usage{
 generate_slides(
   outputs,
-  outfile = "output.pptx",
+  outfile = paste0(tempdir(), "/output.pptx"),
   template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
   fig_width = 9,
   fig_height = 6,
@@ -41,6 +41,9 @@ Specify this optional argument to modify the length of all of the listings displ
 Specify this optional argument to modify the width of all of the listings display}
 
 \item{...}{arguments passed to program}
+}
+\value{
+No return value, called for side effects
 }
 \description{
 generate slides based on output

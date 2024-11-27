@@ -11,6 +11,9 @@ check_and_set_cutoff(data, cutoff)
 
 \item{cutoff}{cutoff threshold}
 }
+\value{
+Set the cutoff value
+}
 \description{
 Assert function to check the cutoff
 }

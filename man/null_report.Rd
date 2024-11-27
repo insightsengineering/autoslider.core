@@ -6,6 +6,9 @@
 \usage{
 null_report()
 }
+\value{
+An empty `rtables` object
+}
 \description{
 Null report
 }

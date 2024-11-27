@@ -11,6 +11,9 @@ decorate.default(x, ...)
 
 \item{...}{additional arguments. not used.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 default method to decorate
 }

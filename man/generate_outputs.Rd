@@ -13,6 +13,9 @@ generate_outputs(spec, datasets, verbose_level = 2)
 
 \item{verbose_level}{Verbose level of messages be displayed. See details for further information.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Generate all outputs from a spec
 }

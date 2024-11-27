@@ -11,6 +11,9 @@ decorate.autoslider_error(x, ...)
 
 \item{...}{additional arguments. not used.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 decorate method for autoslider_error class
 }

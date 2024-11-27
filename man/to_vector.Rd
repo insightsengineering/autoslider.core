@@ -9,6 +9,9 @@ to_vector(num_list)
 \arguments{
 \item{num_list}{list of numbers}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Convert list of numbers to vectors
 }

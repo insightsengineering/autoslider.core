@@ -9,6 +9,9 @@ na_replace(table_df)
 \arguments{
 \item{table_df}{Table dataframe}
 }
+\value{
+Input dataframe with both column replaced to NA
+}
 \description{
 Replace NAs to NA
 }

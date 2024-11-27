@@ -20,6 +20,13 @@ R/util_experimental.R
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+LICENSE
 
 # dev
 tmp/
+ae.pptx
+ae_summary.pptx
+dd.pptx
+dm.pptx
+dor.pptx
+  ‘output.pptx’

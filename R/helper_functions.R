@@ -4,7 +4,7 @@
 #' @param arm_var Arm variable
 #' @param levels factor levels
 #' @param labels factor labels
-#'
+#' @return Dataframe with re-level and re-labelled arm variable.
 #' @export
 mutate_actarm <- function(df,
                           arm_var = "TRT01A",
@@ -25,7 +25,7 @@ mutate_actarm <- function(df,
 #' @param df Input dataframe
 #' @param levels factor levels
 #' @param labels factor labels
-#'
+#' @return dataframe
 #' @export
 preprocess_t_dd <- function(df,
                             levels = c("PROGRESSIVE DISEASE", "ADVERSE EVENT", "OTHER", "<Missing>"),
@@ -55,7 +55,7 @@ preprocess_t_dd <- function(df,
 #' @param df Input dataframe
 #' @param levels factor levels
 #' @param labels factor labels
-#'
+#' @return dataframe
 #' @export
 preprocess_t_ds <- function(df,
                             levels = c("Alive: On Treatment", "Alive: In Follow-up", "<Missing>"),

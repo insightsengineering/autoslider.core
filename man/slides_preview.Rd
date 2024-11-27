@@ -9,6 +9,9 @@ slides_preview(x)
 \arguments{
 \item{x}{rtables or data.frame}
 }
+\value{
+A flextable or a ggplot object depending to the input.
+}
 \description{
 Generate flextable for preview first page
 }

@@ -23,6 +23,9 @@ decorate_outputs(
 
 \item{for_test}{`logic` CICD parameter}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Decorate outputs with titles and footnotes
 }

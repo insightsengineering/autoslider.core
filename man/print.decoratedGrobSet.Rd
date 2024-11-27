@@ -11,6 +11,9 @@
 
 \item{...}{not used.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Print decorated grob set
 }

@@ -15,6 +15,10 @@ s_surv_time_1(df, .var, is_event, control = control_surv_time())
 
 \item{control}{`control_surv_time()` by default}
 }
+\value{
+A function suitable for use in rtables::analyze() with element selection,
+reformatting, and relabeling performed automatically.
+}
 \description{
 survival time afun
 }

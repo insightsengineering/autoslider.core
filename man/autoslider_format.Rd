@@ -57,6 +57,9 @@ black_format(ft, ...)
 
 \item{header_vals}{Header}
 }
+\value{
+A flextable with applied theme.
+}
 \description{
 Zebra themed color
 }

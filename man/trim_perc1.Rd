@@ -11,6 +11,9 @@ trim_perc1(x, output)
 
 \item{output}{output handle}
 }
+\value{
+formatted values
+}
 \description{
 Format of xx.xx (xx.xx)
 }

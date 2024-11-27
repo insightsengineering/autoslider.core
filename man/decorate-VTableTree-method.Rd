@@ -19,6 +19,9 @@
 
 \item{...}{Additional arguments passed to the decoration function.}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 Decorate TableTree
 }
