@@ -127,9 +127,6 @@ write(specs_entry, file = spec_file)
 
 # Workflow
 
-The `autoslideR` workflow is pretty much the same as the `EnableRF` workflow that was established for enableR.
-Anyone who used the [`EnableRF` package](https://github.roche.com/Rpackages/EnableRF) before should find the `autoslideR` approach really familiar. 
-[A demo repo that highlights the entire workflow can be found here.](https://code.roche.com/dss-rac/autoslider-demo)
 
 The folder structure could look something like: 
 
@@ -153,7 +150,6 @@ The `autoslideR` workflow has four main aspects:
 ## The specifications `specs.yml` 
 
 This file contains the specifications of all outputs you would like to create.
-It can be created from scratch or [extracted from a gLOPO](Not sure how). 
 
 For each output we define specific information, namely the program name, the footnotes & titles, the paper (this indicates the orientation, P for portrait and L for landscape, the number indicates the font size), the suffix and `args`.
 
