@@ -2,9 +2,9 @@ library(filters)
 
 test_that("Listing print correctly", {
   # skip_if_too_deep(1)
-  load_filters(file.path(system.file(package = "autoslideR"), "filters.yml"), overwrite = TRUE)
+  load_filters(file.path(system.file(package = "autoslider.core"), "filters.yml"), overwrite = TRUE)
 
-  spec_file <- file.path(system.file(package = "autoslideR"), "spec.yml")
+  spec_file <- file.path(system.file(package = "autoslider.core"), "spec.yml")
 
   full_spec <- spec_file %>%
     read_spec()
