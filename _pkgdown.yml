@@ -1,0 +1,31 @@
+---
+url: https://insightsengineering.github.io/autoslider.core
+
+template:
+  package: nesttemplate
+
+navbar:
+  structure:
+    left: [intro, reference, articles, tutorials, news, reports]
+    right: [search, github]
+  components:
+    reports:
+      text: Reports
+      menu:
+        - text: Coverage report
+          href: coverage-report/
+        - text: Unit test report
+          href: unit-test-report/
+        - text: Non-CRAN unit test report
+          href: unit-test-report-non-cran/
+    github:
+      icon: fa-github
+      href: https://github.com/insightsengineering/autoslider.core
+      aria-label: GitHub
+
+news:
+  releases:
+  - text: "CRAN"
+    href: https://cran.r-project.org/web/packages/autoslider.core/index.html
+  - text: "Dev"
+    href: https://github.com/insightsengineering/autoslider.core/releases
