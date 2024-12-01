@@ -6,7 +6,7 @@ template:
 
 navbar:
   structure:
-    left: [intro, reference, articles, tutorials, news, reports]
+    left: [intro, articles, reference, tutorials, news, reports]
     right: [search, github]
   components:
     reports:
@@ -22,6 +22,12 @@ navbar:
       icon: fa-github
       href: https://github.com/insightsengineering/autoslider.core
       aria-label: GitHub
+
+articles:
+  - title: User guide
+    navbar: ~
+    contents:
+    - autoslideR
 
 news:
   releases:
