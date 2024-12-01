@@ -36,7 +36,7 @@ BugReports: https://github.com/insightsengineering/autoslider.core/issues
 Depends:
     flextable (>= 0.9.4),
     officer (>= 0.3.18),
-    R (>= 2.10)
+    R (>= 3.5.0)
 Imports:
     assertthat,
     checkmate,
