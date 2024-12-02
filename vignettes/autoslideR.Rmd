@@ -1,5 +1,5 @@
 ---
-title: "How to use AutoslideR"
+title: "How to use autoslider.core"
 date: "`r Sys.Date()`"
 output:
     rmarkdown::html_document:
@@ -10,7 +10,7 @@ output:
 author: 
   - Stefan Thoma, Joe Zhu
 vignette: >
-  %\VignetteIndexEntry{Introduction to `AutoslideR`}
+  %\VignetteIndexEntry{Introduction to `AutoslideR.core`}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 editor_options:
@@ -18,7 +18,7 @@ editor_options:
         wrap: 72
 ---
 
-In this vignette we show the general `autoslideR` workflow, how you can create functions that produce study-specific outputs, and how you can integrate them into the `autoslideR` framework.
+In this vignette we show the general `autoslider.core` workflow, how you can create functions that produce study-specific outputs, and how you can integrate them into the `autoslider.core` framework.
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -29,8 +29,8 @@ knitr::opts_chunk$set(
 
 # Requirements
 
-Of course, you need to have the `autoslideR` package installed, and you need to have data available.
-In this example I use example data stored in the `autoslideR` package. 
+Of course, you need to have the `autoslider.core` package installed, and you need to have data available.
+In this example I use example data stored in the `autoslider.core` package. 
 
 The data needs to be stored in a named list where the names should correspond to ADaM data sets.
 ```{r, echo = FALSE, include = FALSE}
@@ -177,7 +177,7 @@ It could look something like that:
 ```
 
 The program name refers to a function that produces an output. 
-This could be one of the `_slide` functions in `autoslideR` or a custom function.
+This could be one of the `_slide` functions in `autoslider.core` or a custom function.
 
 Titles and footnotes are added once the outputs are created.
 We refer to that as decorating the outputs.
@@ -226,9 +226,9 @@ SER:
 
 ## The functions
 
-You can find an overview of all `autoslideR` functions [here](link to the manual).
+You can find an overview of all `autoslider.core` functions [here](link to the manual).
 Note that all output-producing functions end with `_slide` while the prefix (i.e. `t_`, `l_`, `g_`) specify the type of output (i.e. table, listing, or graph respectively).
-Custom functions are needed if the `autoslideR` functions do not cover the outputs you need. 
+Custom functions are needed if the `autoslider.core` functions do not cover the outputs you need. 
 More on that further down.
 
 ## The backend machinery
@@ -255,7 +255,7 @@ data <- list(
       # DISTRTFL is needed for t_ds_slide but is missing in example data
       DISTRTFL = sample(c("Y", "N"), size = length(TRT01A), replace = TRUE, prob = c(.1, .9))
     ) %>%
-    preprocess_t_ds(), # this preproccessing is required by one of the autoslideR functions
+    preprocess_t_ds(), # this preproccessing is required by one of the autoslider.core functions
   "adae" = eg_adae,
   "adtte" = eg_adtte,
   "adrs" = eg_adrs,
@@ -295,7 +295,7 @@ For this example I store the output in a tempfile, you would likely store it in 
 outputs %>%
   generate_slides(
     outfile = tempfile(fileext = ".ppts"),
-    template = file.path(system.file(package = "autoslideR"), "/theme/roche_theme.pptx"),
+    template = file.path(system.file(package = "autoslider.core"), "/theme/basic.pptx"),
     table_format = autoslider_format
   )
 ```
@@ -303,11 +303,10 @@ outputs %>%
 # Writing custom functions
 
 Unless your requirements are really specific, the most efficient way to write a study function is to base it off of a template function from the [TLG catalogue](https://insightsengineering.github.io/tlg-catalog/stable/). 
-If your study is currently on enableR and you have created functions for enableRF already, these should work just fine. 
 
 The function you would want to create should take as input a list of datasets and potentially additional arguments. 
 Within the function, you should not worry about filtering the data, as this should be taken care of with the `filters.yml` file and the general workflow. 
-To work properly with `autoslideR` your function should return either: 
+To work properly with `autoslider.core` your function should return either: 
 
 - A `ggplot2` object for graphs
 - An `rtables` object for tables
@@ -494,7 +493,7 @@ Looks like it works!
 ## Integrate it into the general workflow
 
 You have to keep in mind that the function you created must be in the global environment when calling the `create_outputs` function. 
-This is the case for all `autoslideR` functions, as you attach the `autoslideR` package (with your `library(autoslideR)` call), so all (exported) function of the `autoslideR` package are available.
+This is the case for all `autoslider.core` functions, as you attach the `autoslider.core` package (with your `library(autoslider.core)` call), so all (exported) function of the `autoslider.core` package are available.
 
 If you store your custom function in a separate script, you would need to source that script at some point before calling the function, i.e.: 
 
@@ -536,26 +535,7 @@ generate_slides(outputs, outfile = filepath)
 
 Of course, you would not use a temporary file, and you might want to use a custom `.pptx` template for your slides. 
 
-## [EXPERIMENTAL] Using the `use_template` function in autoslideR
 
-The `use_template` function in the autoslideR package allows you to create a new autoslideR compatible output function based on a template. This is particularly useful when you want to create slides with different types of content such as listings, tables, and graphs.
-
-The function that are created using this helper should work right away, but you will need to customize the content and load the functions in your script later on. 
-By default, the template function will take some input arguments, such as `adsl` and one other dataset, but you can (and should) adjust the template to suit your needs. 
-
-Currently, the templates are based on functions that require ADaM datasets. 
-
-### Basic Usage
-
-The `use_template` function requires at least one argument: `template`. This should be one of the templates returned by `list_all_templates()`.
-
-```{r}
-#| eval: FALSE
-use_template(template = "listing")
-```
-
-This will create a new function named "default_slide.R" in the "./programs" or "./R" directory (whichever exists).
-If none of them exist the file will be placed in the root project directory.
 
 ### Customizing the Output
 You can customize the name of the function and the path where it's saved using the `function_name` and `save_path` parameters:
