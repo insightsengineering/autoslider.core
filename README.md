@@ -1,6 +1,5 @@
 # autoslider.core
 
-
 <!-- start badges -->
 [![Check 🛠](https://github.com/insightsengineering/autoslider.core/actions/workflows/check.yaml/badge.svg)](https://insightsengineering.github.io/autoslider.core/main/unit-test-report/)
 [![Docs 📚](https://github.com/insightsengineering/autoslider.core/actions/workflows/docs.yaml/badge.svg)](https://insightsengineering.github.io/autoslider.core/)
@@ -27,7 +26,6 @@
 
 `autoslider.core` creates a set of standard table templates that are often used in Study Results Endorsement Plan. It aims to reduce the amount of work when creating slides and avoid the duplicated effort between statisticians and programmers.
 
-
 ## Installation
 
 `autoslider.core` is available on CRAN and you can install the latest released version with:
@@ -42,4 +40,3 @@ or you can install the latest development version directly from GitHub by runnin
 # install.packages("pak")
 pak::pak("insightsengineering/autoslider.core")
 ```
-
