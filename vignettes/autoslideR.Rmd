@@ -34,7 +34,7 @@ In this example I use example data stored in the `autoslideR` package.
 
 The data needs to be stored in a named list where the names should correspond to ADaM data sets.
 ```{r, echo = FALSE, include = FALSE}
-library(autoslideR)
+library(autoslider.core)
 library(dplyr)
 ```
 
