@@ -339,12 +339,12 @@ lbt06 <- function(datasets) {
     dplyr::filter(ABLFL != "Y") %>%
     dplyr::filter(!(AVISIT %in% c("SCREENING", "BASELINE"))) %>%
     dplyr::mutate(AVISIT = droplevels(AVISIT)) %>%
-    var_relabel(AVISIT = "Visit")
+    formatters::var_relabel(AVISIT = "Visit")
 
   adlb_f_crp <- adlb_f %>% dplyr::filter(PARAMCD == "CRP")
 
   # Define the split function
-  split_fun <- drop_split_levels
+  split_fun <- rtables::drop_split_levels
 
   lyt <- basic_table(show_colcounts = TRUE) %>%
     split_cols_by("ARM") %>%
@@ -352,13 +352,13 @@ lbt06 <- function(datasets) {
       split_fun = split_fun, label_pos = "topleft",
       split_label = obj_label(adlb_f_crp$AVISIT)
     ) %>%
-    count_abnormal_by_baseline(
+    tern::count_abnormal_by_baseline(
       "ANRIND",
       abnormal = c(Low = "LOW", High = "HIGH"),
       .indent_mods = 4L
     ) %>%
-    append_varlabels(adlb_f_crp, "ANRIND", indent = 1L) %>%
-    append_topleft("    Baseline Status")
+    tern::append_varlabels(adlb_f_crp, "ANRIND", indent = 1L) %>%
+    rtables::append_topleft("    Baseline Status")
 
   result <- build_table(
     lyt = lyt,
@@ -386,7 +386,7 @@ adlb_f <- eg_adlb %>%
   dplyr::filter(ABLFL != "Y") %>%
   dplyr::filter(!(AVISIT %in% c("SCREENING", "BASELINE"))) %>%
   dplyr::mutate(AVISIT = droplevels(AVISIT)) %>%
-  var_relabel(AVISIT = "Visit")
+  formatters::var_relabel(AVISIT = "Visit")
 
 adlb_f_crp <- adlb_f %>% dplyr::filter(PARAMCD == "CRP")
 ```
@@ -423,10 +423,13 @@ We are applying a filter to the ADSL data set but create the output on ADLB.
 To forward the filter to ADLB, we must semi-join the ADSL to ADLB.
 
 ```{r}
+require(tern)
+require(rtables)
+require(formatters)
 lbt06 <- function(datasets) {
   # Ensure character variables are converted to factors and empty strings and NAs are explicit missing levels.
-  adsl <- datasets$adsl %>% df_explicit_na()
-  adlb <- datasets$adlb %>% df_explicit_na()
+  adsl <- datasets$adsl %>% tern::df_explicit_na()
+  adlb <- datasets$adlb %>% tern::df_explicit_na()
 
 
   # join adsl to adlb
@@ -437,10 +440,10 @@ lbt06 <- function(datasets) {
 
   adlb_f <- adlb %>%
     dplyr::mutate(AVISIT = droplevels(AVISIT)) %>%
-    var_relabel(AVISIT = "Visit")
+    formatters::var_relabel(AVISIT = "Visit")
 
   # Define the split function
-  split_fun <- drop_split_levels
+  split_fun <- rtables::drop_split_levels
 
   lyt <- basic_table(show_colcounts = TRUE) %>%
     split_cols_by("ARM") %>%
@@ -448,13 +451,13 @@ lbt06 <- function(datasets) {
       split_fun = split_fun, label_pos = "topleft",
       split_label = obj_label(adlb_f_crp$AVISIT)
     ) %>%
-    count_abnormal_by_baseline(
+    tern::count_abnormal_by_baseline(
       "ANRIND",
       abnormal = c(Low = "LOW", High = "HIGH"),
       .indent_mods = 4L
     ) %>%
-    append_varlabels(adlb_f, "ANRIND", indent = 1L) %>%
-    append_topleft("    Baseline Status")
+    tern::append_varlabels(adlb_f, "ANRIND", indent = 1L) %>%
+    rtables::append_topleft("    Baseline Status")
 
   result <- build_table(
     lyt = lyt,
