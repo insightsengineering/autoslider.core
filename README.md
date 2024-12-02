@@ -1,11 +1,12 @@
 # autoslider.core
 
 <!-- start badges -->
-[![Check 🛠](https://github.com/insightsengineering/autoslider.core/actions/workflows/check.yaml/badge.svg)](https://insightsengineering.github.io/autoslider.core/main/unit-test-report/)
+[![Check
+🛠](https://github.com/insightsengineering/autoslider.core/actions/workflows/check.yaml/badge.svg)](https://github.com/insightsengineering/autoslider.core/actions/workflows/check.yaml)
 [![Docs 📚](https://github.com/insightsengineering/autoslider.core/actions/workflows/docs.yaml/badge.svg)](https://insightsengineering.github.io/autoslider.core/)
 [![Release 🎈](https://github.com/insightsengineering/autoslider.core/actions/workflows/release.yaml/badge.svg)](https://github.com/insightsengineering/autoslider.core/releases)
-[![Code Coverage 📔](https://raw.githubusercontent.com/insightsengineering/autoslider.core/_xml_coverage_reports/data/main/badge.svg)](https://insightsengineering.github.io/autoslider.core/main/coverage-report/)
-
+[![Code Coverage
+📔](https://raw.githubusercontent.com/insightsengineering/autoslider.core/_xml_coverage_reports/data/main/badge.svg)](https://raw.githubusercontent.com/insightsengineering/autoslider.core/_xml_coverage_reports/data/main/coverage.xml)
 ![GitHub forks](https://img.shields.io/github/forks/insightsengineering/autoslider.core?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/insightsengineering/autoslider.core?style=social)
 
