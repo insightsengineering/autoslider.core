@@ -329,8 +329,8 @@ We are going create a table based on [LBT06 Laboratory Abnormalities by Visit an
 ```{r}
 lbt06 <- function(datasets) {
   # Ensure character variables are converted to factors and empty strings and NAs are explicit missing levels.
-  adsl <- datasets$adsl %>% df_explicit_na()
-  adlb <- datasets$adlb %>% df_explicit_na()
+  adsl <- datasets$adsl %>% tern::df_explicit_na()
+  adlb <- datasets$adlb %>% tern::df_explicit_na()
 
   # Please note that df_explict_na has a na_level argument defaulting to "<Missing>",
   # Please don't change the na_level to anything other than NA, empty string or the default "<Missing>".
