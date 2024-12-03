@@ -14,7 +14,6 @@ renv.lock
 tests/testthat/Rplots.pdf
 
 # docs
-inst/doc
 docs
 R/util_experimental.R
 ^_pkgdown\.yml$
