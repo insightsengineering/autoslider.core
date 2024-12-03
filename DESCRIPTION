@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slide Automation for Tables, Listings and Figures
-Version: 0.1.0.9002
+Version: 0.1.0.9003
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
     person("Heng", "Wang", role = "aut"),
@@ -79,6 +79,9 @@ Suggests:
     svglite (>= 2.1.2),
     testthat (>= 3.2.0),
     withr
+VignetteBuilder:
+    knitr,
+    rmarkdown
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
@@ -87,9 +90,6 @@ Config/Needs/verdepcheck: insightsengineering/formatters,
     r-lib/testthat, tidyverse/tibble, tidyverse/tidyr, r-lib/withr,
     r-lib/xml2
 Config/testthat/edition: 3
-VignetteBuilder:
-    knitr,
-    rmarkdown
 Encoding: UTF-8
 Language: en-US
 LazyData: true
