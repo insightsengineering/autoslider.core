@@ -346,11 +346,11 @@ lbt06 <- function(datasets) {
   # Define the split function
   split_fun <- rtables::drop_split_levels
 
-  lyt <- basic_table(show_colcounts = TRUE) %>%
-    split_cols_by("ARM") %>%
-    split_rows_by("AVISIT",
+  lyt <- rtables::basic_table(show_colcounts = TRUE) %>%
+    rtables::split_cols_by("ARM") %>%
+    rtables::split_rows_by("AVISIT",
       split_fun = split_fun, label_pos = "topleft",
-      split_label = obj_label(adlb_f_crp$AVISIT)
+      split_label = formatters::obj_label(adlb_f_crp$AVISIT)
     ) %>%
     tern::count_abnormal_by_baseline(
       "ANRIND",
@@ -360,12 +360,12 @@ lbt06 <- function(datasets) {
     tern::append_varlabels(adlb_f_crp, "ANRIND", indent = 1L) %>%
     rtables::append_topleft("    Baseline Status")
 
-  result <- build_table(
+  result <- rtables::build_table(
     lyt = lyt,
     df = adlb_f_crp,
     alt_counts_df = adsl
   ) %>%
-    trim_rows()
+    rtables::trim_rows()
 
   result
 }
@@ -423,9 +423,6 @@ We are applying a filter to the ADSL data set but create the output on ADLB.
 To forward the filter to ADLB, we must semi-join the ADSL to ADLB.
 
 ```{r}
-require(tern)
-require(rtables)
-require(formatters)
 lbt06 <- function(datasets) {
   # Ensure character variables are converted to factors and empty strings and NAs are explicit missing levels.
   adsl <- datasets$adsl %>% tern::df_explicit_na()
@@ -445,11 +442,11 @@ lbt06 <- function(datasets) {
   # Define the split function
   split_fun <- rtables::drop_split_levels
 
-  lyt <- basic_table(show_colcounts = TRUE) %>%
-    split_cols_by("ARM") %>%
-    split_rows_by("AVISIT",
+  lyt <- rtables::basic_table(show_colcounts = TRUE) %>%
+    rtables::split_cols_by("ARM") %>%
+    rtables::split_rows_by("AVISIT",
       split_fun = split_fun, label_pos = "topleft",
-      split_label = obj_label(adlb_f_crp$AVISIT)
+      split_label = formatters::obj_label(adlb_f_crp$AVISIT)
     ) %>%
     tern::count_abnormal_by_baseline(
       "ANRIND",
@@ -459,12 +456,12 @@ lbt06 <- function(datasets) {
     tern::append_varlabels(adlb_f, "ANRIND", indent = 1L) %>%
     rtables::append_topleft("    Baseline Status")
 
-  result <- build_table(
+  result <- rtables::build_table(
     lyt = lyt,
     df = adlb_f,
     alt_counts_df = adsl
   ) %>%
-    trim_rows()
+    rtables::trim_rows()
 
   result
 }
@@ -582,18 +579,6 @@ use_template(
 )
 ```
 
-
-### Available Templates
-You can see all available templates by running `list_all_templates()`:
-
-```{r}
-list_all_templates()
-```
-
-This will return a character vector of all available templates.
-
-The `run_all` template is a good starting point when you set up a project.
-It will give you a script from which the {autoslideR} workflow is called.
 
 ### Conclusion
 The use_template function is a powerful tool for creating new autoslideR compatible output functions. By customizing the function name, save path, and other options, you can easily create slides that fit your specific needs.
