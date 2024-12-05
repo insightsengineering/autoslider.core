@@ -39,12 +39,17 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/format_3d.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/format_date.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/func_wrapper.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/g_eg_slide.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/g_lb_slide.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/g_mean_general.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/g_vs_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/gen_notes.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_output.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_outputs.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_slides.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/get_proper_title.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/index.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/l_ae_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/lyt_to_side_by_side.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/lyt_to_side_by_side_two_data.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/mutate_actarm.html</loc></url>
@@ -73,6 +78,7 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/t_dd_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/t_dm_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/t_dor_slide.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/t_ds_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/table_to_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.Ddataframe.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.VTableTree.html</loc></url>
