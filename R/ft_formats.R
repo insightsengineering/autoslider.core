@@ -127,38 +127,3 @@ autoslider_dose_format <- function(ft, header_vals = names(ft)) {
     bold(part = "header") %>%
     border_remove()
 }
-
-#' @describeIn autoslider_format
-#'
-#' White color theme
-#'
-#' @param ft flextable object
-#' @param ... arguments passed to program
-#'
-#' @export
-white_format <- function(ft, ...) {
-  ft <- do_call(autoslider_dose_format, ft = ft, ...)
-  ft %>%
-    color(color = "white", part = "header") %>%
-    bg(bg = "#0B41CD", part = "header") %>%
-    border_inner(part = "body", border = fp_border(color = "#F5F5F2")) %>%
-    border_outer(part = "body", border = fp_border(color = "#F5F5F2"))
-}
-
-
-#' @describeIn autoslider_format
-#'
-#' Black color theme
-#'
-#' @param ft flextable object
-#' @param ... arguments passed to program
-#'
-#' @export
-black_format <- function(ft, ...) {
-  ft <- do_call(autoslider_dose_format, ft = ft, ...)
-  ft %>%
-    color(color = "blue", part = "header") %>%
-    border_inner_h(part = "all", border = fp_border(color = "black")) %>%
-    hline_top(part = "all", border = fp_border(color = "black", width = 2)) %>%
-    hline_bottom(part = "all", border = fp_border(color = "black", width = 2))
-}

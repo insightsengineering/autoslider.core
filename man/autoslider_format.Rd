@@ -7,8 +7,6 @@
 \alias{red_format}
 \alias{purple_format}
 \alias{autoslider_dose_format}
-\alias{white_format}
-\alias{black_format}
 \title{Table color and font}
 \usage{
 autoslider_format(
@@ -31,10 +29,6 @@ red_format(ft, ...)
 purple_format(ft, ...)
 
 autoslider_dose_format(ft, header_vals = names(ft))
-
-white_format(ft, ...)
-
-black_format(ft, ...)
 }
 \arguments{
 \item{ft}{flextable object}
@@ -76,9 +70,5 @@ Zebra themed color
 \item \code{purple_format()}: Purple color theme
 
 \item \code{autoslider_dose_format()}: `AutoslideR` dose formats
-
-\item \code{white_format()}: White color theme
-
-\item \code{black_format()}: Black color theme
 
 }}

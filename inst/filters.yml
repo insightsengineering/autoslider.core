@@ -148,3 +148,18 @@ FEWSBJ:
   condition: SUBJID %in% c("id-267", "id-206", "id-188", "id-389", "id-140")
   target: adsl
   type: anl
+CRP:
+  title: NA_character_
+  condition: PARAMCD == "CRP"
+  target: adlb
+  type: ref
+HR:
+  title: NA_character_
+  condition: PARAMCD == "HR"
+  target: adeg
+  type: ref
+ADSL:
+  title: NA_character_
+  condition: 1==1
+  target: adsl
+  type: ref
