@@ -3,7 +3,7 @@ test_that("save an autoslider output", {
     decorate(title = "test title", footnote = "") %>%
     list()
 
-  outfile = paste0(tempdir(), "/output.pptx")
+  outfile <- paste0(tempdir(), "/output.pptx")
   testthat::expect_no_error(
     generate_slides(
       output,
