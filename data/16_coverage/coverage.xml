@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.809763462506291" branch-rate="0" lines-covered="1609" lines-valid="1987" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2024-12-05 13:28:12.964328">
+<coverage line-rate="0.809859154929577" branch-rate="0" lines-covered="1610" lines-valid="1988" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2024-12-05 13:35:01.907471">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
   <packages>
-    <package name="autoslider.core" line-rate="0.809763462506291" branch-rate="0" complexity="0">
+    <package name="autoslider.core" line-rate="0.809859154929577" branch-rate="0" complexity="0">
       <classes>
         <class name="assert.R" filename="R/assert.R" line-rate="0.307692307692308" branch-rate="0" complexity="0">
           <methods>
@@ -2559,8 +2559,8 @@
                 <line number="123" hits="3" branch="false"/>
                 <line number="124" hits="3" branch="false"/>
                 <line number="125" hits="3" branch="false"/>
-                <line number="127" hits="3" branch="false"/>
-                <line number="128" hits="1" branch="false"/>
+                <line number="126" hits="3" branch="false"/>
+                <line number="128" hits="3" branch="false"/>
                 <line number="129" hits="1" branch="false"/>
                 <line number="130" hits="1" branch="false"/>
                 <line number="131" hits="1" branch="false"/>
@@ -2570,13 +2570,13 @@
                 <line number="135" hits="1" branch="false"/>
                 <line number="136" hits="1" branch="false"/>
                 <line number="137" hits="1" branch="false"/>
-                <line number="138" hits="2" branch="false"/>
-                <line number="139" hits="1" branch="false"/>
+                <line number="138" hits="1" branch="false"/>
+                <line number="139" hits="2" branch="false"/>
                 <line number="140" hits="1" branch="false"/>
                 <line number="141" hits="1" branch="false"/>
                 <line number="142" hits="1" branch="false"/>
-                <line number="145" hits="3" branch="false"/>
-                <line number="147" hits="3" branch="false"/>
+                <line number="143" hits="1" branch="false"/>
+                <line number="146" hits="3" branch="false"/>
                 <line number="148" hits="3" branch="false"/>
                 <line number="149" hits="3" branch="false"/>
                 <line number="150" hits="3" branch="false"/>
@@ -2597,8 +2597,9 @@
                 <line number="165" hits="3" branch="false"/>
                 <line number="166" hits="3" branch="false"/>
                 <line number="167" hits="3" branch="false"/>
-                <line number="169" hits="3" branch="false"/>
-                <line number="172" hits="3" branch="false"/>
+                <line number="168" hits="3" branch="false"/>
+                <line number="170" hits="3" branch="false"/>
+                <line number="173" hits="3" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -2695,8 +2696,8 @@
             <line number="123" hits="3" branch="false"/>
             <line number="124" hits="3" branch="false"/>
             <line number="125" hits="3" branch="false"/>
-            <line number="127" hits="3" branch="false"/>
-            <line number="128" hits="1" branch="false"/>
+            <line number="126" hits="3" branch="false"/>
+            <line number="128" hits="3" branch="false"/>
             <line number="129" hits="1" branch="false"/>
             <line number="130" hits="1" branch="false"/>
             <line number="131" hits="1" branch="false"/>
@@ -2706,13 +2707,13 @@
             <line number="135" hits="1" branch="false"/>
             <line number="136" hits="1" branch="false"/>
             <line number="137" hits="1" branch="false"/>
-            <line number="138" hits="2" branch="false"/>
-            <line number="139" hits="1" branch="false"/>
+            <line number="138" hits="1" branch="false"/>
+            <line number="139" hits="2" branch="false"/>
             <line number="140" hits="1" branch="false"/>
             <line number="141" hits="1" branch="false"/>
             <line number="142" hits="1" branch="false"/>
-            <line number="145" hits="3" branch="false"/>
-            <line number="147" hits="3" branch="false"/>
+            <line number="143" hits="1" branch="false"/>
+            <line number="146" hits="3" branch="false"/>
             <line number="148" hits="3" branch="false"/>
             <line number="149" hits="3" branch="false"/>
             <line number="150" hits="3" branch="false"/>
@@ -2733,8 +2734,9 @@
             <line number="165" hits="3" branch="false"/>
             <line number="166" hits="3" branch="false"/>
             <line number="167" hits="3" branch="false"/>
-            <line number="169" hits="3" branch="false"/>
-            <line number="172" hits="3" branch="false"/>
+            <line number="168" hits="3" branch="false"/>
+            <line number="170" hits="3" branch="false"/>
+            <line number="173" hits="3" branch="false"/>
           </lines>
         </class>
         <class name="t_dd_slide.R" filename="R/t_dd_slide.R" line-rate="1" branch-rate="0" complexity="0">
