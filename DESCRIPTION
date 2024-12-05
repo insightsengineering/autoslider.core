@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slide Automation for Tables, Listings and Figures
-Version: 0.1.0.9003
+Version: 0.1.0.9004
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut")),
     person("Heng", "Wang", role = "aut"),
@@ -48,30 +48,30 @@ Imports:
     methods,
     officer (>= 0.3.18),
     rlang,
-    rtables (>= 0.6.10),
     rlistings (>= 0.2.9),
+    rtables (>= 0.6.10),
     stringr,
     survival,
     tern (>= 0.9.6),
     tidyr,
     yaml
 Suggests:
-    lubridate,
-    glue,
-    formatters (>= 0.5.9),
-    filters (>= 0.3.1),
     devtools,
-    googledrive,
+    filters (>= 0.3.1),
+    formatters (>= 0.5.9),
     ggpubr,
+    glue,
+    googledrive,
     htmltools,
     httr,
     knitr,
+    lubridate,
     mime,
     nestcolor,
     purrr,
     rmarkdown (>= 2.23),
-    rvg (>= 0.2.5),
     rsvg,
+    rvg (>= 0.2.5),
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
     testthat (>= 3.2.0),
