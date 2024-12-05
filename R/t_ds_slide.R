@@ -39,7 +39,7 @@ t_ds_slide <- function(adsl, arm = "TRT01P",
       STDONSflag = ifelse(STDONS == "<Missing>", "N", "Y")
     ) %>%
     mutate_at(c("STDONS", "DCSREAS"), ~ as.factor(explicit_na(.))) %>%
-    var_relabel(
+    formatters::var_relabel(
       STDONS = "On-study Status",
       DCSflag = "Discontinued the study"
     )

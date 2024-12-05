@@ -95,7 +95,7 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
     ) %>%
     semi_join(., adsl1, by = c("STUDYID", "USUBJID")) %>%
     filter(ANL01FL == "Y" & TRTEMFL == "Y" & SAFFL == "Y") %>%
-    var_relabel(
+    formatters::var_relabel(
       ATOXGR2 = "AE Grade 3 groups",
       ATOXGR = "AE Grade",
       TRT01A = "Actual Treatment 01"
@@ -104,7 +104,7 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
     mutate(
       TMPFL1_REL0 = AEREL == "Y"
     ) %>%
-    var_relabel(
+    formatters::var_relabel(
       TMPFL1_REL0 = "Any treatment"
     ) %>%
     # ---------- ADAE: Grade 5 and related flags ---------
@@ -112,7 +112,7 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
       TMPFL1_G5 = ATOXGR %in% c(5),
       TMPFL1_G5_REL = ATOXGR %in% c(5) & AEREL == "Y"
     ) %>%
-    var_relabel(
+    formatters::var_relabel(
       TMPFL1_G5 = "Grade 5 AE",
       TMPFL1_G5_REL = "Treatment-related Grade 5 AE"
     ) %>%
@@ -121,7 +121,7 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
       TMPFL1_SER = AESER == "Y",
       TMPFL1_SER_REL = AESER == "Y" & AEREL == "Y"
     ) %>%
-    var_relabel(
+    formatters::var_relabel(
       TMPFL1_SER = "Serious AE",
       TMPFL1_SER_REL = "Treatment-related Serious AE"
     )
@@ -133,7 +133,7 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
         TMPFL1_G34 = ATOXGR %in% c(3, 4) & !(USUBJID %in% pts_gr5$USUBJID), # Only count the highest grade is 3 or 4
         TMPFL1_G34_REL = ATOXGR %in% c(3, 4) & AEREL == "Y" & !(USUBJID %in% pts_gr5$USUBJID)
       ) %>%
-      var_relabel(
+      formatters::var_relabel(
         TMPFL1_G34 = "Grade 3-4 AE",
         TMPFL1_G34_REL = "Treatment-related Grade 3-4 AE"
       )
@@ -143,7 +143,7 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
         TMPFL1_G34 = ATOXGR %in% c(3, 4),
         TMPFL1_G34_REL = ATOXGR %in% c(3, 4) & AEREL == "Y"
       ) %>%
-      var_relabel(
+      formatters::var_relabel(
         TMPFL1_G34 = "Grade 3-4 AE",
         TMPFL1_G34_REL = "Treatment-related Grade 3-4 AE"
       )

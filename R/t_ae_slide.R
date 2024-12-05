@@ -41,7 +41,7 @@ t_ae_slide <- function(adsl, adae, arm = "TRT01A",
     mutate(
       AETOXGR = sas_na(AETOXGR) %>% as.factor()
     ) %>%
-    var_relabel(
+    formatters::var_relabel(
       AEBODSYS = "MedDRA System Organ Class",
       AEDECOD = "MedDRA Preferred Term"
     )

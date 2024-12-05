@@ -105,7 +105,7 @@ t_ae_pt_core <- function(adsl, adae, arm, cutoff, diff = FALSE, soc = "NULL",
   }
 
   anl <- anl %>%
-    var_relabel(
+    formatters::var_relabel(
       AEBODSYS = "MedDRA System Organ Class",
       AEDECOD = "MedDRA Preferred Term"
     ) %>%
