@@ -66,11 +66,11 @@ to_flextable.Ddataframe <- function(x, lpp, ...) {
 #' @export
 to_flextable.Ddataframe <- function(x, lpp, table_format = table_format, ...) {
   df <- x
-  if (all(is.na(var_labels(df)))) {
-    var_labels(df) <- names(df)
+  if (all(is.na(formatters::var_labels(df)))) {
+    formatters::var_labels(df) <- names(df)
   }
   ft <- flextable(df)
-  ft <- set_header_labels(ft, values = as.list(var_labels(df)))
+  ft <- set_header_labels(ft, values = as.list(formatters::var_labels(df)))
 
   # if(!is.null(apply_theme)){
   #   ft <- ft %>%
@@ -114,11 +114,11 @@ to_flextable.data.frame <- function(x, col_width = NULL, table_format = orange_f
       autofit() %>%
       fit_to_width(10)
   } else {
-    if (all(is.na(var_labels(df)))) {
-      var_labels(df) <- names(df)
+    if (all(is.na(formatters::var_labels(df)))) {
+      formatters::var_labels(df) <- names(df)
     }
 
-    ft <- set_header_labels(ft, values = as.list(var_labels(df)))
+    ft <- set_header_labels(ft, values = as.list(formatters::var_labels(df)))
     ft <- ft %>% width(width = col_width)
     if (flextable_dim(ft)$widths > 10) {
       pgwidth <- 10.5

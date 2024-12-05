@@ -83,7 +83,7 @@ t_ae_slide <- function(adsl, adae, arm = "TRT01A",
         # , .formats = list(trim_perc1)
       ) %>%
       # append_varlabels(anl, "AEDECOD", indent = TRUE)
-      append_topleft(paste("  ", var_labels(anl["AEDECOD"]), "N (%)"))
+      append_topleft(paste("  ", formatters::var_labels(anl["AEDECOD"]), "N (%)"))
 
     result <- lyt_to_side_by_side_two_data(lyt, anl, adsl, side_by_side)
 

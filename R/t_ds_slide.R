@@ -61,7 +61,7 @@ t_ds_slide <- function(adsl, arm = "TRT01P",
       .stats = "count_fraction",
       denom = "N_col",
       na.rm = TRUE,
-      # var_labels =  var_labels(adsl1)["STDONS"]
+      # var_labels =  formatters::var_labels(adsl1)["STDONS"]
     ) %>%
     split_rows_by(
       "DCSflag",

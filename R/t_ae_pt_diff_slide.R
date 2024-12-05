@@ -138,7 +138,7 @@ t_ae_pt_core <- function(adsl, adae, arm, cutoff, diff = FALSE, soc = "NULL",
         .indent_mods = c(count_fraction = 1L)
         # , .formats = list(trim_perc1)
       ) %>%
-      append_topleft(paste("  ", var_labels(anl["AEDECOD"]), "N (%)"))
+      append_topleft(paste("  ", formatters::var_labels(anl["AEDECOD"]), "N (%)"))
 
     if (soc == "soc") {
       sort_path <- c("AEBODSYS", "*", "AEDECOD")

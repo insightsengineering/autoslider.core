@@ -67,7 +67,7 @@ l_ae_slide <- function(adsl, adae) {
     )
 
 
-  var_labels(adae_f) <- c(
+  formatters::var_labels(adae_f) <- c(
     CPID = "Center/Patient ID", # keep
     # ASR = "Age/Sex/Race",
     # TRT01A = "Treatment",                                      #keep
