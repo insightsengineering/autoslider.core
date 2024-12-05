@@ -619,3 +619,8 @@ build_table_header <- function(anl,
 get_version_label_output <- function() {
   NULL
 }
+
+
+strip_NA <- function(input) {
+  return(input[which(input != "NA")])
+}
