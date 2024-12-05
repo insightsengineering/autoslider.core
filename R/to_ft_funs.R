@@ -147,7 +147,7 @@ old_paginate_listing <- function(lsting,
                                  margins = c(top = .5, bottom = .5, left = .75, right = .75),
                                  lpp = NA_integer_,
                                  cpp = NA_integer_,
-                                 colwidths = propose_column_widths(lsting),
+                                 colwidths = formatters::propose_column_widths(lsting),
                                  tf_wrap = !is.null(max_width),
                                  max_width = NULL,
                                  verbose = FALSE) {
@@ -157,7 +157,7 @@ old_paginate_listing <- function(lsting,
   checkmate::assert_count(max_width, null.ok = TRUE)
   checkmate::assert_flag(verbose)
 
-  indx <- paginate_indices(lsting,
+  indx <- formatters::paginate_indices(lsting,
     page_type = page_type,
     font_family = font_family,
     font_size = font_size,
@@ -242,7 +242,7 @@ to_flextable.dlisting <- function(x, cpp, lpp, ...) {
 #' @export
 to_flextable.VTableTree <- function(x, table_format = orange_format, ...) {
   tbl <- x
-  mf <- matrix_form(tbl)
+  mf <- formatters::matrix_form(tbl)
   nr_header <- attr(mf, "nrow_header")
   non_total_coln <- c(TRUE, !grepl("All Patients", names(tbl)))
   df <- as.data.frame(mf$strings[(nr_header + 1):(nrow(mf$strings)), , drop = FALSE])

@@ -14,18 +14,13 @@
 #' @importFrom cli cat_bullet
 #' @importFrom dplyr mutate_at mutate rename filter select semi_join case_when all_of arrange
 #' @importFrom dplyr left_join distinct inner_join
+#' @importFrom dplyr %>%
 #' @importFrom filters apply_filter
-#' @importFrom formatters var_relabel propose_column_widths var_labels obj_label matrix_form with_label
-#' @importFrom formatters var_labels<- paginate_indices
 #' @importFrom ggpubr as_ggplot
-#' @importFrom glue glue
-#' @importFrom googlesheets4 read_sheet
 #' @importFrom graphics title
 #' @importFrom grDevices dev.off svg
 #' @importFrom grid grid.draw gpar grid.newpage unit.pmax
 #' @importFrom gridExtra arrangeGrob
-#' @importFrom lubridate is.Date
-#' @importFrom dplyr %>%
 #' @importFrom methods is formalArgs new
 #' @importFrom officer fortify_location ph_location_label
 #' @importFrom purrr reduce
