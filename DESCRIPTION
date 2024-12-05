@@ -48,14 +48,11 @@ Imports:
     ggplot2,
     ggpubr,
     glue,
-    googlesheets4,
     grid,
     gridExtra,
     lubridate,
-    magrittr,
     methods,
     purrr,
-    readxl,
     rlang,
     rlistings (>= 0.2.9),
     rtables (>= 0.6.10),
@@ -67,6 +64,7 @@ Imports:
     yaml
 Suggests:
     devtools,
+    googlesheets4,
     googledrive,
     htmltools,
     httr,

@@ -29,7 +29,7 @@ adsl <- eg_adsl \%>\%
   preprocess_t_ds()
 out1 <- t_ds_slide(adsl, "TRT01P")
 print(out1)
-generate_slides(out1, "ds.pptx")
+generate_slides(out1, paste0(tempdir(), "/ds.pptx"))
 
 out2 <- t_ds_slide(adsl, "TRT01P", split_by_study = TRUE)
 print(out2)

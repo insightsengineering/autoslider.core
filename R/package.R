@@ -25,12 +25,11 @@
 #' @importFrom grid grid.draw gpar grid.newpage unit.pmax
 #' @importFrom gridExtra arrangeGrob
 #' @importFrom lubridate is.Date
-#' @importFrom magrittr %>%
+#' @importFrom dplyr %>%
 #' @importFrom methods is formalArgs new
 #' @importFrom officer fortify_location ph_location_label
 #' @importFrom purrr reduce
 #' @importFrom rlang abort `:=`
-#' @importFrom readxl read_excel
 #' @importFrom rvg dml
 #' @importFrom stats setNames median na.omit pt sd
 #' @importFrom stringr str_extract str_to_title
