@@ -331,69 +331,6 @@ to_flextable.dVTableTree <- function(x, lpp, cpp, ...) {
   return(ft_list_resize)
 }
 
-
-
-
-flexi_to_ppt <- function(rdf_flex, themeppt, dir, stack_all = FALSE) {
-  ## ----------------------------------- ##
-  ## Output table to ppt
-  ## ----------------------------------- ##
-  outputID <- paste(rdf_flex$spec$ppt, rdf_flex$spec$suffix, sep = "_")
-  output_target <- paste0(dir, "/output/", outputID, ".pptx")
-
-
-  myppt <- read_pptx(themeppt)
-  if (!stack_all) {
-    print("not stacking")
-    myppt <- myppt %>%
-      remove_slide(., index = NULL)
-  } else {
-    output_target <- themeppt
-  }
-
-  # myppt <- read_pptx()
-  # myppt <- myppt %>%
-  #   remove_slide(., index = NULL)
-
-  mytmp <- layout_summary(myppt)[[2]][1]
-
-  obj <- rdf_flex
-  if (is(rdf_flex, "list")) {
-    obj <- rdf_flex$dml
-  }
-
-  get_title_properties <- function(title) {
-    para <- 50
-    # cat(nchar(title), " ", as.integer(24-nchar(title)/para), "\n")
-    fp_text(font.size = as.integer(24 - nchar(title) / para), bold = TRUE, color = "white")
-  }
-
-
-  myppt %>%
-    add_slide(layout = "Title and Contents", master = mytmp) %>%
-    ph_with(obj, location = ph_location_type(type = "body")) %>%
-    ph_with(rdf_flex$footnote, location = ph_location_type(type = "ftr")) %>%
-    ph_with(ftext(rdf_flex$spec$titles, get_title_properties(rdf_flex$spec$titles)) %>% fpar(),
-      location = ph_location_type(type = "title")
-    ) %>%
-    print(myppt, target = output_target)
-}
-
-
-flextable_to_ppt <- function(rdf_flexes, dir = as.character(getwd()),
-                             themeppt = "basic.pptx", stack_all = FALSE, outputppt = "out.pptx") {
-  if (stack_all) {
-    read_pptx(themeppt) %>%
-      remove_slide(index = NULL) %>%
-      print(target = outputppt)
-
-    lapply(rdf_flexes, flexi_to_ppt, outputppt, dir, stack_all = TRUE)
-  } else {
-    lapply(rdf_flexes, flexi_to_ppt, themeppt, dir, stack_all = FALSE)
-  }
-}
-
-
 g_export <- function(decorated_p) {
   ret <- list()
   ret$dml <- dml(ggobj = as_ggplot(decorated_p$grob))
