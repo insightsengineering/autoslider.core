@@ -66,11 +66,11 @@ to_flextable.Ddataframe <- function(x, lpp, ...) {
 #' @export
 to_flextable.Ddataframe <- function(x, lpp, table_format = table_format, ...) {
   df <- x
-  if (all(is.na(var_labels(df)))) {
-    var_labels(df) <- names(df)
+  if (all(is.na(formatters::var_labels(df)))) {
+    formatters::var_labels(df) <- names(df)
   }
   ft <- flextable(df)
-  ft <- set_header_labels(ft, values = as.list(var_labels(df)))
+  ft <- set_header_labels(ft, values = as.list(formatters::var_labels(df)))
 
   # if(!is.null(apply_theme)){
   #   ft <- ft %>%
@@ -114,11 +114,11 @@ to_flextable.data.frame <- function(x, col_width = NULL, table_format = orange_f
       autofit() %>%
       fit_to_width(10)
   } else {
-    if (all(is.na(var_labels(df)))) {
-      var_labels(df) <- names(df)
+    if (all(is.na(formatters::var_labels(df)))) {
+      formatters::var_labels(df) <- names(df)
     }
 
-    ft <- set_header_labels(ft, values = as.list(var_labels(df)))
+    ft <- set_header_labels(ft, values = as.list(formatters::var_labels(df)))
     ft <- ft %>% width(width = col_width)
     if (flextable_dim(ft)$widths > 10) {
       pgwidth <- 10.5
@@ -147,7 +147,7 @@ old_paginate_listing <- function(lsting,
                                  margins = c(top = .5, bottom = .5, left = .75, right = .75),
                                  lpp = NA_integer_,
                                  cpp = NA_integer_,
-                                 colwidths = propose_column_widths(lsting),
+                                 colwidths = formatters::propose_column_widths(lsting),
                                  tf_wrap = !is.null(max_width),
                                  max_width = NULL,
                                  verbose = FALSE) {
@@ -157,7 +157,7 @@ old_paginate_listing <- function(lsting,
   checkmate::assert_count(max_width, null.ok = TRUE)
   checkmate::assert_flag(verbose)
 
-  indx <- paginate_indices(lsting,
+  indx <- formatters::paginate_indices(lsting,
     page_type = page_type,
     font_family = font_family,
     font_size = font_size,
@@ -242,7 +242,7 @@ to_flextable.dlisting <- function(x, cpp, lpp, ...) {
 #' @export
 to_flextable.VTableTree <- function(x, table_format = orange_format, ...) {
   tbl <- x
-  mf <- matrix_form(tbl)
+  mf <- formatters::matrix_form(tbl)
   nr_header <- attr(mf, "nrow_header")
   non_total_coln <- c(TRUE, !grepl("All Patients", names(tbl)))
   df <- as.data.frame(mf$strings[(nr_header + 1):(nrow(mf$strings)), , drop = FALSE])
@@ -331,72 +331,9 @@ to_flextable.dVTableTree <- function(x, lpp, cpp, ...) {
   return(ft_list_resize)
 }
 
-
-
-
-flexi_to_ppt <- function(rdf_flex, themeppt, dir, stack_all = FALSE) {
-  ## ----------------------------------- ##
-  ## Output table to ppt
-  ## ----------------------------------- ##
-  outputID <- paste(rdf_flex$spec$ppt, rdf_flex$spec$suffix, sep = "_")
-  output_target <- paste0(dir, "/output/", outputID, ".pptx")
-
-
-  myppt <- read_pptx(themeppt)
-  if (!stack_all) {
-    print("not stacking")
-    myppt <- myppt %>%
-      remove_slide(., index = NULL)
-  } else {
-    output_target <- themeppt
-  }
-
-  # myppt <- read_pptx()
-  # myppt <- myppt %>%
-  #   remove_slide(., index = NULL)
-
-  mytmp <- layout_summary(myppt)[[2]][1]
-
-  obj <- rdf_flex
-  if (is(rdf_flex, "list")) {
-    obj <- rdf_flex$dml
-  }
-
-  get_title_properties <- function(title) {
-    para <- 50
-    # cat(nchar(title), " ", as.integer(24-nchar(title)/para), "\n")
-    fp_text(font.size = as.integer(24 - nchar(title) / para), bold = TRUE, color = "white")
-  }
-
-
-  myppt %>%
-    add_slide(layout = "Title and Contents", master = mytmp) %>%
-    ph_with(obj, location = ph_location_type(type = "body")) %>%
-    ph_with(rdf_flex$footnote, location = ph_location_type(type = "ftr")) %>%
-    ph_with(ftext(rdf_flex$spec$titles, get_title_properties(rdf_flex$spec$titles)) %>% fpar(),
-      location = ph_location_type(type = "title")
-    ) %>%
-    print(myppt, target = output_target)
-}
-
-
-flextable_to_ppt <- function(rdf_flexes, dir = as.character(getwd()),
-                             themeppt = "basic.pptx", stack_all = FALSE, outputppt = "out.pptx") {
-  if (stack_all) {
-    read_pptx(themeppt) %>%
-      remove_slide(index = NULL) %>%
-      print(target = outputppt)
-
-    lapply(rdf_flexes, flexi_to_ppt, outputppt, dir, stack_all = TRUE)
-  } else {
-    lapply(rdf_flexes, flexi_to_ppt, themeppt, dir, stack_all = FALSE)
-  }
-}
-
-
 g_export <- function(decorated_p) {
   ret <- list()
-  ret$dml <- dml(ggobj = as_ggplot(decorated_p$grob))
+  ret$dml <- rvg::dml(ggobj = ggpubr::as_ggplot(decorated_p$grob))
   ret$footnote <- decorated_p$footnotes
   ret$spec <- attributes(decorated_p)$spec
   return(ret)

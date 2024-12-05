@@ -52,7 +52,7 @@ t_dm_slide <- function(adsl,
       denom = "n",
       vars = vars,
       .formats = c(mean_sd = "xx.xx (xx.xx)", median = "xx.xx"),
-      var_labels = var_labels(adsl1)[vars]
+      var_labels = formatters::var_labels(adsl1)[vars]
     )
 
   result <- lyt_to_side_by_side(lyt, adsl1, side_by_side)

@@ -29,10 +29,14 @@ test_that("Listing print correctly", {
       "t_tte_slide",
       "t_orr_slide",
       # "l_dsl01_slide",
-      # "t_dm_slide",
+      "g_vs_slide",
+      "g_lab_slide",
+      "g_eg_slide",
+      "t_dm_slide",
       "t_vs_slide",
       "t_ae_summ_slide",
-      "t_ex_slide"
+      "t_ex_slide",
+      "l_ae_slide"
     )) %>%
     generate_outputs(datasets = testdata) %>%
     decorate_outputs(

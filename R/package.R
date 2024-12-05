@@ -1,5 +1,7 @@
 #' autoslider.core Package
 #'
+# nocov start
+
 "_PACKAGE"
 
 #' @import flextable
@@ -12,24 +14,14 @@
 #' @importFrom cli cat_bullet
 #' @importFrom dplyr mutate_at mutate rename filter select semi_join case_when all_of arrange
 #' @importFrom dplyr left_join distinct inner_join
-#' @importFrom filters apply_filter
-#' @importFrom formatters var_relabel propose_column_widths var_labels obj_label matrix_form with_label
-#' @importFrom formatters var_labels<- paginate_indices
-#' @importFrom ggpubr as_ggplot
-#' @importFrom glue glue
-#' @importFrom googlesheets4 read_sheet
+#' @importFrom dplyr %>%
 #' @importFrom graphics title
 #' @importFrom grDevices dev.off svg
 #' @importFrom grid grid.draw gpar grid.newpage unit.pmax
 #' @importFrom gridExtra arrangeGrob
-#' @importFrom lubridate is.Date
-#' @importFrom magrittr %>%
 #' @importFrom methods is formalArgs new
 #' @importFrom officer fortify_location ph_location_label
-#' @importFrom purrr reduce
 #' @importFrom rlang abort `:=`
-#' @importFrom readxl read_excel
-#' @importFrom rvg dml
 #' @importFrom stats setNames median na.omit pt sd
 #' @importFrom stringr str_extract str_to_title
 #' @importFrom survival Surv survfit coxph survdiff strata
@@ -71,3 +63,5 @@ utils::globalVariables(c(
 gen_notes <- function() {
   NULL
 }
+
+# nocov end

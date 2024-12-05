@@ -39,7 +39,7 @@ t_ae <- function(datasets) {
 }
 
 data \%>\%
-  apply_filter("SER_SE") \%>\%
+  filters::apply_filter("SER_SE") \%>\%
   t_ae()
 
 }

@@ -42,7 +42,7 @@ preprocess_t_dd <- function(df,
       DTHCAT3 = DTHCAT == levels[3],
       DTHCAT = factor(explicit_na(sas_na(DTHCAT)), levels = levels, labels = labels)
     ) %>%
-    var_relabel(
+    formatters::var_relabel(
       DTHCAT1 = labels[1],
       DTHCAT2 = labels[2],
       DTHCAT3 = labels[3]

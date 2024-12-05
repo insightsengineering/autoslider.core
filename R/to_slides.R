@@ -129,7 +129,8 @@ slides_preview <- function(x) {
   if (is(x, "VTableTree")) {
     ret <- to_flextable(paginate_table(x, lpp = 20)[[1]])
   } else if (is(x, "listing_df")) {
-    ret <- to_flextable(old_paginate_listing(x, cpp = 150, lpp = 20)[[1]], col_width = propose_column_widths(x))
+    ret <- to_flextable(old_paginate_listing(x, cpp = 150, lpp = 20)[[1]],
+                        col_width = formatters::propose_column_widths(x))
   } else if (is(x, "ggplot")) {
     ret <- x
   }

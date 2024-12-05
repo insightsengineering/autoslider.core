@@ -46,7 +46,7 @@ t_dd_slide <- function(adsl,
       ) %>%
       # count_patients_with_flags(
       #   "USUBJID",
-      #   flag_variables = var_labels(anl[,c("DTHCAT1", "DTHCAT2", "DTHCAT3")]),
+      #   flag_variables = formatters::var_labels(anl[,c("DTHCAT1", "DTHCAT2", "DTHCAT3")]),
       #   .indent_mods = 1L,
       #   .format = list(trim_perc1),
       #   denom = "n"

@@ -41,19 +41,19 @@ setMethod(
   "decorate", "VTableTree",
   decorate.VTableTree <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
     width_set <- attr(x, "width")
-    tmp_x <- matrix_form(x)
+    tmp_x <- formatters::matrix_form(x)
 
     if (is.null(width_set)) {
-      width <- propose_column_widths(tmp_x)
+      width <- formatters::propose_column_widths(tmp_x)
     } else {
-      width <- ifelse(is.na(width_set), propose_column_widths(tmp_x), width_set)
+      width <- ifelse(is.na(width_set), formatters::propose_column_widths(tmp_x), width_set)
     }
 
-    glued_title <- glue(paste(titles, collapse = "\n"))
+    glued_title <- glue::glue(paste(titles, collapse = "\n"))
     main_title(x) <- glued_title
 
     git_fn <- git_footnote(for_test)
-    glued_footnotes <- glue(paste(c(footnotes, git_fn), collapse = "\n"))
+    glued_footnotes <- glue::glue(paste(c(footnotes, git_fn), collapse = "\n"))
     main_footer(x) <- glued_footnotes
 
     new(
@@ -105,19 +105,19 @@ setMethod(
   "decorate", "listing_df",
   decorate.listing_df <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
     width_set <- attr(x, "width")
-    tmp_x <- matrix_form(x)
+    tmp_x <- formatters::matrix_form(x)
 
     if (is.null(width_set)) {
-      width <- propose_column_widths(tmp_x)
+      width <- formatters::propose_column_widths(tmp_x)
     } else {
-      width <- ifelse(is.na(width_set), propose_column_widths(tmp_x), width_set)
+      width <- ifelse(is.na(width_set), formatters::propose_column_widths(tmp_x), width_set)
     }
 
-    glued_title <- glue(paste(titles, collapse = "\n"))
+    glued_title <- glue::glue(paste(titles, collapse = "\n"))
     main_title(x) <- glued_title
 
     git_fn <- git_footnote(for_test)
-    glued_footnotes <- glue(paste(c(footnotes, git_fn), collapse = "\n"))
+    glued_footnotes <- glue::glue(paste(c(footnotes, git_fn), collapse = "\n"))
     main_footer(x) <- glued_footnotes
     new(
       "dlisting",
@@ -149,8 +149,8 @@ decorate.grob <-
     size <- fs(paper)
     grob <- decorate_grob(
       grob = x,
-      titles = glue(paste(titles, collapse = "\n")),
-      footnotes = c(glue(paste(footnotes, collapse = "\n")), git_footnote(for_test), datetime()),
+      titles = glue::glue(paste(titles, collapse = "\n")),
+      footnotes = c(glue::glue(paste(footnotes, collapse = "\n")), git_footnote(for_test), datetime()),
       border = FALSE,
       gp_titles = gpar(fontsize = size$fontsize),
       gp_footnotes = gpar(fontsize = size$fontsize - 2)
@@ -188,8 +188,8 @@ decorate.list <-
     })
     grobs <- decorate_grob_set(
       grobs = x,
-      titles = glue(paste(titles, collapse = "\n")),
-      footnotes = c(glue(paste(footnotes, collapse = "\n")), git_footnote(for_test), datetime()),
+      titles = glue::glue(paste(titles, collapse = "\n")),
+      footnotes = c(glue::glue(paste(footnotes, collapse = "\n")), git_footnote(for_test), datetime()),
       border = FALSE,
       gp_titles = gpar(fontsize = size$fontsize),
       gp_footnotes = gpar(fontsize = size$fontsize - 2)
