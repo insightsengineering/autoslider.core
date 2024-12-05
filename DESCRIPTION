@@ -50,6 +50,7 @@ Imports:
     glue,
     grid,
     gridExtra,
+    googlesheets4,
     lubridate,
     methods,
     purrr,
@@ -64,7 +65,6 @@ Imports:
     yaml
 Suggests:
     devtools,
-    googlesheets4,
     googledrive,
     htmltools,
     httr,
