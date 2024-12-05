@@ -65,7 +65,8 @@ t_aesi_slide <- function(adsl, adae, aesi, arm = "ACTARM", grad_var = "AETOXGR")
   adae2 <- adae2 %>%
     mutate(
       AEDECOD = as.character(AEDECOD),
-      WD = formatters::with_label(AEACN == "DRUG WITHDRAWN", "Total number of patients with study drug withdrawn due to AESI"),
+      WD = formatters::with_label(
+        AEACN == "DRUG WITHDRAWN", "Total number of patients with study drug withdrawn due to AESI"),
       DSM = formatters::with_label(
         AEACN %in% c("DRUG INTERRUPTED", "DOSE INCREASED", "DOSE REDUCED"),
         "Total number of patients with dose modified/interrupted due to AESI"
