@@ -68,6 +68,7 @@ Suggests:
     knitr,
     mime,
     nestcolor,
+    purrr,
     rmarkdown (>= 2.23),
     rvg (>= 0.2.5),
     rsvg,

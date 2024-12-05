@@ -160,7 +160,7 @@ s_surv_time_1 <- function(df, .var, is_event, control = control_surv_time()) {
   new_label <- paste0("Median (Months, ", conf_level * 100, "% CI)")
 
   list(
-    median_ci = with_label(c(
+    median_ci = formatters::with_label(c(
       unname(srv_tab["median"]),
       unname(srv_tab[paste0(srv_fit$conf.int, c("LCL", "UCL"))])
     ), new_label)
@@ -206,7 +206,7 @@ s_proportion_1 <- function(x, conf_level = 0.95,
   )
 
   # rcell(c(p_hat, prop_ci), format = list(rsp_ci_format))
-  # prop_ci = with_label(c(p_hat * 100, prop_ci * 100), new_label)
+  # prop_ci = formatters::with_label(c(p_hat * 100, prop_ci * 100), new_label)
   list(
     "n_prop" = formatters::with_label(c(n, p_hat), "ORR (%)"),
     "prop_ci" = formatters::with_label(
@@ -232,8 +232,8 @@ s_coxph_pairwise_1 <- function(df, .ref_group, .in_ref_col, .var, is_event, stra
         rcell(""),
         .labels = c(paste0(strat_type, " HR (", conf_level * 100, "% CI)"), paste0("p-value (", pval_method, ")"))
       )
-      # list(hr_ci = with_label("", paste0("Stratified HR (", conf_level*100, "% CI)")),
-      #      pvalue = with_label("", paste0("p-value (", pval_method, ")"))
+      # list(hr_ci = formatters::with_label("", paste0("Stratified HR (", conf_level*100, "% CI)")),
+      #      pvalue = formatters::with_label("", paste0("p-value (", pval_method, ")"))
       #      )
     )
   }
@@ -262,13 +262,13 @@ s_coxph_pairwise_1 <- function(df, .ref_group, .in_ref_col, .var, is_event, stra
     likelihood = sum_cox$logtest["pvalue"]
   )
   list(
-    # hr = with_label(sum_cox$conf.int[1, 1], "Hazard Ratio"),
-    # hr_ci = with_label(unname(sum_cox$conf.int[1, 3:4]), f_conf_level(conf_level)),
-    hr_ci = with_label(
+    # hr = formatters::with_label(sum_cox$conf.int[1, 1], "Hazard Ratio"),
+    # hr_ci = formatters::with_label(unname(sum_cox$conf.int[1, 3:4]), f_conf_level(conf_level)),
+    hr_ci = formatters::with_label(
       c(sum_cox$conf.int[1, 1], unname(sum_cox$conf.int[1, 3:4])),
       paste0("Stratified HR (", conf_level * 100, "% CI)")
     ),
-    pvalue = with_label(unname(pval), paste0("p-value (", pval_method, ")"))
+    pvalue = formatters::with_label(unname(pval), paste0("p-value (", pval_method, ")"))
   )
 
   in_rows(

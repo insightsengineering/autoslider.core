@@ -52,11 +52,11 @@ t_aesi_slide <- function(adsl, adae, aesi, arm = "ACTARM", grad_var = "AETOXGR")
   adae2 <- adae2 %>%
     left_join(not_resolved, by = c("USUBJID")) %>%
     mutate(
-      ALL_RESOLVED = with_label(
+      ALL_RESOLVED = formatters::with_label(
         is.na(NOT_RESOLVED),
         "Total number of patients with all non-fatal AESIs resolved"
       ),
-      NOT_RESOLVED = with_label(
+      NOT_RESOLVED = formatters::with_label(
         !is.na(NOT_RESOLVED),
         "Total number of patients with at least one unresolved or ongoing non-fatal AESI"
       )
@@ -65,63 +65,63 @@ t_aesi_slide <- function(adsl, adae, aesi, arm = "ACTARM", grad_var = "AETOXGR")
   adae2 <- adae2 %>%
     mutate(
       AEDECOD = as.character(AEDECOD),
-      WD = with_label(AEACN == "DRUG WITHDRAWN", "Total number of patients with study drug withdrawn due to AESI"),
-      DSM = with_label(
+      WD = formatters::with_label(AEACN == "DRUG WITHDRAWN", "Total number of patients with study drug withdrawn due to AESI"),
+      DSM = formatters::with_label(
         AEACN %in% c("DRUG INTERRUPTED", "DOSE INCREASED", "DOSE REDUCED"),
         "Total number of patients with dose modified/interrupted due to AESI"
       ),
-      CONTRT = with_label(AECONTRT == "Y", "Total number of patients with treatment received for AESI"),
-      SER = with_label(AESER == "Y", "Total number of patients with at least one serious AESI"),
-      REL = with_label(AEREL == "Y", "Total number of patients with at least one related AESI"),
-      ALL_RESOLVED_WD = with_label(
+      CONTRT = formatters::with_label(AECONTRT == "Y", "Total number of patients with treatment received for AESI"),
+      SER = formatters::with_label(AESER == "Y", "Total number of patients with at least one serious AESI"),
+      REL = formatters::with_label(AEREL == "Y", "Total number of patients with at least one related AESI"),
+      ALL_RESOLVED_WD = formatters::with_label(
         WD == TRUE & ALL_RESOLVED == TRUE,
         "No. of patients with study drug withdrawn due to resolved AESI"
       ),
-      ALL_RESOLVED_DSM = with_label(
+      ALL_RESOLVED_DSM = formatters::with_label(
         DSM == TRUE & ALL_RESOLVED == TRUE,
         "No. of patients with dose modified/interrupted due to resolved AESI"
       ),
-      ALL_RESOLVED_CONTRT = with_label(
+      ALL_RESOLVED_CONTRT = formatters::with_label(
         CONTRT == TRUE & ALL_RESOLVED == TRUE,
         "No. of patients with treatment received for resolved AESI"
       ),
-      NOT_RESOLVED_WD = with_label(
+      NOT_RESOLVED_WD = formatters::with_label(
         WD == TRUE & NOT_RESOLVED == TRUE,
         "No. of patients with study drug withdrawn due to unresolved or ongoing AESI"
       ),
-      NOT_RESOLVED_DSM = with_label(
+      NOT_RESOLVED_DSM = formatters::with_label(
         DSM == TRUE & NOT_RESOLVED == TRUE,
         "No. of patients with dose modified/interrupted due to unresolved or ongoing AESI"
       ),
-      NOT_RESOLVED_CONTRT = with_label(
+      NOT_RESOLVED_CONTRT = formatters::with_label(
         CONTRT == TRUE & NOT_RESOLVED == TRUE,
         "No. of patients with treatment received for unresolved or ongoing AESI"
       ),
-      SERWD = with_label(
+      SERWD = formatters::with_label(
         AESER == "Y" & AEACN == "DRUG WITHDRAWN",
         "No. of patients with study drug withdrawn due to serious AESI"
       ),
-      SERCONTRT = with_label(
+      SERCONTRT = formatters::with_label(
         AECONTRT == "Y" & AESER == "Y",
         "No. of patients with dose modified/interrupted due to serious AESI"
       ),
-      SERDSM = with_label(
+      SERDSM = formatters::with_label(
         AESER == "Y" & AEACN %in% c("DRUG INTERRUPTED", "DOSE INCREASED", "DOSE REDUCED"),
         "No. of patients with treatment received for serious AESI"
       ),
-      RELWD = with_label(
+      RELWD = formatters::with_label(
         AEREL == "Y" & AEACN == "DRUG WITHDRAWN",
         "No. of patients with study drug withdrawn due to related AESI"
       ),
-      RELDSM = with_label(
+      RELDSM = formatters::with_label(
         AEREL == "Y" & AEACN %in% c("DRUG INTERRUPTED", "DOSE INCREASED", "DOSE REDUCED"),
         "No. of patients with dose modified/interrupted due to related AESI"
       ),
-      RELCONTRT = with_label(
+      RELCONTRT = formatters::with_label(
         AECONTRT == "Y" & AEREL == "Y",
         "No. of patients with treatment received for related AESI"
       ),
-      RELSER = with_label(AESER == "Y" & AEREL == "Y", "No. of patients with serious, related AESI")
+      RELSER = formatters::with_label(AESER == "Y" & AEREL == "Y", "No. of patients with serious, related AESI")
     )
 
   if (grad_var %in% c("AETOXGR", "ATOXGR")) {
