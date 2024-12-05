@@ -34,7 +34,16 @@
   suffix: FAS
   args:
     arm: "TRT01A"
-    vars: ["SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"]
+    vars: ["SEX", "AGE", "RACE", "ETHNIC"]
+- program: t_dm_slide
+  titles: Patient Demographics and Baseline Characteristics
+  footnotes: 't_dm_slide footnote'
+  paper: L6
+  suffix: FAS
+  args:
+    arm: "TRT01A"
+    vars: ["SEX", "AGE", "RACE", "ETHNIC"]
+    side_by_side: TRUE
 - program: t_dm_tx
   titles: Baseline Disease Characteristics
   footnotes: ''

@@ -1,5 +1,7 @@
 #' autoslider.core Package
 #'
+# nocov start
+
 "_PACKAGE"
 
 #' @import flextable
@@ -71,3 +73,5 @@ utils::globalVariables(c(
 gen_notes <- function() {
   NULL
 }
+
+# nocov end
