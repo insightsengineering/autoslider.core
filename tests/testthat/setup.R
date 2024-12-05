@@ -47,7 +47,7 @@ adsl <- eg_adsl %>%
   mutate(TRT01A = factor(TRT01A, levels = c("A: Drug X", "B: Placebo", "C: Combination"))) %>%
   preprocess_t_dd() %>%
   mutate(DISTRTFL = sample(c("Y", "N"), size = length(TRT01A), replace = TRUE, prob = c(.1, .9))) %>%
-  # preprocess_t_ds() %>%
+  preprocess_t_ds() %>%
   mutate(
     DTRFL = if_else(EOTSTT == "DISCONTINUED", "Y", "N"),
     TRTSDT = as.Date(TRTSDTM)

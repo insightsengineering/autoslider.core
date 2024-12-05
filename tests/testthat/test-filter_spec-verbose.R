@@ -9,9 +9,10 @@ test_that("Listing print correctly", {
   full_spec <- spec_file %>%
     read_spec()
 
-  expect_snapshot(full_spec %>%
+  testthat::expect_snapshot(full_spec %>%
     filter_spec(., program %in% c(
       "t_ds_slide",
-      "t_ds_trt_slide"
+      "t_ds_trt_slide",
+      "i_am_wrong"
     ), verbose = TRUE))
 })
