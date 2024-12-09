@@ -175,7 +175,6 @@ s_surv_time_1 <- function(df, .var, is_event, control = control_surv_time()) {
 #' @param long flag
 #' @return A function suitable for use in rtables::analyze() with element selection,
 #' reformatting, and relabeling performed automatically.
-#' @export
 s_proportion_1 <- function(x, conf_level = 0.95,
                            method = c(
                              "waldcc", "wald", "clopper-pearson",
