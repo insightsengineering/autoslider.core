@@ -113,7 +113,7 @@ trim_perc <- function(x, output) {
 #' @return formatted values
 #' @export
 perc_perc <- function(x, output) {
-  paste0(round(x[1] * 100, 1), "% (", round(x[2] * 100, 1), "%)")
+  paste0(new_round(x[1] * 100, 0), "% (", new_round(x[2] * 100, 0), "%)")
 }
 
 #' Format of xx.xx (xx.xx, xx.xx)
@@ -123,7 +123,7 @@ perc_perc <- function(x, output) {
 #' @return formatted values
 #' @export
 format_3d <- function(x, output) {
-  paste0(round(x[1], 2), " (", round(x[2], 2), ", ", round(x[3], 2), ")")
+  paste0(new_round(x[1], 2), " (", new_round(x[2], 2), ", ", new_round(x[3], 2), ")")
 }
 
 
@@ -175,7 +175,6 @@ s_surv_time_1 <- function(df, .var, is_event, control = control_surv_time()) {
 #' @param long flag
 #' @return A function suitable for use in rtables::analyze() with element selection,
 #' reformatting, and relabeling performed automatically.
-#' @export
 s_proportion_1 <- function(x, conf_level = 0.95,
                            method = c(
                              "waldcc", "wald", "clopper-pearson",
