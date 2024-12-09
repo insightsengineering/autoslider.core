@@ -18,7 +18,7 @@ testthat::test_that("xx.xx (xx.xx)", {
 })
 
 testthat::test_that("xx.xx (xx.x)", {
-  expect_identical(trim_perc(c(10, 0.6375)), "10 (63.8)")
+  expect_identical(trim_perc1(c(10, 0.6375)), "10 (63.8)")
 })
 
 testthat::test_that("(xx\\%, xx\\%)", {
