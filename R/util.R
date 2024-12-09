@@ -113,7 +113,7 @@ trim_perc <- function(x, output) {
 #' @return formatted values
 #' @export
 perc_perc <- function(x, output) {
-  paste0(round(x[1] * 100, 1), "% (", round(x[2] * 100, 1), "%)")
+  paste0(new_round(x[1] * 100, 0), "% (", new_round(x[2] * 100, 0), "%)")
 }
 
 #' Format of xx.xx (xx.xx, xx.xx)
@@ -123,7 +123,7 @@ perc_perc <- function(x, output) {
 #' @return formatted values
 #' @export
 format_3d <- function(x, output) {
-  paste0(round(x[1], 2), " (", round(x[2], 2), ", ", round(x[3], 2), ")")
+  paste0(new_round(x[1], 2), " (", new_round(x[2], 2), ", ", new_round(x[3], 2), ")")
 }
 
 
