@@ -1,3 +1,5 @@
+# autoslider.core 0.2.0.9000
+
 # autoslider.core 0.2.0
 
 ### New features
