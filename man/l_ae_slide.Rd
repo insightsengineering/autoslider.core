@@ -22,5 +22,6 @@ library(rlistings)
 adsl <- eg_adsl
 adae <- eg_adae
 
-l_ae_slide(adsl = adsl, adae = adae)
+out <- l_ae_slide(adsl = adsl, adae = adae)
+head(out)
 }

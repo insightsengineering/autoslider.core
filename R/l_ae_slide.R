@@ -9,7 +9,8 @@
 #' adsl <- eg_adsl
 #' adae <- eg_adae
 #'
-#' l_ae_slide(adsl = adsl, adae = adae)
+#' out <- l_ae_slide(adsl = adsl, adae = adae)
+#' head(out)
 l_ae_slide <- function(adsl, adae) {
   assert_that(has_name(adae, c(
     "SITEID", "SUBJID", "AGE", "SEX", "RACE", "TRTSDTM", "AETOXGR",
