@@ -167,53 +167,6 @@ s_surv_time_1 <- function(df, .var, is_event, control = control_surv_time()) {
   )
 }
 
-#' survival proportion afun
-#'
-#' @param x data vector
-#' @param conf_level confidence level
-#' @param method type of method for calculation
-#' @param long flag
-#' @return A function suitable for use in rtables::analyze() with element selection,
-#' reformatting, and relabeling performed automatically.
-s_proportion_1 <- function(x, conf_level = 0.95,
-                           method = c(
-                             "waldcc", "wald", "clopper-pearson",
-                             "wilson", "agresti-coull", "jeffreys"
-                           ),
-                           long = FALSE) {
-  x <- as.logical(x)
-  method <- match.arg(method)
-  # assert_that(conf_level >= 0, conf_level <= 1, is.flag(long))
-  rsp <- x
-  n <- sum(rsp)
-  p_hat <- mean(rsp)
-  prop_ci <- switch(method,
-    `clopper-pearson` = prop_clopper_pearson(rsp, conf_level),
-    wilson = prop_wilson(rsp, conf_level),
-    wald = prop_wald(rsp, conf_level),
-    waldcc = prop_wald(rsp, conf_level, correct = TRUE),
-    `agresti-coull` = prop_agresti_coull(rsp, conf_level),
-    jeffreys = prop_jeffreys(rsp, conf_level)
-  )
-  y <- prop.test(sum(rsp), length(rsp), correct = TRUE, conf.level = conf_level)
-  prop_ci <- as.numeric(y$conf.int)
-
-  new_label <- paste0(
-    "ORR (%, ",
-    tern::d_proportion(conf_level, method, long = FALSE),
-    ")"
-  )
-
-  # rcell(c(p_hat, prop_ci), format = list(rsp_ci_format))
-  # prop_ci = formatters::with_label(c(p_hat * 100, prop_ci * 100), new_label)
-  list(
-    "n_prop" = formatters::with_label(c(n, p_hat), "ORR (%)"),
-    "prop_ci" = formatters::with_label(
-      x = 100 * prop_ci, label = d_proportion(conf_level, method, long = long)
-    )
-  )
-  # return(prop_ci)
-}
 
 s_coxph_pairwise_1 <- function(df, .ref_group, .in_ref_col, .var, is_event, strat = NULL,
                                control = control_coxph()) {
