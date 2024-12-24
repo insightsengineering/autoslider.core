@@ -137,7 +137,7 @@ autoslider_dose_format <- function(ft, header_vals = names(ft)) {
 #'
 #' @export
 black_format_ae <- function(ft, body_font_size = 8, header_font_size = 8, ...) {
-  ft <- autoslideR:::do_call(autoslider_dose_format, ft = ft, ...)
+  ft <- do_call(autoslider_dose_format, ft = ft, ...)
   ft %>%
     fontsize(size = body_font_size, part = "body") %>%
     fontsize(size = header_font_size, part = "header") %>%
