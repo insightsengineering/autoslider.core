@@ -7,6 +7,8 @@
 \alias{red_format}
 \alias{purple_format}
 \alias{autoslider_dose_format}
+\alias{black_format_ae}
+\alias{black_format_tb}
 \title{Table color and font}
 \usage{
 autoslider_format(
@@ -29,6 +31,10 @@ red_format(ft, ...)
 purple_format(ft, ...)
 
 autoslider_dose_format(ft, header_vals = names(ft))
+
+black_format_ae(ft, body_font_size = 8, header_font_size = 8, ...)
+
+black_format_tb(ft, body_font_size = 8, header_font_size = 8, ...)
 }
 \arguments{
 \item{ft}{flextable object}
@@ -71,4 +77,11 @@ Zebra themed color
 
 \item \code{autoslider_dose_format()}: `AutoslideR` dose formats
 
+\item \code{black_format_ae()}: Black color theme for AE listing
+
+\item \code{black_format_tb()}: Black color theme
+
 }}
+\author{
+Nina Qi and Jasmina Uzunovic
+}
