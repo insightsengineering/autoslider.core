@@ -29,6 +29,7 @@ Authors:
   \item Stefan Pascal Thoma
   \item Miles Almond
   \item Chenkai Lv
+  \item Jasmina Uzunovic
 }
 
 Other contributors:
@@ -40,6 +41,7 @@ Other contributors:
   \item Nolan Steed [contributor]
   \item Daoling Pang [contributor]
   \item Elisabeth Deutschmann [contributor]
+  \item Nina Qi [contributor]
 }
 
 }
