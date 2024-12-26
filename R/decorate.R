@@ -81,7 +81,6 @@ setMethod(
 #' The paper default paper size, `L11`, indicate that the fontsize is 11.
 #' The fontsize of the footnotes, is the fontsize of the titles minus 2.
 decorate.ggplot <- function(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...) {
-
   glued_title <- glue::glue(paste(titles, collapse = "\n"))
   # main_title(x) <- glued_title
 

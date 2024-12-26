@@ -175,5 +175,3 @@ black_format_tb <- function(ft, body_font_size = 8, header_font_size = 8, ...) {
     hline_top(part = "all", border = fp_border(color = "black", width = 2)) %>%
     hline_bottom(part = "all", border = fp_border(color = "black", width = 2))
 }
-
-

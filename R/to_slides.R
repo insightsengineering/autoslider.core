@@ -58,7 +58,8 @@ generate_slides <- function(outputs,
       current_title <- outputs@main_title
     }
     outputs <- list(
-      decorate(outputs, titles = current_title, footnotes = "Confidential and for internal use only"))
+      decorate(outputs, titles = current_title, footnotes = "Confidential and for internal use only")
+    )
   } else if (any(c(
     is(outputs, "data.frame"),
     is(outputs, "ggplot")
@@ -105,22 +106,20 @@ generate_slides <- function(outputs,
       y <- to_flextable(x, ...)
       table_to_slide(ppt, content = y, decor = FALSE, ...)
     } else {
-      if (any(class(x) %in% c("decoratedGrob", "decoratedGrobSet", "ggplot"))){
-        if (is(x, "ggplot")){
+      if (any(class(x) %in% c("decoratedGrob", "decoratedGrobSet", "ggplot"))) {
+        if (is(x, "ggplot")) {
           x <- decorate.ggplot(x)
         }
 
         assertthat::assert_that(is(x, "decoratedGrob") || is(x, "decoratedGrobSet"))
 
         figure_to_slide(ppt,
-                        content = x, fig_width = fig_width, fig_height = fig_height,
-                        figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
+          content = x, fig_width = fig_width, fig_height = fig_height,
+          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
         )
-
       } else {
         throw("Not yet covered class")
       }
-
     }
   }
   print(ppt, target = outfile)
@@ -141,7 +140,8 @@ slides_preview <- function(x) {
     ret <- to_flextable(paginate_table(x, lpp = 20)[[1]])
   } else if (is(x, "listing_df")) {
     ret <- to_flextable(old_paginate_listing(x, cpp = 150, lpp = 20)[[1]],
-                        col_width = formatters::propose_column_widths(x))
+      col_width = formatters::propose_column_widths(x)
+    )
   } else if (is(x, "ggplot")) {
     ret <- x
   }
@@ -317,7 +317,7 @@ figure_to_slide <- function(ppt, content,
     # old
     # ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
     content_list <- g_export(content)
-    ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type="body"))# fig_width, fig_height, figure_loc)
+    ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type = "body")) # fig_width, fig_height, figure_loc)
 
     ph_with_args <- args[unlist(lapply(args, function(x) all(c("location", "value") %in% names(x))))]
     res <- lapply(ph_with_args, function(x) {
