@@ -118,7 +118,7 @@ generate_slides <- function(outputs,
         )
 
       } else {
-        throws_error("Not yet covered class")
+        throw("Not yet covered class")
       }
 
     }
@@ -332,6 +332,6 @@ figure_to_slide <- function(ppt, content,
     }
     return(ppt)
   } else {
-    throws_error("Should not reach here")
+    throw("Should not reach here")
   }
 }
