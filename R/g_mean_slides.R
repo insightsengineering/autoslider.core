@@ -19,7 +19,8 @@
 #' advs_filtered <- eg_advs %>% filter(
 #'   PARAMCD == "SYSBP"
 #' )
-#' g_mean_general(eg_adsl, advs_filtered)
+#' out1 <- g_mean_general(eg_adsl, advs_filtered)
+#' generate_slides(out1, paste0(tempdir(), "/g_mean.pptx"))
 g_mean_general <- function(adsl,
                            data,
                            variables = control_lineplot_vars(group_var = "TRT01P"),
@@ -87,7 +88,8 @@ g_mean_general <- function(adsl,
 #' plot_vs
 #' # you want x-axis tilted labels? No problem:
 #' plot_vs +
-#'   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+#'   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)) %>%
+#'   generate_slides(paste0(tempdir(), "/g_vs.pptx"))
 g_vs_slide <- function(adsl, advs, arm = "TRT01P", paramcd = "PARAM",
                        subtitle = "Plot of Mean and 95% Confidence Limits by Visit.", ...) {
   # tern 0.9.4 added facet_var in control_lineplot_vars
@@ -147,7 +149,8 @@ g_vs_slide <- function(adsl, advs, arm = "TRT01P", paramcd = "PARAM",
 #'   paramcd = "PARAM",
 #'   y = "CHG",
 #'   subtitle = "Plot of change from baseline and 95% Confidence Limit by Visit."
-#' )
+#' ) %>%
+#'   generate_slides(paste0(tempdir(), "/g_lb.pptx"))
 #'
 g_lb_slide <- function(adsl, adlb, arm = "TRT01P", paramcd = "PARAM", y = "AVAL",
                        subtitle = "Plot of Mean and 95% Confidence Limits by Visit.", ...) {
@@ -202,7 +205,8 @@ g_lb_slide <- function(adsl, adlb, arm = "TRT01P", paramcd = "PARAM", y = "AVAL"
 #' plot_eg
 #' # you want x-axis tilted labels? No problem:
 #' plot_eg +
-#'   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+#'   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)) %>%
+#'   generate_slides(paste0(tempdir(), "/g_eg.pptx"))
 g_eg_slide <- function(adsl, adeg, arm = "TRT01P", paramcd = "PARAM",
                        subtitle = "Plot of Mean and 95% Confidence Limits by Visit.", ...) {
   # tern 0.9.4 added facet_var in control_lineplot_vars

@@ -49,7 +49,8 @@ library(dplyr)
 advs_filtered <- eg_advs \%>\% filter(
   PARAMCD == "SYSBP"
 )
-g_mean_general(eg_adsl, advs_filtered)
+out1 <- g_mean_general(eg_adsl, advs_filtered)
+generate_slides(out1, paste0(tempdir(), "/g_mean.pptx"))
 }
 \author{
 Stefan Thoma (`thomas7`)

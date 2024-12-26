@@ -333,7 +333,11 @@ to_flextable.dVTableTree <- function(x, lpp, cpp, ...) {
 
 g_export <- function(decorated_p) {
   ret <- list()
-  ret$dml <- rvg::dml(ggobj = ggpubr::as_ggplot(decorated_p$grob))
+
+  ret$dml <- rvg::dml(ggobj = ggpubr::as_ggplot(decorated_p$grob)
+                      ,bg = "white"
+                      ,pointsize = 12,
+                      editable = TRUE)
   ret$footnote <- decorated_p$footnotes
   ret$spec <- attributes(decorated_p)$spec
   return(ret)

@@ -52,21 +52,25 @@ generate_slides <- function(outputs,
     is(outputs, "VTableTree"),
     is(outputs, "listing_df")
   ))) {
+    if (is(outputs, "listing_df")) {
+      current_title <- main_title(outputs)
+    } else {
+      current_title <- outputs@main_title
+    }
+    outputs <- list(
+      decorate(outputs, titles = current_title, footnotes = "Confidential and for internal use only"))
+  } else if (any(c(
+    is(outputs, "data.frame"),
+    is(outputs, "ggplot")
+  ))) {
     if (is(outputs, "ggplot")) {
       current_title <- outputs$labels$title
       if (is.null(current_title)) {
         current_title <- ""
       }
-    } else if (is(outputs, "listing_df")) {
-      current_title <- main_title(outputs)
-    } else {
-      current_title <- outputs@main_title
+      outputs <- decorate.ggplot(outputs)
     }
-    outputs <- list(decorate(outputs, titles = current_title, footnotes = "Confidential and for internal use only"))
-  } else if (any(c(
-    is(outputs, "data.frame"),
-    is(outputs, "ggplot")
-  ))) {
+
     outputs <- list(outputs)
   }
 
@@ -100,16 +104,23 @@ generate_slides <- function(outputs,
     } else if (is(x, "data.frame")) { # this is dedicated for small data frames without pagination
       y <- to_flextable(x, ...)
       table_to_slide(ppt, content = y, decor = FALSE, ...)
-    } else if (is(x, "decoratedGrob") || is(x, "decoratedGrobSet")) {
-      figure_to_slide(ppt,
-        content = x, fig_width = fig_width, fig_height = fig_height,
-        figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
-      )
-    } else if (is(x, "ggplot")) {
-      figure_to_slide(ppt,
-        content = x, decor = FALSE, fig_width = fig_width, fig_height = fig_height,
-        figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
-      )
+    } else {
+      if (any(class(x) %in% c("decoratedGrob", "decoratedGrobSet", "ggplot"))){
+        if (is(x, "ggplot")){
+          x <- decorate.ggplot(x)
+        }
+
+        assertthat::assert_that(is(x, "decoratedGrob") || is(x, "decoratedGrobSet"))
+
+        figure_to_slide(ppt,
+                        content = x, fig_width = fig_width, fig_height = fig_height,
+                        figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
+        )
+
+      } else {
+        throws_error("Not yet covered class")
+      }
+
     }
   }
   print(ppt, target = outfile)
@@ -301,22 +312,26 @@ figure_to_slide <- function(ppt, content,
     )
   }
 
-  if (("decoratedGrob" %in% class(content)) || ("ggplot" %in% class(content))) {
+  if ("decoratedGrob" %in% class(content)) {
     ppt <- do_call(add_slide, x = ppt, master = ppt_master, ...)
-    ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
+    # old
+    # ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
+    content_list <- g_export(content)
+    ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type="body"))# fig_width, fig_height, figure_loc)
 
     ph_with_args <- args[unlist(lapply(args, function(x) all(c("location", "value") %in% names(x))))]
     res <- lapply(ph_with_args, function(x) {
       ppt <- ph_with(ppt, value = x$value, location = x$location)
     })
-
     return(res)
   } else if ("decoratedGrobSet" %in% class(content)) { # for decoratedGrobSet, a list of figures are created and added
+    # revisit, to mak emore efficent
     for (figure in content) {
       ppt <- do_call(add_slide, x = ppt, master = ppt_master, ...)
       ppt <- ph_with_img(ppt, figure, fig_width, fig_height, figure_loc)
     }
-
     return(ppt)
+  } else {
+    throws_error("Should not reach here")
   }
 }

@@ -60,7 +60,8 @@ plot_lb_chg <- g_lb_slide(
   paramcd = "PARAM",
   y = "CHG",
   subtitle = "Plot of change from baseline and 95\% Confidence Limit by Visit."
-)
+) \%>\%
+  generate_slides(paste0(tempdir(), "/g_lb.pptx"))
 
 }
 \author{

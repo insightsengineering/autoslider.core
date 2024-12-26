@@ -9,12 +9,14 @@
 #' @import rtables
 #' @import tern
 #' @import rlistings
+#' @import ggplot2
 #' @importFrom assertthat assert_that noNA are_equal has_name is.string
 #' @importFrom checkmate assert_class assert_numeric assert_flag assert_count assert_number
 #' @importFrom cli cat_bullet
 #' @importFrom dplyr mutate_at mutate rename filter select semi_join case_when all_of arrange
 #' @importFrom dplyr left_join distinct inner_join
 #' @importFrom dplyr %>%
+#' @importFrom ggpubr as_ggplot
 #' @importFrom graphics title
 #' @importFrom grDevices dev.off svg
 #' @importFrom grid grid.draw gpar grid.newpage unit.pmax
@@ -22,6 +24,7 @@
 #' @importFrom methods is formalArgs new
 #' @importFrom officer fortify_location ph_location_label
 #' @importFrom rlang abort `:=`
+#' @importFrom rvg dml
 #' @importFrom stats setNames median na.omit pt sd
 #' @importFrom stringr str_extract str_to_title
 #' @importFrom survival Surv survfit coxph survdiff strata

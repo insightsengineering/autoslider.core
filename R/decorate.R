@@ -80,17 +80,29 @@ setMethod(
 #' @details
 #' The paper default paper size, `L11`, indicate that the fontsize is 11.
 #' The fontsize of the footnotes, is the fontsize of the titles minus 2.
-#' @export
 decorate.ggplot <- function(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...) {
-  decorate(
-    x = ggplot2::ggplotGrob(x),
-    titles = titles,
+
+  glued_title <- glue::glue(paste(titles, collapse = "\n"))
+  # main_title(x) <- glued_title
+
+  git_fn <- git_footnote(for_test)
+  glued_footnotes <- glue::glue(paste(c(footnotes, git_fn), collapse = "\n"))
+  # main_footer(x) <- glued_footnotes
+
+  ret <- list(
+    grob = ggplot2::ggplotGrob(x),
+    titles = glued_title,
     footnotes = footnotes,
     paper = paper,
     for_test = for_test
   )
+  class(ret) <- "decoratedGrob"
+  return(ret)
 }
 
+# decorate.gg <- function(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...) {
+#   retrun(decorate.ggplot(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...))
+# }
 
 #' decorate listing
 #'

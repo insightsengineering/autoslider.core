@@ -47,7 +47,8 @@ plot_vs <- g_vs_slide(
 plot_vs
 # you want x-axis tilted labels? No problem:
 plot_vs +
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)) \%>\%
+  generate_slides(paste0(tempdir(), "/g_vs.pptx"))
 }
 \author{
 Stefan Thoma (`thomas7`)
