@@ -86,11 +86,6 @@ write(yaml_content, file = filters)
 
 # Create the specs entry
 specs_entry <- '
-- program: t_pop_slide
-  titles: Analysis Sets
-  footnotes: "Analysis Sets footer"
-  paper: L6
-  suffix: ITT
 - program: t_ds_slide
   titles: Patient Disposition ({filter_titles("adsl")})
   footnotes: "t_ds footnotes"
@@ -156,10 +151,6 @@ For each output we define specific information, namely the program name, the foo
 It could look something like that:
 
 ```
-- program: t_pop_slide
-  titles: Analysis Sets 
-  footnotes: 'Analysis Sets footer'
-  paper: L6
 - program: t_ds_slide
   titles: Patient Disposition ({filter_titles("adsl")})
   footnotes: 't_ds footnotes'
@@ -270,8 +261,7 @@ outputs <- spec_file %>%
   # we can also filter for specific programs, if we don't want to create them all
   filter_spec(., program %in% c(
     "t_ds_slide",
-    "t_dm_slide",
-    "t_pop_slide"
+    "t_dm_slide"
   )) %>%
   # these filtered specs are now piped into the generate_outputs function.
   # this function also requires the data
@@ -285,7 +275,7 @@ outputs <- spec_file %>%
 
 We can have a look at one of the outputs stored in the outputs file:
 ```{r}
-outputs$t_pop_slide_ITT
+outputs$t_dm_slide_ITT
 ```
 
 Now we can save it to a slide. 
@@ -534,52 +524,3 @@ generate_slides(outputs, outfile = filepath)
 ```
 
 Of course, you would not use a temporary file, and you might want to use a custom `.pptx` template for your slides. 
-
-
-
-### Customizing the Output
-You can customize the name of the function and the path where it's saved using the `function_name` and `save_path` parameters:
-
-```{r}
-#| eval: FALSE
-use_template(
-  template = "listing",
-  function_name = "l_custom_slide",
-  save_path = "./my_directory/l_custom_slide.R"
-)
-```
-
-This will create a new function named "my_listing_slide.R" in the "my_directory" directory.
-In {autoslideR} we call functions in the format `[t,l,g]_[output]_slide` and the file typically `[t,l,g]_[output]_slide.R`. We encourage users to follow this custom. 
-A `dm` table function would be called something like: `t_dm_slide` and the file it's stored in `t_dm_slide.R`.
-
-### Overwriting Existing Files
-By default, use_template will not overwrite existing files. If you want to overwrite an existing file, you can set overwrite = TRUE:
-
-```{r}
-#| eval: FALSE
-use_template(
-  template = "listing",
-  function_name = "l_custom_slide",
-  save_path = "./my_directory/l_custom_slide.R",
-  overwrite = TRUE
-)
-```
-
-### Opening the File
-If you want to open the file immediately after it's created, you can set open = TRUE. This is the default behavior when running in an interactive session:
-
-```{r}
-#| eval: FALSE
-use_template(
-  template = "listing",
-  function_name = "l_custom_slide",
-  save_path = "./my_directory/l_custom_slide.R",
-  open = TRUE
-)
-```
-
-
-### Conclusion
-The use_template function is a powerful tool for creating new autoslideR compatible output functions. By customizing the function name, save path, and other options, you can easily create slides that fit your specific needs.
-
