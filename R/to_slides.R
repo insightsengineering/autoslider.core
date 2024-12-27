@@ -118,7 +118,7 @@ generate_slides <- function(outputs,
           figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
         )
       } else {
-        throw("Not yet covered class")
+        stop("Not yet covered class")
       }
     }
   }
@@ -317,7 +317,7 @@ figure_to_slide <- function(ppt, content,
     # old
     # ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
     content_list <- g_export(content)
-    ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type = "body")) # fig_width, fig_height, figure_loc)
+    ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type = "body"))
 
     ph_with_args <- args[unlist(lapply(args, function(x) all(c("location", "value") %in% names(x))))]
     res <- lapply(ph_with_args, function(x) {
@@ -332,6 +332,6 @@ figure_to_slide <- function(ppt, content,
     }
     return(ppt)
   } else {
-    throw("Should not reach here")
+    stop("Should not reach here")
   }
 }
