@@ -6,9 +6,14 @@ template:
 
 navbar:
   structure:
-    left: [intro, articles, reference, tutorials, news, reports]
+    left: [intro, articles, developers, reference, tutorials, news, reports]
     right: [search, github]
   components:
+    developers:
+      text: Developers
+      menu:
+        - text: Guidelines for moving template for open-sourcing
+          href: articles/opensource
     reports:
       text: Reports
       menu:
@@ -28,6 +33,7 @@ articles:
     navbar: ~
     contents:
     - autoslideR
+    - opensource
 
 news:
   releases:
