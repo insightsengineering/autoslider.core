@@ -1,0 +1,75 @@
+---
+title: "Guidelines for building downstream autoslider.* packages"
+output:
+    rmarkdown::html_document:
+        theme: "spacelab"
+        highlight: "kate"
+        toc: true
+        toc_float: true
+author:
+  - Joe Zhu ([`shajoezhu`](https://github.com/shajoezhu))
+vignette: >
+  %\VignetteIndexEntry{Guide for Developers}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+I recommend to build your own customized TLG templates into downstream `R` packages. 
+
+Please refer to [Good Software Engineering Practice for R Packages](https://pharmarug.github.io/pharmasug2024-r-workshop/) for how to build an R package. 
+
+Recommend adding the following dependencies to your customized downstream package:
+
+```
+Depends:
+    autoslider.core (>= 0.2.0),
+    R (>= 3.50)
+Imports:
+    assertthat,
+    checkmate,
+    cli,
+    dplyr,
+    flextable (>= 0.9.4),
+    forcats,
+    formatters (>= 0.5.8),
+    ggplot2,
+    gridExtra,
+    lubridate,
+    methods,
+    officer (>= 0.3.18),
+    rlang,
+    rlistings (>= 0.2.9),
+    rtables (>= 0.6.9),
+    stringr,
+    survival,
+    tern (>= 0.9.5),
+    tibble,
+    tidyr,
+    yaml
+Suggests:
+    devtools,
+    filters (>= 0.3.1),
+    googledrive,
+    grid,
+    htmltools,
+    httr,
+    knitr,
+    mime,
+    nestcolor,
+    purrr,
+    rice,
+    rmarkdown,
+    rsvg,
+    rvg (>= 0.2.5),
+    styler (>= 1.10.2),
+    svglite (>= 2.1.2),
+    testthat (>= 3.2.0),
+    withr
+```

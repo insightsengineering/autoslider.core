@@ -13,7 +13,9 @@ navbar:
       text: Developers
       menu:
         - text: Guidelines for moving template for open-sourcing
-          href: articles/opensource
+          href: articles/opensource.html
+        - text: Guidelines for building downstream autoslider.* packages
+          href: articles/downstream.html
     reports:
       text: Reports
       menu:
@@ -34,6 +36,7 @@ articles:
     contents:
     - autoslideR
     - opensource
+    - downstream
 
 news:
   releases:

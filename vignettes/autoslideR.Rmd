@@ -8,7 +8,8 @@ output:
         toc: true
         toc_float: true
 author: 
-  - Stefan Thoma, Joe Zhu
+  - Stefan Thoma, Joe Zhu ([`shajoezhu`](https://github.com/shajoezhu))
+
 vignette: >
   %\VignetteIndexEntry{Introduction to `AutoslideR.core`}
   %\VignetteEngine{knitr::rmarkdown}
