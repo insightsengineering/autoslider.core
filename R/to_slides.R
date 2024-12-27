@@ -118,8 +118,11 @@ generate_slides <- function(outputs,
           figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
         )
       } else {
-        print(class(x))
-        stop("Not yet covered class")
+        if (is(x, "autoslider_error")) {
+          message(x)
+        } else {
+          stop("Not yet covered class")
+        }
       }
     }
   }
