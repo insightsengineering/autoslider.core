@@ -47,11 +47,9 @@ plot_lb <- g_lb_slide(
   adlb = adlb_filtered,
   paramcd = "PARAM",
   subtitle_add_unit = FALSE
-)
-plot_lb
-# you want x-axis tilted labels? No problem:
-plot_lb +
+) +
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+generate_slides(plot_lb, paste0(tempdir(), "/g_lb.pptx"))
 
 # Let's plot change values:
 plot_lb_chg <- g_lb_slide(
@@ -60,8 +58,8 @@ plot_lb_chg <- g_lb_slide(
   paramcd = "PARAM",
   y = "CHG",
   subtitle = "Plot of change from baseline and 95\% Confidence Limit by Visit."
-) \%>\%
-  generate_slides(paste0(tempdir(), "/g_lb.pptx"))
+)
+generate_slides(plot_lb_chg, paste0(tempdir(), "/g_lb_chg.pptx"))
 
 }
 \author{

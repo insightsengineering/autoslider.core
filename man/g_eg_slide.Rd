@@ -44,12 +44,10 @@ plot_eg <- g_eg_slide(
   arm = "TRT01P",
   paramcd = "PARAM",
   subtitle_add_unit = FALSE
-)
-plot_eg
-# you want x-axis tilted labels? No problem:
-plot_eg +
-  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1)) \%>\%
-  generate_slides(paste0(tempdir(), "/g_eg.pptx"))
+) +
+  ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
+
+generate_slides(plot_eg, paste0(tempdir(), "/g_eg.pptx"))
 }
 \author{
 Stefan Thoma (`thomas7`)
