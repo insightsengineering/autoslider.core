@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 ```
 
 `AutoslideR` core functions that are used for slide rendering and workflow is already open-sourced with the 
-[`autoslider.core`](https://cran.r-project.org/web/packages/autoslider.core/) package, if you have built your own customized template package, namely `autoslider.*` (see [this page](downstream.html) for guidelines), once the template functions are stable, generic, we also encourage to make these functions open-source for external users. This article describes the how to process. Template that contains specific variable names or columns are not recommended for open-sourcing. The key steps include the following
+[`autoslider.core`](https://cran.r-project.org/package=autoslider.core) package, if you have built your own customized template package, namely `autoslider.*` (see [this page](downstream.html) for guidelines), once the template functions are stable, generic, we also encourage to make these functions open-source for external users. This article describes the how to process. Template that contains specific variable names or columns are not recommended for open-sourcing. The key steps include the following
 
   * From `autoslider.*` to `autoslider.core`. 
 
