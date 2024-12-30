@@ -242,7 +242,7 @@ to_flextable.dlisting <- function(x, cpp, lpp, ...) {
 #' @export
 to_flextable.VTableTree <- function(x, table_format = orange_format, ...) {
   tbl <- x
-  mf <- formatters::matrix_form(tbl)
+  mf <- formatters::matrix_form(tbl, indent_rownames = TRUE)
   nr_header <- attr(mf, "nrow_header")
   non_total_coln <- c(TRUE, !grepl("All Patients", names(tbl)))
   df <- as.data.frame(mf$strings[(nr_header + 1):(nrow(mf$strings)), , drop = FALSE])
