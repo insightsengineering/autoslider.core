@@ -3,6 +3,7 @@
 ### Miscellaneous
  
  * Plots in slides are now editable.
+ * Keep indentation in tables. 
 
 # autoslider.core 0.2.1
 
