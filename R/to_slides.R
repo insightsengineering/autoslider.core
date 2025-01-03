@@ -121,7 +121,7 @@ generate_slides <- function(outputs,
         if (is(x, "autoslider_error")) {
           message(x)
         } else {
-          stop("Not yet covered class")
+          next
         }
       }
     }
