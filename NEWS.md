@@ -1,9 +1,10 @@
-# autoslider.core 0.2.1.9010
+# autoslider.core 0.2.2
 
 ### Miscellaneous
  
  * Plots in slides are now editable.
- * Keep indentation in tables. 
+ * Keep indentation in tables.
+ * Added vignette for open-sourcing.
 
 # autoslider.core 0.2.1
 
