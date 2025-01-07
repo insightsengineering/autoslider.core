@@ -154,9 +154,9 @@ setMethod(
 #' @export
 #'
 decorate.grob <-
-  function(x, titles, footnotes, paper = "L11", for_test = FALSE, ...) {
+  function(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...) {
     size <- fs(paper)
-    grob <- decorate_grob(
+    grob <- tern::decorate_grob(
       grob = x,
       titles = glue::glue(paste(titles, collapse = "\n")),
       footnotes = c(glue::glue(paste(footnotes, collapse = "\n")), git_footnote(for_test), datetime()),

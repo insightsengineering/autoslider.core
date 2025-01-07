@@ -329,7 +329,7 @@ figure_to_slide <- function(ppt, content,
     })
     return(res)
   } else if ("decoratedGrobSet" %in% class(content)) { # for decoratedGrobSet, a list of figures are created and added
-    # revisit, to mak emore efficent
+    # revisit, to make more efficent
     for (figure in content) {
       ppt <- do_call(add_slide, x = ppt, master = ppt_master, ...)
       ppt <- ph_with_img(ppt, figure, fig_width, fig_height, figure_loc)
