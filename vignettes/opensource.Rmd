@@ -9,7 +9,7 @@ output:
 author:
   - Joe Zhu ([`shajoezhu`](https://github.com/shajoezhu))
 vignette: >
-  %\VignetteIndexEntry{Guide for Developers}
+  %\VignetteIndexEntry{Guidelines for Open-sourcing}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
