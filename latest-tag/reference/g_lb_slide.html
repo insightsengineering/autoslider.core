@@ -25,7 +25,7 @@ Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)">
 
     <a class="navbar-brand me-2" href="../index.html">autoslider.core</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2</small>
 
     <div style="width: 140px; margin-left: 0.5rem;"> <small class="nav-text text-muted me-auto">part of</small> <img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/nest.png?raw=true" alt="NEST" style="height: 30px;"><a href="https://pharmaverse.org/" class="external-link"><img src="https://github.com/insightsengineering/hex-stickers/blob/main/PNG/pharmaverse.png?raw=true" alt="pharmaverse" style="height: 28px;"></a> </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +38,15 @@ Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/autoslideR.html">How to use autoslider.core</a></li>
+    <li><a class="dropdown-item" href="../articles/opensource.html">Guidelines for Open-sourcing</a></li>
+    <li><a class="dropdown-item" href="../articles/downstream.html">Guidelines for building downstream autoslider.* packages</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-developers" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Developers</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-developers">
+<li><a class="dropdown-item" href="../articles/opensource.html">Guidelines for moving template for open-sourcing</a></li>
+    <li><a class="dropdown-item" href="../articles/downstream.html">Guidelines for building downstream autoslider.* packages</a></li>
   </ul>
 </li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
@@ -64,6 +73,7 @@ Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)">
     <div class="dropdown-menu" aria-labelledby="dropdown-versions">
     <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/autoslider.core/main">main</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/autoslider.core/latest-tag">latest-tag</a>
+<a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/autoslider.core/v0.2.2">v0.2.2</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/autoslider.core/v0.2.1">v0.2.1</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/autoslider.core/v0.2.0">v0.2.0</a>
 <a class="dropdown-item" data-toggle="tooltip" title="" href="https://insightsengineering.github.io/autoslider.core/v0.1.0">v0.1.0</a>
@@ -85,7 +95,7 @@ Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)">
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Plot mean values of LB</h1>
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/autoslider.core/blob/v0.2.1/R/g_mean_slides.R" class="external-link"><code>R/g_mean_slides.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/autoslider.core/blob/v0.2.2/R/g_mean_slides.R" class="external-link"><code>R/g_mean_slides.R</code></a></small>
       <div class="d-none name"><code>g_lb_slide.Rd</code></div>
     </div>
 
@@ -172,13 +182,9 @@ This lets you specify additional arguments to `tern::g_lineplot()`</p></dd>
 <span class="r-in"><span>  adlb <span class="op">=</span> <span class="va">adlb_filtered</span>,</span></span>
 <span class="r-in"><span>  paramcd <span class="op">=</span> <span class="st">"PARAM"</span>,</span></span>
 <span class="r-in"><span>  subtitle_add_unit <span class="op">=</span> <span class="cn">FALSE</span></span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">plot_lb</span></span></span>
-<span class="r-plt img"><img src="g_lb_slide-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span><span class="co"># you want x-axis tilted labels? No problem:</span></span></span>
-<span class="r-in"><span><span class="va">plot_lb</span> <span class="op">+</span></span></span>
+<span class="r-in"><span><span class="op">)</span> <span class="op">+</span></span></span>
 <span class="r-in"><span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">45</span>, hjust <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-plt img"><img src="g_lb_slide-2.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="fu"><a href="generate_slides.html">generate_slides</a></span><span class="op">(</span><span class="va">plot_lb</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"/g_lb.pptx"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Let's plot change values:</span></span></span>
 <span class="r-in"><span><span class="va">plot_lb_chg</span> <span class="op">&lt;-</span> <span class="fu">g_lb_slide</span><span class="op">(</span></span></span>
@@ -188,6 +194,7 @@ This lets you specify additional arguments to `tern::g_lineplot()`</p></dd>
 <span class="r-in"><span>  y <span class="op">=</span> <span class="st">"CHG"</span>,</span></span>
 <span class="r-in"><span>  subtitle <span class="op">=</span> <span class="st">"Plot of change from baseline and 95% Confidence Limit by Visit."</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="generate_slides.html">generate_slides</a></span><span class="op">(</span><span class="va">plot_lb_chg</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"/g_lb_chg.pptx"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
