@@ -1,0 +1,11 @@
+pandoc: '3.4'
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  autoslideR: autoslideR.html
+  downstream: downstream.html
+  opensource: opensource.html
+last_built: 2025-01-08T04:51Z
+urls:
+  reference: https://insightsengineering.github.io/autoslider.core/reference
+  article: https://insightsengineering.github.io/autoslider.core/articles
