@@ -97,4 +97,4 @@ LazyDataCompression: xz
 RoxygenNote: 7.3.2
 Remotes: 
     insightsengineering/rtables@981_cran_v0.6.11,
-    insightsengineering/tern@main
+    insightsengineering/tern@upversion_dep
