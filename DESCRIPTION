@@ -84,7 +84,7 @@ VignetteBuilder:
     rmarkdown
 Remotes: 
     insightsengineering/rtables@981_cran_v0.6.11,
-    insightsengineering/tern@upversion_dep
+    insightsengineering/tern@main
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
