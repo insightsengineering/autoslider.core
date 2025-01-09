@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slide Automation for Tables, Listings and Figures
-Version: 0.2.2.9000
+Version: 0.2.2.9001
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0001-7566-2787")),
@@ -82,6 +82,9 @@ Suggests:
 VignetteBuilder:
     knitr,
     rmarkdown
+Remotes: 
+    insightsengineering/rtables@981_cran_v0.6.11,
+    insightsengineering/tern@upversion_dep
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
@@ -95,6 +98,3 @@ Language: en-US
 LazyData: true
 LazyDataCompression: xz
 RoxygenNote: 7.3.2
-Remotes: 
-    insightsengineering/rtables@981_cran_v0.6.11,
-    insightsengineering/tern@upversion_dep
