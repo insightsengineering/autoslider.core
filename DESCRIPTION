@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slide Automation for Tables, Listings and Figures
-Version: 0.2.2.9003
+Version: 0.2.3
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0001-7566-2787")),
@@ -57,7 +57,7 @@ Imports:
     rvg (>= 0.2.5),
     stringr,
     survival,
-    tern (>= 0.9.6.9018),
+    tern (>= 0.9.7),
     tidyr,
     yaml
 Suggests:
@@ -83,7 +83,7 @@ VignetteBuilder:
     knitr,
     rmarkdown
 Remotes: 
-    insightsengineering/tern@main
+    insightsengineering/tern@1281_cran_0.9.7
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
