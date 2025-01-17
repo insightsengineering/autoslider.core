@@ -66,6 +66,7 @@ eg
 expr
 flextable
 fontsize
+formatters
 ggplot
 github
 headerlines
@@ -85,6 +86,7 @@ ppt
 rds
 repo
 reusability
+rlistings
 rtable
 rtables
 scaler
