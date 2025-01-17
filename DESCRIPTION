@@ -82,8 +82,6 @@ Suggests:
 VignetteBuilder:
     knitr,
     rmarkdown
-Remotes: 
-    insightsengineering/tern@1281_cran_0.9.7
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
