@@ -5,7 +5,7 @@ articles:
   autoslideR: autoslideR.html
   downstream: downstream.html
   opensource: opensource.html
-last_built: 2025-01-08T04:51Z
+last_built: 2025-01-17T13:53Z
 urls:
-  reference: https://insightsengineering.github.io/autoslider.core/latest-tag/reference
-  article: https://insightsengineering.github.io/autoslider.core/latest-tag/articles
+  reference: https://insightsengineering.github.io/autoslider.core/main/reference
+  article: https://insightsengineering.github.io/autoslider.core/main/articles
