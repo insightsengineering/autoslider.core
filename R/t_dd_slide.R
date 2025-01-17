@@ -32,12 +32,12 @@ t_dd_slide <- function(adsl,
     lyt <- build_table_header(adsl, arm, split_by_study = split_by_study, side_by_side = side_by_side)
 
     lyt <- lyt %>%
-      # count_values(
-      #   "DTHFL",
-      #   values = "Y",
-      #   denom = c("N_col"),
-      #   .labels = c(count_fraction = "All Deaths")
-      # ) %>%
+      count_values(
+        "DTHFL",
+        values = "Y",
+        denom = c("N_col"),
+        .labels = c(count_fraction = "All Deaths")
+      ) %>%
       analyze_vars(
         vars = "DTHCAT", .stats = "count_fraction",
         na_str = "<Missing>",
