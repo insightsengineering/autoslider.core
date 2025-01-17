@@ -67,7 +67,7 @@ t_dor_slide <- function(adsl, adtte, arm = "TRT01P", refgroup = NULL) {
     count_values(
       vars = "USUBJID",
       values = unique(adtte$USUBJID),
-      .labels = "Responders",
+      .labels = c(count = "Responders"),
       .stats = "count"
     ) %>%
     analyze_vars(
