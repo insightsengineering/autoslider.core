@@ -101,7 +101,7 @@ save_output.dlisting <- function(output, file_name, save_rds = TRUE) {
 #' @param generic_suffix generic suffix. must be length 1 character or NULL.
 #' @export
 #' @return The input `object` invisibly
-#' @examples
+#' @examplesIf require(filters)
 #' ## As `save_outputs` is the last step in the pipeline we have to run
 #' ## the 'whole machinery' in order to show its functionality. Also take a look
 #' ## at the `AutoslideR-Demo` repo on code.roche.com.

@@ -17,6 +17,7 @@ This will create a null report similar as STREAM does. You can use
 it inside output functions as shown in the example below.
 }
 \examples{
+\dontshow{if (require(filters)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(dplyr)
 library(filters)
 data <- list(
@@ -41,7 +42,7 @@ t_ae <- function(datasets) {
 data \%>\%
   filters::apply_filter("SER_SE") \%>\%
   t_ae()
-
+\dontshow{\}) # examplesIf}
 }
 \author{
 Thomas Neitmann (`neitmant`)

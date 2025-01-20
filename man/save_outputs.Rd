@@ -32,6 +32,7 @@ The input `object` invisibly
 Save a list of outputs
 }
 \examples{
+\dontshow{if (require(filters)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 ## As `save_outputs` is the last step in the pipeline we have to run
 ## the 'whole machinery' in order to show its functionality. Also take a look
 ## at the `AutoslideR-Demo` repo on code.roche.com.
@@ -58,5 +59,5 @@ read_spec(spec_file) \%>\%
   generate_outputs(datasets = data) \%>\%
   decorate_outputs() \%>\%
   save_outputs(outfolder = output_dir)
-
+\dontshow{\}) # examplesIf}
 }
