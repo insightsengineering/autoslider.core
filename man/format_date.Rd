@@ -21,21 +21,3 @@ doesn't satisfy the LHS. For this reason, I had to 'quiet' all `lubridate` funct
 This `format_date()` function was tested with the inputs in the examples, all gave the
 expected returned value, so there should be no issues.
 }
-\examples{
-
-# expected to return "2019"
-format_date("2019")
-
-# expected to return "20APR2019"
-format_date("2019-04-20")
-
-# expected to return ""
-format_date("")
-
-# expected to return "18JUN2019"
-format_date("2019-06-18T10:32")
-
-# expected to return "APR2019"
-format_date("2019-04")
-
-}
