@@ -1,7 +1,6 @@
 # data setup
 library(dplyr)
 library(ggplot2)
-library(svglite)
 
 adeg <- testdata$adeg %>% filter(PARAMCD == "QT")
 advs <- testdata$advs %>% filter(PARAMCD == "WEIGHT")

@@ -1,4 +1,6 @@
 test_that("Listing print correctly", {
+  testthat::skip_if_not_installed("filters")
+
   # skip_if_too_deep(1)
   filters::load_filters(file.path(
     system.file(package = "autoslider.core"),

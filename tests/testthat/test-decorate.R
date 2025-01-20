@@ -53,6 +53,8 @@ test_that("Test decoreate throw", {
 
 
 test_that("Test ph_with_img not to throw", {
+  testthat::skip_if_not_installed("rsvg")
+
   p <- ggplotGrob(a)
   location_ <- officer::fortify_location(officer::ph_location_fullsize(), doc = read_pptx())
   width <- location_$width
