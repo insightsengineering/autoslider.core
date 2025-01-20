@@ -12,7 +12,7 @@
 #' @return A vector.
 #'
 #' @export
-#' @examplesif require(lubridate)
+#' @examplesIf require(lubridate)
 #' require(lubridate)
 #'
 #' # expected to return "2019"

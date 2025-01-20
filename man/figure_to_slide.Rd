@@ -25,7 +25,7 @@ figure_to_slide(
 
 \item{fig_height}{user specified figure height}
 
-\item{figure_loc}{location of the figure. Defaults to `ph_location_type("body")`}
+\item{figure_loc}{location of the figure. Defaults to \code{ph_location_type("body")}}
 
 \item{...}{arguments passed to program}
 }

@@ -13,7 +13,7 @@ s_surv_time_1(df, .var, is_event, control = control_surv_time())
 
 \item{is_event}{vector indicating event}
 
-\item{control}{`control_surv_time()` by default}
+\item{control}{\code{control_surv_time()} by default}
 }
 \value{
 A function suitable for use in rtables::analyze() with element selection,

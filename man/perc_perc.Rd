@@ -2,7 +2,7 @@
 % Please edit documentation in R/util.R
 \name{perc_perc}
 \alias{perc_perc}
-\title{Format of (xx\%, xx\%)}
+\title{Format of (xx\\%, xx\\%)}
 \usage{
 perc_perc(x, output)
 }
@@ -15,5 +15,5 @@ perc_perc(x, output)
 formatted values
 }
 \description{
-Format of (xx\%, xx\%)
+Format of (xx\\%, xx\\%)
 }

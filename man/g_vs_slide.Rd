@@ -18,18 +18,18 @@ g_vs_slide(
 
 \item{advs}{ADVS data}
 
-\item{arm}{`"TRT01P"` by default}
+\item{arm}{\code{"TRT01P"} by default}
 
-\item{paramcd}{Which variable to use for plotting. By default `"PARAM"`}
+\item{paramcd}{Which variable to use for plotting. By default \code{"PARAM"}}
 
 \item{subtitle}{character scalar forwarded to g_lineplot}
 
 \item{...}{|
-Gets forwarded to `tern::g_lineplot()`.
-This lets you specify additional arguments to `tern::g_lineplot()`}
+Gets forwarded to \code{tern::g_lineplot()}.
+This lets you specify additional arguments to \code{tern::g_lineplot()}}
 }
 \description{
-Wrapper for `g_mean_general()`.
+Wrapper for \code{g_mean_general()}.
 Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)
 }
 \examples{
@@ -49,5 +49,5 @@ plot_vs <- g_vs_slide(
 generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"))
 }
 \author{
-Stefan Thoma (`thomas7`)
+Stefan Thoma (\code{thomas7})
 }

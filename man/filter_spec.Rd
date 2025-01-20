@@ -7,15 +7,15 @@
 filter_spec(spec, filter_expr, verbose = TRUE)
 }
 \arguments{
-\item{spec}{A `spec` object as returned by `read_spec()`}
+\item{spec}{A \code{spec} object as returned by \code{read_spec()}}
 
-\item{filter_expr}{A `logical` expression indicating outputs to keep}
+\item{filter_expr}{A \code{logical} expression indicating outputs to keep}
 
 \item{verbose}{Should a message about the number of outputs matching
-`filter_spec` be printed? Defaults to `TRUE`.}
+\code{filter_spec} be printed? Defaults to \code{TRUE}.}
 }
 \value{
-A `spec` object containing only the outputs matching `filter_expr`
+A \code{spec} object containing only the outputs matching \code{filter_expr}
 }
 \description{
 Filter a spec object
@@ -45,5 +45,5 @@ filter_spec(spec, grepl("^t_", program))
 
 }
 \author{
-Thomas Neitmann (`neitmant`)
+Thomas Neitmann (\code{neitmant})
 }

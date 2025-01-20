@@ -15,9 +15,9 @@ t_aesi_slide(adsl, adae, aesi, arm = "ACTARM", grad_var = "AETOXGR")
 \item{aesi}{AESI variable which will act as a filter to select the rows required to create the table.
 An example of AESI variable is CQ01NAM.}
 
-\item{arm}{Arm variable, character, `"ACTARM"` by default.}
+\item{arm}{Arm variable, character, \code{"ACTARM"} by default.}
 
-\item{grad_var}{Grading variable, character, `"AETOXGR"` by default.}
+\item{grad_var}{Grading variable, character, \code{"AETOXGR"} by default.}
 }
 \value{
 rtables object
@@ -37,5 +37,5 @@ t_aesi_slide(adsl, adae_atoxgr, aesi = "CQ01NAM", grad_var = "ATOXGR")
 
 }
 \author{
-Kai Xiang Lim (`limk43`)
+Kai Xiang Lim (\code{limk43})
 }

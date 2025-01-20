@@ -7,13 +7,13 @@
 read_spec(spec_file = "spec.yml", metadata = NULL)
 }
 \arguments{
-\item{spec_file}{`character`. Path to a yaml spec file}
+\item{spec_file}{\code{character}. Path to a yaml spec file}
 
 \item{metadata}{Metadata of study}
 }
 \value{
-An object of class `spec` which is a `list` where each element corresponds
-to one output, e.g. `t_dm_IT`.
+An object of class \code{spec} which is a \code{list} where each element corresponds
+to one output, e.g. \code{t_dm_IT}.
 }
 \description{
 Read yaml spec file and split according to filter lists
@@ -30,6 +30,8 @@ spec[1:3]
 
 }
 \author{
-- Liming Li (`Lil128`)
-- Thomas Neitmann (`neitmant`)
+\itemize{
+\item Liming Li (\code{Lil128})
+\item Thomas Neitmann (\code{neitmant})
+}
 }

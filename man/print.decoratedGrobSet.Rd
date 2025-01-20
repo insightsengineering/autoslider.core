@@ -7,7 +7,7 @@
 \method{print}{decoratedGrobSet}(x, ...)
 }
 \arguments{
-\item{x}{An object of class `decoratedGrobSet`}
+\item{x}{An object of class \code{decoratedGrobSet}}
 
 \item{...}{not used.}
 }

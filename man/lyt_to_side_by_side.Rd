@@ -14,7 +14,7 @@ lyt_to_side_by_side(lyt, anl, side_by_side = NULL)
 \item{side_by_side}{A logical value indicating whether to display the data side by side.}
 }
 \value{
-An `rtables` layout
+An \code{rtables} layout
 }
 \description{
 Build side by side layout by cbind

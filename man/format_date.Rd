@@ -2,22 +2,42 @@
 % Please edit documentation in R/format_date.R
 \name{format_date}
 \alias{format_date}
-\title{Convert dates from `yyyy-mm-dd` format into 20APR2019 format
-`Datetime` format removes the time and outputs date in the same way
+\title{Convert dates from \code{yyyy-mm-dd} format into 20APR2019 format
+\code{Datetime} format removes the time and outputs date in the same way
 Able to handle truncated dates as well (e.g. just the year or year and month)}
 \usage{
 format_date(x)
 }
 \arguments{
-\item{x}{vector of dates in character, in `yyyy-mm-dd` format}
+\item{x}{vector of dates in character, in \code{yyyy-mm-dd} format}
 }
 \value{
 A vector.
 }
 \description{
-`dplyr::case_when()` will check all RHS expressions on the input, this means if
+\code{dplyr::case_when()} will check all RHS expressions on the input, this means if
 these expressions return warnings, they will happen even then the input doesn't
-doesn't satisfy the LHS. For this reason, I had to 'quiet' all `lubridate` functions.
-This `format_date()` function was tested with the inputs in the examples, all gave the
+doesn't satisfy the LHS. For this reason, I had to 'quiet' all \code{lubridate} functions.
+This \code{format_date()} function was tested with the inputs in the examples, all gave the
 expected returned value, so there should be no issues.
+}
+\examples{
+\dontshow{if (require(lubridate)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+require(lubridate)
+
+# expected to return "2019"
+format_date("2019")
+
+# expected to return "20APR2019"
+format_date("2019-04-20")
+
+# expected to return ""
+format_date("")
+
+# expected to return "18JUN2019"
+format_date("2019-06-18T10:32")
+
+# expected to return "APR2019"
+format_date("2019-04")
+\dontshow{\}) # examplesIf}
 }

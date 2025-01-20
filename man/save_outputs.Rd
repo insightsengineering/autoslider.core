@@ -13,20 +13,20 @@ save_outputs(
 )
 }
 \arguments{
-\item{outputs}{`list` of outputs as created by `generate_outputs`}
+\item{outputs}{\code{list} of outputs as created by \code{generate_outputs}}
 
 \item{outfolder}{Folder in which to store the `outputs``}
 
 \item{generic_suffix}{generic suffix. must be length 1 character or NULL.}
 
-\item{save_rds}{Should the input `outputs` be saved as `.rds` files in
-in addition to `.out` or `.pdf` files? Defaults to `FALSE`.}
+\item{save_rds}{Should the input \code{outputs} be saved as \code{.rds} files in
+in addition to \code{.out} or \code{.pdf} files? Defaults to \code{FALSE}.}
 
 \item{verbose_level}{Level of verbose information displayed.
-Default set to `1`.}
+Default set to \code{1}.}
 }
 \value{
-The input `object` invisibly
+The input \code{object} invisibly
 }
 \description{
 Save a list of outputs

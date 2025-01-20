@@ -19,21 +19,21 @@ g_lb_slide(
 
 \item{adlb}{ADLB data}
 
-\item{arm}{`"TRT01P"` by default}
+\item{arm}{\code{"TRT01P"} by default}
 
-\item{paramcd}{character scalar. defaults to By default `"PARAM"`
+\item{paramcd}{character scalar. defaults to By default \code{"PARAM"}
 Which variable to use for plotting.}
 
-\item{y}{character scalar. Variable to plot on the Y axis. By default `"AVAL"`}
+\item{y}{character scalar. Variable to plot on the Y axis. By default \code{"AVAL"}}
 
 \item{subtitle}{character scalar forwarded to g_lineplot}
 
 \item{...}{|
-Gets forwarded to `tern::g_lineplot()`.
-This lets you specify additional arguments to `tern::g_lineplot()`}
+Gets forwarded to \code{tern::g_lineplot()}.
+This lets you specify additional arguments to \code{tern::g_lineplot()}}
 }
 \description{
-Wrapper for `g_mean_general()`.
+Wrapper for \code{g_mean_general()}.
 Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)
 }
 \examples{
@@ -63,5 +63,5 @@ generate_slides(plot_lb_chg, paste0(tempdir(), "/g_lb_chg.pptx"))
 
 }
 \author{
-Stefan Thoma (`thomas7`)
+Stefan Thoma (\code{thomas7})
 }

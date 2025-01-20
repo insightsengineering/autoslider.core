@@ -15,7 +15,7 @@
 
 \item{paper}{Orientation and font size as string, e.g. "P8"; "L11"}
 
-\item{for_test}{`logic` CICD parameter}
+\item{for_test}{\code{logic} CICD parameter}
 
 \item{...}{Additional arguments. not used.}
 }
