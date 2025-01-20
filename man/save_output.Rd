@@ -27,22 +27,22 @@ save_output.decoratedGrobSet(output, file_name, save_rds = TRUE)
 save_output.dlisting(output, file_name, save_rds = TRUE)
 }
 \arguments{
-\item{output}{Output object, e.g. an \code{rtable} or \code{grob}}
+\item{output}{Output object, e.g. an `rtable` or `grob`}
 
-\item{file_name}{Full path of the new file \emph{excluding} the extension}
+\item{file_name}{Full path of the new file *excluding* the extension}
 
-\item{save_rds}{Saved as an \code{.rds} files}
+\item{save_rds}{Saved as an `.rds` files}
 }
 \value{
-The input \code{object} invisibly
+The input `object` invisibly
 
 No return value, called for side effects
 
-The input \code{object} invisibly
+The input `object` invisibly
 
-The input \code{object} invisibly
+The input `object` invisibly
 
-The input \code{object} invisibly
+The input `object` invisibly
 }
 \description{
 Save an Output

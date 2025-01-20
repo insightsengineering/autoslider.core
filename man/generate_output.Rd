@@ -24,10 +24,10 @@ No return value, called for side effects
 Generate output and apply filters, titles, and footnotes
 }
 \details{
-\code{verbose_level} is used to control how many messages are printed out.
-By default, \code{2} will show all filter messages and show output generation message.
-\code{1} will show output generation message only.
-\code{0} will display no message.
+`verbose_level` is used to control how many messages are printed out.
+By default, `2` will show all filter messages and show output generation message.
+`1` will show output generation message only.
+`0` will display no message.
 }
 \examples{
 library(dplyr)
@@ -47,5 +47,5 @@ generate_output("t_ae_slide", data, spec$t_ae_slide_SE)
 
 }
 \author{
-Liming Li (\code{Lil128})
+Liming Li (`Lil128`)
 }

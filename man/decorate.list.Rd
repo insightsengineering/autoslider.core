@@ -15,7 +15,7 @@ decorate.list(x, titles, footnotes, paper = "L11", for_test = FALSE, ...)
 
 \item{paper}{paper size. default is "L11".}
 
-\item{for_test}{\code{logic} CICD parameter}
+\item{for_test}{`logic` CICD parameter}
 
 \item{...}{additional arguments. not used}
 }
@@ -26,6 +26,6 @@ No return value, called for side effects
 decorate list of grobs
 }
 \details{
-The paper default paper size, \code{L11}, indicate that the fontsize is 11.
+The paper default paper size, `L11`, indicate that the fontsize is 11.
 The fontsize of the footnotes, is the fontsize of the titles minus 2.
 }

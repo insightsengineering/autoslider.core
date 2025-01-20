@@ -13,15 +13,15 @@ decorate_outputs(
 )
 }
 \arguments{
-\item{outputs}{\code{list} of output objects as created by \code{generate_outputs}}
+\item{outputs}{`list` of output objects as created by `generate_outputs`}
 
-\item{generic_title}{\code{character} vector of titles}
+\item{generic_title}{`character` vector of titles}
 
-\item{generic_footnote}{\code{character} vector of footnotes}
+\item{generic_footnote}{`character` vector of footnotes}
 
-\item{version_label}{\code{character}. A version label to be added to the title.}
+\item{version_label}{`character`. A version label to be added to the title.}
 
-\item{for_test}{\code{logic} CICD parameter}
+\item{for_test}{`logic` CICD parameter}
 }
 \value{
 No return value, called for side effects
@@ -30,12 +30,12 @@ No return value, called for side effects
 Decorate outputs with titles and footnotes
 }
 \details{
-\code{generic_title} and \code{generic_footnote} will be added to \emph{all} outputs. The use
+`generic_title` and `generic_footnote` will be added to *all* outputs. The use
 case is to add information such as protocol number and snapshot date defined
-in a central place (e.g. metadata.yml) to \emph{every} output.
+in a central place (e.g. metadata.yml) to *every* output.
 
-\code{version_label} must be either \code{"DRAFT"}, \code{"APPROVED"} or \code{NULL}. By default,
-when outputs are created on the master branch it is set to \code{NULL}, i.e. no
-version label will be displayed. Otherwise \code{"DRAFT"} will be added. To add
-\code{"APPROVED"} to the title you will need to explicitly set \code{version_label = "APPROVED"}.
+`version_label` must be either `"DRAFT"`, `"APPROVED"` or `NULL`. By default,
+when outputs are created on the master branch it is set to `NULL`, i.e. no
+version label will be displayed. Otherwise `"DRAFT"` will be added. To add
+`"APPROVED"` to the title you will need to explicitly set `version_label = "APPROVED"`.
 }

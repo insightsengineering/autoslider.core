@@ -23,10 +23,8 @@ rtables object
 Death table
 }
 \note{
-\itemize{
-\item Default arm variables are set to \code{"TRT01A"} for safety output, and
-\code{"TRT01P"} for efficacy output
-}
+* Default arm variables are set to `"TRT01A"` for safety output, and
+ `"TRT01P"` for efficacy output
 }
 \examples{
 library(dplyr)

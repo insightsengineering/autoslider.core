@@ -7,7 +7,7 @@
 null_report()
 }
 \value{
-An empty \code{rtables} object
+An empty `rtables` object
 }
 \description{
 Null report
@@ -44,5 +44,5 @@ data \%>\%
 
 }
 \author{
-Thomas Neitmann (\code{neitmant})
+Thomas Neitmann (`neitmant`)
 }

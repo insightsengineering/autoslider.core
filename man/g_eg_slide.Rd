@@ -18,18 +18,18 @@ g_eg_slide(
 
 \item{adeg}{ADVS data}
 
-\item{arm}{\code{"TRT01P"} by default}
+\item{arm}{`"TRT01P"` by default}
 
-\item{paramcd}{Which variable to use for plotting. By default \code{"PARAM"}}
+\item{paramcd}{Which variable to use for plotting. By default `"PARAM"`}
 
 \item{subtitle}{character scalar forwarded to g_lineplot}
 
 \item{...}{|
-Gets forwarded to \code{tern::g_lineplot()}.
-This lets you specify additional arguments to \code{tern::g_lineplot()}}
+Gets forwarded to `tern::g_lineplot()`.
+This lets you specify additional arguments to `tern::g_lineplot()`}
 }
 \description{
-Wrapper for \code{g_mean_general()}.
+Wrapper for `g_mean_general()`.
 Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)
 }
 \examples{
@@ -50,5 +50,5 @@ plot_eg <- g_eg_slide(
 generate_slides(plot_eg, paste0(tempdir(), "/g_eg.pptx"))
 }
 \author{
-Stefan Thoma (\code{thomas7})
+Stefan Thoma (`thomas7`)
 }

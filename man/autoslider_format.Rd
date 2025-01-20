@@ -75,7 +75,7 @@ Zebra themed color
 
 \item \code{purple_format()}: Purple color theme
 
-\item \code{autoslider_dose_format()}: \code{AutoslideR} dose formats
+\item \code{autoslider_dose_format()}: `AutoslideR` dose formats
 
 \item \code{black_format_ae()}: Black color theme for AE listing
 

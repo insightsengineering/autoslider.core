@@ -16,7 +16,7 @@ build_table_header(anl, arm, split_by_study, side_by_side)
 \item{side_by_side}{A logical value indicating whether to display the data side by side.}
 }
 \value{
-A \code{rtables} layout with desired header.
+A `rtables` layout with desired header.
 }
 \description{
 Build table header, a utility function to help with construct structured header for table layout

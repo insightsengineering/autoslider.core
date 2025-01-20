@@ -3,7 +3,7 @@
 \name{g_mean_general}
 \alias{g_mean_general}
 \title{Plot mean values general function
-used by wrappers \code{g_vs_slide},\code{g_lb_slide}, & \code{g_eg_slide}}
+used by wrappers `g_vs_slide`,`g_lb_slide`, & `g_eg_slide`}
 \usage{
 g_mean_general(
   adsl,
@@ -39,7 +39,7 @@ arm. Can be \code{NA} to indicate lack of groups.
 
 \item{subtitle}{character scalar forwarded to g_lineplot}
 
-\item{...}{additional arguments passed to \code{tern::g_lineplot}}
+\item{...}{additional arguments passed to `tern::g_lineplot`}
 }
 \description{
 adapted from https://insightsengineering.github.io/tlg-catalog/stable/graphs/other/mng01.html
@@ -53,5 +53,5 @@ out1 <- g_mean_general(eg_adsl, advs_filtered)
 generate_slides(out1, paste0(tempdir(), "/g_mean.pptx"))
 }
 \author{
-Stefan Thoma (\code{thomas7})
+Stefan Thoma (`thomas7`)
 }
