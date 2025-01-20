@@ -103,7 +103,7 @@ generate_output <-
 #'
 #' @export
 #'
-#' @examples
+#' @examplesIf require(filters)
 #' library(dplyr, warn.conflicts = FALSE)
 #' data <- list(
 #'   adsl = eg_adsl,
