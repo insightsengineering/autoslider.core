@@ -12,7 +12,8 @@
 #' @return A vector.
 #'
 #' @export
-#' @examples
+#' @examplesif require(lubridate)
+#' require(lubridate)
 #'
 #' # expected to return "2019"
 #' format_date("2019")

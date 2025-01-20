@@ -19,14 +19,24 @@ editor_options:
         wrap: 72
 ---
 
-In this vignette we show the general `autoslider.core` workflow, how you can create functions that produce study-specific outputs, and how you can integrate them into the `autoslider.core` framework.
-
 ```{r, include = FALSE}
+suggested_dependent_pkgs <- c("filters")
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  eval = all(vapply(
+    suggested_dependent_pkgs,
+    requireNamespace,
+    logical(1),
+    quietly = TRUE
+  ))
 )
 ```
+```{r, echo=FALSE}
+knitr::opts_chunk$set(comment = "#")
+```
+
+In this vignette we show the general `autoslider.core` workflow, how you can create functions that produce study-specific outputs, and how you can integrate them into the `autoslider.core` framework.
 
 # Requirements
 
