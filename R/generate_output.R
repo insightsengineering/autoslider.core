@@ -16,7 +16,7 @@
 #'
 #' @export
 #'
-#' @examples
+#' @examplesIf require(filters)
 #' library(dplyr)
 #' filters::load_filters(
 #'   yaml_file = system.file("filters.yml", package = "autoslider.core"),
