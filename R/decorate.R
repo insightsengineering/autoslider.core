@@ -282,16 +282,20 @@ decorate_outputs <- function(outputs,
       )
     }
 
-    structure(
-      .Data = decorate(
-        x = output,
-        title = c(full_title, generic_title),
-        footnotes = c(spec$footnotes, generic_footnote),
-        paper = spec$paper,
-        for_test = for_test
-      ),
-      spec = modifyList(spec, list(titles = glue::glue(paste0(c(full_title, generic_title), collapse = "\n"))))
-    )
+    if ("ggplot" %in% class(output)){
+      decorate.ggplot(output)
+    } else {
+      structure(
+        .Data = decorate(
+          x = output,
+          title = c(full_title, generic_title),
+          footnotes = c(spec$footnotes, generic_footnote),
+          paper = spec$paper,
+          for_test = for_test
+        ),
+        spec = modifyList(spec, list(titles = glue::glue(paste0(c(full_title, generic_title), collapse = "\n"))))
+      )
+    }
   })
 }
 
