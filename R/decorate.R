@@ -282,7 +282,7 @@ decorate_outputs <- function(outputs,
       )
     }
 
-    if ("ggplot" %in% class(output)){
+    if ("ggplot" %in% class(output)) {
       decorate.ggplot(output)
     } else {
       structure(
