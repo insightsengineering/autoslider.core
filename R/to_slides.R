@@ -16,7 +16,7 @@
 #' @param ... arguments passed to program
 #' @return No return value, called for side effects
 #' @export
-#' @examples
+#' @examplesIf require(filters)
 #'
 #' # Example 1. When applying to the whole pipeline
 #' library(dplyr)

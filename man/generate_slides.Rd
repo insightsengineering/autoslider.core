@@ -49,6 +49,7 @@ No return value, called for side effects
 generate slides based on output
 }
 \examples{
+\dontshow{if (require(filters)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 
 # Example 1. When applying to the whole pipeline
 library(dplyr)
@@ -76,4 +77,5 @@ spec_file \%>\%
 adsl <- eg_adsl
 t_dm_slide(adsl, "TRT01P", c("SEX", "AGE")) \%>\%
   generate_slides()
+\dontshow{\}) # examplesIf}
 }
