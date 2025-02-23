@@ -4,7 +4,7 @@
 \alias{decorate.list}
 \title{decorate list of grobs}
 \usage{
-\method{decorate}{list}(x, titles, footnotes, paper = "L11", for_test = FALSE, ...)
+decorate.list(x, titles, footnotes, paper = "L11", for_test = FALSE, ...)
 }
 \arguments{
 \item{x}{object to decorate}

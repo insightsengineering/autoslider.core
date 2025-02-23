@@ -4,7 +4,7 @@
 \alias{decorate.autoslider_error}
 \title{decorate method for autoslider_error class}
 \usage{
-\method{decorate}{autoslider_error}(x, ...)
+decorate.autoslider_error(x, ...)
 }
 \arguments{
 \item{x}{object to decorate}

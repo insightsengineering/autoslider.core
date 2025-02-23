@@ -1,3 +1,8 @@
+#' generic function decorate
+#' @return No return value, called for side effects
+#' @export
+setGeneric("decorate", function(x, ...) standardGeneric("decorate"))
+
 #' s3 method for decorate
 #' @param x object to decorate
 #' @param ... additional arguments passed to methods
@@ -32,8 +37,8 @@ decorate.autoslider_error <- function(x, ...) {
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments passed to the decoration function.
 #' @return No return value, called for side effects
-# setMethod(
-#   "decorate", "VTableTree",
+setMethod(
+  "decorate", "VTableTree",
   decorate.VTableTree <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
     width_set <- attr(x, "width")
     tmp_x <- formatters::matrix_form(x)
@@ -60,7 +65,7 @@ decorate.autoslider_error <- function(x, ...) {
       width = width
     )
   }
-# )
+)
 
 
 #' Decorate ggplot object
@@ -105,8 +110,8 @@ decorate.ggplot <- function(x, titles = "", footnotes = "", paper = "L11", for_t
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments. not used.
 #' @return No return value, called for side effects
-# setMethod(
-#   "decorate", "listing_df",
+setMethod(
+  "decorate", "listing_df",
   decorate.listing_df <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
     width_set <- attr(x, "width")
     tmp_x <- formatters::matrix_form(x)
@@ -132,7 +137,7 @@ decorate.ggplot <- function(x, titles = "", footnotes = "", paper = "L11", for_t
       width = width
     )
   }
-# )
+)
 
 
 #' decorate grob
@@ -184,11 +189,11 @@ decorate.list <-
     }, FUN.VALUE = TRUE)))
     size <- fs(paper)
     x <- lapply(x, function(g) {
-      ret <- g
       if ("ggplot" %in% class(g)) {
-        ret <- ggplot2::ggplotGrob(g)
+        return(ggplot2::ggplotGrob(g))
+      } else {
+        return(g)
       }
-      ret
     })
     grobs <- decorate_grob_set(
       grobs = x,
@@ -277,20 +282,16 @@ decorate_outputs <- function(outputs,
       )
     }
 
-    if ("ggplot" %in% class(output)) {
-      decorate.ggplot(output)
-    } else {
-      structure(
-        .Data = decorate(
-          x = output,
-          title = c(full_title, generic_title),
-          footnotes = c(spec$footnotes, generic_footnote),
-          paper = spec$paper,
-          for_test = for_test
-        ),
-        spec = modifyList(spec, list(titles = glue::glue(paste0(c(full_title, generic_title), collapse = "\n"))))
-      )
-    }
+    structure(
+      .Data = decorate(
+        x = output,
+        title = c(full_title, generic_title),
+        footnotes = c(spec$footnotes, generic_footnote),
+        paper = spec$paper,
+        for_test = for_test
+      ),
+      spec = modifyList(spec, list(titles = glue::glue(paste0(c(full_title, generic_title), collapse = "\n"))))
+    )
   })
 }
 

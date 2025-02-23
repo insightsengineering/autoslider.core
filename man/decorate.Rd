@@ -2,8 +2,10 @@
 % Please edit documentation in R/decorate.R
 \name{decorate}
 \alias{decorate}
-\title{s3 method for decorate}
+\title{generic function decorate}
 \usage{
+decorate(x, ...)
+
 decorate(x, ...)
 }
 \arguments{
@@ -11,6 +13,11 @@ decorate(x, ...)
 
 \item{...}{additional arguments passed to methods}
 }
+\value{
+No return value, called for side effects
+}
 \description{
+generic function decorate
+
 s3 method for decorate
 }

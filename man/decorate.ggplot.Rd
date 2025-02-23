@@ -4,7 +4,14 @@
 \alias{decorate.ggplot}
 \title{Decorate ggplot object}
 \usage{
-\method{decorate}{ggplot}(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...)
+decorate.ggplot(
+  x,
+  titles = "",
+  footnotes = "",
+  paper = "L11",
+  for_test = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{An object to decorate}
