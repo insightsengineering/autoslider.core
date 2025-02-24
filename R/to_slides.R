@@ -150,7 +150,7 @@ slides_preview <- function(x) {
   } else if (is(x, "ggplot")) {
     ret <- x
   } else {
-    stop ("Unintended usage!")
+    stop("Unintended usage!")
   }
   return(ret)
 }
