@@ -152,7 +152,7 @@ slides_preview <- function(x) {
   } else {
     stop("Unintended usage!")
   }
-  return(ret)
+  ret
 }
 
 get_body_bottom_location <- function(ppt) {
