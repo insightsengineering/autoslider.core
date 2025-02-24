@@ -161,7 +161,8 @@ get_body_bottom_location <- function(ppt) {
   height <- location_$height
   top <- 0.7 * height
   left <- 0.1 * width
-  return(ph_location(left = left, top = top))
+  ph <- ph_location(left = left, top = top)
+  ph
 }
 
 
@@ -174,7 +175,8 @@ get_body_bottom_location <- function(ppt) {
 center_table_loc <- function(ft, ppt_width, ppt_height) {
   top <- 0.17 * ppt_height
   left <- (ppt_width - sum(dim(ft)$widths)) / 2
-  return(ph_location(left = left, top = top))
+  ph <- ph_location(left = left, top = top)
+  ph
 }
 
 #' Adjust title line break and font size
