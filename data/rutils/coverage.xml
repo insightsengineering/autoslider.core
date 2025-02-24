@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.819541375872383" branch-rate="0" lines-covered="1644" lines-valid="2006" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-02-24 02:18:15.867957">
+<coverage line-rate="0.819900497512438" branch-rate="0" lines-covered="1648" lines-valid="2010" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-02-24 02:41:05.856184">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
   <packages>
-    <package name="autoslider.core" line-rate="0.819541375872383" branch-rate="0" complexity="0">
+    <package name="autoslider.core" line-rate="0.819900497512438" branch-rate="0" complexity="0">
       <classes>
         <class name="assert.R" filename="R/assert.R" line-rate="0.307692307692308" branch-rate="0" complexity="0">
           <methods>
@@ -109,11 +109,11 @@
             <line number="19" hits="13" branch="false"/>
           </lines>
         </class>
-        <class name="decorate.R" filename="R/decorate.R" line-rate="0.902097902097902" branch-rate="0" complexity="0">
+        <class name="decorate.R" filename="R/decorate.R" line-rate="0.904761904761905" branch-rate="0" complexity="0">
           <methods>
-            <method name="ANY" signature="" line-rate="1" branch-rate="0" complexity="0">
+            <method name="ANY" signature="" line-rate="0.5" branch-rate="0" complexity="0">
               <lines>
-                <line number="10" hits="4" branch="false"/>
+                <line number="10" hits="0" branch="false"/>
                 <line number="34" hits="17" branch="false"/>
               </lines>
             </method>
@@ -202,7 +202,7 @@
                 <line number="168" hits="1" branch="false"/>
               </lines>
             </method>
-            <method name="decorate.list" signature="" line-rate="0.958333333333333" branch-rate="0" complexity="0">
+            <method name="decorate.list" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
                 <line number="187" hits="1" branch="false"/>
                 <line number="188" hits="1" branch="false"/>
@@ -212,7 +212,7 @@
                 <line number="192" hits="1" branch="false"/>
                 <line number="193" hits="1" branch="false"/>
                 <line number="194" hits="1" branch="false"/>
-                <line number="195" hits="0" branch="false"/>
+                <line number="195" hits="1" branch="false"/>
                 <line number="196" hits="1" branch="false"/>
                 <line number="197" hits="1" branch="false"/>
                 <line number="198" hits="1" branch="false"/>
@@ -230,7 +230,7 @@
                 <line number="210" hits="1" branch="false"/>
               </lines>
             </method>
-            <method name="decorate_outputs" signature="" line-rate="0.884615384615385" branch-rate="0" complexity="0">
+            <method name="decorate_outputs" signature="" line-rate="0.892857142857143" branch-rate="0" complexity="0">
               <lines>
                 <line number="239" hits="1" branch="false"/>
                 <line number="241" hits="1" branch="false"/>
@@ -284,24 +284,28 @@
                 <line number="293" hits="1" branch="false"/>
                 <line number="294" hits="1" branch="false"/>
                 <line number="295" hits="1" branch="false"/>
+                <line number="296" hits="1" branch="false"/>
+                <line number="297" hits="1" branch="false"/>
+                <line number="298" hits="1" branch="false"/>
+                <line number="299" hits="1" branch="false"/>
               </lines>
             </method>
             <method name="print.decoratedGrob" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
-                <line number="305" hits="0" branch="false"/>
-                <line number="306" hits="0" branch="false"/>
+                <line number="309" hits="0" branch="false"/>
+                <line number="310" hits="0" branch="false"/>
               </lines>
             </method>
             <method name="print.decoratedGrobSet" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
-                <line number="316" hits="0" branch="false"/>
-                <line number="317" hits="0" branch="false"/>
-                <line number="318" hits="0" branch="false"/>
+                <line number="320" hits="0" branch="false"/>
+                <line number="321" hits="0" branch="false"/>
+                <line number="322" hits="0" branch="false"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="10" hits="4" branch="false"/>
+            <line number="10" hits="0" branch="false"/>
             <line number="19" hits="1" branch="false"/>
             <line number="28" hits="1" branch="false"/>
             <line number="43" hits="12" branch="false"/>
@@ -371,7 +375,7 @@
             <line number="192" hits="1" branch="false"/>
             <line number="193" hits="1" branch="false"/>
             <line number="194" hits="1" branch="false"/>
-            <line number="195" hits="0" branch="false"/>
+            <line number="195" hits="1" branch="false"/>
             <line number="196" hits="1" branch="false"/>
             <line number="197" hits="1" branch="false"/>
             <line number="198" hits="1" branch="false"/>
@@ -439,11 +443,15 @@
             <line number="293" hits="1" branch="false"/>
             <line number="294" hits="1" branch="false"/>
             <line number="295" hits="1" branch="false"/>
-            <line number="305" hits="0" branch="false"/>
-            <line number="306" hits="0" branch="false"/>
-            <line number="316" hits="0" branch="false"/>
-            <line number="317" hits="0" branch="false"/>
-            <line number="318" hits="0" branch="false"/>
+            <line number="296" hits="1" branch="false"/>
+            <line number="297" hits="1" branch="false"/>
+            <line number="298" hits="1" branch="false"/>
+            <line number="299" hits="1" branch="false"/>
+            <line number="309" hits="0" branch="false"/>
+            <line number="310" hits="0" branch="false"/>
+            <line number="320" hits="0" branch="false"/>
+            <line number="321" hits="0" branch="false"/>
+            <line number="322" hits="0" branch="false"/>
           </lines>
         </class>
         <class name="fastdocall.R" filename="R/fastdocall.R" line-rate="0.535714285714286" branch-rate="0" complexity="0">
@@ -1370,9 +1378,9 @@
         </class>
         <class name="save_output.R" filename="R/save_output.R" line-rate="0.896551724137931" branch-rate="0" complexity="0">
           <methods>
-            <method name="ANY" signature="" line-rate="1" branch-rate="0" complexity="0">
+            <method name="ANY" signature="" line-rate="0.5" branch-rate="0" complexity="0">
               <lines>
-                <line number="10" hits="4" branch="false"/>
+                <line number="10" hits="0" branch="false"/>
                 <line number="34" hits="17" branch="false"/>
               </lines>
             </method>
@@ -4186,7 +4194,7 @@
                 <line number="268" hits="0" branch="false"/>
                 <line number="270" hits="20" branch="false"/>
                 <line number="273" hits="20" branch="false"/>
-                <line number="274" hits="15" branch="false"/>
+                <line number="274" hits="11" branch="false"/>
                 <line number="277" hits="20" branch="false"/>
               </lines>
             </method>
@@ -4569,7 +4577,7 @@
             <line number="268" hits="0" branch="false"/>
             <line number="270" hits="20" branch="false"/>
             <line number="273" hits="20" branch="false"/>
-            <line number="274" hits="15" branch="false"/>
+            <line number="274" hits="11" branch="false"/>
             <line number="277" hits="20" branch="false"/>
             <line number="282" hits="2" branch="false"/>
             <line number="286" hits="2" branch="false"/>
