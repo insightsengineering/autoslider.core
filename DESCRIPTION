@@ -39,7 +39,7 @@ BugReports: https://github.com/insightsengineering/autoslider.core/issues
 Depends:
     R (>= 3.5.0)
 Imports:
-    assertthat,
+    assertthat (>= 0.2.1),
     checkmate,
     cli,
     dplyr,
