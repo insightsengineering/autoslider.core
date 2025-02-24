@@ -41,7 +41,7 @@ Depends:
 Imports:
     assertthat (>= 0.2.1),
     checkmate (>= 2.3.2),
-    cli (>= 3.6.4),
+    cli (>= 3.6.3),
     dplyr (>= 1.1.4),
     flextable (>= 0.9.4),
     forcats (>= 1.0.0),
@@ -51,7 +51,7 @@ Imports:
     gridExtra (>= 2.3),
     methods,
     officer (>= 0.3.18),
-    rlang (>= 1.1.5),
+    rlang (>= 1.1.4),
     rlistings (>= 0.2.10),
     rtables (>= 0.6.11),
     rvg (>= 0.2.5),
