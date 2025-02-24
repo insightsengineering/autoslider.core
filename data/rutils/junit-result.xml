@@ -1,256 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="bad_filters" timestamp="2025-02-24T02:17:13Z" hostname="530d6508589f" tests="1" skipped="0" failures="0" errors="0" time="0.029">
+  <testsuite name="bad_filters" timestamp="2025-02-24T02:17:09Z" hostname="f8d38fcf170c" tests="1" skipped="0" failures="0" errors="0" time="0.029">
     <testcase time="0.0289999999999999" classname="bad_filters" name="Listing_print_correctly"/>
   </testsuite>
-  <testsuite name="data_snapshot" timestamp="2025-02-24T02:17:13Z" hostname="530d6508589f" tests="1" skipped="1" failures="0" errors="0" time="0.076">
-    <testcase time="0.0760000000000001" classname="data_snapshot" name="Test_data_snapshot">
-      <skipped message="Reason: On CRAN ('test-data_snapshot.R:6:5')"/>
-    </testcase>
+  <testsuite name="data_snapshot" timestamp="2025-02-24T02:17:09Z" hostname="f8d38fcf170c" tests="18" skipped="0" failures="0" errors="0" time="0.816">
+    <testcase time="0.101" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0860000000000003" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.028" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0549999999999997" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.028" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.077" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0220000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0539999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0230000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.048" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0230000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0519999999999996" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0330000000000004" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0329999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0230000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0499999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0230000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0569999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
   </testsuite>
-  <testsuite name="decorate" timestamp="2025-02-24T02:17:13Z" hostname="530d6508589f" tests="8" skipped="0" failures="0" errors="0" time="0.87">
-    <testcase time="0.133" classname="decorate" name="Test_decoreate.grob_not_to_throw"/>
+  <testsuite name="decorate" timestamp="2025-02-24T02:17:10Z" hostname="f8d38fcf170c" tests="8" skipped="0" failures="0" errors="0" time="0.816">
+    <testcase time="0.102" classname="decorate" name="Test_decoreate.grob_not_to_throw"/>
     <testcase time="0.004" classname="decorate" name="Test_decoreate_not_to_throw"/>
-    <testcase time="0.0949999999999998" classname="decorate" name="Test_decoreate_not_to_throw"/>
-    <testcase time="0.0920000000000001" classname="decorate" name="Test_print_not_to_throw"/>
-    <testcase time="0.0580000000000003" classname="decorate" name="Test_print_not_to_throw"/>
-    <testcase time="0.122" classname="decorate" name="Test_print_not_to_throw"/>
+    <testcase time="0.097" classname="decorate" name="Test_decoreate_not_to_throw"/>
+    <testcase time="0.0649999999999999" classname="decorate" name="Test_print_not_to_throw"/>
+    <testcase time="0.0600000000000001" classname="decorate" name="Test_print_not_to_throw"/>
+    <testcase time="0.124" classname="decorate" name="Test_print_not_to_throw"/>
     <testcase time="0.00800000000000001" classname="decorate" name="Test_decoreate_throw"/>
-    <testcase time="0.358" classname="decorate" name="Test_ph_with_img_not_to_throw"/>
+    <testcase time="0.356" classname="decorate" name="Test_ph_with_img_not_to_throw"/>
   </testsuite>
-  <testsuite name="filter_spec-verbose" timestamp="2025-02-24T02:17:14Z" hostname="530d6508589f" tests="1" skipped="1" failures="0" errors="0" time="0.027">
-    <testcase time="0.0269999999999997" classname="filter_spec_verbose" name="Listing_print_correctly">
-      <skipped message="Reason: On CRAN ('test-filter_spec-verbose.R:13:3')"/>
-    </testcase>
+  <testsuite name="filter_spec-verbose" timestamp="2025-02-24T02:17:11Z" hostname="f8d38fcf170c" tests="1" skipped="0" failures="0" errors="0" time="0.048">
+    <testcase time="0.048" classname="filter_spec_verbose" name="Listing_print_correctly"/>
   </testsuite>
-  <testsuite name="formats" timestamp="2025-02-24T02:17:14Z" hostname="530d6508589f" tests="6" skipped="0" failures="0" errors="0" time="0.107">
-    <testcase time="0.0290000000000004" classname="formats" name="new_round_function"/>
-    <testcase time="0.0549999999999997" classname="formats" name="new_round_function"/>
+  <testsuite name="formats" timestamp="2025-02-24T02:17:11Z" hostname="f8d38fcf170c" tests="6" skipped="0" failures="0" errors="0" time="0.086">
+    <testcase time="0.0140000000000002" classname="formats" name="new_round_function"/>
+    <testcase time="0.0489999999999995" classname="formats" name="new_round_function"/>
     <testcase time="0.00600000000000023" classname="formats" name="xx.xx_xx.xx_"/>
-    <testcase time="0.00599999999999978" classname="formats" name="xx.xx_xx.x_"/>
-    <testcase time="0.00499999999999989" classname="formats" name="_xx_xx_"/>
+    <testcase time="0.00499999999999989" classname="formats" name="xx.xx_xx.x_"/>
+    <testcase time="0.00600000000000023" classname="formats" name="_xx_xx_"/>
     <testcase time="0.00600000000000023" classname="formats" name="xx.xx_xx.xx_xx.xx_"/>
   </testsuite>
-  <testsuite name="g_mean_slides" timestamp="2025-02-24T02:17:14Z" hostname="530d6508589f" tests="14" skipped="5" failures="0" errors="0" time="0.861">
+  <testsuite name="g_mean_slides" timestamp="2025-02-24T02:17:11Z" hostname="f8d38fcf170c" tests="14" skipped="5" failures="0" errors="0" time="0.866">
     <testcase time="0.342" classname="g_mean_slides" name="g_mean_slides_Test_1_Test_graph_creation_of_g_eg_slide_eg_mean_plot_"/>
-    <testcase time="0.00099999999999989" classname="g_mean_slides" name="g_mean_slides_Test_1_Test_graph_creation_of_g_eg_slide_eg_mean_plot_">
+    <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_1_Test_graph_creation_of_g_eg_slide_eg_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:20:3')"/>
     </testcase>
-    <testcase time="0.0169999999999999" classname="g_mean_slides" name="g_mean_slides_Test_2_Test_error_of_g_eg_slide_"/>
-    <testcase time="0.11" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_"/>
-    <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_">
+    <testcase time="0.0169999999999995" classname="g_mean_slides" name="g_mean_slides_Test_2_Test_error_of_g_eg_slide_"/>
+    <testcase time="0.108000000000001" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_"/>
+    <testcase time="0.000999999999999446" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:37:3')"/>
     </testcase>
-    <testcase time="0.118" classname="g_mean_slides" name="g_mean_slides_Test_4_Test_graph_creation_of_g_lb_slide_lab_change_from_baseline_plot_"/>
+    <testcase time="0.130000000000001" classname="g_mean_slides" name="g_mean_slides_Test_4_Test_graph_creation_of_g_lb_slide_lab_change_from_baseline_plot_"/>
     <testcase time="0.000999999999999446" classname="g_mean_slides" name="g_mean_slides_Test_4_Test_graph_creation_of_g_lb_slide_lab_change_from_baseline_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:54:3')"/>
     </testcase>
-    <testcase time="0.0170000000000003" classname="g_mean_slides" name="g_mean_slides_Test_5_Test_error_of_g_lb_slide_"/>
-    <testcase time="0.105" classname="g_mean_slides" name="g_mean_slides_Test_6_Test_graph_creation_of_g_vs_slide_vital_sign_mean_plot_"/>
+    <testcase time="0.016" classname="g_mean_slides" name="g_mean_slides_Test_5_Test_error_of_g_lb_slide_"/>
+    <testcase time="0.0979999999999999" classname="g_mean_slides" name="g_mean_slides_Test_6_Test_graph_creation_of_g_vs_slide_vital_sign_mean_plot_"/>
     <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_6_Test_graph_creation_of_g_vs_slide_vital_sign_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:72:3')"/>
     </testcase>
     <testcase time="0.016" classname="g_mean_slides" name="g_mean_slides_Test_7_Test_error_of_g_vs_slide_"/>
-    <testcase time="0.114" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_"/>
-    <testcase time="0.00199999999999978" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_">
+    <testcase time="0.117" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_"/>
+    <testcase time="0.000999999999999446" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:94:3')"/>
     </testcase>
-    <testcase time="0.016" classname="g_mean_slides" name="g_mean_slides_Test_9_Test_error_of_general_function_g_mean_slide_"/>
+    <testcase time="0.0170000000000003" classname="g_mean_slides" name="g_mean_slides_Test_9_Test_error_of_general_function_g_mean_slide_"/>
   </testsuite>
-  <testsuite name="helper_functions" timestamp="2025-02-24T02:17:15Z" hostname="530d6508589f" tests="2" skipped="1" failures="0" errors="0" time="0.057">
+  <testsuite name="helper_functions" timestamp="2025-02-24T02:17:12Z" hostname="f8d38fcf170c" tests="2" skipped="0" failures="0" errors="0" time="0.062">
     <testcase time="0.00999999999999979" classname="helper_functions" name="Test_some_functions_in_helper_functions.R"/>
-    <testcase time="0.0470000000000006" classname="helper_functions" name="Test_some_functions_in_helper_functions.R">
-      <skipped message="Reason: On CRAN ('test-helper_functions.R:3:3')"/>
-    </testcase>
+    <testcase time="0.0519999999999996" classname="helper_functions" name="Test_some_functions_in_helper_functions.R"/>
   </testsuite>
-  <testsuite name="l_ae_slide" timestamp="2025-02-24T02:17:15Z" hostname="530d6508589f" tests="1" skipped="1" failures="0" errors="0" time="8.098">
-    <testcase time="8.098" classname="l_ae_slide" name="Test_listing_creation_of_l_ae_slide_Adverse_Events_Listing_">
-      <skipped message="Reason: On CRAN ('test-l_ae_slide.R:7:3')"/>
-    </testcase>
+  <testsuite name="l_ae_slide" timestamp="2025-02-24T02:17:12Z" hostname="f8d38fcf170c" tests="1" skipped="0" failures="0" errors="0" time="7.97">
+    <testcase time="7.97" classname="l_ae_slide" name="Test_listing_creation_of_l_ae_slide_Adverse_Events_Listing_"/>
   </testsuite>
-  <testsuite name="log" timestamp="2025-02-24T02:17:23Z" hostname="530d6508589f" tests="2" skipped="0" failures="0" errors="0" time="0.02">
-    <testcase time="0.0190000000000001" classname="log" name="Test_some_functions_in_log.R"/>
-    <testcase time="0.000999999999999446" classname="log" name="Test_some_functions_in_log.R"/>
+  <testsuite name="log" timestamp="2025-02-24T02:17:20Z" hostname="f8d38fcf170c" tests="2" skipped="0" failures="0" errors="0" time="0.012">
+    <testcase time="0.0100000000000016" classname="log" name="Test_some_functions_in_log.R"/>
+    <testcase time="0.00199999999999889" classname="log" name="Test_some_functions_in_log.R"/>
   </testsuite>
-  <testsuite name="output-table-format" timestamp="2025-02-24T02:17:23Z" hostname="530d6508589f" tests="5" skipped="0" failures="0" errors="0" time="3.245">
-    <testcase time="0.892999999999999" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.557" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.565000000000001" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.614999999999998" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.615" classname="output_table_format" name="save_an_autoslider_output"/>
+  <testsuite name="output-table-format" timestamp="2025-02-24T02:17:20Z" hostname="f8d38fcf170c" tests="5" skipped="0" failures="0" errors="0" time="3.207">
+    <testcase time="0.870000000000001" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.553999999999998" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.564" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.611000000000001" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.607999999999999" classname="output_table_format" name="save_an_autoslider_output"/>
   </testsuite>
-  <testsuite name="save_output" timestamp="2025-02-24T02:17:26Z" hostname="530d6508589f" tests="1" skipped="0" failures="0" errors="0" time="0.225">
-    <testcase time="0.225000000000001" classname="save_output" name="save_an_output"/>
+  <testsuite name="save_output" timestamp="2025-02-24T02:17:23Z" hostname="f8d38fcf170c" tests="1" skipped="0" failures="0" errors="0" time="0.228">
+    <testcase time="0.228000000000002" classname="save_output" name="save_an_output"/>
   </testsuite>
-  <testsuite name="slides_preview" timestamp="2025-02-24T02:17:26Z" hostname="530d6508589f" tests="2" skipped="1" failures="0" errors="0" time="0.505">
-    <testcase time="0.495999999999999" classname="slides_preview" name="Test_slides_preview"/>
-    <testcase time="0.00900000000000034" classname="slides_preview" name="Test_slides_preview">
-      <skipped message="Reason: On CRAN ('test-slides_preview.R:5:3')"/>
-    </testcase>
+  <testsuite name="slides_preview" timestamp="2025-02-24T02:17:24Z" hostname="f8d38fcf170c" tests="3" skipped="0" failures="0" errors="0" time="0.526">
+    <testcase time="0.472000000000001" classname="slides_preview" name="Test_slides_preview"/>
+    <testcase time="0.0239999999999974" classname="slides_preview" name="Test_slides_preview"/>
+    <testcase time="0.0300000000000011" classname="slides_preview" name="Test_slides_preview"/>
   </testsuite>
-  <testsuite name="srep_outputs" timestamp="2025-02-24T02:17:27Z" hostname="530d6508589f" tests="3" skipped="0" failures="0" errors="0" time="95.15">
-    <testcase time="2.062" classname="srep_outputs" name="Listing_print_correctly"/>
-    <testcase time="92.921" classname="srep_outputs" name="Listing_print_correctly"/>
-    <testcase time="0.167000000000002" classname="srep_outputs" name="Listing_print_correctly"/>
+  <testsuite name="srep_outputs" timestamp="2025-02-24T02:17:24Z" hostname="f8d38fcf170c" tests="3" skipped="0" failures="0" errors="0" time="94.353">
+    <testcase time="1.994" classname="srep_outputs" name="Listing_print_correctly"/>
+    <testcase time="91.312" classname="srep_outputs" name="Listing_print_correctly"/>
+    <testcase time="1.04700000000001" classname="srep_outputs" name="Listing_print_correctly"/>
   </testsuite>
-  <testsuite name="t_ae_pt_diff_slide" timestamp="2025-02-24T02:19:02Z" hostname="530d6508589f" tests="8" skipped="7" failures="0" errors="0" time="1.516">
-    <testcase time="0.220999999999989" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_diff_slide.R:2:3')"/>
-    </testcase>
-    <testcase time="0.161000000000001" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_diff_slide.R:6:3')"/>
-    </testcase>
-    <testcase time="0.297000000000011" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_diff_slide.R:11:3')"/>
-    </testcase>
-    <testcase time="0.194999999999993" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_diff_slide.R:17:3')"/>
-    </testcase>
-    <testcase time="0.307000000000002" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_diff_slide.R:25:3')"/>
-    </testcase>
-    <testcase time="0.117999999999995" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_"/>
-    <testcase time="0.144000000000005" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_diff_slide.R:43:3')"/>
-    </testcase>
-    <testcase time="0.0729999999999933" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_with_null_report">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_diff_slide.R:57:3')"/>
-    </testcase>
+  <testsuite name="t_ae_pt_diff_slide" timestamp="2025-02-24T02:18:58Z" hostname="f8d38fcf170c" tests="9" skipped="0" failures="0" errors="0" time="2.003">
+    <testcase time="0.24499999999999" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_"/>
+    <testcase time="0.408000000000001" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.302000000000007" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.208999999999989" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.310000000000002" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.185000000000002" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.102000000000004" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_"/>
+    <testcase time="0.164999999999992" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.0770000000000124" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_with_null_report"/>
   </testsuite>
-  <testsuite name="t_ae_pt_slide" timestamp="2025-02-24T02:19:03Z" hostname="530d6508589f" tests="6" skipped="6" failures="0" errors="0" time="1.679">
-    <testcase time="0.204999999999998" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_slide.R:2:3')"/>
-    </testcase>
-    <testcase time="0.196000000000012" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_28">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_slide.R:6:3')"/>
-    </testcase>
-    <testcase time="0.176000000000002" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_30">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_slide.R:10:3')"/>
-    </testcase>
-    <testcase time="0.379999999999995" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_slide.R:15:3')"/>
-    </testcase>
-    <testcase time="0.366" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_28">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_slide.R:19:3')"/>
-    </testcase>
-    <testcase time="0.355999999999995" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_30">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_slide.R:23:3')"/>
-    </testcase>
+  <testsuite name="t_ae_pt_slide" timestamp="2025-02-24T02:19:00Z" hostname="f8d38fcf170c" tests="6" skipped="0" failures="0" errors="0" time="1.729">
+    <testcase time="0.209999999999994" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_"/>
+    <testcase time="0.201999999999998" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_28"/>
+    <testcase time="0.183000000000007" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_30"/>
+    <testcase time="0.390000000000001" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_"/>
+    <testcase time="0.382000000000005" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_28"/>
+    <testcase time="0.361999999999995" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_30"/>
   </testsuite>
-  <testsuite name="t_ae_pt_soc_diff_slide" timestamp="2025-02-24T02:19:05Z" hostname="530d6508589f" tests="5" skipped="4" failures="0" errors="0" time="1.958">
-    <testcase time="0.334000000000003" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_soc_diff_slide.R:2:3')"/>
-    </testcase>
-    <testcase time="0.316999999999993" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_soc_diff_slide.R:6:3')"/>
-    </testcase>
-    <testcase time="0.607000000000014" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_soc_diff_slide.R:10:3')"/>
-    </testcase>
-    <testcase time="0.378" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2">
-      <skipped message="Reason: On CRAN ('test-t_ae_pt_soc_diff_slide.R:16:3')"/>
-    </testcase>
-    <testcase time="0.321999999999989" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_"/>
+  <testsuite name="t_ae_pt_soc_diff_slide" timestamp="2025-02-24T02:19:02Z" hostname="f8d38fcf170c" tests="7" skipped="0" failures="0" errors="0" time="3.027">
+    <testcase time="0.341000000000008" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_"/>
+    <testcase time="0.319999999999993" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.611000000000004" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.397999999999996" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.609000000000009" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.483999999999995" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.263999999999996" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_"/>
   </testsuite>
-  <testsuite name="t_ae_slide" timestamp="2025-02-24T02:19:07Z" hostname="530d6508589f" tests="2" skipped="2" failures="0" errors="0" time="0.758">
-    <testcase time="0.700000000000003" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_Adverse_Events_for_Patient_">
-      <skipped message="Reason: On CRAN ('test-t_ae_slide.R:10:3')"/>
-    </testcase>
-    <testcase time="0.0580000000000069" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_with_null_report">
-      <skipped message="Reason: On CRAN ('test-t_ae_slide.R:24:3')"/>
-    </testcase>
+  <testsuite name="t_ae_slide" timestamp="2025-02-24T02:19:05Z" hostname="f8d38fcf170c" tests="2" skipped="0" failures="0" errors="0" time="0.767">
+    <testcase time="0.701999999999998" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_Adverse_Events_for_Patient_"/>
+    <testcase time="0.0649999999999977" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_with_null_report"/>
   </testsuite>
-  <testsuite name="t_ae_summary_slide" timestamp="2025-02-24T02:19:08Z" hostname="530d6508589f" tests="3" skipped="3" failures="0" errors="0" time="0.653">
-    <testcase time="0.545999999999992" classname="t_ae_summary_slide" name="Test_table_creation_of_t_ae_summ_slide_safety_summary_table_">
-      <skipped message="Reason: On CRAN ('test-t_ae_summary_slide.R:2:3')"/>
-    </testcase>
-    <testcase time="0.034000000000006" classname="t_ae_summary_slide" name="Test_t_ae_summ_slide_with_expected_Error">
-      <skipped message="Reason: On CRAN ('test-t_ae_summary_slide.R:23:3')"/>
-    </testcase>
-    <testcase time="0.0729999999999933" classname="t_ae_summary_slide" name="Test_t_ae_summ_slide_with_null_report">
-      <skipped message="Reason: On CRAN ('test-t_ae_summary_slide.R:35:3')"/>
-    </testcase>
+  <testsuite name="t_ae_summary_slide" timestamp="2025-02-24T02:19:06Z" hostname="f8d38fcf170c" tests="4" skipped="0" failures="0" errors="0" time="1.196">
+    <testcase time="0.535000000000011" classname="t_ae_summary_slide" name="Test_table_creation_of_t_ae_summ_slide_safety_summary_table_"/>
+    <testcase time="0.540999999999997" classname="t_ae_summary_slide" name="Test_table_creation_of_t_ae_summ_slide_safety_summary_table_"/>
+    <testcase time="0.0400000000000063" classname="t_ae_summary_slide" name="Test_t_ae_summ_slide_with_expected_Error"/>
+    <testcase time="0.0799999999999983" classname="t_ae_summary_slide" name="Test_t_ae_summ_slide_with_null_report"/>
   </testsuite>
-  <testsuite name="t_aesi_slide" timestamp="2025-02-24T02:19:08Z" hostname="530d6508589f" tests="5" skipped="3" failures="0" errors="0" time="1.357">
-    <testcase time="0.439000000000007" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AETOXGR_grading">
-      <skipped message="Reason: On CRAN ('test-t_aesi_slide.R:2:3')"/>
-    </testcase>
-    <testcase time="0.450999999999993" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AESEV_grading">
-      <skipped message="Reason: On CRAN ('test-t_aesi_slide.R:10:3')"/>
-    </testcase>
-    <testcase time="0.420000000000002" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_custom_AEGRP_grouping">
-      <skipped message="Reason: On CRAN ('test-t_aesi_slide.R:21:3')"/>
-    </testcase>
-    <testcase time="0.0169999999999959" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_with_no_aesi_var_given"/>
-    <testcase time="0.0300000000000011" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_with_aesi_var_not_found_in_dataset"/>
+  <testsuite name="t_aesi_slide" timestamp="2025-02-24T02:19:07Z" hostname="f8d38fcf170c" tests="5" skipped="0" failures="0" errors="0" time="1.37">
+    <testcase time="0.461999999999989" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AETOXGR_grading"/>
+    <testcase time="0.444000000000003" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AESEV_grading"/>
+    <testcase time="0.427000000000007" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_custom_AEGRP_grouping"/>
+    <testcase time="0.00799999999999557" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_with_no_aesi_var_given"/>
+    <testcase time="0.0289999999999964" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_with_aesi_var_not_found_in_dataset"/>
   </testsuite>
-  <testsuite name="t_dd_slide" timestamp="2025-02-24T02:19:10Z" hostname="530d6508589f" tests="5" skipped="5" failures="0" errors="0" time="0.598">
-    <testcase time="0.153000000000006" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
-      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:2:3')"/>
-    </testcase>
-    <testcase time="0.0319999999999965" classname="t_dd_slide" name="Test_t_dd_slide_table_with_expected_Error">
-      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:6:3')"/>
-    </testcase>
-    <testcase time="0.046999999999997" classname="t_dd_slide" name="Test_table_creation_of_with_null_report">
-      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:10:3')"/>
-    </testcase>
-    <testcase time="0.212000000000003" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
-      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:15:3')"/>
-    </testcase>
-    <testcase time="0.153999999999996" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_">
-      <skipped message="Reason: On CRAN ('test-t_dd_slide.R:20:3')"/>
-    </testcase>
+  <testsuite name="t_dd_slide" timestamp="2025-02-24T02:19:09Z" hostname="f8d38fcf170c" tests="6" skipped="0" failures="0" errors="0" time="0.726">
+    <testcase time="0.172000000000011" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
+    <testcase time="0.0389999999999873" classname="t_dd_slide" name="Test_t_dd_slide_table_with_expected_Error"/>
+    <testcase time="0.0560000000000116" classname="t_dd_slide" name="Test_table_creation_of_with_null_report"/>
+    <testcase time="0.204999999999998" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
+    <testcase time="0.170999999999992" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
+    <testcase time="0.0829999999999984" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
   </testsuite>
-  <testsuite name="t_dm_slide" timestamp="2025-02-24T02:19:10Z" hostname="530d6508589f" tests="1" skipped="1" failures="0" errors="0" time="0.359">
-    <testcase time="0.359000000000009" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide">
-      <skipped message="Reason: On CRAN ('test-t_dm_slide.R:3:3')"/>
-    </testcase>
+  <testsuite name="t_dm_slide" timestamp="2025-02-24T02:19:09Z" hostname="f8d38fcf170c" tests="5" skipped="0" failures="0" errors="0" time="2.585">
+    <testcase time="0.362000000000009" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.673999999999992" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.454000000000008" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.420000000000002" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.674999999999997" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
   </testsuite>
-  <testsuite name="t_dor_slide" timestamp="2025-02-24T02:19:11Z" hostname="530d6508589f" tests="2" skipped="2" failures="0" errors="0" time="0.322">
-    <testcase time="0.167000000000002" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_DAYS_">
-      <skipped message="Reason: On CRAN ('test-t_dor_slide.R:8:3')"/>
-    </testcase>
-    <testcase time="0.155000000000001" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_YEARS_">
-      <skipped message="Reason: On CRAN ('test-t_dor_slide.R:19:3')"/>
-    </testcase>
+  <testsuite name="t_dor_slide" timestamp="2025-02-24T02:19:12Z" hostname="f8d38fcf170c" tests="2" skipped="0" failures="0" errors="0" time="0.319">
+    <testcase time="0.161999999999992" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_DAYS_"/>
+    <testcase time="0.157000000000011" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_YEARS_"/>
   </testsuite>
-  <testsuite name="t_ds_slide" timestamp="2025-02-24T02:19:11Z" hostname="530d6508589f" tests="4" skipped="4" failures="0" errors="0" time="1.225">
-    <testcase time="0.285999999999987" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide">
-      <skipped message="Reason: On CRAN ('test-t_ds_slide.R:2:3')"/>
-    </testcase>
-    <testcase time="0.284000000000006" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide">
-      <skipped message="Reason: On CRAN ('test-t_ds_slide.R:6:3')"/>
-    </testcase>
-    <testcase time="0.364999999999995" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide">
-      <skipped message="Reason: On CRAN ('test-t_ds_slide.R:10:3')"/>
-    </testcase>
-    <testcase time="0.290000000000006" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide">
-      <skipped message="Reason: On CRAN ('test-t_ds_slide.R:14:3')"/>
-    </testcase>
+  <testsuite name="t_ds_slide" timestamp="2025-02-24T02:19:12Z" hostname="f8d38fcf170c" tests="5" skipped="0" failures="0" errors="0" time="1.408">
+    <testcase time="0.289999999999992" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.286000000000001" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.367999999999995" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.294000000000011" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.170000000000002" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
   </testsuite>
-  <testsuite name="util" timestamp="2025-02-24T02:19:12Z" hostname="530d6508589f" tests="18" skipped="0" failures="0" errors="0" time="0.06">
-    <testcase time="0.0169999999999959" classname="util" name="Test_some_functions_in_util.R"/>
+  <testsuite name="util" timestamp="2025-02-24T02:19:14Z" hostname="f8d38fcf170c" tests="18" skipped="0" failures="0" errors="0" time="0.053">
+    <testcase time="0.00799999999999557" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00199999999999534" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00199999999999534" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00799999999999557" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.000999999999990564" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.007000000000005" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00199999999999534" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.007000000000005" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00600000000000023" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00199999999999534" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00699999999999079" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00400000000000489" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00399999999999068" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00300000000000011" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00200000000000955" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.000999999999990564" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00200000000000955" classname="util" name="Test_some_functions_in_util.R"/>
   </testsuite>
-  <testsuite name="format_date" timestamp="2025-02-24T02:19:12Z" hostname="530d6508589f" tests="1" skipped="1" failures="0" errors="0" time="0.134">
-    <testcase time="0.134" classname="format_date" name="Test_format_date">
-      <skipped message="Reason: On CRAN ('test_format_date.R:3:3')"/>
-    </testcase>
+  <testsuite name="format_date" timestamp="2025-02-24T02:19:14Z" hostname="f8d38fcf170c" tests="5" skipped="0" failures="0" errors="0" time="0.258">
+    <testcase time="0.140000000000001" classname="format_date" name="Test_format_date"/>
+    <testcase time="0.0439999999999969" classname="format_date" name="Test_format_date"/>
+    <testcase time="0.0229999999999961" classname="format_date" name="Test_format_date"/>
+    <testcase time="0.0259999999999962" classname="format_date" name="Test_format_date"/>
+    <testcase time="0.0250000000000057" classname="format_date" name="Test_format_date"/>
   </testsuite>
 </testsuites>
