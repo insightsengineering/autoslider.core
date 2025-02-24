@@ -189,11 +189,11 @@ decorate.list <-
     }, FUN.VALUE = TRUE)))
     size <- fs(paper)
     x <- lapply(x, function(g) {
+      ret <- g
       if ("ggplot" %in% class(g)) {
-        return(ggplot2::ggplotGrob(g))
-      } else {
-        return(g)
+        ret <- ggplot2::ggplotGrob(g)
       }
+      ret
     })
     grobs <- decorate_grob_set(
       grobs = x,
