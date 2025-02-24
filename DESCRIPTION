@@ -74,6 +74,7 @@ Suggests:
     purrr (>= 1.0.4),
     rmarkdown (>= 2.23),
     rsvg (>= 0.3.4),
+    R.utils (>= 2.12.3),
     styler (>= 1.10.2),
     svglite (>= 2.1.2),
     testthat (>= 3.2.0),
