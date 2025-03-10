@@ -1,5 +1,9 @@
 my_gt_fun <- function(){
-  trial |> tbl_summary(include = c(trt, age, grade))
+
+  trial |>
+    select(trt, age, grade) |>
+    tbl_summary(by = trt) |>
+    add_p()
 }
 
 
