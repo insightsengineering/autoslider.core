@@ -21,6 +21,7 @@
 #' @importFrom grDevices dev.off svg
 #' @importFrom grid grid.draw gpar grid.newpage unit.pmax
 #' @importFrom gridExtra arrangeGrob
+#' @importFrom gtsummary tbl_summary
 #' @importFrom methods is formalArgs new
 #' @importFrom officer fortify_location ph_location_label
 #' @importFrom rlang abort `:=`
