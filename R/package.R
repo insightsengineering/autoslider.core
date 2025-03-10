@@ -25,7 +25,7 @@
 #' @importFrom officer fortify_location ph_location_label
 #' @importFrom rlang abort `:=`
 #' @importFrom rvg dml
-#' @importFrom stats setNames median na.omit pt sd
+#' @importFrom stats setNames median na.omit pt sd as.formula
 #' @importFrom stringr str_extract str_to_title
 #' @importFrom survival Surv survfit coxph survdiff strata
 #' @importFrom tern control_coxph format_xx d_proportion
@@ -33,29 +33,15 @@
 #' @importFrom utils modifyList file.edit assignInNamespace
 NULL
 
-
 utils::globalVariables(c(
-  ".", "AEBODSYS", "AEBODSYS2", "AESI01FL", "AESIGFL", "AETOXGR", "ANL01FL", "ATOXGR", "AVAL",
-  "AVALC", "AVALC1", "AVALU", "CNSR", "DCSREAS", "DTHCAT", "DTRTxxFL", "EVNT1", "EVNTDESC", "NAMVAR",
-  "REFNAME", "STDONS", "STUDYID", "TRT01A", "USUBJID", "adag", "as.formula", "condition", "id",
-  "inner_join", "is_event", "is_not_event", "is_rsp", "null_report", "pchisq", "prop.test",
-  "r_condition", "re", "rec_trt", "select_reporting_event", "sym", "target", "to_yaml_spec",
-  "type", "update_yaml_spec", "var_labels_remove", "vars", "with_label",
-  "ACTARM", "AEACN", "AECONTRT", "AEDECOD", "AEENDTC", "AEENDY", "AENDY", "AEOUT", "AEREL", "AESDTH",
-  "AESEQ", "AESER", "AESEV", "AESTDTC", "AESTDY", "AEWITHFL", "AGE", "AGEU", "ALL_RESOLVED",
-  "ANALYSIS", "ANRIND", "ASR", "ASTDY", "AVISIT", "AVISITN", "Action", "CMCAT", "CMDOSE", "CMDOSU",
-  "CMSTDTC", "CONTENT", "CONTRT", "COUNTRY", "CPID", "CQ01NAM", "DISCONT", "DSDECOD", "DSM",
-  "DSSCAT", "Date_First", "ECDOSE", "ECMOOD", "ECSTDTC", "EOSSTT", "EXDOSE", "EXDOSU", "EXENDTC",
-  "EXENDY", "EXSTDTC", "EXSTDY", "HEIGHT", "ID", "LEVEL1_FORMAT", "NOT_RESOLVED", "ONTRTFL",
-  "PARAM", "PARAMCD", "PARCAT2", "PCHG", "RACE", "Related", "SAFFL", "SEX", "SITEID", "SMQ01NAM",
-  "SSADM", "STDWD", "SUBJID", "Serious", "TRTEDTM", "TRTEMFL", "TRTSDTM", "WD",
-  "border_color", "summary_txt", "col_status", "newvalue", "ptord", "status", "value",
-  "CMDECOD", "CMENDTC", "CMENRTPT", "CMTRT", "ongoing",
-  "ADJ_REAS", "AENUM", "DOSMOD_YN", "ECCAT", "ECDOSU", "ECENDTC", "ECENDY", "ECOCCUR", "ECSPID",
-  "ECSTDY", "ECTRT", "FACAT", "FAECADJ", "FAOBJ", "FAORRES", "FAREFID", "FATESTCD", "RFXENDTC",
-  "RFXSTDTC", "VISIT", "END", "START", "act_dose", "dlteval", "dose_admin", "dsdecod", "plan_dose",
-  "ADTM", "ADY", "ANRHI", "ANRLO", "DLD", "LBTEST", "LBTEST_U"
+  ".", "AEACN", "AEBODSYS", "AECONTRT", "AEDECOD", "AENDY", "AEOUT", "AEREL", "AESER", "AETOXGR", "AGE",
+  "ALL_RESOLVED", "ANL01FL", "ASTDY", "ATOXGR", "AVAL", "AVISIT", "AVISITN", "Action", "CNSR",
+  "CONTRT", "COUNTRY", "CPID", "DCSREAS", "DSM", "DTHCAT", "Date_First", "EVNT1", "EVNTDESC",
+  "NOT_RESOLVED", "RACE", "Related", "SAFFL", "SEX", "SITEID", "STDONS", "STUDYID", "SUBJID",
+  "Serious", "TRT01A", "TRTEMFL", "TRTSDTM", "USUBJID", "WD", "as.formula", "border_color",
+  "is_event", "is_not_event"
 ))
+
 
 #' General notes
 #'
