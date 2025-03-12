@@ -80,3 +80,13 @@
 #'
 #' @usage data(eg_adtr)
 "eg_adtr"
+
+
+#' Cached trial
+#'
+#' Cached trial data
+#'
+#' @docType data
+#'
+#' @export
+trial <- gtsummary::trial
