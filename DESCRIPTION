@@ -96,3 +96,4 @@ Language: en-US
 LazyData: true
 LazyDataCompression: xz
 RoxygenNote: 7.3.2
+Remotes: insightsengineering/tern@main
