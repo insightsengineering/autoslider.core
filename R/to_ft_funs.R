@@ -49,9 +49,9 @@ to_flextable.Ddataframe <- function(x, lpp, ...) {
 
   # force the width of the 1st column to be the widest of all paginated table
   ft_list_resize <- set_width_widest(ft_list)
-
   class(ft_list_resize) <- "dflextable"
-  return(ft_list_resize)
+
+  ft_list_resize
 }
 
 #' To flextable
@@ -236,7 +236,8 @@ to_flextable.dlisting <- function(x, cpp, lpp, ...) {
   # force the width of the 1st column to be the widest of all paginated table
   # ft_list_resize <- set_width_widest(ft_list)
   class(ft_list) <- "dflextable"
-  return(ft_list)
+
+  ft_list
 }
 
 
@@ -332,9 +333,9 @@ to_flextable.dVTableTree <- function(x, lpp, cpp, ...) {
   })
   # force the width of the 1st column to be the widest of all paginated table
   ft_list_resize <- set_width_widest(ft_list)
-
   class(ft_list_resize) <- "dflextable"
-  return(ft_list_resize)
+
+  ft_list_resize
 }
 
 g_export <- function(decorated_p) {
@@ -348,7 +349,8 @@ g_export <- function(decorated_p) {
   )
   ret$footnote <- decorated_p$footnotes
   ret$spec <- attributes(decorated_p)$spec
-  return(ret)
+
+  ret
 }
 
 set_width_widest <- function(ft_list) {
@@ -358,7 +360,8 @@ set_width_widest <- function(ft_list) {
   for (i in 1:length(ft_list)) {
     ft_list[[i]]$ft <- width(ft_list[[i]]$ft, 1, width = width1st)
   }
-  return(ft_list)
+
+  ft_list
 }
 
 get_merge_index_single <- function(span) {
@@ -370,7 +373,8 @@ get_merge_index_single <- function(span) {
     }
     j <- j + span[j]
   }
-  return(ret)
+
+  ret
 }
 
 get_merge_index <- function(spans) {
