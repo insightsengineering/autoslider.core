@@ -19,7 +19,8 @@ check_and_set_cutoff <- function(data, cutoff) {
       assert_that(are_equal(cutoff, cutoff_suffix))
     }
   }
-  return(cutoff)
+
+  cutoff
 }
 
 #' Replace NAs to NA
@@ -37,7 +38,8 @@ na_replace <- function(table_df) {
       }
     }
   }
-  return(table_df)
+
+  table_df
 }
 
 #' Concatenate arguments into a string
@@ -236,7 +238,7 @@ is_in_repository <- function() {
 
 get_remote_url <- function() {
   repos <- system("git remote -v", intern = TRUE)
-  return(str_extract(repos, "(https://|git@).*.git"))
+  str_extract(repos, "(https://|git@).*.git")
 }
 
 get_last_gitcommit_sha <- function() {
@@ -386,7 +388,8 @@ text_wrap_cut <- function(text, width) {
     s <- wrap_chunk(x, width = width)
     paste(unlist(s), collapse = "\n")
   }, FUN.VALUE = "")
-  return(ret)
+
+  ret
 }
 
 text_wrap_cut_keepreturn <- function(text, width) {
@@ -398,14 +401,15 @@ text_wrap_cut_keepreturn <- function(text, width) {
     r <- text_wrap_cut(x, width)
     paste0(r, collapse = "\n")
   }, FUN.VALUE = "")
-  return(ret)
+
+  ret
 }
 
 #' @noRd
 fs <- function(paper) {
   fontsize <- as.integer(substr(paper, 2, nchar(paper)))
   orientation <- substr(paper, 1, 1)
-  return(list(fontsize = fontsize, orientation = orientation))
+  list(fontsize = fontsize, orientation = orientation)
 }
 
 validate_paper_size <- function(paper) {
@@ -423,12 +427,15 @@ validate_paper_size <- function(paper) {
 }
 
 get_output_file_ext <- function(output, file_path) {
+  ret <- ""
   if (tools::file_ext(file_path) != "") {
-    return(file_path)
+    ret <- file_path
   } else {
     file_ext <- ifelse(is_rtable(output) || "dVTableTree" %in% class(output), "out", "pdf")
-    return(sprintf("%s.%s", file_path, file_ext))
+    ret <- sprintf("%s.%s", file_path, file_ext)
   }
+
+  ret
 }
 
 warn_about_legacy_filtering <- function(output) {
@@ -564,7 +571,8 @@ build_table_header <- function(anl,
       split_cols_by(var = arm) %>%
       add_overall_col("All Patients")
   }
-  return(lyt)
+
+  lyt
 }
 
 
@@ -574,5 +582,5 @@ get_version_label_output <- function() {
 
 
 strip_NA <- function(input) {
-  return(input[which(input != "NA")])
+  input[which(input != "NA")]
 }

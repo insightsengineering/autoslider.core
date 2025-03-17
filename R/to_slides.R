@@ -62,7 +62,8 @@ generate_slides <- function(outputs,
     )
   } else if (any(c(
     is(outputs, "data.frame"),
-    is(outputs, "ggplot")
+    is(outputs, "ggplot"),
+    is(outputs, "gtsummary")
   ))) {
     if (is(outputs, "ggplot")) {
       current_title <- outputs$labels$title
@@ -73,6 +74,8 @@ generate_slides <- function(outputs,
     }
 
     outputs <- list(outputs)
+  } else {
+    print("Should not get here")
   }
 
   assert_that(is.list(outputs))
@@ -105,6 +108,11 @@ generate_slides <- function(outputs,
     } else if (is(x, "data.frame")) { # this is dedicated for small data frames without pagination
       y <- to_flextable(x, ...)
       table_to_slide(ppt, content = y, decor = FALSE, ...)
+    } else if (is(x, "gtsummary")){
+      y <- to_flextable(x, ...)
+      table_to_slide(ppt,
+                     content = y, decor = FALSE, ...
+      )
     } else {
       if (any(class(x) %in% c("decoratedGrob", "decoratedGrobSet", "ggplot"))) {
         if (is(x, "ggplot")) {
