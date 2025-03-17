@@ -35,6 +35,14 @@
   args:
     arm: "TRT01A"
     vars: ["SEX", "AGE", "RACE", "ETHNIC"]
+- program: gt_t_dm_slide
+  titles: Patient Demographics and Baseline Characteristics
+  footnotes: 't_dm_slide footnote'
+  paper: L6
+  suffix: FAS
+  args:
+    arm: "TRT01A"
+    vars: ["SEX", "AGE", "RACE", "ETHNIC"]
 - program: t_dm_slide
   titles: Patient Demographics and Baseline Characteristics
   footnotes: 't_dm_slide footnote'

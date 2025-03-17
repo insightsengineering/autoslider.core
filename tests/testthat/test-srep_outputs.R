@@ -36,6 +36,7 @@ test_that("Listing print correctly", {
       "g_lab_slide",
       "g_eg_slide",
       "t_dm_slide",
+      "gt_t_dm_slide",
       "t_vs_slide",
       "t_ae_summ_slide",
       "t_ex_slide",
