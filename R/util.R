@@ -52,9 +52,7 @@ dec_paste <- function(...) {
     ...
   )
 
-  if (any(is.na(arguments))) {
-    return(NA)
-  } else {
+  if (!any(is.na(arguments))) {
     do.call("paste", arguments)
   }
 }

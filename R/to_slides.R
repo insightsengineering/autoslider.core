@@ -108,10 +108,10 @@ generate_slides <- function(outputs,
     } else if (is(x, "data.frame")) { # this is dedicated for small data frames without pagination
       y <- to_flextable(x, ...)
       table_to_slide(ppt, content = y, decor = FALSE, ...)
-    } else if (is(x, "gtsummary")){
+    } else if (is(x, "gtsummary")) {
       y <- to_flextable(x, ...)
       table_to_slide(ppt,
-                     content = y, decor = FALSE, ...
+        content = y, decor = FALSE, ...
       )
     } else {
       if (any(class(x) %in% c("decoratedGrob", "decoratedGrobSet", "ggplot"))) {
