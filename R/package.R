@@ -21,7 +21,7 @@
 #' @importFrom grDevices dev.off svg
 #' @importFrom grid grid.draw gpar grid.newpage unit.pmax
 #' @importFrom gridExtra arrangeGrob
-#' @importFrom gtsummary tbl_summary
+#' @importFrom gtsummary tbl_summary add_p
 #' @importFrom methods is formalArgs new
 #' @importFrom officer fortify_location ph_location_label
 #' @importFrom rlang abort `:=`
@@ -40,7 +40,8 @@ utils::globalVariables(c(
   "CONTRT", "COUNTRY", "CPID", "DCSREAS", "DSM", "DTHCAT", "Date_First", "EVNT1", "EVNTDESC",
   "NOT_RESOLVED", "RACE", "Related", "SAFFL", "SEX", "SITEID", "STDONS", "STUDYID", "SUBJID",
   "Serious", "TRT01A", "TRTEMFL", "TRTSDTM", "USUBJID", "WD", "as.formula", "border_color",
-  "is_event", "is_not_event"
+  "is_event", "is_not_event",
+  "age", "grade", "trt" # from gtsummary
 ))
 
 

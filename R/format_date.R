@@ -40,5 +40,5 @@ format_date <- function(x) {
     TRUE ~ ""
   )
 
-  return(x_form)
+  x_form
 }
