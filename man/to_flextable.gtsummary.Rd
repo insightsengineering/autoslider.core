@@ -4,7 +4,7 @@
 \alias{to_flextable.gtsummary}
 \title{convert gtsummary to flextable}
 \usage{
-\method{to_flextable}{gtsummary}(x)
+\method{to_flextable}{gtsummary}(x, ...)
 }
 \description{
 convert gtsummary to flextable
