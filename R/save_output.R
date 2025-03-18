@@ -81,6 +81,17 @@ save_output.decoratedGrobSet <- function(output, file_name, save_rds = TRUE) {
 #' @rdname save_output
 #' @return The input `object` invisibly
 #' @export
+save_output.dgtsummary <- function(output, file_name, save_rds = TRUE) {
+  if (save_rds) {
+    saveRDS(output, file = paste0(file_name, ".rds"))
+  }
+
+  invisible(output)
+}
+
+#' @rdname save_output
+#' @return The input `object` invisibly
+#' @export
 save_output.dlisting <- function(output, file_name, save_rds = TRUE) {
   if (save_rds) {
     saveRDS(output, file = paste0(file_name, ".rds"))

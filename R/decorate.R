@@ -37,6 +37,7 @@ decorate.autoslider_error <- function(x, ...) {
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments passed to the decoration function.
 #' @return No return value, called for side effects
+#' @export
 setMethod(
   "decorate", "VTableTree",
   decorate.VTableTree <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
@@ -110,6 +111,7 @@ decorate.ggplot <- function(x, titles = "", footnotes = "", paper = "L11", for_t
 #' @param for_test `logic` CICD parameter
 #' @param ... Additional arguments. not used.
 #' @return No return value, called for side effects
+#' @export
 setMethod(
   "decorate", "listing_df",
   decorate.listing_df <- function(x, titles = "", footnotes = "", paper = "P8", for_test = FALSE, ...) {
@@ -140,6 +142,8 @@ setMethod(
 )
 
 
+
+
 #' decorate grob
 #' @param x object to decorate
 #' @param titles graph titles
@@ -168,6 +172,21 @@ decorate.grob <-
     grob
   }
 
+# decorate gtsummary
+#' @export
+  decorate.gtsummary <-
+    function(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...) {
+      size <- fs(paper)
+      glued_title <- glue::glue(paste(titles, collapse = "\n"))
+      x <- x %>% modify_caption(caption = "")
+      structure(
+        .Data = x,
+        titles = glued_title,
+        paper = paper,
+        class = union("dgtsummary", class(x))
+      )
+    }
+# )
 
 #' decorate list of grobs
 #' @param x object to decorate

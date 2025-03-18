@@ -94,5 +94,6 @@ gt_t_dm_slide <- function(adsl,
                           vars = c("AGE", "SEX", "RACE")) {
   adsl |>
     select(all_of(c(vars, arm))) |>
-    tbl_summary(by = all_of(arm))
+    tbl_summary(by = all_of(arm)) |>
+      modify_caption(caption = "Demographic slide") # Set default title
 }

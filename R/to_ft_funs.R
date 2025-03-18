@@ -104,8 +104,20 @@ to_flextable.Ddataframe <- function(x, lpp, table_format = table_format, ...) {
 #' convert gtsummary to flextable
 #' @export
 to_flextable.gtsummary <- function(x, ...) {
-  x %>% gtsummary::as_flex_table()
+  ft <- x %>%
+    gtsummary::as_flex_table()
+
+  ft
 }
+
+#' convert dgtsummary to flextable
+#' @export
+to_flextable.dgtsummary <- function(x, ...) {
+  ft <- x %>%
+    gtsummary::as_flex_table()
+}
+
+
 
 
 #' convert data.frame to flextable

@@ -9,6 +9,7 @@
 \alias{dVTableTree-method}
 \alias{save_output.decoratedGrob}
 \alias{save_output.decoratedGrobSet}
+\alias{save_output.dgtsummary}
 \alias{save_output.dlisting}
 \title{Save an Output}
 \usage{
@@ -24,6 +25,8 @@ save_output.decoratedGrob(output, file_name, save_rds = TRUE)
 
 save_output.decoratedGrobSet(output, file_name, save_rds = TRUE)
 
+save_output.dgtsummary(output, file_name, save_rds = TRUE)
+
 save_output.dlisting(output, file_name, save_rds = TRUE)
 }
 \arguments{
@@ -37,6 +40,8 @@ save_output.dlisting(output, file_name, save_rds = TRUE)
 The input `object` invisibly
 
 No return value, called for side effects
+
+The input `object` invisibly
 
 The input `object` invisibly
 

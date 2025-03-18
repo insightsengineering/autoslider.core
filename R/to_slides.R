@@ -108,7 +108,7 @@ generate_slides <- function(outputs,
     } else if (is(x, "data.frame")) { # this is dedicated for small data frames without pagination
       y <- to_flextable(x, ...)
       table_to_slide(ppt, content = y, decor = FALSE, ...)
-    } else if (is(x, "gtsummary")) {
+    } else if (is(x, "gtsummary") || is(x, "dgtsummary")) {
       y <- to_flextable(x, ...)
       table_to_slide(ppt,
         content = y, decor = FALSE, ...
