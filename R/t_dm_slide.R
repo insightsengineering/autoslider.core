@@ -95,5 +95,5 @@ gt_t_dm_slide <- function(adsl,
   adsl |>
     select(all_of(c(vars, arm))) |>
     tbl_summary(by = all_of(arm)) |>
-      modify_caption(caption = "Demographic slide") # Set default title
+    modify_caption(caption = "Demographic slide") # Set default title
 }
