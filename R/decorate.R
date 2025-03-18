@@ -172,7 +172,18 @@ decorate.grob <-
     grob
   }
 
-# decorate gtsummary
+#' decorate gtsummary
+#'
+#' @param x gtsummary object to decorate
+#' @param titles graph titles
+#' @param footnotes graph footnotes
+#' @param paper paper size. default is "L8".
+#' @param for_test `logic` CICD parameter
+#' @param ... Additional arguments. not used.
+#' @return No return value, called for side effects
+#' @details
+#' The paper default paper size, `L11`, indicate that the fontsize is 11.
+#' The fontsize of the footnotes, is the fontsize of the titles minus 2.#'
 #' @export
 decorate.gtsummary <-
   function(x, titles = "", footnotes = "", paper = "L11", for_test = FALSE, ...) {
