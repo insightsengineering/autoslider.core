@@ -63,7 +63,9 @@ generate_slides <- function(outputs,
   } else if (any(c(
     is(outputs, "data.frame"),
     is(outputs, "ggplot"),
-    is(outputs, "gtsummary")
+    is(outputs, "gtsummary"),
+    is(outputs, "dVTableTree"),
+    is(outputs, "dlisting")
   ))) {
     if (is(outputs, "ggplot")) {
       current_title <- outputs$labels$title
@@ -74,8 +76,6 @@ generate_slides <- function(outputs,
     }
 
     outputs <- list(outputs)
-  } else {
-    print("Should not get here")
   }
 
   assert_that(is.list(outputs))

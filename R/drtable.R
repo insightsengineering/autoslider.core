@@ -19,13 +19,3 @@ setClass(
     width = "numeric"
   )
 )
-
-# setClass(
-#   "dgtsummary",
-#   slots = c(
-#     gtsummary = "gtsummary",
-#     titles = "character",
-#     footnotes = "character",
-#     paper = "character"
-#   )
-# )
