@@ -49,6 +49,6 @@ read_spec(spec_file) \%>\%
   decorate_outputs() \%>\%
   save_outputs(outfolder = output_dir)
 
-slides_from_rds(list.files(output_dir, "t_dm_slide_FAS.rds"))
+slides_from_rds(list.files(file.path(output_dir, "t_dm_slide_FAS.rds")))
 \dontshow{\}) # examplesIf}
 }

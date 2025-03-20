@@ -232,7 +232,7 @@ save_outputs <- function(outputs,
 #'   decorate_outputs() %>%
 #'   save_outputs(outfolder = output_dir)
 #'
-#' slides_from_rds(list.files(output_dir, "t_dm_slide_FAS.rds"))
+#' slides_from_rds(list.files(file.path(output_dir, "t_dm_slide_FAS.rds")))
 slides_from_rds <- function(filenames, outfile = paste0(tempdir(), "/output.pptx"),
                             template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx")) {
   outputs <- lapply(filenames, readRDS)
