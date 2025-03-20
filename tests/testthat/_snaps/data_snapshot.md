@@ -148,14 +148,14 @@
     Code
       dim(get(datai))
     Output
-      [1] 400  55
+      [1] 400  56
 
 ---
 
     Code
       head(get(datai))
     Output
-      # A tibble: 6 x 55
+      # A tibble: 6 x 56
         STUDYID   USUBJID   SUBJID SITEID   AGE AGEU  SEX   RACE  ETHNIC COUNTRY DTHFL
         <chr>     <chr>     <chr>  <chr>  <int> <fct> <fct> <fct> <fct>  <fct>   <fct>
       1 AB12345-1 AB12345-~ id-128 CHN-3     32 YEARS M     ASIAN HISPA~ CHN     Y    
@@ -164,7 +164,7 @@
       4 AB12345-2 AB12345-~ id-220 CHN-11    26 YEARS F     ASIAN NOT H~ CHN     N    
       5 AB12345-1 AB12345-~ id-267 CHN-7     40 YEARS M     ASIAN NOT H~ CHN     N    
       6 AB12345-2 AB12345-~ id-201 CHN-15    49 YEARS M     ASIAN NOT H~ CHN     Y    
-      # i 44 more variables: INVID <chr>, INVNAM <chr>, ARM <fct>, ARMCD <fct>,
+      # i 45 more variables: INVID <chr>, INVNAM <chr>, ARM <fct>, ARMCD <fct>,
       #   ACTARM <fct>, ACTARMCD <fct>, TRT01P <fct>, TRT01A <fct>, TRT02P <fct>,
       #   TRT02A <fct>, REGION1 <fct>, STRATA1 <fct>, STRATA2 <fct>, BMRKR1 <dbl>,
       #   BMRKR2 <fct>, ITTFL <fct>, SAFFL <fct>, BMEASIFL <fct>, BEP01FL <fct>,
