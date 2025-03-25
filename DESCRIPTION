@@ -49,7 +49,7 @@ Imports:
     ggpubr (>= 0.6.0),
     grid,
     gridExtra (>= 2.3),
-    gtsummary,
+    gtsummary (>= 2.1.0),
     methods,
     officer (>= 0.3.18),
     rlang (>= 1.1.4),
