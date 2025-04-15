@@ -41,7 +41,7 @@ test_that("Test table creation of t_ae_pt_diff_slide  (safety summary table)", {
 
 test_that("Test table creation of t_ae_pt_slide (safety summary table) prune by total 2", {
   expect_snapshot(
-    t_ae_pt_diff_slide(testdata_two_arm$adsl, testdata_two_arm$adae, "TRT01A", 2, side_by_side = TRUE)
+    t_ae_pt_diff_slide(testdata_two_arm$adsl, testdata_two_arm$adae, "TRT01A", 2, side_by_side = "GlobalAsia")
   )
 })
 

@@ -483,17 +483,21 @@ lyt_to_side_by_side <- function(lyt, anl, side_by_side = NULL) {
 
   if (!is.null(side_by_side)) {
     if (grepl("Asia", side_by_side)) {
+      tmp_anl <- anl %>% filter(COUNTRY %in% c("CHN", "HKG", "TWN", "KOR", "SGP", "THA", "MYS"))
+      tmp_anl$lvl <- "Asia"
       result <- cbind_rtables(
         result,
         build_table(
           lyt = lyt,
-          df = anl %>% filter(COUNTRY %in% c("CHN", "HKG", "TWN", "KOR", "SGP", "THA", "MYS"))
+          df = tmp_anl
         )
       )
     }
 
     if (grepl("China", side_by_side)) {
-      result <- cbind_rtables(result, build_table(lyt = lyt, df = anl %>% filter(COUNTRY == "CHN")))
+      tmp_anl <- anl %>% filter(COUNTRY == "CHN")
+      tmp_anl$lvl <- "China"
+      result <- cbind_rtables(result, build_table(lyt = lyt, df = tmp_anl))
     }
   }
   return(result)
@@ -511,20 +515,30 @@ lyt_to_side_by_side_two_data <- function(lyt, anl, alt_counts_df, side_by_side =
 
   if (!is.null(side_by_side)) {
     if (grepl("Asia", side_by_side)) {
+      countries <- c("CHN", "HKG", "TWN", "KOR", "SGP", "THA", "MYS")
+      tmp_anl <- anl %>% filter(COUNTRY %in% countries)
+      tmp_anl$lvl <- "Asia"
+      tmp_alt <- alt_counts_df %>% filter(COUNTRY %in% countries)
+      tmp_alt$lvl <- "Asia"
+
       result <- cbind_rtables(
         result,
         build_table(
           lyt = lyt,
-          df = anl %>% filter(COUNTRY %in% c("CHN", "HKG", "TWN", "KOR", "SGP", "THA", "MYS")),
-          alt_counts_df = alt_counts_df %>% filter(COUNTRY %in% c("CHN", "HKG", "TWN", "KOR", "SGP", "THA", "MYS"))
+          df = tmp_anl,
+          alt_counts_df = tmp_alt
         )
       )
     }
 
     if (grepl("China", side_by_side)) {
+      tmp_anl <-  anl %>% filter(COUNTRY == "CHN")
+      tmp_anl$lvl <- "China"
+      tmp_alt <- alt_counts_df %>% filter(COUNTRY == "CHN")
+      tmp_alt$lvl <- "China"
       result <- cbind_rtables(result, build_table(
-        lyt = lyt, df = anl %>% filter(COUNTRY == "CHN"),
-        alt_counts_df = alt_counts_df %>% filter(COUNTRY == "CHN")
+        lyt = lyt, df = tmp_anl,
+        alt_counts_df = tmp_alt
       ))
     }
   }
@@ -566,6 +580,7 @@ build_table_header <- function(anl,
       warning("split_by_study argument will be ignored")
     }
     lyt <- lyt %>%
+      split_cols_by(var = "lvl") %>%
       split_cols_by(var = arm) %>%
       add_overall_col("All Patients")
   }

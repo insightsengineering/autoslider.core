@@ -77,9 +77,11 @@ t_ae_pt_core <- function(adsl, adae, arm, cutoff, diff = FALSE, soc = "NULL",
   } else if (side_by_side != TRUE) {
     adsl1 <- adsl %>%
       select("STUDYID", "USUBJID", "RACE", "COUNTRY", all_of(arm))
+    adsl1$lvl <- "Global"
   } else {
     adsl1 <- adsl %>%
       select("STUDYID", "USUBJID", all_of(arm))
+    adsl1$lvl <- "Global"
   }
 
   anl <- adae %>%
@@ -96,6 +98,10 @@ t_ae_pt_core <- function(adsl, adae, arm, cutoff, diff = FALSE, soc = "NULL",
         ATOXGR %in% c(5) ~ "5",
       ) %>% as.factor()
     )
+
+  if (!is.null(side_by_side)) {
+    anl$lvl <- "Global"
+  }
 
   if (soc == "soc") {
     anl <- anl %>%

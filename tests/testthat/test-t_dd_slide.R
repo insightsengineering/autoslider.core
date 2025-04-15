@@ -17,6 +17,6 @@ test_that("Test table creation of t_dd_slide (death table)", {
 
 
 test_that("Test table creation of t_dd_slide (death table)", {
-  expect_snapshot(t_dd_slide(testdata$adsl, "TRT01A", split_by_study = TRUE, side_by_side = TRUE))
-  expect_warning(t_dd_slide(testdata$adsl, "TRT01A", split_by_study = TRUE, side_by_side = TRUE))
+  expect_snapshot(t_dd_slide(testdata$adsl, "TRT01A", split_by_study = TRUE, side_by_side = "GlobalChina"))
+  expect_warning(t_dd_slide(testdata$adsl, "TRT01A", split_by_study = TRUE, side_by_side = "GlobalChina"))
 })

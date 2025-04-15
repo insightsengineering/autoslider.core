@@ -44,6 +44,10 @@ t_ds_slide <- function(adsl, arm = "TRT01P",
       DCSflag = "Discontinued the study"
     )
 
+  if (!is.null(side_by_side)) {
+    adsl1$lvl <- "Global"
+  }
+
   lyt <- build_table_header(adsl1, arm, split_by_study = split_by_study, side_by_side = side_by_side)
 
   lyt <- lyt %>%

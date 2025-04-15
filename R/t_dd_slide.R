@@ -26,6 +26,10 @@ t_dd_slide <- function(adsl,
 
   anl <- adsl
 
+  if (!is.null(side_by_side)) {
+    anl$lvl <- "Global"
+  }
+
   if (nrow(anl) == 0) {
     return(null_report())
   } else {

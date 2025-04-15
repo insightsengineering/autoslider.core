@@ -60,7 +60,8 @@
       Adverse Events with Difference
       
       ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-      MedDRA System Organ Class                                                                                       
+                                                                                                                      
+      MedDRA System Organ Class                Global                                    Asia                         
          MedDRA Preferred Term N (%)   A: Drug X    B: Placebo   All Patients   A: Drug X    B: Placebo   All Patients
       ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
       cl A.1                                                                                                          
@@ -113,7 +114,8 @@
       Adverse Events with Difference
       
       ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-      MedDRA System Organ Class                                                                                       
+                                                                                                                      
+      MedDRA System Organ Class                Global                                    Asia                         
          MedDRA Preferred Term N (%)   A: Drug X    B: Placebo   All Patients   A: Drug X    B: Placebo   All Patients
       ————————————————————————————————————————————————————————————————————————————————————————————————————————————————
       cl A.1                                                                                                          

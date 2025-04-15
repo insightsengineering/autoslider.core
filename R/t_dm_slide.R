@@ -40,6 +40,10 @@ t_dm_slide <- function(adsl,
   adsl1 <- adsl %>%
     select(all_of(c("STUDYID", "USUBJID", arm, vars, extra)))
 
+  if (!is.null(side_by_side)) {
+    adsl1$lvl <- "Global"
+  }
+
   lyt <- build_table_header(adsl1, arm,
     split_by_study = split_by_study,
     side_by_side = side_by_side

@@ -46,6 +46,10 @@ t_ae_slide <- function(adsl, adae, arm = "TRT01A",
       AEDECOD = "MedDRA Preferred Term"
     )
 
+  if (!is.null(side_by_side)) {
+    anl$lvl <- "Global"
+  }
+
   if (nrow(anl) == 0) {
     return(null_report())
   } else {

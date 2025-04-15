@@ -6,7 +6,10 @@ test_that("Test demographic table creation of t_dm_slide", {
     split_by_study = FALSE,
     side_by_side = "GlobalChina"
   ))
-
+  expect_snapshot(t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"),
+                             split_by_study = FALSE,
+                             side_by_side = "GlobalAsia"
+  ))
   expect_snapshot(t_dm_slide(adsl, "TRT01P", c("SEX", "AGE", "RACE", "ETHNIC", "COUNTRY"),
     split_by_study = TRUE
   ))
