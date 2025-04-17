@@ -1,4 +1,12 @@
-# autoslider.core 0.2.3.9013
+# autoslider.core 0.2.4
+
+### Miscellaneous
+
+ * Align upstream packages (formatters/rtables/rlistings/tern) to the latest releases. 
+ * Allow structured header for side-by-side tables.
+ * Fixed bugs in decoration. 
+ * Support gtsummary.
+ * Support slides creation from rds files.
 
 # autoslider.core 0.2.3
 
