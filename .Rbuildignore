@@ -31,3 +31,6 @@ dor.pptx
 ‘output.pptx’
 tests/testthat/srep.pptx
 docs
+tests/testthat/.rds
+t_dm_slide_FAS.rds
+tmp.pptx
