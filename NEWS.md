@@ -1,3 +1,5 @@
+# autoslider.core 0.2.4.9000
+
 # autoslider.core 0.2.4
 
 ### Miscellaneous
