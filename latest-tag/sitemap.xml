@@ -23,6 +23,7 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/decorate.default.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/decorate.ggplot.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/decorate.grob.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/decorate.gtsummary.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/decorate.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/decorate.list.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/decorate_outputs.html</loc></url>
@@ -50,6 +51,7 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_outputs.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_slides.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/get_proper_title.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/gt_t_dm_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/index.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/l_ae_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/lyt_to_side_by_side.html</loc></url>
@@ -68,6 +70,7 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/s_surv_time_1.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/save_output.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/save_outputs.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/slides_from_rds.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/slides_preview.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/t_ae_pt_diff_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/t_ae_pt_slide.html</loc></url>
@@ -86,9 +89,12 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.dVTableTree.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.data.frame.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.default.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.dgtsummary.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.dlisting.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.gtsummary.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_flextable.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/to_vector.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/trial.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/trim_perc.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/trim_perc1.html</loc></url>
 </urlset>
