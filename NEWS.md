@@ -1,6 +1,8 @@
-# autoslider.core 0.2.4.9000
+# autoslider.core 0.2.4.433
 
-# autoslider.core 0.2.4
+ * Dropping dependencies level.
+
+# autoslider.core 0.2.4.433
 
 ### Miscellaneous
 
