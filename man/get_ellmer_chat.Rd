@@ -2,7 +2,7 @@
 % Please edit documentation in R/ai.R
 \name{get_ellmer_chat}
 \alias{get_ellmer_chat}
-\title{Get a ellmer chat API with given platform}
+\title{Get an `ellmer` chat API with given platform}
 \usage{
 get_ellmer_chat(
   platform = "deepseek",
@@ -21,5 +21,5 @@ get_ellmer_chat(
 \item{model}{Model of choice}
 }
 \description{
-Get a ellmer chat API with given platform
+Get an `ellmer` chat API with given platform
 }

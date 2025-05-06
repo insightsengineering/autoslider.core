@@ -10,7 +10,7 @@ get_system_prompt <- function(text = "you are a Clinical data scientist expert")
   return(text)
 }
 
-#' Get a ellmer chat API with given platform
+#' Get an `ellmer` chat API with given platform
 #'
 #' @param platform Platform provider
 #' @param base_url Base url
