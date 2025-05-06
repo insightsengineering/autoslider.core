@@ -68,7 +68,6 @@ adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_ke
     }
     output
   })
-  print(ret)
   names(ret) <- names_outputs
-  return(ret)
+  ret
 }
