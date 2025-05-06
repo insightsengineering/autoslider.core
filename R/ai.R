@@ -1,12 +1,12 @@
-get_deepseek_key <- function(filename = "DEEPSEEK_KEY"){
+get_deepseek_key <- function(filename = "DEEPSEEK_KEY") {
   scan(filename, what = "character", sep = NULL)
 }
 
-get_portkey_key <- function(filename = "PORTKEY_KEY"){
+get_portkey_key <- function(filename = "PORTKEY_KEY") {
   scan(filename, what = "character", sep = NULL)
 }
 
-get_system_prompt <- function(text = "you are a Clinical data scientist expert"){
+get_system_prompt <- function(text = "you are a Clinical data scientist expert") {
   return(text)
 }
 
@@ -23,18 +23,21 @@ get_ellmer_chat <- function(platform = "deepseek",
       system_prompt = get_system_prompt(),
       base_url = base_url,
       api_key = api_key,
-      model=model)
-  } else if (platform == "galileo"){
-    chat <- chat_portkey(system_prompt = get_system_prompt(),
-                 base_url = base_url,
-                 api_key = api_key,
-                 model = model)
+      model = model
+    )
+  } else if (platform == "galileo") {
+    chat <- chat_portkey(
+      system_prompt = get_system_prompt(),
+      base_url = base_url,
+      api_key = api_key,
+      model = model
+    )
   }
   return(chat)
 }
 
 #' @export
-get_prompt_list <- function(filename){
+get_prompt_list <- function(filename) {
   prompt <- yaml::read_yaml(filename, eval.expr = TRUE)
   structure(
     .Data = prompt,
@@ -51,7 +54,7 @@ integrate_prompt <- function(base_prompt, tlg) {
 }
 
 #' @export
-adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_key, model){
+adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_key, model) {
   chat <- get_ellmer_chat(platform, base_url, api_key, model)
   names_outputs <- names(outputs)
   ret <- lapply(names_outputs, function(output_name) {
@@ -59,9 +62,9 @@ adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_ke
     if (is(output, "autoslider_error")) {
       return(output)
     }
-    if (output_name %in% names(prompt_list)){
+    if (output_name %in% names(prompt_list)) {
       current_prompt <- integrate_prompt(prompt_list[[output_name]]$prompt, output@tbl)
-      output@footnotes <- c(output@footnotes, chat$chat(current_prompt)) #gather_ai_feedback()
+      output@footnotes <- c(output@footnotes, chat$chat(current_prompt)) # gather_ai_feedback()
     }
     output
   })

@@ -12,6 +12,7 @@
 #' @author
 #' - Liming Li (`Lil128`)
 #' - Thomas Neitmann (`neitmant`)
+#' - Joe Zhu
 #'
 #' @export
 #'

@@ -24,10 +24,11 @@ test_that("Listing print correctly", {
     )
   prompt_list <- get_prompt_list(filename = "~/autoslider.core/inst/prompt.yml")
   outputs <- adding_ai_footnotes(outputs, prompt_list,
-                                 platform = "deepseek",
-                                 base_url = "https://api.deepseek.com",
-                                 api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),
-                                 model = "deepseek-chat")
+    platform = "deepseek",
+    base_url = "https://api.deepseek.com",
+    api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),
+    model = "deepseek-chat"
+  )
   output_dir <- tempdir()
   testthat::expect_output({
     outputs %>%

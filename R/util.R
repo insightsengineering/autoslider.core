@@ -532,7 +532,7 @@ lyt_to_side_by_side_two_data <- function(lyt, anl, alt_counts_df, side_by_side =
     }
 
     if (grepl("China", side_by_side)) {
-      tmp_anl <-  anl %>% filter(COUNTRY == "CHN")
+      tmp_anl <- anl %>% filter(COUNTRY == "CHN")
       tmp_anl$lvl <- "China"
       tmp_alt <- alt_counts_df %>% filter(COUNTRY == "CHN")
       tmp_alt$lvl <- "China"
