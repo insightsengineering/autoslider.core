@@ -10,6 +10,12 @@ get_system_prompt <- function(text = "you are a Clinical data scientist expert")
   return(text)
 }
 
+#' Get a ellmer chat API with given platform
+#'
+#' @param platform Platform provider
+#' @param base_url Base url
+#' @param api_key API key
+#' @param model Model of choice
 #'
 #' @export
 #'
@@ -36,6 +42,10 @@ get_ellmer_chat <- function(platform = "deepseek",
   return(chat)
 }
 
+#' Read prompt list from yaml file
+#'
+#' @param filename File name
+#'
 #' @export
 get_prompt_list <- function(filename) {
   prompt <- yaml::read_yaml(filename, eval.expr = TRUE)
@@ -53,6 +63,15 @@ integrate_prompt <- function(base_prompt, tlg) {
   ret
 }
 
+#' Update footnote with AI response
+#'
+#' @param outputs Output objects
+#' @param prompt_list List of prompt
+#' @param platform Platform provider
+#' @param base_url Base url
+#' @param api_key API key
+#' @param model Model of choice
+#'
 #' @export
 adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_key, model) {
   chat <- get_ellmer_chat(platform, base_url, api_key, model)
