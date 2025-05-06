@@ -1,0 +1,41 @@
+test_that("Listing print correctly", {
+  testthat::skip_if_not_installed("filters")
+  testthat::skip_if_not_installed("ellmer")
+
+  # skip_if_too_deep(1)
+  filters::load_filters(file.path(
+    system.file(package = "autoslider.core"),
+    "filters.yml"
+  ), overwrite = TRUE)
+
+  spec_file <- file.path(system.file(package = "autoslider.core"), "spec.yml")
+
+  full_spec <- spec_file %>%
+    read_spec()
+
+  outputs <- full_spec %>%
+    filter_spec(., program %in% c(
+      "t_dm_slide"
+    )) %>%
+    generate_outputs(datasets = testdata) %>%
+    decorate_outputs(
+      version_label = NULL,
+      for_test = TRUE
+    )
+  prompt_list <- get_prompt_list(filename = "~/autoslider.core/inst/prompt.yml")
+  outputs <- adding_ai_footnotes(outputs, prompt_list,
+                                 platform = "deepseek",
+                                 base_url = "https://api.deepseek.com",
+                                 api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),
+                                 model = "deepseek-chat")
+  output_dir <- tempdir()
+  testthat::expect_output({
+    outputs %>%
+      generate_slides(outfile = paste0(output_dir, "/srep.pptx"), t_cpp = 250, t_lpp = 50)
+  })
+
+  testthat::expect_no_error({
+    outputs %>%
+      save_outputs(outfolder = output_dir)
+  })
+})
