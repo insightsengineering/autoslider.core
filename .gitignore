@@ -6,3 +6,6 @@ tests/testthat/Rplots.pdf
 tests/testthat/t_dm_output.rds
 tests/testthat/srep.pptx
 docs/
+*_KEY
+PORTKEY_KEY
+DEEPSEEK_KEY

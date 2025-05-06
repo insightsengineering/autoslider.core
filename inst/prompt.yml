@@ -4,7 +4,7 @@ As a Clinical data scientist expert, here is a demographic summary table from a 
 
 {table_text}
 
-Please analyze the 'Race' category in this table. Specifically, compare the distribution of races between the '{group1_name}' column and the '{group2_name}' column.
+Please analyze the 'Race' category in this table. Specifically, compare the distribution of races between the Placebo column and the treatment column.
 
 Focus only on describing any noticeable differences or similarities in the counts and percentages for each race listed between these two specific groups, based *directly* on the data presented in the table text provided above.
 
