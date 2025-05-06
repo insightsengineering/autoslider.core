@@ -1,6 +1,7 @@
 test_that("Listing print correctly", {
   testthat::skip_if_not_installed("filters")
   testthat::skip_if_not_installed("ellmer")
+  testthat::skip_on_ci()
 
   # skip_if_too_deep(1)
   filters::load_filters(file.path(
@@ -22,7 +23,10 @@ test_that("Listing print correctly", {
       version_label = NULL,
       for_test = TRUE
     )
-  prompt_list <- get_prompt_list(filename = "~/autoslider.core/inst/prompt.yml")
+  prompt_list <- get_prompt_list(filename = file.path(
+    system.file(package = "autoslider.core"),
+    "prompt.yml"
+  ))
   # outputs <- adding_ai_footnotes(outputs, prompt_list,
   #   platform = "deepseek",
   #   base_url = "https://api.deepseek.com",
@@ -35,7 +39,7 @@ test_that("Listing print correctly", {
     api_key = get_portkey_key("~/autoslider.core/PORTKEY_KEY"),
     model = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
   )
-  output_dir <- "./" # tempdir()
+  output_dir <- tempdir()
   testthat::expect_output({
     outputs %>%
       generate_slides(outfile = paste0(output_dir, "ai_srep.pptx"), t_cpp = 250, t_lpp = 50)
