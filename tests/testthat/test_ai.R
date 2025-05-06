@@ -23,16 +23,22 @@ test_that("Listing print correctly", {
       for_test = TRUE
     )
   prompt_list <- get_prompt_list(filename = "~/autoslider.core/inst/prompt.yml")
+  # outputs <- adding_ai_footnotes(outputs, prompt_list,
+  #   platform = "deepseek",
+  #   base_url = "https://api.deepseek.com",
+  #   api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),
+  #   model = "deepseek-chat"
+  # )
   outputs <- adding_ai_footnotes(outputs, prompt_list,
-    platform = "deepseek",
-    base_url = "https://api.deepseek.com",
-    api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),
-    model = "deepseek-chat"
+    platform = "galileo",
+    base_url = "https://us.aigw.galileo.roche.com/v1",
+    api_key = get_portkey_key("~/autoslider.core/PORTKEY_KEY"),
+    model = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
   )
-  output_dir <- tempdir()
+  output_dir <- "./" # tempdir()
   testthat::expect_output({
     outputs %>%
-      generate_slides(outfile = paste0(output_dir, "/srep.pptx"), t_cpp = 250, t_lpp = 50)
+      generate_slides(outfile = paste0(output_dir, "ai_srep.pptx"), t_cpp = 250, t_lpp = 50)
   })
 
   testthat::expect_no_error({

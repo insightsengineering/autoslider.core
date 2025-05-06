@@ -26,7 +26,7 @@ get_ellmer_chat <- function(platform = "deepseek",
       model = model
     )
   } else if (platform == "galileo") {
-    chat <- chat_portkey(
+    chat <- ellmer::chat_portkey(
       system_prompt = get_system_prompt(),
       base_url = base_url,
       api_key = api_key,
