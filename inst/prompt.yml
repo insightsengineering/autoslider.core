@@ -1,11 +1,9 @@
 - output: t_dm_slide_FAS
   prompt: "
-As a Clinical data scientist expert, here is a demographic summary table from a clinical trial:
 
 {table_text}
 
-Please analyze the 'Race' category in this table. Specifically, compare the distribution of races between the Placebo column and the treatment column.
+Please analyze the 'Sex', 'Age', 'Race' category in this table. Specifically, compare the distribution of races between the Placebo column and the treatment column for any imbalance.
 
 Focus only on describing any noticeable differences or similarities in the counts and percentages for each race listed between these two specific groups, based *directly* on the data presented in the table text provided above.
-
-**Important: DO perform a rigorous and formal statistical tests (like a chi-squared test).** Your task is to provide a textual summary of the observed differences or similarities in racial composition between '{group1_name}' and '{group2_name}' as they appear in the table. For instance, mention which races seem more or less prevalent in one group compared to the other according to the numbers shown."
+"
