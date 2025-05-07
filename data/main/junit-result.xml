@@ -1,207 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="bad_filters" timestamp="2025-04-23T11:12:09Z" hostname="cc32c478b3d1" tests="1" skipped="0" failures="0" errors="0" time="0.029">
-    <testcase time="0.0289999999999999" classname="bad_filters" name="Listing_print_correctly"/>
+  <testsuite name="bad_filters" timestamp="2025-05-07T16:25:53Z" hostname="5865bc90777d" tests="1" skipped="0" failures="0" errors="0" time="0.03">
+    <testcase time="0.0300000000000002" classname="bad_filters" name="Listing_print_correctly"/>
   </testsuite>
-  <testsuite name="data_snapshot" timestamp="2025-04-23T11:12:09Z" hostname="cc32c478b3d1" tests="18" skipped="0" failures="0" errors="0" time="0.819">
-    <testcase time="0.102" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0879999999999996" classname="data_snapshot" name="Test_data_snapshot"/>
+  <testsuite name="data_snapshot" timestamp="2025-05-07T16:25:53Z" hostname="5865bc90777d" tests="18" skipped="0" failures="0" errors="0" time="1.025">
+    <testcase time="0.103" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0910000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0289999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0649999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0290000000000004" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.242" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0229999999999997" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0609999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.024" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0540000000000003" classname="data_snapshot" name="Test_data_snapshot"/>
     <testcase time="0.028" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0550000000000002" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0259999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0770000000000004" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0509999999999997" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0330000000000004" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0319999999999996" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0230000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0540000000000003" classname="data_snapshot" name="Test_data_snapshot"/>
     <testcase time="0.0219999999999998" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.056" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0230000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0489999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0229999999999997" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.052" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0340000000000003" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0309999999999997" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0230000000000001" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0500000000000003" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0229999999999997" classname="data_snapshot" name="Test_data_snapshot"/>
-    <testcase time="0.0569999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
+    <testcase time="0.0609999999999999" classname="data_snapshot" name="Test_data_snapshot"/>
   </testsuite>
-  <testsuite name="decorate" timestamp="2025-04-23T11:12:09Z" hostname="cc32c478b3d1" tests="8" skipped="0" failures="0" errors="0" time="0.861">
-    <testcase time="0.127" classname="decorate" name="Test_decoreate.grob_not_to_throw"/>
-    <testcase time="0.004" classname="decorate" name="Test_decoreate_not_to_throw"/>
-    <testcase time="0.118" classname="decorate" name="Test_decoreate_not_to_throw"/>
+  <testsuite name="decorate" timestamp="2025-05-07T16:25:54Z" hostname="5865bc90777d" tests="8" skipped="0" failures="0" errors="0" time="0.824">
+    <testcase time="0.103" classname="decorate" name="Test_decoreate.grob_not_to_throw"/>
+    <testcase time="0.00499999999999989" classname="decorate" name="Test_decoreate_not_to_throw"/>
+    <testcase time="0.0990000000000002" classname="decorate" name="Test_decoreate_not_to_throw"/>
     <testcase time="0.0640000000000001" classname="decorate" name="Test_print_not_to_throw"/>
-    <testcase time="0.0590000000000002" classname="decorate" name="Test_print_not_to_throw"/>
+    <testcase time="0.0609999999999999" classname="decorate" name="Test_print_not_to_throw"/>
     <testcase time="0.125" classname="decorate" name="Test_print_not_to_throw"/>
     <testcase time="0.00800000000000001" classname="decorate" name="Test_decoreate_throw"/>
-    <testcase time="0.356" classname="decorate" name="Test_ph_with_img_not_to_throw"/>
+    <testcase time="0.359" classname="decorate" name="Test_ph_with_img_not_to_throw"/>
   </testsuite>
-  <testsuite name="filter_spec-verbose" timestamp="2025-04-23T11:12:10Z" hostname="cc32c478b3d1" tests="1" skipped="0" failures="0" errors="0" time="0.049">
-    <testcase time="0.0490000000000004" classname="filter_spec_verbose" name="Listing_print_correctly"/>
+  <testsuite name="filter_spec-verbose" timestamp="2025-05-07T16:25:54Z" hostname="5865bc90777d" tests="1" skipped="0" failures="0" errors="0" time="0.049">
+    <testcase time="0.0489999999999995" classname="filter_spec_verbose" name="Listing_print_correctly"/>
   </testsuite>
-  <testsuite name="formats" timestamp="2025-04-23T11:12:10Z" hostname="cc32c478b3d1" tests="6" skipped="0" failures="0" errors="0" time="0.086">
-    <testcase time="0.0139999999999993" classname="formats" name="new_round_function"/>
-    <testcase time="0.0490000000000004" classname="formats" name="new_round_function"/>
-    <testcase time="0.00499999999999989" classname="formats" name="xx.xx_xx.xx_"/>
+  <testsuite name="formats" timestamp="2025-05-07T16:25:54Z" hostname="5865bc90777d" tests="6" skipped="0" failures="0" errors="0" time="0.085">
+    <testcase time="0.0130000000000008" classname="formats" name="new_round_function"/>
+    <testcase time="0.048" classname="formats" name="new_round_function"/>
+    <testcase time="0.00599999999999934" classname="formats" name="xx.xx_xx.xx_"/>
     <testcase time="0.00600000000000023" classname="formats" name="xx.xx_xx.x_"/>
-    <testcase time="0.00599999999999934" classname="formats" name="_xx_xx_"/>
+    <testcase time="0.00600000000000023" classname="formats" name="_xx_xx_"/>
     <testcase time="0.00600000000000023" classname="formats" name="xx.xx_xx.xx_xx.xx_"/>
   </testsuite>
-  <testsuite name="g_mean_slides" timestamp="2025-04-23T11:12:10Z" hostname="cc32c478b3d1" tests="14" skipped="5" failures="0" errors="0" time="0.89">
-    <testcase time="0.345000000000001" classname="g_mean_slides" name="g_mean_slides_Test_1_Test_graph_creation_of_g_eg_slide_eg_mean_plot_"/>
-    <testcase time="0.000999999999999446" classname="g_mean_slides" name="g_mean_slides_Test_1_Test_graph_creation_of_g_eg_slide_eg_mean_plot_">
+  <testsuite name="g_mean_slides" timestamp="2025-05-07T16:25:55Z" hostname="5865bc90777d" tests="14" skipped="5" failures="0" errors="0" time="0.744">
+    <testcase time="0.159999999999999" classname="g_mean_slides" name="g_mean_slides_Test_1_Test_graph_creation_of_g_eg_slide_eg_mean_plot_"/>
+    <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_1_Test_graph_creation_of_g_eg_slide_eg_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:20:3')"/>
     </testcase>
-    <testcase time="0.0179999999999998" classname="g_mean_slides" name="g_mean_slides_Test_2_Test_error_of_g_eg_slide_"/>
-    <testcase time="0.112" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_"/>
-    <testcase time="0.00200000000000067" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_">
+    <testcase time="0.0170000000000003" classname="g_mean_slides" name="g_mean_slides_Test_2_Test_error_of_g_eg_slide_"/>
+    <testcase time="0.117999999999999" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_"/>
+    <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_3_Test_graph_creation_of_g_lb_slide_lab_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:37:3')"/>
     </testcase>
-    <testcase time="0.133" classname="g_mean_slides" name="g_mean_slides_Test_4_Test_graph_creation_of_g_lb_slide_lab_change_from_baseline_plot_"/>
-    <testcase time="0.00199999999999978" classname="g_mean_slides" name="g_mean_slides_Test_4_Test_graph_creation_of_g_lb_slide_lab_change_from_baseline_plot_">
+    <testcase time="0.138" classname="g_mean_slides" name="g_mean_slides_Test_4_Test_graph_creation_of_g_lb_slide_lab_change_from_baseline_plot_"/>
+    <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_4_Test_graph_creation_of_g_lb_slide_lab_change_from_baseline_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:54:3')"/>
     </testcase>
     <testcase time="0.0169999999999995" classname="g_mean_slides" name="g_mean_slides_Test_5_Test_error_of_g_lb_slide_"/>
-    <testcase time="0.102" classname="g_mean_slides" name="g_mean_slides_Test_6_Test_graph_creation_of_g_vs_slide_vital_sign_mean_plot_"/>
-    <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_6_Test_graph_creation_of_g_vs_slide_vital_sign_mean_plot_">
+    <testcase time="0.101" classname="g_mean_slides" name="g_mean_slides_Test_6_Test_graph_creation_of_g_vs_slide_vital_sign_mean_plot_"/>
+    <testcase time="0.00199999999999978" classname="g_mean_slides" name="g_mean_slides_Test_6_Test_graph_creation_of_g_vs_slide_vital_sign_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:72:3')"/>
     </testcase>
-    <testcase time="0.0169999999999995" classname="g_mean_slides" name="g_mean_slides_Test_7_Test_error_of_g_vs_slide_"/>
-    <testcase time="0.122" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_"/>
-    <testcase time="0.00100000000000033" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_">
+    <testcase time="0.016" classname="g_mean_slides" name="g_mean_slides_Test_7_Test_error_of_g_vs_slide_"/>
+    <testcase time="0.154000000000001" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_"/>
+    <testcase time="0.000999999999999446" classname="g_mean_slides" name="g_mean_slides_Test_8_Test_graph_creation_of_g_mean_slide_vital_sign_mean_plot_">
       <skipped message="Reason: On CI ('test-g_mean_slides.R:94:3')"/>
     </testcase>
     <testcase time="0.0170000000000003" classname="g_mean_slides" name="g_mean_slides_Test_9_Test_error_of_general_function_g_mean_slide_"/>
   </testsuite>
-  <testsuite name="helper_functions" timestamp="2025-04-23T11:12:11Z" hostname="cc32c478b3d1" tests="2" skipped="0" failures="0" errors="0" time="0.063">
+  <testsuite name="helper_functions" timestamp="2025-05-07T16:25:55Z" hostname="5865bc90777d" tests="2" skipped="0" failures="0" errors="0" time="0.067">
     <testcase time="0.00999999999999979" classname="helper_functions" name="Test_some_functions_in_helper_functions.R"/>
-    <testcase time="0.0529999999999999" classname="helper_functions" name="Test_some_functions_in_helper_functions.R"/>
+    <testcase time="0.0570000000000004" classname="helper_functions" name="Test_some_functions_in_helper_functions.R"/>
   </testsuite>
-  <testsuite name="l_ae_slide" timestamp="2025-04-23T11:12:11Z" hostname="cc32c478b3d1" tests="1" skipped="0" failures="0" errors="0" time="8.195">
-    <testcase time="8.195" classname="l_ae_slide" name="Test_listing_creation_of_l_ae_slide_Adverse_Events_Listing_"/>
+  <testsuite name="l_ae_slide" timestamp="2025-05-07T16:25:55Z" hostname="5865bc90777d" tests="1" skipped="0" failures="0" errors="0" time="8.256">
+    <testcase time="8.256" classname="l_ae_slide" name="Test_listing_creation_of_l_ae_slide_Adverse_Events_Listing_"/>
   </testsuite>
-  <testsuite name="log" timestamp="2025-04-23T11:12:20Z" hostname="cc32c478b3d1" tests="2" skipped="0" failures="0" errors="0" time="0.011">
-    <testcase time="0.00999999999999979" classname="log" name="Test_some_functions_in_log.R"/>
+  <testsuite name="log" timestamp="2025-05-07T16:26:04Z" hostname="5865bc90777d" tests="2" skipped="0" failures="0" errors="0" time="0.012">
+    <testcase time="0.011000000000001" classname="log" name="Test_some_functions_in_log.R"/>
     <testcase time="0.000999999999999446" classname="log" name="Test_some_functions_in_log.R"/>
   </testsuite>
-  <testsuite name="output-table-format" timestamp="2025-04-23T11:12:20Z" hostname="cc32c478b3d1" tests="5" skipped="0" failures="0" errors="0" time="3.319">
-    <testcase time="0.927000000000001" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.568" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.576000000000001" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.636999999999999" classname="output_table_format" name="save_an_autoslider_output"/>
-    <testcase time="0.611000000000001" classname="output_table_format" name="save_an_autoslider_output"/>
+  <testsuite name="output-table-format" timestamp="2025-05-07T16:26:04Z" hostname="5865bc90777d" tests="5" skipped="0" failures="0" errors="0" time="3.352">
+    <testcase time="0.94" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.565000000000001" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.625999999999999" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.606" classname="output_table_format" name="save_an_autoslider_output"/>
+    <testcase time="0.614999999999998" classname="output_table_format" name="save_an_autoslider_output"/>
   </testsuite>
-  <testsuite name="save_output" timestamp="2025-04-23T11:12:23Z" hostname="cc32c478b3d1" tests="5" skipped="0" failures="0" errors="0" time="2.217">
-    <testcase time="0.23" classname="save_output" name="save_an_output"/>
+  <testsuite name="save_output" timestamp="2025-05-07T16:26:07Z" hostname="5865bc90777d" tests="5" skipped="0" failures="0" errors="0" time="2.205">
+    <testcase time="0.240000000000002" classname="save_output" name="save_an_output"/>
     <testcase time="0.375" classname="save_output" name="Test_save_output_Save_an_Output_"/>
-    <testcase time="0.463999999999999" classname="save_output" name="Test_save_output_Save_an_Output_"/>
-    <testcase time="0.355" classname="save_output" name="save_an_output"/>
-    <testcase time="0.792999999999999" classname="save_output" name="save_an_output"/>
+    <testcase time="0.466999999999999" classname="save_output" name="Test_save_output_Save_an_Output_"/>
+    <testcase time="0.353999999999999" classname="save_output" name="save_an_output"/>
+    <testcase time="0.769000000000002" classname="save_output" name="save_an_output"/>
   </testsuite>
-  <testsuite name="slides_preview" timestamp="2025-04-23T11:12:25Z" hostname="cc32c478b3d1" tests="3" skipped="0" failures="0" errors="0" time="0.521">
-    <testcase time="0.472000000000001" classname="slides_preview" name="Test_slides_preview"/>
-    <testcase time="0.0249999999999986" classname="slides_preview" name="Test_slides_preview"/>
+  <testsuite name="slides_preview" timestamp="2025-05-07T16:26:09Z" hostname="5865bc90777d" tests="3" skipped="0" failures="0" errors="0" time="0.516">
+    <testcase time="0.468" classname="slides_preview" name="Test_slides_preview"/>
     <testcase time="0.0240000000000009" classname="slides_preview" name="Test_slides_preview"/>
+    <testcase time="0.0239999999999974" classname="slides_preview" name="Test_slides_preview"/>
   </testsuite>
-  <testsuite name="srep_outputs" timestamp="2025-04-23T11:12:26Z" hostname="cc32c478b3d1" tests="3" skipped="0" failures="0" errors="0" time="96.281">
-    <testcase time="2.766" classname="srep_outputs" name="Listing_print_correctly"/>
-    <testcase time="93.224" classname="srep_outputs" name="Listing_print_correctly"/>
-    <testcase time="0.290999999999997" classname="srep_outputs" name="Listing_print_correctly"/>
+  <testsuite name="srep_outputs" timestamp="2025-05-07T16:26:10Z" hostname="5865bc90777d" tests="3" skipped="0" failures="0" errors="0" time="97.728">
+    <testcase time="2.835" classname="srep_outputs" name="Listing_print_correctly"/>
+    <testcase time="94.62" classname="srep_outputs" name="Listing_print_correctly"/>
+    <testcase time="0.272999999999996" classname="srep_outputs" name="Listing_print_correctly"/>
   </testsuite>
-  <testsuite name="t_ae_pt_diff_slide" timestamp="2025-04-23T11:14:02Z" hostname="cc32c478b3d1" tests="9" skipped="0" failures="0" errors="0" time="2.87">
-    <testcase time="0.181000000000012" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_"/>
-    <testcase time="1.06099999999999" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.320999999999998" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.210000000000008" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.370999999999995" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.212000000000003" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.108000000000004" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_"/>
-    <testcase time="0.325999999999993" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+  <testsuite name="t_ae_pt_diff_slide" timestamp="2025-05-07T16:27:47Z" hostname="5865bc90777d" tests="9" skipped="0" failures="0" errors="0" time="2.868">
+    <testcase time="0.185000000000002" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_"/>
+    <testcase time="1.08" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.328000000000003" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.211999999999989" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.336000000000013" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.209999999999994" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.106999999999999" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_safety_summary_table_"/>
+    <testcase time="0.329999999999998" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_2"/>
     <testcase time="0.0799999999999983" classname="t_ae_pt_diff_slide" name="Test_table_creation_of_t_ae_pt_diff_slide_with_null_report"/>
   </testsuite>
-  <testsuite name="t_ae_pt_slide" timestamp="2025-04-23T11:14:05Z" hostname="cc32c478b3d1" tests="6" skipped="0" failures="0" errors="0" time="1.751">
-    <testcase time="0.216000000000008" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_"/>
-    <testcase time="0.200999999999993" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_28"/>
+  <testsuite name="t_ae_pt_slide" timestamp="2025-05-07T16:27:50Z" hostname="5865bc90777d" tests="6" skipped="0" failures="0" errors="0" time="1.827">
+    <testcase time="0.216999999999999" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_"/>
+    <testcase time="0.200000000000003" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_28"/>
     <testcase time="0.195000000000007" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_slide_safety_summary_table_prune_by_total_30"/>
-    <testcase time="0.399999999999991" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_"/>
-    <testcase time="0.381" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_28"/>
-    <testcase time="0.358000000000004" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_30"/>
+    <testcase time="0.397999999999996" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_"/>
+    <testcase time="0.438000000000002" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_28"/>
+    <testcase time="0.378999999999991" classname="t_ae_pt_slide" name="Test_table_creation_of_t_ae_pt_soc_slide_safety_summary_table_prune_by_total_30"/>
   </testsuite>
-  <testsuite name="t_ae_pt_soc_diff_slide" timestamp="2025-04-23T11:14:07Z" hostname="cc32c478b3d1" tests="7" skipped="0" failures="0" errors="0" time="3.136">
-    <testcase time="0.343000000000004" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_"/>
-    <testcase time="0.322999999999993" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.650999999999996" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.391000000000005" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.650000000000006" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.518000000000001" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
-    <testcase time="0.259999999999991" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_"/>
+  <testsuite name="t_ae_pt_soc_diff_slide" timestamp="2025-05-07T16:27:52Z" hostname="5865bc90777d" tests="7" skipped="0" failures="0" errors="0" time="3.187">
+    <testcase time="0.347000000000008" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_"/>
+    <testcase time="0.329999999999998" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.658000000000001" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.405999999999992" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.653000000000006" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.525999999999996" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_prune_by_total_2"/>
+    <testcase time="0.26700000000001" classname="t_ae_pt_soc_diff_slide" name="Test_table_creation_of_t_ae_pt_soc_diff_slide_safety_summary_table_"/>
   </testsuite>
-  <testsuite name="t_ae_slide" timestamp="2025-04-23T11:14:10Z" hostname="cc32c478b3d1" tests="2" skipped="0" failures="0" errors="0" time="0.746">
-    <testcase time="0.677000000000007" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_Adverse_Events_for_Patient_"/>
-    <testcase time="0.0690000000000026" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_with_null_report"/>
+  <testsuite name="t_ae_slide" timestamp="2025-05-07T16:27:55Z" hostname="5865bc90777d" tests="2" skipped="0" failures="0" errors="0" time="0.764">
+    <testcase time="0.697999999999993" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_Adverse_Events_for_Patient_"/>
+    <testcase time="0.0660000000000025" classname="t_ae_slide" name="Test_adverse_event_table_creation_of_t_ae_slide_with_null_report"/>
   </testsuite>
-  <testsuite name="t_ae_summary_slide" timestamp="2025-04-23T11:14:10Z" hostname="cc32c478b3d1" tests="4" skipped="0" failures="0" errors="0" time="1.224">
-    <testcase time="0.549999999999997" classname="t_ae_summary_slide" name="Test_table_creation_of_t_ae_summ_slide_safety_summary_table_"/>
-    <testcase time="0.551999999999992" classname="t_ae_summary_slide" name="Test_table_creation_of_t_ae_summ_slide_safety_summary_table_"/>
+  <testsuite name="t_ae_summary_slide" timestamp="2025-05-07T16:27:56Z" hostname="5865bc90777d" tests="4" skipped="0" failures="0" errors="0" time="1.247">
+    <testcase time="0.566999999999993" classname="t_ae_summary_slide" name="Test_table_creation_of_t_ae_summ_slide_safety_summary_table_"/>
+    <testcase time="0.558999999999997" classname="t_ae_summary_slide" name="Test_table_creation_of_t_ae_summ_slide_safety_summary_table_"/>
     <testcase time="0.0400000000000063" classname="t_ae_summary_slide" name="Test_t_ae_summ_slide_with_expected_Error"/>
-    <testcase time="0.0819999999999936" classname="t_ae_summary_slide" name="Test_t_ae_summ_slide_with_null_report"/>
+    <testcase time="0.0810000000000031" classname="t_ae_summary_slide" name="Test_t_ae_summ_slide_with_null_report"/>
   </testsuite>
-  <testsuite name="t_aesi_slide" timestamp="2025-04-23T11:14:12Z" hostname="cc32c478b3d1" tests="5" skipped="0" failures="0" errors="0" time="1.39">
-    <testcase time="0.468000000000004" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AETOXGR_grading"/>
-    <testcase time="0.444999999999993" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AESEV_grading"/>
-    <testcase time="0.447000000000003" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_custom_AEGRP_grouping"/>
-    <testcase time="0.00800000000000978" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_with_no_aesi_var_given"/>
+  <testsuite name="t_aesi_slide" timestamp="2025-05-07T16:27:57Z" hostname="5865bc90777d" tests="5" skipped="0" failures="0" errors="0" time="1.443">
+    <testcase time="0.503" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AETOXGR_grading"/>
+    <testcase time="0.456999999999994" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_AESEV_grading"/>
+    <testcase time="0.451999999999998" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_AESI_summary_table_with_custom_AEGRP_grouping"/>
+    <testcase time="0.00900000000001455" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_with_no_aesi_var_given"/>
     <testcase time="0.0219999999999914" classname="t_aesi_slide" name="Test_table_creation_of_t_aesi_slide_with_aesi_var_not_found_in_dataset"/>
   </testsuite>
-  <testsuite name="t_dd_slide" timestamp="2025-04-23T11:14:13Z" hostname="cc32c478b3d1" tests="6" skipped="0" failures="0" errors="0" time="1.054">
-    <testcase time="0.173000000000002" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
-    <testcase time="0.0390000000000015" classname="t_dd_slide" name="Test_t_dd_slide_table_with_expected_Error"/>
-    <testcase time="0.0549999999999926" classname="t_dd_slide" name="Test_table_creation_of_with_null_report"/>
-    <testcase time="0.214000000000013" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
-    <testcase time="0.345999999999989" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
-    <testcase time="0.227000000000004" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
+  <testsuite name="t_dd_slide" timestamp="2025-05-07T16:27:59Z" hostname="5865bc90777d" tests="6" skipped="0" failures="0" errors="0" time="1.06">
+    <testcase time="0.165999999999997" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
+    <testcase time="0.0389999999999873" classname="t_dd_slide" name="Test_t_dd_slide_table_with_expected_Error"/>
+    <testcase time="0.0560000000000116" classname="t_dd_slide" name="Test_table_creation_of_with_null_report"/>
+    <testcase time="0.216000000000008" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
+    <testcase time="0.35499999999999" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
+    <testcase time="0.228000000000009" classname="t_dd_slide" name="Test_table_creation_of_t_dd_slide_death_table_"/>
   </testsuite>
-  <testsuite name="t_dm_slide" timestamp="2025-04-23T11:14:14Z" hostname="cc32c478b3d1" tests="6" skipped="0" failures="0" errors="0" time="3.469">
-    <testcase time="0.375" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
-    <testcase time="0.716000000000008" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
-    <testcase time="0.703000000000003" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
-    <testcase time="0.480000000000018" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
-    <testcase time="0.468999999999994" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
-    <testcase time="0.725999999999999" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+  <testsuite name="t_dm_slide" timestamp="2025-05-07T16:28:00Z" hostname="5865bc90777d" tests="6" skipped="0" failures="0" errors="0" time="3.558">
+    <testcase time="0.378999999999991" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.742999999999995" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.733000000000004" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.490000000000009" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.466999999999985" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
+    <testcase time="0.746000000000009" classname="t_dm_slide" name="Test_demographic_table_creation_of_t_dm_slide"/>
   </testsuite>
-  <testsuite name="t_dor_slide" timestamp="2025-04-23T11:14:18Z" hostname="cc32c478b3d1" tests="2" skipped="0" failures="0" errors="0" time="0.337">
-    <testcase time="0.176000000000016" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_DAYS_"/>
-    <testcase time="0.160999999999973" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_YEARS_"/>
+  <testsuite name="t_dor_slide" timestamp="2025-05-07T16:28:03Z" hostname="5865bc90777d" tests="2" skipped="0" failures="0" errors="0" time="0.344">
+    <testcase time="0.167000000000002" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_DAYS_"/>
+    <testcase time="0.176999999999992" classname="t_dor_slide" name="Test_DOR_table_when_time_unit_is_YEARS_"/>
   </testsuite>
-  <testsuite name="t_ds_slide" timestamp="2025-04-23T11:14:18Z" hostname="cc32c478b3d1" tests="5" skipped="0" failures="0" errors="0" time="2.367">
-    <testcase time="0.307000000000016" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
-    <testcase time="0.61099999999999" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
-    <testcase time="0.379999999999995" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
-    <testcase time="0.621000000000009" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
-    <testcase time="0.448000000000008" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+  <testsuite name="t_ds_slide" timestamp="2025-05-07T16:28:04Z" hostname="5865bc90777d" tests="5" skipped="0" failures="0" errors="0" time="2.375">
+    <testcase time="0.293000000000006" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.621999999999986" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.385999999999996" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.618000000000023" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
+    <testcase time="0.455999999999989" classname="t_ds_slide" name="Test_table_creation_of_t_ds_slide"/>
   </testsuite>
-  <testsuite name="util" timestamp="2025-04-23T11:14:20Z" hostname="cc32c478b3d1" tests="18" skipped="0" failures="0" errors="0" time="0.052">
-    <testcase time="0.00799999999998136" classname="util" name="Test_some_functions_in_util.R"/>
+  <testsuite name="util" timestamp="2025-05-07T16:28:06Z" hostname="5865bc90777d" tests="18" skipped="0" failures="0" errors="0" time="0.054">
+    <testcase time="0.0109999999999957" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00200000000000955" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00199999999998113" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.000999999999976353" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00800000000000978" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.007000000000005" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.007000000000005" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.000999999999976353" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00600000000000023" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00199999999998113" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.0040000000000191" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.0029999999999859" classname="util" name="Test_some_functions_in_util.R"/>
-    <testcase time="0.00200000000000955" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00499999999999545" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00300000000001432" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.000999999999976353" classname="util" name="Test_some_functions_in_util.R"/>
     <testcase time="0.00200000000000955" classname="util" name="Test_some_functions_in_util.R"/>
+    <testcase time="0.00100000000000477" classname="util" name="Test_some_functions_in_util.R"/>
   </testsuite>
-  <testsuite name="format_date" timestamp="2025-04-23T11:14:20Z" hostname="cc32c478b3d1" tests="5" skipped="0" failures="0" errors="0" time="0.245">
-    <testcase time="0.13900000000001" classname="format_date" name="Test_format_date"/>
-    <testcase time="0.0279999999999916" classname="format_date" name="Test_format_date"/>
+  <testsuite name="ai" timestamp="2025-05-07T16:28:06Z" hostname="5865bc90777d" tests="1" skipped="1" failures="0" errors="0" time="0.041">
+    <testcase time="0.0409999999999968" classname="ai" name="Listing_print_correctly">
+      <skipped message="Reason: On CI ('test_ai.R:4:3')"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="format_date" timestamp="2025-05-07T16:28:06Z" hostname="5865bc90777d" tests="5" skipped="0" failures="0" errors="0" time="0.254">
+    <testcase time="0.150000000000006" classname="format_date" name="Test_format_date"/>
+    <testcase time="0.0289999999999964" classname="format_date" name="Test_format_date"/>
     <testcase time="0.0229999999999961" classname="format_date" name="Test_format_date"/>
-    <testcase time="0.0279999999999916" classname="format_date" name="Test_format_date"/>
-    <testcase time="0.0270000000000152" classname="format_date" name="Test_format_date"/>
+    <testcase time="0.0260000000000105" classname="format_date" name="Test_format_date"/>
+    <testcase time="0.025999999999982" classname="format_date" name="Test_format_date"/>
   </testsuite>
 </testsuites>
