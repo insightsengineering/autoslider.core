@@ -87,7 +87,7 @@ VignetteBuilder:
     knitr,
     rmarkdown
 Remotes: 
-    r-world-devs/ellmer@add_portkey_support
+    tidyverse/ellmer@main
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
