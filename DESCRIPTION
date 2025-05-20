@@ -63,7 +63,7 @@ Imports:
     yaml (>= 2.3.7)
 Suggests:
     devtools (>= 2.4.5),
-    ellmer (>= 0.1.1.9000),
+    ellmer (>= 0.2.0),
     filters (>= 0.3.1),
     formatters (>= 0.5.11),
     glue (>= 1.8.0),
@@ -86,8 +86,6 @@ Suggests:
 VignetteBuilder:
     knitr,
     rmarkdown
-Remotes: 
-    tidyverse/ellmer@main
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
