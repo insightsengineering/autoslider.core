@@ -157,60 +157,67 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
       add_colcounts() %>%
       count_patients_with_event(
         vars = "USUBJID",
-        table_names = "U",
         filters = c("SAFFL" = "Y"),
         denom = "N_col",
         .stats = "count_fraction",
-        .labels = c(count_fraction = "All grade AEs, any cause")
+        .labels = c(count_fraction = "All grade AEs, any cause"),
+        table_names = "U",
         # .formats = list(trim_perc1)
       ) %>%
       count_patients_with_flags(
         "USUBJID",
         flag_variables = c(TMPFL1_REL0 = "Related"),
         denom = "N_col",
-        .indent_mods = 1L
+        .indent_mods = 1L,
+        var_labels = "TMPFL1 Related"
         # .format = list(trim_perc1)
       ) %>%
       count_patients_with_flags(
         "USUBJID",
         flag_variables = c(TMPFL1_G34 = "Grade 3-4 AEs"),
         denom = "N_col",
-        .indent_mods = 0L
+        .indent_mods = 0L,
+        var_labels = "Grade 3-4 AEs"
         # .format = list(trim_perc1)
       ) %>%
       count_patients_with_flags(
         "USUBJID",
         flag_variables = c(TMPFL1_G34_REL = "Related"),
         denom = "N_col",
-        .indent_mods = 1L
+        .indent_mods = 1L,
+        var_labels = "TMPFL1_G34 Related"
         # .format = list(trim_perc1)
       ) %>%
       count_patients_with_flags(
         "USUBJID",
         flag_variables = c(TMPFL1_G5 = "Grade 5 AE"),
         denom = "N_col",
-        .indent_mods = 0L
+        .indent_mods = 0L,
+        var_labels = "Grade 5 AE"
         # .format = list(trim_perc1)
       ) %>%
       count_patients_with_flags(
         "USUBJID",
         flag_variables = c(TMPFL1_G5_REL = "Related"),
         denom = "N_col",
-        .indent_mods = 1L
+        .indent_mods = 1L,
+        var_labels = "TMPFL1_G5 Related"
         # .format = list(trim_perc1)
       ) %>%
       count_patients_with_flags(
         "USUBJID",
         flag_variables = c(TMPFL1_SER = "SAEs"),
         denom = "N_col",
-        .indent_mods = 0L
+        .indent_mods = 0L,
+        var_labels = "SAEs"
         # .format = list(trim_perc1)
       ) %>%
       count_patients_with_flags(
         "USUBJID",
         flag_variables = c(TMPFL1_SER_REL = "Related"),
         denom = "N_col",
-        .indent_mods = 1L
+        .indent_mods = 1L,
+        var_labels = "TMPFL1_SEA Related"
         # .format = list(trim_perc1)
       )
 
@@ -222,7 +229,8 @@ t_ae_summ_slide <- function(adsl, adae, arm = "TRT01A",
          "USUBJID",
          flag_variables = c(', dose_adjust_flags[i], "='", dose_adjust_labels[i],
           "'),
-                    denom = 'N_col',
+          denom = 'N_col',
+          var_labels = paste('dose adjust',i),
          .indent_mods = 0L)"
         )
         eval(parse(text = text))
