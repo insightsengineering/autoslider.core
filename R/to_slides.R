@@ -65,7 +65,8 @@ generate_slides <- function(outputs,
     is(outputs, "ggplot"),
     is(outputs, "gtsummary"),
     is(outputs, "dVTableTree"),
-    is(outputs, "dlisting")
+    is(outputs, "dlisting"),
+    is(outputs, "grob")
   ))) {
     if (is(outputs, "ggplot")) {
       current_title <- outputs$labels$title
@@ -73,6 +74,8 @@ generate_slides <- function(outputs,
         current_title <- ""
       }
       outputs <- decorate.ggplot(outputs)
+    } else if (is(outputs, "grob")) {
+      outputs <- decorate.grob(outputs)
     }
 
     outputs <- list(outputs)

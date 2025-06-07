@@ -18,9 +18,13 @@ a <- ggplot(data = sample_df, mapping = aes(x = group, y = value)) +
 aa <- list(a, a)
 
 
+
 test_that("Test decoreate.grob not to throw", {
   p <- ggplotGrob(a)
   expect_no_error(decorate.grob(p, titles = "some title", footnotes = "some footnote"))
+
+  aa_bind <- gridExtra::grid.arrange(a, a, ncol = 2, nrow=1)
+  expect_no_error(decorate.grob(aa_bind, titles = "some title", footnotes = "some footnote"))
 })
 
 
