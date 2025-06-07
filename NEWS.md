@@ -1,4 +1,4 @@
-# autoslider.core 0.2.4.9003
+# autoslider.core 0.2.4.9004
 
  * Dropping dependencies level.
 
