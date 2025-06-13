@@ -1,12 +1,22 @@
 ---
 title: "Generating Templates with table_templates.R"
-author: "[Your Name]"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output:
+    rmarkdown::html_document:
+        theme: "spacelab"
+        highlight: "kate"
+        toc: true
+        toc_float: true
+author: 
+  - Yolanda Zhou ([`yolandazzz13`])
+
 vignette: >
   %\VignetteIndexEntry{Using Table Templates}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+editor_options:
+    markdown:
+        wrap: 72
 ---
 
 ```{r, include = FALSE}
@@ -17,24 +27,30 @@ knitr::opts_chunk$set(
 ```
 
 ## Introduction
-This vignette demonstrates how to use pre-defined templates to create new R scripts for generating tables.The core idea is to provide a set of standard templates for common statistical tables, such as those for demography (`t_dm_slide`). Users can thenmodify them to suit their specific datasets and analysis needs.
+This vignette demonstrates how to use pre-defined templates to create new R scripts for generating tables.The core idea is to provide a set of standard templates for common statistical tables, such as those for demography (`t_dm_slide`). Users can then modify them to suit their specific datasets and analysis needs.
 
-## List Available Templates
+## List available templates
 Before generating a template, you can view all supported table templates using the ` list_all_templates()` function:
+
+To get started, first navigate to your `autoslider.core` repo directory:
 
 
 ```{r, include = TRUE, eval = FALSE}
-library(autoslider.core)
+setwd("~/path/to/autoslider.core")
+
+devtools::load_all() 
+
 list_all_templates()
 
 ```
 This will return a character vector of supported templates (e.g., "t_dm_slide", "t_ae_slide", etc.), each corresponding to a table type stored in the `R/` folder of the package.
 
-## Generate a Table Template
+## Generate a template for your own table
 Use the `use_template()` function to generate a template script that you can customize. For example:
 
 ```{r_function_call, include = TRUE, eval = FALSE}
 use_template(template = "t_dm_slide", function_name = "demography")
+
 ```
 This will create a file with the demography template at `./programs/R/demography.R`
 
@@ -46,7 +62,7 @@ This will create a file with the demography template at `./programs/R/demography
 - In interactive mode, the generated file will open in your R editor for immediate editing.
 
 
-## Customize the Template
+## Customize the template
 Once the script is generated, you can modify it to suit your dataset or statistical needs. For instance, you can:
 
 
