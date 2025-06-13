@@ -16,6 +16,8 @@ tests/testthat/Rplots.pdf
 # docs
 docs
 R/util_experimental.R
+specs.yml
+filters.yml
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
