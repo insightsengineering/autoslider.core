@@ -1,0 +1,60 @@
+---
+title: "Generating Templates with table_templates.R"
+author: "[Your Name]"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using Table Templates}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+This vignette demonstrates how to use pre-defined templates to create new R scripts for generating tables.The core idea is to provide a set of standard templates for common statistical tables, such as those for demography (`t_dm_slide`). Users can thenmodify them to suit their specific datasets and analysis needs.
+
+## List Available Templates
+Before generating a template, you can view all supported table templates using the ` list_all_templates()` function:
+
+
+```{r, include = TRUE, eval = FALSE}
+library(autoslider.core)
+list_all_templates()
+
+```
+This will return a character vector of supported templates (e.g., "t_dm_slide", "t_ae_slide", etc.), each corresponding to a table type stored in the `R/` folder of the package.
+
+## Generate a Table Template
+Use the `use_template()` function to generate a template script that you can customize. For example:
+
+```{r_function_call, include = TRUE, eval = FALSE}
+use_template(template = "t_dm_slide", function_name = "demography")
+```
+This will create a file with the demography template at `./programs/R/demography.R`
+
+### Notes
+- The `template` argument must match one of the entries in list_all_templates(). 
+
+- If a file with the same name already exists, it will not be overwritten unless you set `overwrite = TRUE`.
+
+- In interactive mode, the generated file will open in your R editor for immediate editing.
+
+
+## Customize the Template
+Once the script is generated, you can modify it to suit your dataset or statistical needs. For instance, you can:
+
+
+- Add or remove table columns
+
+- Customize labels and formatting
+
+- Modify the summary statistics
+
+
+
