@@ -33,18 +33,21 @@ use_template <- function(template = "t_dm_slide",
   # assert_that(assertthat::is.string(save_path))
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
-  
+
   if (is.null(save_path)) {
-    # what is potential folder for
-    potential_folders <- c("./programs/R", "./templates")
-    path <- potential_folders[potential_folders %in% list.dirs()] %>%
-      first()
-    save_path <- file.path(ifelse(!is.na(path), path, "."), paste0(function_name, "_XXXX.R"))
+    target_dir <- "./programs/R"
+
+    if (!dir.exists(target_dir)) {
+      dir.create(target_dir, recursive = TRUE)
+    }
+
+    save_path <- file.path(target_dir, paste0(function_name, "_XXXX.R"))
   } else {
+    # Original validation logic for when save_path is provided
     assertthat::has_extension(save_path, ext = "R")
     assertthat::is.writeable(save_path %>% dirname())
   }
-  
+
   package <- "autoslide.core"
   if (!tolower(template) %in% list_all_templates()) {
     err_msg <- sprintf(
@@ -56,7 +59,7 @@ use_template <- function(template = "t_dm_slide",
     )
     abort(err_msg)
   }
-  
+
   if (file.exists(save_path) && !overwrite) {
     err_msg <- paste(
       sprintf("A file named '%s' already exists.", save_path),
@@ -65,15 +68,15 @@ use_template <- function(template = "t_dm_slide",
     )
     abort(err_msg)
   }
-  
+
   #template_file <- system.file(
    # paste0("R/", tolower(template), ".R"),
   #  package = package
   #)
-  
-    
+
+
   template_file <- file.path("R", paste0(tolower(template), ".R"))
-  
+
   # Check if the file exists:
   if (!file.exists(template_file)){
     err_msg <- sprintf(
@@ -89,11 +92,11 @@ use_template <- function(template = "t_dm_slide",
     file_lines <- gsub("FUNCTION_NAME", function_name, file_lines)
     writeLines(file_lines, save_path)
   }
-  
+
   if (open) {
     file.edit(save_path)
   }
-  
+
   invisible(TRUE)
 }
 
