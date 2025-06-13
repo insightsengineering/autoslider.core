@@ -1,4 +1,4 @@
-# autoslider.core 0.2.4.9005
+# autoslider.core 0.2.5
 
  * Dropping dependencies level.
  * Adding `ellmer` dependency, enable AI prompt.
