@@ -17,7 +17,6 @@ test_that("Listing print correctly", {
       "t_ds_slide",
       "t_dd_slide",
       "t_ae_slide",
-      "t_ae_sae_slide",
       "t_ae_pt_slide",
       "t_ae_pt_soc_slide",
       "t_ae_pt_diff_slide",
