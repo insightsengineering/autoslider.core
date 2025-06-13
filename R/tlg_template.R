@@ -87,9 +87,13 @@ use_template <- function(template = "t_dm_slide",
   }
   if (file.copy(template_file, save_path, overwrite = TRUE)) {
     rlang::inform(sprintf("\u2713 File '%s' has been created successfully", save_path))
-    # lets fix the function_name:
     file_lines <- readLines(save_path)
-    file_lines <- gsub("FUNCTION_NAME", function_name, file_lines)
+
+    file_lines <- file_lines[!grepl("^#'", file_lines)]
+    file_lines <- file_lines[nzchar(file_lines)]
+
+    # Replace function name with numbering
+    file_lines <- gsub(tolower(template), function_name, file_lines)
     writeLines(file_lines, save_path)
   }
 
@@ -125,6 +129,6 @@ list_all_templates <- function() {
     stringr::str_remove(".R$") %>%
     # str_remove("^ad_") %>%
     tolower() %>%
-    stringr::str_subset("^t_") %>%
+    stringr::str_subset("^(t_|l_|g_)") %>%
     structure(package = package)
 }
