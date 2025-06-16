@@ -1,6 +1,11 @@
-# autoslider.core 0.2.4.9004
+# autoslider.core 0.2.5.9000
+
+# autoslider.core 0.2.5
 
  * Dropping dependencies level.
+ * Adding `ellmer` dependency, enable AI prompt.
+ * Bug fix in side by side plot rendering.
+ * Code enhancement when using `split_rows_by` and `analysis` on the same variable multiple times, enhancing the table paths. Upstream enhancement from `rtables`.
 
 # autoslider.core 0.2.4.433
 

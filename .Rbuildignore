@@ -12,6 +12,9 @@ renv.lock
 .github
 ^\.gitlab-ci\.yml$
 tests/testthat/Rplots.pdf
+^\.pdf
+^\.docx
+slides_outputs.RDS
 
 # docs
 docs
@@ -30,6 +33,9 @@ ae_summary.pptx
 dd.pptx
 dm.pptx
 dor.pptx
+g_mean.pptx
+g_vs.pptx
+test.pptx
 ‘output.pptx’
 tests/testthat/srep.pptx
 docs
