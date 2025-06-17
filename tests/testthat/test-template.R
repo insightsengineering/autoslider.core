@@ -1,5 +1,5 @@
 library(testthat)
-library(rprojroot)
+# library(rprojroot)
 
 # Define the project root and test path
 
@@ -43,7 +43,7 @@ test_that("use_template test 2: saving when no path is specified", {
   )
 
   # Clean up
-  # file.remove(file_location)
+
 
 
 
@@ -53,9 +53,8 @@ test_that("use_template test 2: saving when no path is specified", {
     overwrite = TRUE,
     open = FALSE
   ))
-
-  # Clean up
-  #file.remove(file_location)
+  file_location <- file.path(test_path, 'tryout.R')
+  file.remove(file_location)
 })
 
 test_that("use_template test 3: create folder when it does not exist", {

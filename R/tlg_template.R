@@ -34,6 +34,7 @@ use_template <- function(template = "t_dm_slide",
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
   assert_that(!is.null(save_path))
+  assert_that(template %in% list_all_templates())
 
 
   if (!dir.exists(save_path)) {
@@ -68,30 +69,18 @@ use_template <- function(template = "t_dm_slide",
     abort(err_msg)
   }
 
-  template_file <- system.file(
-  paste0("R/", tolower(template), ".R"),
-   package = package
-  )
+  file_list <- get_template_filepath(full.names = TRUE)
+  template_file <- file_list[grepl(template, file_list)]
 
 
-  #template_file <- file.path(rprojroot::find_package_root_file("R"), paste0(tolower(template), ".R"))
-  #template_dir <- system.file("R", package = package)
-
-  print(template_file)
-  # Check if the file exists:
-
-  # Fallback for development mode (e.g., when testing locally)
   if (template_file == "" || !file.exists(template_file)) {
-    fallback_file <- file.path("R", paste0(tolower(template), ".R"))
-    if (file.exists(fallback_file)) {
-      template_file <- fallback_file
-    } else {
+
       err_msg <- sprintf(
         "No templates named '%s' are available",
         tolower(template)
       )
       abort(err_msg)
-    }
+
   }
   # print(save_path)
   if (file.copy(template_file, save_path, overwrite = TRUE)) {
@@ -125,23 +114,22 @@ use_template <- function(template = "t_dm_slide",
 #' @examples
 #' list_all_templates()
 list_all_templates <- function() {
+  get_template_filepath(full.names = FALSE) |>
+    stringr::str_remove("\\.R$") |>
+    structure(package = package)
+}
+
+get_template_filepath <- function(full.names = FALSE){
   package <- "autoslider.core"
 
   # Installed-package path
-  template_dir <- file.path(system.file(package = package), "R")
+  template_dir <- system.file("R",package = package)
 
-  # Fallback for devtools::test() when the package isn’t installed
-  if (!dir.exists(template_dir)) {
-    template_dir <- "R"
+  pattern = "^(t_|l_|g_)"
+  if (full.names == TRUE) {
+    pattern = paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"), collapse = "|")
   }
 
-  if (!dir.exists(template_dir)) {
-    abort("Template directory not found.")
-  }
-
-  list.files(template_dir, pattern = "\\.R$", full.names = FALSE) |>
-    stringr::str_remove("\\.R$") |>
-    tolower() |>
-    stringr::str_subset("^(t_|l_|g_)") |>
-    structure(package = package)
+  list.files(template_dir, pattern = "\\.R$", full.names = full.names) |>
+      stringr::str_subset(pattern)
 }
