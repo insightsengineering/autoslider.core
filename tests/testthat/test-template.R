@@ -9,10 +9,8 @@ test_path <- tempdir()
 # test `list_all_templates` -----
 test_that("list_all_templates test 1: returns all available templates", {
   expected <- c(
-    "l_ae_slide", "g_mean_slides", "t_ae_pt_diff_slide", "t_ae_pt_slide",
-    "t_ae_pt_soc_diff_slide", "t_ae_pt_soc_slide", "t_aesi_slide",
-    "t_ae_slide", "t_ae_summary_slide", "t_dd_slide", "t_dm_slide",
-    "t_dor_slide", "t_ds_slide"
+    "/root/autoslider.core/R/l_ae_slide", "/root/autoslider.core/R/g_mean_slides", "/root/autoslider.core/R/t_ae_pt_diff_slide", "/root/autoslider.core/R/t_ae_pt_slide", "/root/autoslider.core/R/t_ae_pt_soc_diff_slide", "/root/autoslider.core/R/t_ae_pt_soc_slide", "/root/autoslider.core/R/t_aesi_slide", "/root/autoslider.core/R/t_ae_slide", "/root/autoslider.core/R/t_ae_summary_slide", "/root/autoslider.core/R/t_dd_slide", "/root/autoslider.core/R/t_dm_slide", "/root/autoslider.core/R/t_dor_slide", "/root/autoslider.core/R/t_ds_slide"
+
   )
 
   actual <- list_all_templates()
@@ -52,7 +50,7 @@ test_that("use_template test 2: saving when no path is specified", {
     overwrite = TRUE,
     open = FALSE
   ))
-  file_location <- file.path(test_path, "tryout.R")
+  file_location <- file.path("programs/R", "tryout.R")
   file.remove(file_location)
 })
 
