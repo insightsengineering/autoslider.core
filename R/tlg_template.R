@@ -68,22 +68,30 @@ use_template <- function(template = "t_dm_slide",
     abort(err_msg)
   }
 
-  # template_file <- system.file(
-  # paste0("R/", tolower(template), ".R"),
-  #  package = package
-  # )
+  template_file <- system.file(
+  paste0("R/", tolower(template), ".R"),
+   package = package
+  )
 
 
-  template_file <- file.path(rprojroot::find_package_root_file("R"), paste0(tolower(template), ".R"))
+  #template_file <- file.path(rprojroot::find_package_root_file("R"), paste0(tolower(template), ".R"))
+  #template_dir <- system.file("R", package = package)
 
   print(template_file)
   # Check if the file exists:
-  if (!file.exists(template_file)) {
-    err_msg <- sprintf(
-      "No templates named '%s' are available",
-      template_file
-    )
-    abort(err_msg)
+
+  # Fallback for development mode (e.g., when testing locally)
+  if (template_file == "" || !file.exists(template_file)) {
+    fallback_file <- file.path("R", paste0(tolower(template), ".R"))
+    if (file.exists(fallback_file)) {
+      template_file <- fallback_file
+    } else {
+      err_msg <- sprintf(
+        "No templates named '%s' are available",
+        tolower(template)
+      )
+      abort(err_msg)
+    }
   }
   # print(save_path)
   if (file.copy(template_file, save_path, overwrite = TRUE)) {
@@ -126,9 +134,10 @@ list_all_templates <- function() {
     abort(err_msg)
   }
   # list all table templates in R folder
-  list.files(file.path(rprojroot::find_package_root_file("R"))) %>%
+  list.files(system.file("R", package = package)) %>%
     stringr::str_remove(".R$") %>%
     # str_remove("^ad_") %>%
     tolower() %>%
-    stringr::str_subset("^(t_|l_|g_)")
+    stringr::str_subset("^(t_|l_|g_)") %>%
+    structure(package = package)
 }

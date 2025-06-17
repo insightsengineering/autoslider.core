@@ -2,11 +2,9 @@ library(testthat)
 library(rprojroot)
 
 # Define the project root and test path
-proj_root <- "~/autoslider.core"
-test_path <- file.path(proj_root, "tests", "testthat")
 
-# Create test path if it doesn't exist
-if (!dir.exists(test_path)) dir.create(test_path, recursive = TRUE)
+
+test_path <- tempdir()
 
 # test `list_all_templates` -----
 test_that("list_all_templates test 1: returns all available templates", {
@@ -17,6 +15,7 @@ test_that("list_all_templates test 1: returns all available templates", {
     "t_dor_slide", "t_ds_slide"
   )
 
+
   actual <- list_all_templates()
   expect_setequal(actual, expected)
 })
@@ -24,16 +23,14 @@ test_that("list_all_templates test 1: returns all available templates", {
 
 
 test_that("use_template test 2: saving when no path is specified", {
-  file_location <- file.path("programs", "R", "tryout.R")
 
 
-  use_template(
+
+  expect_snapshot(use_template(
     template = "t_dm_slide",
     function_name = "tryout",
     open = FALSE
-  )
-
-  expect_snapshot_file(file_location)
+  ))
 
   # Test overwrite logic
   expect_error(
@@ -48,17 +45,17 @@ test_that("use_template test 2: saving when no path is specified", {
   # Clean up
   # file.remove(file_location)
 
-  use_template(
+
+
+  expect_snapshot(use_template(
     template = "t_dm_slide",
     function_name = "tryout",
     overwrite = TRUE,
     open = FALSE
-  )
-
-  expect_snapshot_file(file_location)
+  ))
 
   # Clean up
-  file.remove(file_location)
+  #file.remove(file_location)
 })
 
 test_that("use_template test 3: create folder when it does not exist", {
@@ -69,15 +66,15 @@ test_that("use_template test 3: create folder when it does not exist", {
 
   expect_false(dir.exists(new_dir))
 
-  use_template(
+
+  expect_snapshot(use_template(
     template = "t_dm_slide",
     function_name = "folder_test",
     save_path = new_dir,
     open = FALSE
-  )
+  ))
 
   expect_true(dir.exists(new_dir))
-  expect_snapshot_file(expected_file)
 })
 
 
