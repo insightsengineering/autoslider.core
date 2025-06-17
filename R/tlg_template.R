@@ -130,6 +130,5 @@ list_all_templates <- function() {
     stringr::str_remove(".R$") %>%
     # str_remove("^ad_") %>%
     tolower() %>%
-    stringr::str_subset("^(t_|l_|g_)") %>%
-    structure(package = package)
+    stringr::str_subset("^(t_|l_|g_)")
 }
