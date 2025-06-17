@@ -15,7 +15,6 @@ test_that("list_all_templates test 1: returns all available templates", {
     "t_dor_slide", "t_ds_slide"
   )
 
-
   actual <- list_all_templates()
   expect_setequal(actual, expected)
 })
@@ -26,6 +25,7 @@ test_that("use_template test 2: saving when no path is specified", {
   expect_snapshot(use_template(
     template = "t_dm_slide",
     function_name = "tryout",
+    save_path = test_path,
     open = FALSE
   ))
 
@@ -34,6 +34,7 @@ test_that("use_template test 2: saving when no path is specified", {
     use_template(
       template = "t_dm_slide",
       function_name = "tryout",
+      save_path = test_path,
       overwrite = FALSE,
       open = FALSE
     )
@@ -47,6 +48,7 @@ test_that("use_template test 2: saving when no path is specified", {
   expect_snapshot(use_template(
     template = "t_dm_slide",
     function_name = "tryout",
+    save_path = test_path,
     overwrite = TRUE,
     open = FALSE
   ))
@@ -80,6 +82,7 @@ test_that("use_template test 4: expected errors", {
     use_template(
       template = "ttt", # invalid template
       function_name = "tryout",
+      save_path = test_path,
       open = FALSE
     )
   )

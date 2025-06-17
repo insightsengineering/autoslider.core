@@ -121,7 +121,7 @@ get_template_filepath <- function(full.names = FALSE) {
   package <- "autoslider.core"
 
   # Installed-package path
-  template_dir <- system.file("R", package = package)
+  template_dir <- system.file("templates", package = package)
 
   pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
