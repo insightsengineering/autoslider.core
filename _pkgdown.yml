@@ -16,6 +16,9 @@ navbar:
           href: articles/opensource.html
         - text: Guidelines for building downstream autoslider.* packages
           href: articles/downstream.html
+        - text: How to write your own tables/listings from existing templates?
+          href: articles/tlg_templates.html
+
     reports:
       text: Reports
       menu:
@@ -37,6 +40,7 @@ articles:
     - autoslideR
     - opensource
     - downstream
+    - tlg_templates
 
 news:
   releases:
