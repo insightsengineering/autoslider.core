@@ -2,7 +2,7 @@ library(testthat)
 library(rprojroot)
 
 # Define the project root and test path
-proj_root <- '~/autoslider.core'
+proj_root <- "~/autoslider.core"
 test_path <- file.path(proj_root, "tests", "testthat")
 
 # Create test path if it doesn't exist
