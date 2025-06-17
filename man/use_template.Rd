@@ -7,7 +7,7 @@
 use_template(
   template = "t_dm_slide",
   function_name = "default",
-  save_path = NULL,
+  save_path = "./programs/R",
   overwrite = FALSE,
   open = interactive()
 )
