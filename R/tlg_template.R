@@ -48,7 +48,7 @@ use_template <- function(template = "t_dm_slide",
   assertthat::is.writeable(save_path %>% dirname())
 
 
-  package <- "autoslide.core"
+  package <- "autoslider.core"
   if (!tolower(template) %in% list_all_templates()) {
     err_msg <- sprintf(
       paste0(
