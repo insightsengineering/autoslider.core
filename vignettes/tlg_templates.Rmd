@@ -27,7 +27,7 @@ knitr::opts_chunk$set(
 ```
 
 ## Introduction
-This vignette demonstrates how to use pre-defined templates to create new R scripts for generating tables.The core idea is to provide a set of standard templates for common statistical tables, such as those for demography (`t_dm_slide`). Users can then modify them to suit their specific datasets and analysis needs.
+This vignette demonstrates how to use predefined templates to create new R scripts for generating tables.The core idea is to provide a set of standard templates for common statistical tables, such as those for demography (`t_dm_slide`). Users can then modify them to suit their specific datasets and analysis needs.
 
 ## List available templates
 Before generating a template, you can view all supported table templates using the ` list_all_templates()` function:
@@ -43,7 +43,7 @@ devtools::load_all()
 list_all_templates()
 
 ```
-This will return a character vector of supported templates (e.g., "t_dm_slide", "g_ae_slide", etc.), each corresponding to a table type stored in the `R/` folder of the package.
+This will return a character vector of supported templates (e.g., `t_dm_slide`, `g_ae_slide`, etc.), each corresponding to a table type stored in the `R/` folder of the package.
 
 ## Generate a template for your own table
 Use the `use_template()` function to generate a template script that you can customize. For example:
