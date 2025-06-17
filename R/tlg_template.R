@@ -126,16 +126,22 @@ use_template <- function(template = "t_dm_slide",
 #' list_all_templates()
 list_all_templates <- function() {
   package <- "autoslider.core"
-  template_files <- system.file("R", package = package)
 
-  # Fallback to dev source dir if not found (e.g., during devtools::test())
-  if (template_files == "" || !dir.exists(template_files)) {
-    template_files <- "R"
+  # Installed-package path
+  template_dir <- file.path(system.file(package = package), "R")
+
+  # Fallback for devtools::test() when the package isn’t installed
+  if (!dir.exists(template_dir)) {
+    template_dir <- "R"
   }
 
-  list.files(template_files, pattern = "\\.R$", full.names = FALSE) %>%
-    stringr::str_remove(".R$") %>%
-    tolower() %>%
-    stringr::str_subset("^(t_|l_|g_)") %>%
+  if (!dir.exists(template_dir)) {
+    abort("Template directory not found.")
+  }
+
+  list.files(template_dir, pattern = "\\.R$", full.names = FALSE) |>
+    stringr::str_remove("\\.R$") |>
+    tolower() |>
+    stringr::str_subset("^(t_|l_|g_)") |>
     structure(package = package)
 }
