@@ -29,13 +29,13 @@ use_template <- function(template = "t_dm_slide",
                          save_path = "./programs/R",
                          overwrite = FALSE,
                          open = interactive()) {
+  package <- "autoslider.core"
   assert_that(assertthat::is.string(template))
   # assert_that(assertthat::is.string(save_path))
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
   assert_that(!is.null(save_path))
-  assert_that(template %in% list_all_templates())
-
+  assert_that(template %in% list_all_templates() || paste0(system.file("R", package = package), "/", template) %in% list_all_templates())
 
   if (!dir.exists(save_path)) {
     dir.create(save_path, recursive = TRUE)
@@ -48,17 +48,17 @@ use_template <- function(template = "t_dm_slide",
   assertthat::is.writeable(save_path %>% dirname())
 
 
-  package <- "autoslider.core"
-  if (!tolower(template) %in% list_all_templates()) {
-    err_msg <- sprintf(
-      paste0(
-        "No template for '%s' available in package '%s'.\n",
-        "\u2139 Run `list_all_templates()` to get a list of all available templates."
-      ),
-      tolower(template), package
-    )
-    abort(err_msg)
-  }
+
+  # if (!tolower(template) %in% list_all_templates()) {
+  #   err_msg <- sprintf(
+  #     paste0(
+  #       "No template for '%s' available in package '%s'.\n",
+  #       "\u2139 Run `list_all_templates()` to get a list of all available templates."
+  #     ),
+  #     tolower(template), package
+  #   )
+  #   abort(err_msg)
+  # }
 
   if (file.exists(save_path) && !overwrite) {
     err_msg <- paste(
@@ -112,7 +112,7 @@ use_template <- function(template = "t_dm_slide",
 #' @examples
 #' list_all_templates()
 list_all_templates <- function() {
-  get_template_filepath(full.names = FALSE) |>
+  get_template_filepath(full.names = TRUE) |>
     stringr::str_remove("\\.R$") |>
     structure(package = "autoslider.core")
 }
