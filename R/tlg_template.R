@@ -126,7 +126,7 @@ list_all_templates <- function() {
     abort(err_msg)
   }
   # list all table templates in R folder
-  list.files(system.file("R", package = package)) %>%
+  list.files(file.path(rprojroot::find_package_root_file("R"))) %>%
     stringr::str_remove(".R$") %>%
     # str_remove("^ad_") %>%
     tolower() %>%
