@@ -38,10 +38,9 @@ To get started, first navigate to your `autoslider.core` repo directory, make su
 ```{r, include = TRUE, eval = FALSE}
 setwd("~/path/to/autoslider.core")
 
-devtools::load_all() 
+devtools::load_all()
 
 list_all_templates()
-
 ```
 This will return a character vector of supported templates (e.g., `t_dm_slide`, `g_ae_slide`, etc.), each corresponding to a table type stored in the `R/` folder of the package.
 

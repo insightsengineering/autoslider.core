@@ -1,4 +1,3 @@
-
 #' Demographic table with gtsummary
 #'
 #' @param adsl ADSL data set, dataframe

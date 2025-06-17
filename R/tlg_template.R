@@ -26,27 +26,26 @@
 #' }
 use_template <- function(template = "t_dm_slide",
                          function_name = "default",
-                         save_path = NULL,
+                         save_path = "./programs/R",
                          overwrite = FALSE,
                          open = interactive()) {
   assert_that(assertthat::is.string(template))
   # assert_that(assertthat::is.string(save_path))
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
+  assert_that(!is.null(save_path))
 
-  if (is.null(save_path)) {
-    target_dir <- "./programs/R"
 
-    if (!dir.exists(target_dir)) {
-      dir.create(target_dir, recursive = TRUE)
-    }
-
-    save_path <- file.path(target_dir, paste0(function_name, "_XXXX.R"))
-  } else {
-    # Original validation logic for when save_path is provided
-    assertthat::has_extension(save_path, ext = "R")
-    assertthat::is.writeable(save_path %>% dirname())
+  if (!dir.exists(save_path)) {
+    dir.create(save_path, recursive = TRUE)
   }
+
+  save_path <- file.path(save_path, paste0(function_name, ".R"))
+
+  # Original validation logic for when save_path is provided
+  assertthat::has_extension(save_path, ext = "R")
+  assertthat::is.writeable(save_path %>% dirname())
+
 
   package <- "autoslide.core"
   if (!tolower(template) %in% list_all_templates()) {
@@ -69,22 +68,24 @@ use_template <- function(template = "t_dm_slide",
     abort(err_msg)
   }
 
-  #template_file <- system.file(
-   # paste0("R/", tolower(template), ".R"),
+  # template_file <- system.file(
+  # paste0("R/", tolower(template), ".R"),
   #  package = package
-  #)
+  # )
 
 
-  template_file <- file.path("R", paste0(tolower(template), ".R"))
+  template_file <- file.path(rprojroot::find_package_root_file("R"), paste0(tolower(template), ".R"))
 
+  print(template_file)
   # Check if the file exists:
-  if (!file.exists(template_file)){
+  if (!file.exists(template_file)) {
     err_msg <- sprintf(
-      "No templates named '%template_file' are available",
-      package
+      "No templates named '%s' are available",
+      template_file
     )
     abort(err_msg)
   }
+  # print(save_path)
   if (file.copy(template_file, save_path, overwrite = TRUE)) {
     rlang::inform(sprintf("\u2713 File '%s' has been created successfully", save_path))
     file_lines <- readLines(save_path)
