@@ -74,13 +74,11 @@ use_template <- function(template = "t_dm_slide",
 
 
   if (template_file == "" || !file.exists(template_file)) {
-
-      err_msg <- sprintf(
-        "No templates named '%s' are available",
-        tolower(template)
-      )
-      abort(err_msg)
-
+    err_msg <- sprintf(
+      "No templates named '%s' are available",
+      tolower(template)
+    )
+    abort(err_msg)
   }
   # print(save_path)
   if (file.copy(template_file, save_path, overwrite = TRUE)) {
@@ -119,17 +117,17 @@ list_all_templates <- function() {
     structure(package = package)
 }
 
-get_template_filepath <- function(full.names = FALSE){
+get_template_filepath <- function(full.names = FALSE) {
   package <- "autoslider.core"
 
   # Installed-package path
-  template_dir <- system.file("R",package = package)
+  template_dir <- system.file("R", package = package)
 
-  pattern = "^(t_|l_|g_)"
+  pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
-    pattern = paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"), collapse = "|")
+    pattern <- paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"), collapse = "|")
   }
 
   list.files(template_dir, pattern = "\\.R$", full.names = full.names) |>
-      stringr::str_subset(pattern)
+    stringr::str_subset(pattern)
 }

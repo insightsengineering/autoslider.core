@@ -23,9 +23,6 @@ test_that("list_all_templates test 1: returns all available templates", {
 
 
 test_that("use_template test 2: saving when no path is specified", {
-
-
-
   expect_snapshot(use_template(
     template = "t_dm_slide",
     function_name = "tryout",
@@ -53,7 +50,7 @@ test_that("use_template test 2: saving when no path is specified", {
     overwrite = TRUE,
     open = FALSE
   ))
-  file_location <- file.path(test_path, 'tryout.R')
+  file_location <- file.path(test_path, "tryout.R")
   file.remove(file_location)
 })
 
