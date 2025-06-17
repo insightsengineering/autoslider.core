@@ -9,7 +9,9 @@ test_path <- tempdir()
 # test `list_all_templates` -----
 test_that("list_all_templates test 1: returns all available templates", {
   expected <- c(
-    "l_ae_slide", "g_mean_slides", "t_ae_pt_diff_slide", "t_ae_pt_slide", "t_ae_pt_soc_diff_slide", "t_ae_pt_soc_slide", "t_aesi_slide", "t_ae_slide", "t_ae_summary_slide", "t_dd_slide", "t_dm_slide", "t_dor_slide", "t_ds_slide"
+    "l_ae_slide", "g_mean_slides", "t_ae_pt_diff_slide", "t_ae_pt_slide",
+    "t_ae_pt_soc_diff_slide", "t_ae_pt_soc_slide", "t_aesi_slide", "t_ae_slide",
+    "t_ae_summary_slide", "t_dd_slide", "t_dm_slide", "t_dor_slide", "t_ds_slide"
   )
 
   actual <- list_all_templates()
