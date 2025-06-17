@@ -126,17 +126,15 @@ use_template <- function(template = "t_dm_slide",
 #' list_all_templates()
 list_all_templates <- function() {
   package <- "autoslider.core"
-  if (!requireNamespace(package, quietly = TRUE)) {
-    err_msg <- sprintf(
-      "No package called '%s' is installed and hence no templates are available",
-      package
-    )
-    abort(err_msg)
+  template_files <- system.file("R", package = package)
+
+  # Fallback to dev source dir if not found (e.g., during devtools::test())
+  if (template_files == "" || !dir.exists(template_files)) {
+    template_files <- "R"
   }
-  # list all table templates in R folder
-  list.files(system.file("R", package = package)) %>%
+
+  list.files(template_files, pattern = "\\.R$", full.names = FALSE) %>%
     stringr::str_remove(".R$") %>%
-    # str_remove("^ad_") %>%
     tolower() %>%
     stringr::str_subset("^(t_|l_|g_)") %>%
     structure(package = package)
