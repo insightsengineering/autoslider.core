@@ -112,7 +112,7 @@ use_template <- function(template = "t_dm_slide",
 #' @examples
 #' list_all_templates()
 list_all_templates <- function() {
-  get_template_filepath(full.names = TRUE) |>
+  get_template_filepath(full.names = FALSE) |>
     stringr::str_remove("\\.R$") |>
     structure(package = "autoslider.core")
 }
