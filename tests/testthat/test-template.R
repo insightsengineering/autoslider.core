@@ -62,7 +62,7 @@ test_that("use_template test 3: create folder when it does not exist", {
   expect_false(dir.exists(new_dir))
 
 
-  expect_snapshot(use_template(
+  expect_snapshots(use_template(
     template = "t_dm_slide",
     function_name = "folder_test",
     save_path = new_dir,
