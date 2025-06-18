@@ -36,8 +36,8 @@ use_template <- function(template = "t_dm_slide",
   assert_that(assertthat::is.flag(open))
   assert_that(!is.null(save_path))
   assert_that(template %in% list_all_templates() ||
-                paste0(system.file("R", package = package), "/", template) %in%
-                list_all_templates())
+    paste0(system.file("R", package = package), "/", template) %in%
+      list_all_templates())
 
   if (!dir.exists(save_path)) {
     dir.create(save_path, recursive = TRUE)
@@ -128,7 +128,8 @@ get_template_filepath <- function(full.names = FALSE) {
   pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
     pattern <- paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"),
-                      collapse = "|")
+      collapse = "|"
+    )
   }
 
   list.files(template_dir, pattern = "\\.R$", full.names = full.names) |>

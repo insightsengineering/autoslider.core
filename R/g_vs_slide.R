@@ -1,4 +1,3 @@
-
 #' Plot mean values of VS
 #'
 #' Wrapper for `g_mean_general()`.
@@ -44,4 +43,3 @@ g_vs_slide <- function(adsl, advs, arm = "TRT01P", paramcd = "PARAM",
     subtitle = subtitle, ...
   )
 }
-
