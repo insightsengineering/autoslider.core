@@ -54,7 +54,7 @@ Navigate to that folder and link your new template file:
 cd ~/autoslider.core/inst/templates
 ln -s ../../R/t_my_custom_table.R # creates softlinks
 ```
-This creates a link to the file in the `R/` folder, meaning autoslider.core doesn't duplicate the file, but still picks it up.
+This creates a softlink to the file in the `R/` folder, meaning autoslider.core doesn't duplicate the file, but still picks it up.
 
 
 ## Step 3: Verify with `list_all_templates()`
