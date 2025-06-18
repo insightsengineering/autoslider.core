@@ -18,6 +18,8 @@ navbar:
           href: articles/downstream.html
         - text: How to write your own tables/listings from existing templates?
           href: articles/tlg_templates.html
+        - text: How to add your own templates?
+          href: articles/adding_templates.html
 
     reports:
       text: Reports
@@ -41,6 +43,7 @@ articles:
     - opensource
     - downstream
     - tlg_templates
+    - adding_templates
 
 news:
   releases:
