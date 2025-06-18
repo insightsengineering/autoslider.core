@@ -5,9 +5,15 @@
 tests/testthat/Rplots.pdf
 tests/testthat/t_dm_output.rds
 tests/testthat/srep.pptx
+specs.yml
+filters.yml
 docs/
 *_KEY
 PORTKEY_KEY
 DEEPSEEK_KEY
+s
+/doc/
+/Meta/
+programs/R/
 *pdf
 *docx

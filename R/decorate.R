@@ -314,7 +314,7 @@ decorate_outputs <- function(outputs,
 
     if ("ggplot" %in% class(output)) {
       decorate.ggplot(output)
-    } else if ("grob" %in% class(output)){
+    } else if ("grob" %in% class(output)) {
       decorate.grob(output)
     } else {
       structure(

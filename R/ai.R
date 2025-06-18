@@ -59,8 +59,10 @@ get_prompt_list <- function(filename) {
 
 integrate_prompt <- function(base_prompt, tlg) {
   # let's do figures in the future
-  ret <- paste("As a Clinical data scientist expert, here is a",
-               tlg@main_title, ":\n\n")
+  ret <- paste(
+    "As a Clinical data scientist expert, here is a",
+    tlg@main_title, ":\n\n"
+  )
   ret <- gsub("\\{table_text\\}", export_as_txt(tlg), base_prompt)
   ret
 }

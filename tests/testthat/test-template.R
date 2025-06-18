@@ -1,0 +1,85 @@
+library(testthat)
+# library(rprojroot)
+
+# Define the project root and test path
+
+
+test_path <- tempdir()
+
+# test `list_all_templates` -----
+test_that("list_all_templates test 1: returns all available templates", {
+  expected <- c(
+    "l_ae_slide", "g_mean_slides", "t_ae_pt_diff_slide", "t_ae_pt_slide",
+    "t_ae_pt_soc_diff_slide", "t_ae_pt_soc_slide", "t_aesi_slide", "t_ae_slide",
+    "t_ae_summary_slide", "t_dd_slide", "t_dm_slide", "t_dor_slide", "t_ds_slide"
+  )
+
+  actual <- list_all_templates()
+  expect_setequal(actual, expected)
+})
+
+
+
+test_that("use_template test 2: saving when no path is specified", {
+  expect_snapshot(use_template(
+    template = "t_dm_slide",
+    function_name = "tryout",
+    open = FALSE
+  ))
+
+  # Test overwrite logic
+  expect_error(
+    use_template(
+      template = "t_dm_slide",
+      function_name = "tryout",
+      overwrite = FALSE,
+      open = FALSE
+    )
+  )
+
+  # Clean up
+
+
+
+
+  expect_snapshot(use_template(
+    template = "t_dm_slide",
+    function_name = "tryout",
+    overwrite = TRUE,
+    open = FALSE
+  ))
+  file_location <- file.path("programs/R", "tryout.R")
+  file.remove(file_location)
+})
+
+test_that("use_template test 3: create folder when it does not exist", {
+  new_dir <- file.path("random")
+  expected_file <- file.path(new_dir, "folder_test.R")
+
+  if (dir.exists(new_dir)) unlink(new_dir, recursive = TRUE)
+
+  expect_false(dir.exists(new_dir))
+
+
+  expect_snapshot(use_template(
+    template = "t_dm_slide",
+    function_name = "folder_test",
+    save_path = new_dir,
+    open = FALSE
+  ))
+
+  expect_true(dir.exists(new_dir))
+})
+
+
+# test `use_template` error handling -----
+test_that("use_template test 4: expected errors", {
+  expect_error(
+    use_template(
+      template = "ttt", # invalid template
+      function_name = "tryout",
+      save_path = test_path,
+      open = FALSE
+    )
+  )
+})
