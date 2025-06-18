@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Generating Templates with table_templates.R • autoslider.core</title>
+<title>Adding custom templates to autoslider.core as a developer • autoslider.core</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Generating Templates with table_templates.R">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Adding custom templates to autoslider.core as a developer">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -88,14 +88,14 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Generating Templates with table_templates.R</h1>
+      <h1>Adding custom templates to autoslider.core as a developer</h1>
                         <h4 data-toc-skip class="author">Yolanda Zhou
 ([<code>yolandazzz13</code>])</h4>
             
             <h4 data-toc-skip class="date">2025-06-18</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/autoslider.core/blob/main/vignettes/tlg_templates.Rmd" class="external-link"><code>vignettes/tlg_templates.Rmd</code></a></small>
-      <div class="d-none name"><code>tlg_templates.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/autoslider.core/blob/main/vignettes/adding_templates.Rmd" class="external-link"><code>vignettes/adding_templates.Rmd</code></a></small>
+      <div class="d-none name"><code>adding_templates.Rmd</code></div>
     </div>
 
     
@@ -103,70 +103,59 @@
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>This vignette demonstrates how to use predefined templates to create
-new R scripts for generating tables.The core idea is to provide a set of
-standard templates for common statistical tables, such as those for
-demography (<code>t_dm_slide</code>). Users can then modify them to suit
-their specific datasets and analysis needs.</p>
+<p>This vignette shows how developers can add their own custom table
+templates to the autoslider.core package. This is useful if you’re
+extending the package with your own commonly used table logic and want
+it to integrate with the <code><a href="../reference/list_all_templates.html">list_all_templates()</a></code> and
+<code><a href="../reference/use_template.html">use_template()</a></code> framework.</p>
 </div>
 <div class="section level2">
-<h2 id="list-available-templates">List available templates<a class="anchor" aria-label="anchor" href="#list-available-templates"></a>
+<h2 id="step-1-write-your-template">Step 1: Write your template<a class="anchor" aria-label="anchor" href="#step-1-write-your-template"></a>
 </h2>
-<p>Before generating a template, you can view all supported table
-templates using the <code><a href="../reference/list_all_templates.html">list_all_templates()</a></code> function:</p>
-<p>To get started, first navigate to your <code>autoslider.core</code>
-repo directory, make sure you have installed the
-<code>autoslider.core</code> package:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">setwd</a></span><span class="op">(</span><span class="st">"~/path/to/autoslider.core"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">load_all</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
+<p>First, navigate to the <code>R/</code> directory. For example, if you
+are creating a new custom table:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> ~/autoslider.core/R</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">nano</span> t_my_custom_table.R</span></code></pre></div>
+<p>Then you can start editing the template contents inside the file. Be
+sure to follow naming conventions: templates should start with
+<code>t_</code>, <code>l_</code>, or <code>g_</code> to be detected.</p>
+</div>
+<div class="section level2">
+<h2 id="step-2-create-a-softlink-in-insttemplates">Step 2: Create a softlink in inst/templates/<a class="anchor" aria-label="anchor" href="#step-2-create-a-softlink-in-insttemplates"></a>
+</h2>
+<p>For your new template to be recognized by
+<code><a href="../reference/list_all_templates.html">list_all_templates()</a></code>, it must be found under the
+<code>inst/templates/</code> folder.</p>
+<p>Navigate to that folder and link your new template file:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">cd</span> ~/autoslider.core/inst/templates</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> ../../R/t_my_custom_table.R <span class="co"># creates softlinks</span></span></code></pre></div>
+<p>This creates a softlink to the file in the <code>R/</code> folder,
+meaning autoslider.core doesn’t duplicate the file, but still picks it
+up.</p>
+</div>
+<div class="section level2">
+<h2 id="step-3-verify-with-list_all_templates">Step 3: Verify with <code>list_all_templates()</code><a class="anchor" aria-label="anchor" href="#step-3-verify-with-list_all_templates"></a>
+</h2>
+<p>Load the package and call:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">load_all</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/list_all_templates.html">list_all_templates</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>This will return a character vector of supported templates (e.g.,
-<code>t_dm_slide</code>, <code>g_ae_slide</code>, etc.), each
-corresponding to a table type stored in the <code>R/</code> folder of
-the package.</p>
+<p>Your new template <code>t_my_custom_table</code> should appear in the
+list.</p>
 </div>
 <div class="section level2">
-<h2 id="generate-a-template-for-your-own-table">Generate a template for your own table<a class="anchor" aria-label="anchor" href="#generate-a-template-for-your-own-table"></a>
+<h2 id="step-4-generate-with-use_template">Step 4: Generate with <code>use_template()</code><a class="anchor" aria-label="anchor" href="#step-4-generate-with-use_template"></a>
 </h2>
-<p>Use the <code><a href="../reference/use_template.html">use_template()</a></code> function to generate a template
-script that you can customize. For example:</p>
-<pre class="r_function_call"><code><span><span class="fu"><a href="../reference/use_template.html">use_template</a></span><span class="op">(</span>template <span class="op">=</span> <span class="st">"t_dm_slide"</span>, function_name <span class="op">=</span> <span class="st">"demography"</span><span class="op">)</span></span></code></pre>
-<p>This will create a file with the demography template at
-<code>./programs/R/demography.R</code></p>
-<p>To create multiple variations of the same template type, you could
-choose your custom numbering/enumeration style simply by passing in
-different <code>function_names</code>. For example:</p>
-<pre class="r_function_call"><code><span><span class="fu"><a href="../reference/use_template.html">use_template</a></span><span class="op">(</span>template <span class="op">=</span> <span class="st">"l_ae_slide"</span>, function_name <span class="op">=</span> <span class="st">"l_ae_slide_001"</span><span class="op">)</span></span>
-<span><span class="co"># which generates an Adverse Events listing at ./programs/R/l_ae_slide_001.R</span></span>
-<span></span>
-<span><span class="fu"><a href="../reference/use_template.html">use_template</a></span><span class="op">(</span>template <span class="op">=</span> <span class="st">"l_ae_slide"</span>, function_name <span class="op">=</span> <span class="st">"l_ae_slide_v2"</span><span class="op">)</span></span>
-<span><span class="co"># which generates an Adverse Events listing at ./programs/R/l_ae_slide_v2.R</span></span></code></pre>
-<div class="section level3">
-<h3 id="notes">Notes<a class="anchor" aria-label="anchor" href="#notes"></a>
-</h3>
-<ul>
-<li><p>The <code>template</code> argument must match one of the entries
-in list_all_templates().</p></li>
-<li><p>If a file with the same name already exists, it will not be
-overwritten unless you set <code>overwrite = TRUE</code>.</p></li>
-<li><p>In interactive mode, the generated file will open in your R
-editor for immediate editing.</p></li>
-</ul>
-</div>
-</div>
-<div class="section level2">
-<h2 id="customize-the-template">Customize the template<a class="anchor" aria-label="anchor" href="#customize-the-template"></a>
-</h2>
-<p>Once the script is generated, you can modify it to suit your dataset
-or statistical needs. For instance, you can:</p>
-<ul>
-<li><p>Add or remove table columns</p></li>
-<li><p>Customize labels and formatting</p></li>
-<li><p>Modify the summary statistics</p></li>
-</ul>
+<p>You can now use your template like any built-in one:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/use_template.html">use_template</a></span><span class="op">(</span></span>
+<span>  template <span class="op">=</span> <span class="st">"t_my_custom_table"</span>,</span>
+<span>  function_name <span class="op">=</span> <span class="st">"custom_table_slide"</span>,</span>
+<span>  open <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>This will create a new file at
+<code>./programs/R/custom_table_slide.R</code> based on your
+template.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
