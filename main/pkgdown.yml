@@ -5,7 +5,8 @@ articles:
   autoslideR: autoslideR.html
   downstream: downstream.html
   opensource: opensource.html
-last_built: 2025-06-13T13:47Z
+  tlg_templates: tlg_templates.html
+last_built: 2025-06-18T01:13Z
 urls:
   reference: https://insightsengineering.github.io/autoslider.core/reference
   article: https://insightsengineering.github.io/autoslider.core/articles
