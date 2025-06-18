@@ -70,6 +70,8 @@ test_that("use_template test 3: create folder when it does not exist", {
   ))
 
   expect_true(dir.exists(new_dir))
+
+  file.remove(expected_file)
 })
 
 
