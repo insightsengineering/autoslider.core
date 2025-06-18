@@ -26,6 +26,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+
 ## Overview
 This vignette demonstrates how to use predefined templates to create new R scripts for generating tables.The core idea is to provide a set of standard templates for common statistical tables, such as those for demography (`t_dm_slide`). Users can then modify them to suit their specific datasets and analysis needs.
 

@@ -20,7 +20,7 @@
         open = FALSE)
     Message
       ✓ File 'random/folder_test.R' has been created successfully
-      
+
       
 # use_template test 5: create all templates 
 
