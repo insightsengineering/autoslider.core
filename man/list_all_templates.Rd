@@ -6,10 +6,6 @@
 \usage{
 list_all_templates(package = "autoslider.core")
 }
-\arguments{
-  \item{package}{Which package to search for the template file.}
-}
-
 \value{
 A `character` vector of all available templates
 }
@@ -17,7 +13,7 @@ A `character` vector of all available templates
 [EXPERIMENTAL] List All Available Templates
 }
 \examples{
-list_all_templates(package = "autoslider.core")
+list_all_templates()
 }
 \concept{utils_examples}
 \keyword{utils_examples}
