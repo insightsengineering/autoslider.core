@@ -31,7 +31,7 @@ use_template(
 No return value. Called for side effects (creates a file).
 }
 \description{
-Create a new R function file based on a pre-defined template for tables, listings, or graphs.
+Create a new R function file based on a predefined template for tables, listings, or graphs.
 }
 \details{
 Use \code{list_all_templates(package = "example")} to discover which templates are available in the specified package.
