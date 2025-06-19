@@ -6,21 +6,14 @@
 \usage{
 list_all_templates(package = "autoslider.core")
 }
-\arguments{
-  \item{package}{A character string specifying the package from which to list templates.
-  Defaults to \code{"autoslider.core"}.}
-}
 \value{
-A character vector of all available template names in the specified package.
+A `character` vector of all available templates
 }
 \description{
-Return the names of all available template files (e.g., for tables, listings, and graphs) provided by a package.
-}
-\details{
-This function searches for template files (those beginning with \code{t_}, \code{g_}, or \code{l_}) in the \code{inst/templates} folder of the specified package.
+[EXPERIMENTAL] List All Available Templates
 }
 \examples{
-list_all_templates(package = "autoslider.core")
+list_all_templates()
 }
 \concept{utils_examples}
-\keyword{utilities}
+\keyword{utils_examples}

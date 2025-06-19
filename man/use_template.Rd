@@ -14,35 +14,29 @@ use_template(
 )
 }
 \arguments{
+\item{template}{Must be one of `r list_all_templates()`}
 
-  \item{template}{Name of the template to use. Must be one of those listed by
-  \code{list_all_templates(package = "autoslider.core")}.}
+\item{function_name}{What output would you like to create?}
 
-  \item{function_name}{Name for the new template function being created.}
+\item{save_path}{Path to save the function, should include filename and extension.
+Defaults to "./programs/**function_name**_slide.R"}
 
-  \item{save_path}{Path to save the generated template file. If not provided, defaults to
-  \code{"./programs/R/<function_name>.R"}.}
+\item{overwrite}{Whether to overwrite an existing file named `save_path`.}
 
-  \item{overwrite}{Whether to overwrite an existing file at \code{save_path}.}
-
-  \item{open}{Logical. Whether to open the newly created file in an editor. Defaults to
-  \code{interactive()}.}
-
-  \item{package}{Which package to search for the template file. Default is
-  \code{"autoslider.core"}.}
+\item{open}{Whether to open the script right away.}
 }
 \value{
-No return value. This function is called for its side effects (creating a file).
+No return values, called for side effects
 }
 \description{
-Create a new R function script based on a predefined template. Supports templates for tables, listings, and graphs.
+We have separate templates for listings, tables, and graphs.
+There is also a template to set up the `run_all` script.
 }
 \details{
-You can use \code{list_all_templates(package = "<pkg>")} to discover available templates in a specific package.
+Use `list_all_templates()` to discover which templates are available.
 }
 \examples{
 if (interactive()) {
-  use_template("t_dm_slide", function_name = "example_function",
-               package = "autoslider.core")
+  use_template("l_template_slide")
 }
 }
