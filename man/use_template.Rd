@@ -14,31 +14,34 @@ use_template(
 )
 }
 \arguments{
-  \item{template}{Must be one of \code{list_all_templates(package = "package")}.}
+  \item{template}{Name of the template to use. Must be one of those listed by
+  \code{list_all_templates(package = "autoslider.core")}.}
 
-  \item{function_name}{What output would you like to create?}
+  \item{function_name}{Name for the new template function being created.}
 
-  \item{save_path}{Path to save the function, should include filename and extension.
-  Defaults to \code{"./programs/R/<function_name>.R"}.}
+  \item{save_path}{Path to save the generated template file. If not provided, defaults to
+  \code{"./programs/R/<function_name>.R"}.}
 
-  \item{overwrite}{Whether to overwrite an existing file named \code{save_path}.}
+  \item{overwrite}{Whether to overwrite an existing file at \code{save_path}.}
 
-  \item{open}{Whether to open the script right away.}
+  \item{open}{Logical. Whether to open the newly created file in an editor. Defaults to
+  \code{interactive()}.}
 
-  \item{package}{Which package to search for the template file. Default is \code{"autoslider.core"}.}
+  \item{package}{Which package to search for the template file. Default is
+  \code{"autoslider.core"}.}
 }
 \value{
-No return value. Called for side effects (creates a file).
+No return value. This function is called for its side effects (creating a file).
 }
 \description{
-Create a new R function file based on a predefined template for tables, listings, or graphs.
+Create a new R function script based on a predefined template. Supports templates for tables, listings, and graphs.
 }
 \details{
-Use \code{list_all_templates(package = "example")} to discover which templates are available in the specified package.
+You can use \code{list_all_templates(package = "<pkg>")} to discover available templates in a specific package.
 }
 \examples{
 if (interactive()) {
-  use_template("t_dm_slide", function_name = "example",
-  package = "autoslider.core")
+  use_template("t_dm_slide", function_name = "example_function",
+               package = "autoslider.core")
 }
 }
