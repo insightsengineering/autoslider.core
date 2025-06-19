@@ -9,7 +9,8 @@ use_template(
   function_name = "default",
   save_path = "./programs/R",
   overwrite = FALSE,
-  open = interactive()
+  open = interactive(),
+  package = "autoslider.core"
 )
 }
 \arguments{

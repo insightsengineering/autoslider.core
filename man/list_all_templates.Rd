@@ -4,7 +4,7 @@
 \alias{list_all_templates}
 \title{[EXPERIMENTAL] List All Available Templates}
 \usage{
-list_all_templates()
+list_all_templates(package = "autoslider.core")
 }
 \value{
 A `character` vector of all available templates
