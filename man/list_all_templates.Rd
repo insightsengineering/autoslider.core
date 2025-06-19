@@ -7,7 +7,7 @@
 list_all_templates(package = "autoslider.core")
 }
 \arguments{
-  \item{package}{A character string specifying the package to search for template files.
+  \item{package}{A character string specifying the package from which to list templates.
   Defaults to \code{"autoslider.core"}.}
 }
 \value{

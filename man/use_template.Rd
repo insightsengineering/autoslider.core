@@ -14,6 +14,7 @@ use_template(
 )
 }
 \arguments{
+
   \item{template}{Name of the template to use. Must be one of those listed by
   \code{list_all_templates(package = "autoslider.core")}.}
 
