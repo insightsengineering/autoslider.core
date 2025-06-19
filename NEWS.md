@@ -3,6 +3,7 @@
  * Enabled function generation from templates.
  * Split out specific plot functions (e.g., `g_vs_slide`) from `g_mean_general() `.
  * Added vignette `tlg_templates` and `adding_templates`.
+ 
 
 # autoslider.core 0.2.5
 
