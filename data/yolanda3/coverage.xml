@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.799908214777421" branch-rate="0" lines-covered="1743" lines-valid="2179" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-06-19 11:24:04.657">
+<coverage line-rate="0.799908214777421" branch-rate="0" lines-covered="1743" lines-valid="2179" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-06-19 12:27:01.157403">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
@@ -3502,14 +3502,14 @@
             </method>
             <method name="get_template_filepath" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="119" hits="45" branch="false"/>
-                <line number="121" hits="45" branch="false"/>
-                <line number="122" hits="45" branch="false"/>
-                <line number="123" hits="19" branch="false"/>
-                <line number="124" hits="19" branch="false"/>
-                <line number="125" hits="19" branch="false"/>
-                <line number="128" hits="45" branch="false"/>
-                <line number="129" hits="45" branch="false"/>
+                <line number="131" hits="45" branch="false"/>
+                <line number="133" hits="45" branch="false"/>
+                <line number="134" hits="45" branch="false"/>
+                <line number="135" hits="19" branch="false"/>
+                <line number="136" hits="19" branch="false"/>
+                <line number="137" hits="19" branch="false"/>
+                <line number="140" hits="45" branch="false"/>
+                <line number="141" hits="45" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -3555,14 +3555,14 @@
             <line number="112" hits="26" branch="false"/>
             <line number="113" hits="26" branch="false"/>
             <line number="114" hits="26" branch="false"/>
-            <line number="119" hits="45" branch="false"/>
-            <line number="121" hits="45" branch="false"/>
-            <line number="122" hits="45" branch="false"/>
-            <line number="123" hits="19" branch="false"/>
-            <line number="124" hits="19" branch="false"/>
-            <line number="125" hits="19" branch="false"/>
-            <line number="128" hits="45" branch="false"/>
-            <line number="129" hits="45" branch="false"/>
+            <line number="131" hits="45" branch="false"/>
+            <line number="133" hits="45" branch="false"/>
+            <line number="134" hits="45" branch="false"/>
+            <line number="135" hits="19" branch="false"/>
+            <line number="136" hits="19" branch="false"/>
+            <line number="137" hits="19" branch="false"/>
+            <line number="140" hits="45" branch="false"/>
+            <line number="141" hits="45" branch="false"/>
           </lines>
         </class>
         <class name="to_ft_funs.R" filename="R/to_ft_funs.R" line-rate="0.830845771144279" branch-rate="0" complexity="0">
