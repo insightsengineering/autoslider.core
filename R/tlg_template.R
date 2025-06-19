@@ -28,16 +28,16 @@ use_template <- function(template = "t_dm_slide",
                          function_name = "default",
                          save_path = "./programs/R",
                          overwrite = FALSE,
-                         open = interactive()) {
-  package <- "autoslider.core"
+                         open = interactive(),
+                         package = "autoslider.core") {
   assert_that(assertthat::is.string(template))
-  # assert_that(assertthat::is.string(save_path))
+  assert_that(assertthat::is.string(package))
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
   assert_that(!is.null(save_path))
-  assert_that(template %in% list_all_templates() ||
-                paste0(system.file("R", package = package), "/", template) %in%
-                list_all_templates())
+  assert_that(template %in% list_all_templates(package) ||
+    paste0(system.file("R", package = package), "/", template) %in%
+      list_all_templates(package))
 
   if (!dir.exists(save_path)) {
     dir.create(save_path, recursive = TRUE)
@@ -71,7 +71,7 @@ use_template <- function(template = "t_dm_slide",
     abort(err_msg)
   }
 
-  file_list <- get_template_filepath(full.names = TRUE)
+  file_list <- get_template_filepath(package = package, full.names = TRUE)
   template_file <- file_list[grepl(template, file_list)]
 
 
@@ -113,22 +113,21 @@ use_template <- function(template = "t_dm_slide",
 #'
 #' @examples
 #' list_all_templates()
-list_all_templates <- function() {
-  get_template_filepath(full.names = FALSE) |>
+list_all_templates <- function(package = "autoslider.core") {
+  get_template_filepath(package = package, full.names = FALSE) |>
     stringr::str_remove("\\.R$") |>
-    structure(package = "autoslider.core")
+    structure(package = package)
 }
 
-get_template_filepath <- function(full.names = FALSE) {
-  package <- "autoslider.core"
-
+get_template_filepath <- function(package = "autoslider.core", full.names = FALSE) {
   # Installed-package path
   template_dir <- system.file("templates", package = package)
 
   pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
     pattern <- paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"),
-                      collapse = "|")
+      collapse = "|"
+    )
   }
 
   list.files(template_dir, pattern = "\\.R$", full.names = full.names) |>
