@@ -30,9 +30,8 @@ use_template <- function(template = "t_dm_slide",
                          overwrite = FALSE,
                          open = interactive(),
                          package = "autoslider.core") {
-
   assert_that(assertthat::is.string(template))
-  # assert_that(assertthat::is.string(save_path))
+  assert_that(assertthat::is.string(package))
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
   assert_that(!is.null(save_path))
@@ -114,24 +113,21 @@ use_template <- function(template = "t_dm_slide",
 #'
 #' @examples
 #' list_all_templates()
-list_all_templates <- function(from_pkg = "autoslider.core") {
-
-  get_template_filepath(package = from_pkg, full.names = FALSE) |>
+list_all_templates <- function(package = "autoslider.core") {
+  get_template_filepath(package = package, full.names = FALSE) |>
     stringr::str_remove("\\.R$") |>
-    structure(package = from_pkg)
-
+    structure(package = package)
 }
 
-
 get_template_filepath <- function(package = "autoslider.core", full.names = FALSE) {
-
   # Installed-package path
   template_dir <- system.file("templates", package = package)
 
   pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
     pattern <- paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"),
-                      collapse = "|")
+                      collapse = "|"
+    )
   }
 
   list.files(template_dir, pattern = "\\.R$", full.names = full.names) |>
