@@ -53,12 +53,12 @@ Imports:
     methods,
     officer (>= 0.3.18),
     rlang (>= 1.1.1),
-    rlistings (>= 0.2.11),
-    rtables (>= 0.6.12),
+    rlistings (>= 0.2.12),
+    rtables (>= 0.6.13),
     rvg (>= 0.2.5),
     stringr (>= 1.5.0),
     survival,
-    tern (>= 0.9.8),
+    tern (>= 0.9.9),
     tidyr (>= 1.3.0),
     yaml (>= 2.3.7)
 Suggests:
