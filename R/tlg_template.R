@@ -1,43 +1,39 @@
 #' [EXPERIMENTAL] Create new output function based on a template.
 #'
-#'
-#' @description
-#'
 #' We have separate templates for listings, tables, and graphs.
 #' There is also a template to set up the `run_all` script.
 #'
+#' @param template Must be one of `list_all_templates(package = "autoslider.core")`.
+#' @param function_name Name of the output function you want to create. Defaults to "default".
+#' @param save_path Path to save the function. Defaults to "./programs/R".
+#' @param overwrite Whether to overwrite an existing file.
+#' @param open Whether to open the file after creation.
+#' @param package Which package to search for the template file. Defaults to "autoslider.core".
 #'
-#' @param template Must be one of `r list_all_templates()`
-#' @param function_name What output would you like to create?
-#' @param save_path Path to save the function, should include filename and extension.
-#'                  Defaults to "./programs/**function_name**_slide.R"
-#' @param overwrite Whether to overwrite an existing file named `save_path`.
-#' @param open Whether to open the script right away.
+#' @return No return value. Called for side effects (writes a file).
 #'
-#' @return No return values, called for side effects
-#'
-#' @details Use `list_all_templates()` to discover which templates are available.
+#' @details Use `list_all_templates(package = "autoslider.core")` to discover which templates are available.
 #'
 #' @export
 #'
 #' @examples
 #' if (interactive()) {
-#'   use_template("l_template_slide")
+#'   use_template("t_dm_slide", function_name = "my_table", package = "autoslider.core")
 #' }
 use_template <- function(template = "t_dm_slide",
                          function_name = "default",
                          save_path = "./programs/R",
                          overwrite = FALSE,
-                         open = interactive()) {
-  package <- "autoslider.core"
+                         open = interactive(),
+                         package = "autoslider.core") {
   assert_that(assertthat::is.string(template))
-  # assert_that(assertthat::is.string(save_path))
+  assert_that(assertthat::is.string(package))
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
   assert_that(!is.null(save_path))
-  assert_that(template %in% list_all_templates() ||
+  assert_that(template %in% list_all_templates(package) ||
                 paste0(system.file("R", package = package), "/", template) %in%
-                list_all_templates())
+                list_all_templates(package))
 
   if (!dir.exists(save_path)) {
     dir.create(save_path, recursive = TRUE)
@@ -71,8 +67,8 @@ use_template <- function(template = "t_dm_slide",
     abort(err_msg)
   }
 
-  file_list <- get_template_filepath(full.names = TRUE)
-  template_file <- file_list[grepl(template, file_list)]
+  file_list <- get_template_filepath(package = package, full.names = TRUE)
+  template_file <- file_list[basename(file_list) == paste0(template, ".R")]
 
 
   if (template_file == "" || !file.exists(template_file)) {
@@ -104,31 +100,41 @@ use_template <- function(template = "t_dm_slide",
 
 #' [EXPERIMENTAL] List All Available Templates
 #'
-#' @family utils_examples
-#' @keywords utils_examples
+#' @param package Which package to search for the template files. Defaults to "autoslider.core".
 #'
-#' @return A `character` vector of all available templates
+#' @return A character vector of available template names in the specified package.
 #'
 #' @export
 #'
 #' @examples
-#' list_all_templates()
-list_all_templates <- function() {
-  get_template_filepath(full.names = FALSE) |>
+#' list_all_templates(package = "autoslider.core")
+list_all_templates <- function(package = "autoslider.core") {
+  get_template_filepath(package = package, full.names = FALSE) |>
     stringr::str_remove("\\.R$") |>
-    structure(package = "autoslider.core")
+    structure(package = package)
 }
 
-get_template_filepath <- function(full.names = FALSE) {
-  package <- "autoslider.core"
 
+#' Retrieve Template File Paths
+#'
+#' @param package A character string specifying the name of the package to search.
+#' @param full.names If `TRUE`, returns the full path to each file.
+#'                   If `FALSE`, returns only the file names.
+#'
+#' @return A character vector of template file names or paths, depending on `full.names`.
+#'
+#' @export
+#'
+#' @keywords internal
+get_template_filepath <- function(package = "autoslider.core", full.names = FALSE) {
   # Installed-package path
   template_dir <- system.file("templates", package = package)
 
   pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
     pattern <- paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"),
-                      collapse = "|")
+                      collapse = "|"
+    )
   }
 
   list.files(template_dir, pattern = "\\.R$", full.names = full.names) |>

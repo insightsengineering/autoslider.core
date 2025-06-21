@@ -9,33 +9,35 @@ use_template(
   function_name = "default",
   save_path = "./programs/R",
   overwrite = FALSE,
-  open = interactive()
+  open = interactive(),
+  package = "autoslider.core"
 )
 }
 \arguments{
-\item{template}{Must be one of `r list_all_templates()`}
+\item{template}{Must be one of `list_all_templates(package = "autoslider.core")`.}
 
-\item{function_name}{What output would you like to create?}
+\item{function_name}{Name of the output function you want to create. Defaults to "default".}
 
-\item{save_path}{Path to save the function, should include filename and extension.
-Defaults to "./programs/**function_name**_slide.R"}
+\item{save_path}{Path to save the function. Defaults to "./programs/R".}
 
-\item{overwrite}{Whether to overwrite an existing file named `save_path`.}
+\item{overwrite}{Whether to overwrite an existing file.}
 
-\item{open}{Whether to open the script right away.}
+\item{open}{Whether to open the file after creation.}
+
+\item{package}{Which package to search for the template file. Defaults to "autoslider.core".}
 }
 \value{
-No return values, called for side effects
+No return value. Called for side effects (writes a file).
 }
 \description{
 We have separate templates for listings, tables, and graphs.
 There is also a template to set up the `run_all` script.
 }
 \details{
-Use `list_all_templates()` to discover which templates are available.
+Use `list_all_templates(package = "autoslider.core")` to discover which templates are available.
 }
 \examples{
 if (interactive()) {
-  use_template("l_template_slide")
+  use_template("t_dm_slide", function_name = "my_table", package = "autoslider.core")
 }
 }
