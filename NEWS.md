@@ -1,4 +1,4 @@
-# autoslider.core 0.2.5.9003
+# autoslider.core 0.2.5.9004
  * Added support for custom templates via symbolic links in `inst/templates/`.
  * Enabled function generation from templates.
  * Split out specific plot functions (e.g., `g_vs_slide`) from `g_mean_general() `.
