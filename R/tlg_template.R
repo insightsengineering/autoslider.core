@@ -31,9 +31,9 @@ use_template <- function(template = "t_dm_slide",
   assert_that(assertthat::is.flag(overwrite))
   assert_that(assertthat::is.flag(open))
   assert_that(!is.null(save_path))
-  assert_that(template %in% list_all_templates(package) ||
-                paste0(system.file("R", package = package), "/", template) %in%
-                list_all_templates(package))
+  # assert_that(template %in% list_all_templates(package) ||
+  #               paste0(system.file("templates", package = package), "/", template) %in%
+  #               list_all_templates(package))
 
   if (!dir.exists(save_path)) {
     dir.create(save_path, recursive = TRUE)
@@ -46,17 +46,27 @@ use_template <- function(template = "t_dm_slide",
   assertthat::is.writeable(save_path %>% dirname())
 
 
+  # Build expected full path
+  expected_path <- file.path(system.file("templates", package = package), template)
+  expected_core_path <- file.path(system.file("templates", package = "autoslider.core"), template)
 
-  # if (!tolower(template) %in% list_all_templates()) {
-  #   err_msg <- sprintf(
-  #     paste0(
-  #       "No template for '%s' available in package '%s'.\n",
-  #       "\u2139 Run `list_all_templates()` to get a list of all available templates."
-  #     ),
-  #     tolower(template), package
-  #   )
-  #   abort(err_msg)
-  # }
+  # Validation logic
+  valid <- FALSE
+  if (package == "autoslider.core") {
+    valid <- expected_path %in% list_all_templates(package)
+  } else if (package == "autoslideR") {
+    valid <- (expected_path %in% list_all_templates(package)) || (expected_core_path %in% list_all_templates(package))
+  }
+
+  # Error if invalid
+  if (!valid) {
+    err_msg <- sprintf(
+      "Template '%s' not found in package '%s'. Use list_all_templates('%s') to see available templates.",
+      template, package, package
+    )
+    abort(err_msg)
+  }
+
 
   if (file.exists(save_path) && !overwrite) {
     err_msg <- paste(
@@ -67,7 +77,15 @@ use_template <- function(template = "t_dm_slide",
     abort(err_msg)
   }
 
-  file_list <- get_template_filepath(package = package, full.names = TRUE)
+  if (package == "autoslider.core"){
+    file_list <- get_template_filepath(package = package, full.names = TRUE)
+  }else if (package == "autoslideR"){
+    file_list <- c(
+      get_template_filepath(package = "autoslideR", full.names = TRUE),
+      get_template_filepath(package = "autoslider.core", full.names = TRUE)
+    )
+  }
+
   template_file <- file_list[basename(file_list) == paste0(template, ".R")]
 
 
@@ -109,9 +127,19 @@ use_template <- function(template = "t_dm_slide",
 #' @examples
 #' list_all_templates(package = "autoslider.core")
 list_all_templates <- function(package = "autoslider.core") {
-  get_template_filepath(package = package, full.names = FALSE) |>
-    stringr::str_remove("\\.R$") |>
-    structure(package = package)
+  if (package == "autoslideR") {
+    c(
+      get_template_filepath(package = "autoslideR", full.names = TRUE),
+      get_template_filepath(package = "autoslider.core", full.names = TRUE)
+    )|>
+      stringr::str_remove("\\.R$") |>
+      structure(package = package)
+  } else if (package == "autoslider.core"){
+    get_template_filepath(package = package, full.names = TRUE)|>
+      stringr::str_remove("\\.R$") |>
+      structure(package = package)
+  }
+
 }
 
 
