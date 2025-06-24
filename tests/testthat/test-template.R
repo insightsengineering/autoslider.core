@@ -15,7 +15,7 @@ test_that("list_all_templates test 1: returns all available templates", {
     "t_dd_slide", "t_dm_slide", "t_dor_slide", "t_ds_slide"
   )
 
-  actual <- list_all_templates()
+  actual <- basename(list_all_templates())
   expect_setequal(actual, expected)
 })
 
@@ -89,7 +89,7 @@ test_that("use_template test 4: expected errors", {
 
 
 test_that("use_template test 5: all templates", {
-  all_templates <- list_all_templates()
+  all_templates <- basename(list_all_templates())
   for (template in all_templates) {
     expect_true(
       use_template(
