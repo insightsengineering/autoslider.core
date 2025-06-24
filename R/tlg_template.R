@@ -77,9 +77,9 @@ use_template <- function(template = "t_dm_slide",
     abort(err_msg)
   }
 
-  if (package == "autoslider.core"){
+  if (package == "autoslider.core") {
     file_list <- get_template_filepath(package = package, full.names = TRUE)
-  }else if (package == "autoslideR"){
+  } else if (package == "autoslideR") {
     file_list <- c(
       get_template_filepath(package = "autoslideR", full.names = TRUE),
       get_template_filepath(package = "autoslider.core", full.names = TRUE)
@@ -131,15 +131,14 @@ list_all_templates <- function(package = "autoslider.core") {
     c(
       get_template_filepath(package = "autoslideR", full.names = TRUE),
       get_template_filepath(package = "autoslider.core", full.names = TRUE)
-    )|>
+    ) |>
       stringr::str_remove("\\.R$") |>
       structure(package = package)
-  } else if (package == "autoslider.core"){
-    get_template_filepath(package = package, full.names = TRUE)|>
+  } else if (package == "autoslider.core") {
+    get_template_filepath(package = package, full.names = TRUE) |>
       stringr::str_remove("\\.R$") |>
       structure(package = package)
   }
-
 }
 
 
@@ -161,7 +160,7 @@ get_template_filepath <- function(package = "autoslider.core", full.names = FALS
   pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
     pattern <- paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"),
-                      collapse = "|"
+      collapse = "|"
     )
   }
 
