@@ -76,7 +76,7 @@ postprocessing_doc <- function(doc, save_file, doc_o, type = "") {
 #'
 #' @examples
 #' example <- tempfile(fileext = ".pptx")
-#' Add contents into the pptx file
+#' # Add contents into the pptx file
 #' officer::read_pptx() %>%
 #'   officer::add_slide() %>%
 #'   print(target = example)
