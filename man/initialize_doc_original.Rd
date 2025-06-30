@@ -21,10 +21,8 @@ the presentation from the given file path.
 }
 \examples{
 example <- tempfile(fileext = ".pptx")
-# Add contents into the pptx file
-officer::read_pptx() \%>\%
-  officer::add_slide() \%>\%
-  print(target = example)
-
+doc <- officer::read_pptx()
+doc <- officer::add_slide(doc)
+print(doc, target = example)
 doc <- initialize_doc_original(NULL, example)
 }
