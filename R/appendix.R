@@ -75,7 +75,13 @@ postprocessing_doc <- function(doc, save_file, doc_o, type = "") {
 #' @export
 #'
 #' @examples
-#' doc <- initialize_doc_original(NULL, "example.pptx")
+#' example <- tempfile(fileext = ".pptx")
+#' Add contents into the pptx file
+#' officer::read_pptx() %>%
+#'   officer::add_slide() %>%
+#'   print(target = example)
+#'
+#' doc <- initialize_doc_original(NULL, example)
 initialize_doc_original <- function(doc_original, doc_o) {
   if (is.null(doc_original)) {
     doc_original <- officer::read_pptx(doc_o)

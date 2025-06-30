@@ -20,5 +20,11 @@ If a `doc_original` is provided, it is directly returned. Otherwise, the functio
 the presentation from the given file path.
 }
 \examples{
-doc <- initialize_doc_original(NULL, "example.pptx")
+example <- tempfile(fileext = ".pptx")
+Add contents into the pptx file
+officer::read_pptx() \%>\%
+  officer::add_slide() \%>\%
+  print(target = example)
+
+doc <- initialize_doc_original(NULL, example)
 }
