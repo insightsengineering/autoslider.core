@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.797479747974797" branch-rate="0" lines-covered="1772" lines-valid="2222" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-06-30 13:04:33.285162">
+<coverage line-rate="0.797479747974797" branch-rate="0" lines-covered="1772" lines-valid="2222" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-06-30 13:22:49.52739">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
@@ -137,54 +137,54 @@
           <methods>
             <method name="initialize_to_page" signature="" line-rate="0.857142857142857" branch-rate="0" complexity="0">
               <lines>
-                <line number="18" hits="3" branch="false"/>
-                <line number="19" hits="3" branch="false"/>
-                <line number="20" hits="0" branch="false"/>
                 <line number="22" hits="3" branch="false"/>
-                <line number="23" hits="1" branch="false"/>
+                <line number="23" hits="3" branch="false"/>
+                <line number="24" hits="0" branch="false"/>
                 <line number="26" hits="3" branch="false"/>
-                <line number="27" hits="2" branch="false"/>
+                <line number="27" hits="1" branch="false"/>
+                <line number="30" hits="3" branch="false"/>
+                <line number="31" hits="2" branch="false"/>
               </lines>
             </method>
             <method name="postprocessing_doc" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="48" hits="3" branch="false"/>
-                <line number="49" hits="2" branch="false"/>
-                <line number="50" hits="2" branch="false"/>
-                <line number="52" hits="2" branch="false"/>
-                <line number="53" hits="2" branch="false"/>
-                <line number="56" hits="2" branch="false"/>
-                <line number="57" hits="2" branch="false"/>
-                <line number="60" hits="2" branch="false"/>
+                <line number="57" hits="3" branch="false"/>
+                <line number="58" hits="2" branch="false"/>
+                <line number="59" hits="2" branch="false"/>
+                <line number="61" hits="2" branch="false"/>
+                <line number="62" hits="2" branch="false"/>
+                <line number="65" hits="2" branch="false"/>
+                <line number="66" hits="2" branch="false"/>
+                <line number="69" hits="2" branch="false"/>
               </lines>
             </method>
             <method name="initialize_doc_original" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="84" hits="2" branch="false"/>
-                <line number="85" hits="1" branch="false"/>
-                <line number="87" hits="2" branch="false"/>
+                <line number="93" hits="2" branch="false"/>
+                <line number="94" hits="1" branch="false"/>
+                <line number="96" hits="2" branch="false"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="18" hits="3" branch="false"/>
-            <line number="19" hits="3" branch="false"/>
-            <line number="20" hits="0" branch="false"/>
             <line number="22" hits="3" branch="false"/>
-            <line number="23" hits="1" branch="false"/>
+            <line number="23" hits="3" branch="false"/>
+            <line number="24" hits="0" branch="false"/>
             <line number="26" hits="3" branch="false"/>
-            <line number="27" hits="2" branch="false"/>
-            <line number="48" hits="3" branch="false"/>
-            <line number="49" hits="2" branch="false"/>
-            <line number="50" hits="2" branch="false"/>
-            <line number="52" hits="2" branch="false"/>
-            <line number="53" hits="2" branch="false"/>
-            <line number="56" hits="2" branch="false"/>
-            <line number="57" hits="2" branch="false"/>
-            <line number="60" hits="2" branch="false"/>
-            <line number="84" hits="2" branch="false"/>
-            <line number="85" hits="1" branch="false"/>
-            <line number="87" hits="2" branch="false"/>
+            <line number="27" hits="1" branch="false"/>
+            <line number="30" hits="3" branch="false"/>
+            <line number="31" hits="2" branch="false"/>
+            <line number="57" hits="3" branch="false"/>
+            <line number="58" hits="2" branch="false"/>
+            <line number="59" hits="2" branch="false"/>
+            <line number="61" hits="2" branch="false"/>
+            <line number="62" hits="2" branch="false"/>
+            <line number="65" hits="2" branch="false"/>
+            <line number="66" hits="2" branch="false"/>
+            <line number="69" hits="2" branch="false"/>
+            <line number="93" hits="2" branch="false"/>
+            <line number="94" hits="1" branch="false"/>
+            <line number="96" hits="2" branch="false"/>
           </lines>
         </class>
         <class name="assert.R" filename="R/assert.R" line-rate="0.346153846153846" branch-rate="0" complexity="0">
