@@ -19,7 +19,11 @@ Computes the appropriate page number at which to insert a new slide into the Pow
 Defaults to appending to the end if no value is provided.
 }
 \examples{
-doc <- officer::read_pptx("example.pptx")
+tmp <- tempfile(fileext = ".pptx")
+doc <- officer::read_pptx()
+doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+print(doc, target = tmp)
+doc <- officer::read_pptx(tmp)
 initialize_to_page(doc, NA) # append to end
-initialize_to_page(doc, 3) # insert at page 3
+initialize_to_page(doc, 1) # insert at page 1
 }

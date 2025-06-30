@@ -11,9 +11,13 @@
 #' @export
 #'
 #' @examples
-#' doc <- officer::read_pptx("example.pptx")
+#' tmp <- tempfile(fileext = ".pptx")
+#' doc <- officer::read_pptx()
+#' doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+#' print(doc, target = tmp)
+#' doc <- officer::read_pptx(tmp)
 #' initialize_to_page(doc, NA) # append to end
-#' initialize_to_page(doc, 3) # insert at page 3
+#' initialize_to_page(doc, 1) # insert at page 1
 initialize_to_page <- function(doc_original, to_page) {
   max_pages <- length(doc_original)
   if (max_pages == 0) {
@@ -42,8 +46,13 @@ initialize_to_page <- function(doc_original, to_page) {
 #' @export
 #'
 #' @examples
-#' doc <- officer::read_pptx("slides.pptx")
-#' postprocessing_doc(doc, TRUE, "slides.pptx", type = "final")
+#' tmp <- tempfile(fileext = ".pptx")
+#' doc <- officer::read_pptx()
+#' doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+#' print(doc, target = tmp)
+#' doc <- officer::read_pptx(tmp)
+#' # Call postprocessing_doc to save a modified version of doc
+#' postprocessing_doc(doc, TRUE, tmp, type = "final")
 postprocessing_doc <- function(doc, save_file, doc_o, type = "") {
   if (save_file) {
     doc_dir <- dirname(doc_o)

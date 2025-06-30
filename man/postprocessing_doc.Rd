@@ -23,6 +23,11 @@ Performs final actions on the PowerPoint object, including optionally saving the
 The saved filename includes a suffix indicating the slide type that was appended.
 }
 \examples{
-doc <- officer::read_pptx("slides.pptx")
-postprocessing_doc(doc, TRUE, "slides.pptx", type = "final")
+tmp <- tempfile(fileext = ".pptx")
+doc <- officer::read_pptx()
+doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+print(doc, target = tmp)
+doc <- officer::read_pptx(tmp)
+# Call postprocessing_doc to save a modified version of doc
+postprocessing_doc(doc, TRUE, tmp, type = "final")
 }
