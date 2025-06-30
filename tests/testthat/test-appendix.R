@@ -60,10 +60,30 @@ test_that("postprocessing_doc test 2: save_file = FALSE", {
 
 test_that("postprocessing_doc test 3: doc_o is not a ppt", {
   pptx <- officer::read_pptx()
-  result <- postprocessing_doc(pptx, save_file = TRUE, doc_o = "example.pdf", type = "lab_sec")
+  expect_error(postprocessing_doc(pptx, save_file = TRUE, doc_o = "example.pdf", type = "lab_sec"))
+})
 
-  out_path <- file.path(test_path, "example_lab_sec.pptx")
+
+
+test_that("initialize_doc_original test 1: returns existing doc_original", {
+  doc <- officer::read_pptx()
+
+  result <- initialize_doc_original(doc, "dummy_path.pptx")
+  expect_identical(result, doc)
+})
+
+test_that("initialize_doc_original test 2: reads from file when doc_original is NULL", {
+  # Create a temporary file path for a dummy PowerPoint document
+  # tempfile() generates a unique temporary file name
+  doc_o <- tempfile(fileext = ".pptx")
+
+  # Create a minimal PowerPoint document and save it to the temporary path
+  # This makes sure there's a valid file for read_pptx to open
+  minimal_pptx <- officer::read_pptx() %>%
+    officer::add_slide(layout = "Title and Content", master = "Office Theme")
+  print(minimal_pptx, target = doc_o)
+
+  result <- initialize_doc_original(NULL, doc_o)
 
   expect_s3_class(result, "rpptx")
-  expect_true(file.exists(out_path))
 })
