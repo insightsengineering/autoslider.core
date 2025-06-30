@@ -1,0 +1,89 @@
+library(testthat)
+# library(rprojroot)
+
+# Define the project root and test path
+
+
+test_path <- tempdir()
+
+test_that("initialize_to_page test 1: when to_page is null", {
+  doc <- officer::read_pptx()
+  doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+
+  to_page <- initialize_to_page(doc, NA)
+  expect_equal(to_page, 1)
+})
+
+test_that("initialize_to_page test 2: given to_page value", {
+  doc <- officer::read_pptx()
+  doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+  doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+
+  to_page <- initialize_to_page(doc, 2)
+  expect_equal(to_page, 2)
+})
+
+test_that("initialize_to_page test 3: if to_page is too large", {
+  doc <- officer::read_pptx()
+  doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")
+
+  expect_error(initialize_to_page(doc, 99))
+})
+
+
+
+test_that("postprocessing_doc test 1: save_file = TRUE", {
+  temp_path <- file.path(test_path, "save.pptx")
+  out_path <- file.path(test_path, "save_testoutput.pptx")
+
+  # Create minimal pptx and save to temp path
+  ppt <- officer::read_pptx()
+  print(ppt, temp_path)
+
+  doc <- officer::read_pptx(temp_path)
+  result <- postprocessing_doc(doc, save_file = TRUE, doc_o = temp_path, type = "testoutput")
+
+  expect_s3_class(result, "rpptx")
+  expect_true(file.exists(out_path))
+
+  file.remove(out_path)
+})
+
+test_that("postprocessing_doc test 2: save_file = FALSE", {
+  pptx <- officer::read_pptx()
+  result <- postprocessing_doc(pptx, save_file = FALSE, doc_o = "placeholder.pptx")
+  out_path <- file.path(test_path, "placeholder.pptx")
+  expect_s3_class(result, "rpptx")
+  expect_false(file.exists(out_path))
+})
+
+
+test_that("postprocessing_doc test 3: doc_o is not a ppt", {
+  pptx <- officer::read_pptx()
+  expect_error(postprocessing_doc(pptx, save_file = TRUE, doc_o = "example.pdf", type = "lab_sec"))
+})
+
+
+
+test_that("initialize_doc_original test 1: returns existing doc_original", {
+  doc <- officer::read_pptx()
+
+  result <- initialize_doc_original(doc, "dummy_path.pptx")
+  expect_identical(result, doc)
+})
+
+test_that("initialize_doc_original test 2: reads from file when doc_original is NULL", {
+  # Create a temporary file path for a dummy PowerPoint document
+  # tempfile() generates a unique temporary file name
+  doc_o <- tempfile(fileext = ".pptx")
+
+  # Create a minimal PowerPoint document and save it to the temporary path
+  # This makes sure there's a valid file for read_pptx to open
+  minimal_pptx <- officer::read_pptx() %>%
+    officer::add_slide(layout = "Title and Content", master = "Office Theme")
+  print(minimal_pptx, target = doc_o)
+
+  result <- initialize_doc_original(NULL, doc_o)
+
+  expect_s3_class(result, "rpptx")
+})
