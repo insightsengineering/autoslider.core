@@ -20,6 +20,6 @@ Defaults to appending to the end if no value is provided.
 }
 \examples{
 doc <- officer::read_pptx("example.pptx")
-initialize_to_page(doc, NA)    # append to end
-initialize_to_page(doc, 3)     # insert at page 3
+initialize_to_page(doc, NA) # append to end
+initialize_to_page(doc, 3) # insert at page 3
 }
