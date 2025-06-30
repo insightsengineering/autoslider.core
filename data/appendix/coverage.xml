@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.797479747974797" branch-rate="0" lines-covered="1772" lines-valid="2222" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-06-30 06:57:24.686536">
+<coverage line-rate="0.797479747974797" branch-rate="0" lines-covered="1772" lines-valid="2222" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-06-30 08:01:38.240128">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
@@ -160,9 +160,9 @@
             </method>
             <method name="initialize_doc_original" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="80" hits="2" branch="false"/>
-                <line number="81" hits="1" branch="false"/>
-                <line number="83" hits="2" branch="false"/>
+                <line number="86" hits="2" branch="false"/>
+                <line number="87" hits="1" branch="false"/>
+                <line number="89" hits="2" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -182,9 +182,9 @@
             <line number="56" hits="2" branch="false"/>
             <line number="57" hits="2" branch="false"/>
             <line number="60" hits="2" branch="false"/>
-            <line number="80" hits="2" branch="false"/>
-            <line number="81" hits="1" branch="false"/>
-            <line number="83" hits="2" branch="false"/>
+            <line number="86" hits="2" branch="false"/>
+            <line number="87" hits="1" branch="false"/>
+            <line number="89" hits="2" branch="false"/>
           </lines>
         </class>
         <class name="assert.R" filename="R/assert.R" line-rate="0.346153846153846" branch-rate="0" complexity="0">
