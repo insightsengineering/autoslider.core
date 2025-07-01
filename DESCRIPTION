@@ -58,7 +58,7 @@ Imports:
     rvg (>= 0.2.5),
     stringr (>= 1.5.0),
     survival,
-    tern (>= 0.9.0),
+    tern (>= 0.9.9),
     tidyr (>= 1.3.0),
     yaml (>= 2.3.7)
 Suggests:
