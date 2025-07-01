@@ -99,7 +99,8 @@ test_that("append_title_slides test 1: save file", {
   officer::read_pptx() %>% print(target = temp_pptx_file)
 
   # Define the expected output file path
-  expected_output_file <- file.path(dirname(temp_pptx_file), paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_title.pptx"))
+  expected_output_file <- file.path(dirname(temp_pptx_file),
+    paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_title.pptx"))
   on.exit(unlink(expected_output_file), add = TRUE) # Clean up output file
 
 
@@ -124,7 +125,8 @@ test_that("append_section_header_slides test 1: not save file", {
   officer::read_pptx() %>% print(target = temp_pptx_file)
 
   # Define the expected output file path
-  expected_output_file <- file.path(dirname(temp_pptx_file), paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_section_header.pptx"))
+  expected_output_file <- file.path(dirname(temp_pptx_file),
+  paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_section_header.pptx"))
   on.exit(unlink(expected_output_file), add = TRUE) # Clean up output file
 
 
@@ -137,11 +139,13 @@ test_that("append_section_header_slides test 1: not save file", {
   )
 
   expect_s3_class(doc_result_not_saved, "rpptx")
-  expect_false(file.exists(file.path(dirname(temp_pptx_file), paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_section_header.pptx"))))
+  expect_false(file.exists(file.path(dirname(temp_pptx_file),
+  paste0(tools::file_path_sans_ext(basename(temp_pptx_file)),
+         "_section_header.pptx"))))
   expect_equal(length(doc_result_not_saved), 1) # One slide added
 })
 
-test_that("append_all_slides correctly adds multiple slides based on page_list and saves if requested", {
+test_that("append_all_slides correctly adds multiple slides based on page_list", {
   # Create a temporary file for the initial document
   temp_pptx_file <- tempfile(fileext = ".pptx")
   on.exit(unlink(temp_pptx_file), add = TRUE)
@@ -150,7 +154,8 @@ test_that("append_all_slides correctly adds multiple slides based on page_list a
   officer::read_pptx() %>% print(target = temp_pptx_file)
 
   # Define the expected output file path
-  expected_output_file <- file.path(dirname(temp_pptx_file), paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_final.pptx"))
+  expected_output_file <- file.path(dirname(temp_pptx_file),
+  paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_final.pptx"))
   on.exit(unlink(expected_output_file), add = TRUE) # Clean up output file
 
   # Example page_list for dynamic slide appending
@@ -198,7 +203,7 @@ test_that("append_all_slides test 2: error if page_list exceeds max_pages + 1", 
   # This should trigger an error from initialize_to_page.
   invalid_page_list <- list(
     list(type = "title", to_page = 1, study_id = "Valid First Slide"),
-    list(type = "section", to_page = 3, section_title = "Invalid Page Number") # This should cause an error
+    list(type = "section", to_page = 3, section_title = "Invalid Page Number")
   )
 
   expect_error(
