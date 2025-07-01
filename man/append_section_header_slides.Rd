@@ -42,9 +42,9 @@ tmp <- tempfile(fileext = ".pptx")
 doc <- officer::read_pptx()
 print(doc, target = tmp)
 
-doc <- append_section_header_slides(
+append_section_header_slides(
   doc_o = tmp,
-  study_id = "My Study #13",
+  section_title = "My Section",
   to_page = 1,
   save_file = TRUE
 )
