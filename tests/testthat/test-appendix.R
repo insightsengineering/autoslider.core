@@ -113,7 +113,6 @@ test_that("append_title_slides test 1: save file", {
   expect_s3_class(doc_result_saved, "rpptx")
   expect_true(file.exists(expected_output_file))
   expect_equal(length(doc_result_saved), 1) # One slide added
-
 })
 
 test_that("append_section_header_slides test 1: not save file", {

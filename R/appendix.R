@@ -128,15 +128,12 @@ initialize_doc_original <- function(doc_original, doc_o) {
 #'   to_page = 1,
 #'   save_file = TRUE
 #' )
-
-
 append_title_slides <- function(
     doc_o,
     study_id = "XXXX change me",
     to_page = NA,
     doc_original = NULL,
     save_file = FALSE) {
-
   doc_original <- initialize_doc_original(doc_original, doc_o)
 
   to_page <- initialize_to_page(doc_original, to_page)
@@ -199,7 +196,6 @@ append_section_header_slides <- function(
     to_page = NA,
     doc_original = NULL,
     save_file = FALSE) {
-
   doc_original <- initialize_doc_original(doc_original, doc_o)
 
   to_page <- initialize_to_page(doc_original, to_page)
@@ -262,12 +258,10 @@ append_all_slides <- function(
     page_list = list(), # Default to an empty list
     doc_original = NULL,
     save_file = FALSE) {
-
   doc <- initialize_doc_original(doc_original, doc_o)
 
 
   for (page in page_list) {
-
     current_to_page <- page$to_page
 
 
