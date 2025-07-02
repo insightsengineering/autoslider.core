@@ -52,7 +52,6 @@ For `type = "section"`, you need to provide a `section_title.`
 Here’s a complete example. We'll start with an empty presentation, define a `page_list` for our slides, and then call `append_all_slides` to generate the final deck and save it to a file.
 
 ```{r, eval=FALSE}
-
 library(officer)
 library(tools)
 
@@ -85,7 +84,6 @@ doc_result <- append_all_slides(
 # 4. Verify the output
 cat(paste("Number of slides created:", length(doc_result), "\n"))
 cat(paste("Output file exists:", file.exists(expected_output_file)))
-
 ```
 This script produces a new PowerPoint file named `My_Presentation_final.pptx`, containing the three slides defined in `my_page_list.`
 

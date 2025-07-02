@@ -99,8 +99,10 @@ test_that("append_title_slides test 1: save file", {
   officer::read_pptx() %>% print(target = temp_pptx_file)
 
   # Define the expected output file path
-  expected_output_file <- file.path(dirname(temp_pptx_file),
-    paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_title.pptx"))
+  expected_output_file <- file.path(
+    dirname(temp_pptx_file),
+    paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_title.pptx")
+  )
   on.exit(unlink(expected_output_file), add = TRUE) # Clean up output file
 
 
@@ -125,8 +127,10 @@ test_that("append_section_header_slides test 1: not save file", {
   officer::read_pptx() %>% print(target = temp_pptx_file)
 
   # Define the expected output file path
-  expected_output_file <- file.path(dirname(temp_pptx_file),
-  paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_section_header.pptx"))
+  expected_output_file <- file.path(
+    dirname(temp_pptx_file),
+    paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_section_header.pptx")
+  )
   on.exit(unlink(expected_output_file), add = TRUE) # Clean up output file
 
 
@@ -139,9 +143,13 @@ test_that("append_section_header_slides test 1: not save file", {
   )
 
   expect_s3_class(doc_result_not_saved, "rpptx")
-  expect_false(file.exists(file.path(dirname(temp_pptx_file),
-  paste0(tools::file_path_sans_ext(basename(temp_pptx_file)),
-         "_section_header.pptx"))))
+  expect_false(file.exists(file.path(
+    dirname(temp_pptx_file),
+    paste0(
+      tools::file_path_sans_ext(basename(temp_pptx_file)),
+      "_section_header.pptx"
+    )
+  )))
   expect_equal(length(doc_result_not_saved), 1) # One slide added
 })
 
@@ -154,8 +162,10 @@ test_that("append_all_slides correctly adds multiple slides based on page_list",
   officer::read_pptx() %>% print(target = temp_pptx_file)
 
   # Define the expected output file path
-  expected_output_file <- file.path(dirname(temp_pptx_file),
-  paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_final.pptx"))
+  expected_output_file <- file.path(
+    dirname(temp_pptx_file),
+    paste0(tools::file_path_sans_ext(basename(temp_pptx_file)), "_final.pptx")
+  )
   on.exit(unlink(expected_output_file), add = TRUE) # Clean up output file
 
   # Example page_list for dynamic slide appending
