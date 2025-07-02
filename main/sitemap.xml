@@ -5,6 +5,7 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/articles/adding_templates.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/articles/autoslideR.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/articles/downstream.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/articles/generate_placeholder_slides.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/articles/index.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/articles/opensource.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/articles/tlg_templates.html</loc></url>
@@ -12,6 +13,9 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/index.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/news/index.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/adding_ai_footnotes.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/append_all_slides.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/append_section_header_slides.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/append_title_slides.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/autoslider.core-package.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/autoslider_error.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/autoslider_format.html</loc></url>
@@ -59,6 +63,8 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/get_template_filepath.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/gt_t_dm_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/index.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/initialize_doc_original.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/initialize_to_page.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/l_ae_slide.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/list_all_templates.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/lyt_to_side_by_side.html</loc></url>
@@ -69,6 +75,7 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/null_report.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/perc_perc.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/ph_with_img.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/postprocessing_doc.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/preprocess_t_dd.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/preprocess_t_ds.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/print.decoratedGrob.html</loc></url>
