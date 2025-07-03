@@ -37,10 +37,7 @@ To get started, first navigate to your `autoslider.core` repo directory, make su
 
 
 ```{r, include = TRUE, eval = FALSE}
-setwd("~/path/to/autoslider.core")
-
-devtools::load_all()
-
+library(autoslider.core)
 list_all_templates()
 ```
 This will return a character vector of supported templates (e.g., `t_dm_slide`, `g_ae_slide`, etc.), each corresponding to a table type stored in the `R/` folder of the package.
@@ -58,10 +55,10 @@ To create multiple variations of the same template type, you could choose your c
 
 ```{r_function_call, include = TRUE, eval = FALSE}
 use_template(template = "l_ae_slide", function_name = "l_ae_slide_001")
-# which generates an Adverse Events listing at ./programs/R/l_ae_slide_001.R
+# which generates an Adverse Events listing function at ./programs/R/l_ae_slide_001.R
 
 use_template(template = "l_ae_slide", function_name = "l_ae_slide_v2")
-# which generates an Adverse Events listing at ./programs/R/l_ae_slide_v2.R
+# which generates an Adverse Events listing function at ./programs/R/l_ae_slide_v2.R
 ```
 ### Notes
 - The `template` argument must match one of the entries in list_all_templates(). 
