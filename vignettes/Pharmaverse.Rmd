@@ -236,7 +236,7 @@ SER:
 
 
 
-## autoslideR workflow exmaple
+## autoslideR workflow example
 
 A typical workflow could look something like this: 
 

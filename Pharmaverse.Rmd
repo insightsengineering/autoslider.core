@@ -234,9 +234,7 @@ SER:
 
 ```
 
-
-
-## autoslideR typical workflow exmaple
+## autoslideR typical workflow example
 
 A typical workflow could look something like this: 
 
