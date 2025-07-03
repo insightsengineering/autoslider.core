@@ -20,6 +20,9 @@ navbar:
           href: articles/tlg_templates.html
         - text: How to add your own templates?
           href: articles/adding_templates.html
+        - text: How to generate placeholder slides for your presentation?
+          href: articles/generate_placeholder_slides.html
+
 
     reports:
       text: Reports
@@ -44,6 +47,7 @@ articles:
     - downstream
     - tlg_templates
     - adding_templates
+    - generate_placeholder_slides
 
 news:
   releases:
