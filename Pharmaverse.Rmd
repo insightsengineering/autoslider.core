@@ -38,12 +38,10 @@ knitr::opts_chunk$set(comment = "#")
 
 In this vignette we show the general `autoslider.core` workflow, how you can create functions from our templates and produce study-specific outputs, and how you can integrate them into the `autoslider.core` framework to automate slide generation.
 
-# Requirements
 
-Of course, you need to have the `autoslider.core` package installed, and you need to have data available.
-In this example I use example data stored in the `autoslider.core` package. 
+First and foremost, you need to have the `autoslider.core` package installed, and you need to have data available.
+In this example I am using example data stored in the `autoslider.core` package. The data needs to be stored in a named list where the names should correspond to ADaM data sets.
 
-The data needs to be stored in a named list where the names should correspond to ADaM data sets.
 ```{r, echo = FALSE, include = FALSE}
 library(autoslider.core)
 library(dplyr)
@@ -136,8 +134,9 @@ library(assertthat)   # For assert_that() you had issues with before
 # file.remove(spec_file)
 ```
 
+# Prerequisites
 
-# Workflow
+## File structure
 
 
 The folder structure could look something like: 
@@ -146,7 +145,7 @@ The folder structure could look something like:
 ├── programs
 │   ├── run_script.R
 │   ├── R   
-|   |   ├── helping_functions.R
+|   |   ├── template_functions.R
 |   |   ├── output_functions.R
 ├── outputs
 ├── spec.yml
@@ -234,7 +233,7 @@ SER:
 
 ```
 
-## autoslideR typical workflow example
+# AutoslideR typical workflow example
 
 A typical workflow could look something like this: 
 
