@@ -52,6 +52,4 @@ test_that("Test some functions in util.R", {
     # A different legacy size should still warn
     expect_warning(warn_about_legacy_paper_size("a4", "P11"), "Paper size 'a4' is deprecated")
   })
-
-
 })

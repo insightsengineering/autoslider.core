@@ -68,7 +68,4 @@ test_that("assert_is_valid_filter_result fails with invalid inputs", {
 
   # Test NA
   expect_error(assert_is_valid_filter_result(NA), "must evaluate to a logical scalar")
-
 })
-
-
