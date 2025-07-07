@@ -338,42 +338,67 @@ munge_spaces <- function(text, wordboundary = "(\\t|\\n|\\x0b|\\x0c|\\r| )") {
   stringr::str_replace_all(text, wordboundary, " ")
 }
 
-split_chunk <- function(text, whitespace = "[\\t\\n\\x0b\\x0c\\r\\ ]") {
-  wordsep_re <- sprintf("(%s+)", whitespace)
-  strsplit(text, split = wordsep_re, perl = TRUE)
+# split_chunk <- function(text, whitespace = "[\\t\\n\\x0b\\x0c\\r\\ ]") {
+#   wordsep_re <- sprintf("(%s+)", whitespace)
+#   strsplit(text, split = wordsep_re, perl = TRUE)
+# }
+split_chunk <- function(text, whitespace = "\\s+") {
+  # Split the string by one or more whitespace characters.
+  chunks <- strsplit(text, split = whitespace, perl = TRUE)[[1]]
+  # Remove any empty strings that result from leading/trailing whitespace.
+  chunks[chunks != ""]
 }
 
-wrap_chunk <- function(chunks, width, wrapped_chunk = list(), current_line = "", width_left = width) {
+wrap_chunk <- function(chunks, width) {
+  # This iterative version is more robust and easier to debug than a
+  # recursive one, preventing potential stack overflow with very long text.
   if (length(chunks) == 0) {
-    return(append(wrapped_chunk, current_line))
+    return(list())
   }
-  next_chunk <- chunks[1]
-  next_width <- nchar(next_chunk)
-  if (width_left <= 0) {
-    wrapped_chunk <- append(wrapped_chunk, current_line)
-    return(wrap_chunk(chunks, width, wrapped_chunk, "", width))
-  } else if (next_width <= width_left) {
-    if (current_line == "") {
-      current_line <- next_chunk
-    } else {
-      current_line <- paste(current_line, next_chunk)
+
+  lines <- list()
+  current_line <- ""
+
+  while (length(chunks) > 0) {
+    word <- chunks[1]
+
+    # Handle words that are longer than the total line width by breaking them up.
+    if (nchar(word) > width) {
+      # If there's content on the current line, bank it first.
+      if (current_line != "") {
+        lines <- append(lines, current_line)
+      }
+      # Add the first part of the long word as a new line.
+      lines <- append(lines, substr(word, 1, width))
+      # Put the remainder of the long word back at the front of the queue.
+      chunks[1] <- substr(word, width + 1, nchar(word))
+      current_line <- ""
+      next
     }
-    return(wrap_chunk(chunks[-1], width, wrapped_chunk, current_line, width_left - next_width - 1))
-  } else if (next_width > width) {
-    next_chunk_sub <- substr(next_chunk, 1, width_left)
-    if (current_line == "") {
-      current_line <- next_chunk_sub
+
+    # Determine what the line would look like with the new word.
+    potential_line <- if (current_line == "") word else paste(current_line, word, sep = " ")
+
+    # If the new word fits, update the current line and remove the word from the queue.
+    if (nchar(potential_line) <= width) {
+      current_line <- potential_line
+      chunks <- chunks[-1]
     } else {
-      current_line <- paste(current_line, next_chunk_sub)
+      # If it doesn't fit, bank the current line and start a new one with the word.
+      lines <- append(lines, current_line)
+      current_line <- word
+      chunks <- chunks[-1]
     }
-    chunks[1] <- substr(next_chunk, width_left + 1, next_width)
-    wrapped_chunk <- append(wrapped_chunk, current_line)
-    return(wrap_chunk(chunks, width, wrapped_chunk, "", width))
-  } else {
-    wrapped_chunk <- append(wrapped_chunk, current_line)
-    return(wrap_chunk(chunks, width, wrapped_chunk, "", width))
   }
+
+  # Add the last remaining line to the list.
+  if (current_line != "") {
+    lines <- append(lines, current_line)
+  }
+
+  return(lines)
 }
+
 
 text_wrap_cut <- function(text, width) {
   width <- as.integer(width)
