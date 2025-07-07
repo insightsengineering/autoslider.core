@@ -436,6 +436,9 @@ get_output_file_ext <- function(output, file_path) {
   ret
 }
 
+# make config global so that test-util recognizes it
+.autoslider_config <- new.env(parent = emptyenv())
+
 warn_about_legacy_filtering <- function(output) {
   if (.autoslider_config$filter_warning_issued) {
     return(invisible())
