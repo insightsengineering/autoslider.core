@@ -30,7 +30,7 @@ red_format(ft, ...)
 
 purple_format(ft, ...)
 
-autoslider_dose_format(ft, header_vals = names(ft))
+autoslider_dose_format(ft, header_vals = names(ft$body$dataset))
 
 black_format_ae(ft, body_font_size = 8, header_font_size = 8, ...)
 
