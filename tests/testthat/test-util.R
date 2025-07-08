@@ -95,6 +95,57 @@ test_that("Test some functions in util.R", {
     expect_equal(wrap_chunk(chunks5, 13), list("one two three", "four"))
   })
 
+  test_that("git_footnote returns repo", {
+    expect_equal(git_footnote(), c( "GitHub repository: https://github.com/insightsengineering/autoslider.core.git", "Git hash: d7e7956771825a63575e07f740a346d723fcbacc" ))
+
+  })
+
+
+  test_that("on_master_branch", {
+    # my local testing branch is called unittest
+    expect_false(on_master_branch())
+
+    local_mocked_bindings(get_repo_head_name = function() "main")
+    expect_true(on_master_branch())
+
+  })
+
+  test_that("create_new_reporting_event", {
+    temp_dir <- tempfile(pattern = "revent")
+
+    create_new_reporting_event(temp_dir)
+    expect_true(dir.exists(temp_dir))
+    expect_true(file.exists(file.path(temp_dir, "metadata.yml")))
+
+    unlink(temp_dir, recursive = TRUE)
+  })
+
+  test_that("create_output_name", {
+    expect_equal(create_output_name("t_dm", "IT"), "t_dm_IT")
+    expect_equal(create_output_name("t_dm", ""), "t_dm")
+    expect_equal(create_output_name("t_dm", NA), "t_dm")
+    expect_equal(create_output_name("l_ae", "SE"), "l_ae_SE")
+  })
+
+
+  test_that("text_wrap_cut works correctly", {
+    expect_equal(text_wrap_cut("A long line of text to be wrapped", 10), "A long\nline of\ntext to be\nwrapped")
+    expect_equal(text_wrap_cut("A verylongword", 8), "A\nverylong\nword")
+    expect_equal(text_wrap_cut("short", 10), "short")
+    expect_equal(text_wrap_cut("Another test", 0), "")
+  })
+
+  test_that("text_wrap_cut_keepreturn respects existing newlines", {
+    text_with_newlines <- "First line to wrap.\nSecond, much longer line of text that also needs to be wrapped."
+    expected_output <- "First line\nto wrap.\nSecond,\nmuch\nlonger\nline of\ntext that\nalso needs\nto be\nwrapped."
+    expect_equal(text_wrap_cut_keepreturn(text_with_newlines, 10), expected_output)
+
+    # Test with empty lines
+    text_with_empty_lines <- "Line 1\n\nLine 3"
+    expected_empty <- "Line 1\n\nLine 3"
+    expect_equal(text_wrap_cut_keepreturn(text_with_empty_lines, 20), expected_empty)
+  })
+
 
 
 })

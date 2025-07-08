@@ -265,7 +265,7 @@ git_footnote <- function(for_test = FALSE) {
       "Git hash:",
       get_last_gitcommit_sha()
     )
-    ret <- paste(repo, commit, sep = "\n")
+    ret <- c(repo, commit)
   } else {
     ret <- NULL
   }
@@ -308,8 +308,9 @@ map_chr <- function(x, f, ...) {
 
 
 on_master_branch <- function() {
-  get_repo_head_name() == "master"
+  get_repo_head_name() %in% c("master", "main")
 }
+
 
 create_new_reporting_event <- function(name) {
   dir.create(name)
@@ -393,6 +394,7 @@ wrap_chunk <- function(chunks, width) {
 }
 
 
+
 text_wrap_cut <- function(text, width) {
   width <- as.integer(width)
   if (width <= 0) {
@@ -400,26 +402,25 @@ text_wrap_cut <- function(text, width) {
   }
   munged_text <- munge_spaces(text)
   chunks <- split_chunk(munged_text)
-  ret <- vapply(chunks, function(x) {
-    s <- wrap_chunk(x, width = width)
-    paste(unlist(s), collapse = "\n")
-  }, FUN.VALUE = "")
-
-  ret
+  wrapped_list <- wrap_chunk(chunks, width = width)
+  paste(unlist(wrapped_list), collapse = "\n")
 }
 
 text_wrap_cut_keepreturn <- function(text, width) {
   if (is.na(width)) {
     width <- 0
   }
-  texts <- strsplit(text, "\n")
-  ret <- vapply(texts, function(x) {
-    r <- text_wrap_cut(x, width)
-    paste0(r, collapse = "\n")
-  }, FUN.VALUE = "")
-
-  ret
+  lines <- strsplit(text, "\n")[[1]]
+  wrapped_lines_list <- lapply(lines, function(line) {
+    if (line == "") {
+      ""
+    } else {
+      text_wrap_cut(line, width)
+    }
+  })
+  paste(wrapped_lines_list, collapse = "\n")
 }
+
 
 #' @noRd
 fs <- function(paper) {
