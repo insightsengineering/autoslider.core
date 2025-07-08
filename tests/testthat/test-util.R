@@ -96,8 +96,7 @@ test_that("Test some functions in util.R", {
   })
 
   test_that("git_footnote returns repo", {
-    expect_equal(git_footnote(), c( "GitHub repository: https://github.com/insightsengineering/autoslider.core.git", "Git hash: d7e7956771825a63575e07f740a346d723fcbacc" ))
-
+    expect_equal(git_footnote(), c("GitHub repository: https://github.com/insightsengineering/autoslider.core.git", "Git hash: d7e7956771825a63575e07f740a346d723fcbacc"))
   })
 
 
@@ -107,7 +106,6 @@ test_that("Test some functions in util.R", {
 
     local_mocked_bindings(get_repo_head_name = function() "main")
     expect_true(on_master_branch())
-
   })
 
   test_that("create_new_reporting_event", {
@@ -145,7 +143,4 @@ test_that("Test some functions in util.R", {
     expected_empty <- "Line 1\n\nLine 3"
     expect_equal(text_wrap_cut_keepreturn(text_with_empty_lines, 20), expected_empty)
   })
-
-
-
 })

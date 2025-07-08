@@ -351,7 +351,6 @@ split_chunk <- function(text, whitespace = "\\s+") {
 }
 
 wrap_chunk <- function(chunks, width) {
-
   if (length(chunks) == 0) {
     return(list())
   }

@@ -75,9 +75,9 @@ write(specs_entry, file = spec_file)
 # This chunk runs first and prepares the environment for the whole document
 
 # 1. Load ALL necessary packages
-library(rtables)      # For append_topleft()
-library(dplyr)       # For %>% and other functions
-library(assertthat)   # For assert_that() you had issues with before
+library(rtables) # For append_topleft()
+library(dplyr) # For %>% and other functions
+library(assertthat) # For assert_that() you had issues with before
 
 
 library("dplyr")
@@ -115,13 +115,13 @@ outputs <- spec_file %>%
 
 
 
- y <- to_flextable.dVTableTree(outputs$t_dm_slide_ITT , lpp = 200, cpp = 200)
+y <- to_flextable.dVTableTree(outputs$t_dm_slide_ITT, lpp = 200, cpp = 200)
 # not sure what the intended effect is here
-  expect_silent(autoslider_dose_format(y[[1]]$ft))
-  expect_silent(black_format_tb(y[[1]]$ft))
+expect_silent(autoslider_dose_format(y[[1]]$ft))
+expect_silent(black_format_tb(y[[1]]$ft))
 
 # specifically called on a adverse event table for processing
 
-  y <- to_flextable.dVTableTree(outputs$t_ae_sae_slide_SER , lpp = 200, cpp = 200)
+y <- to_flextable.dVTableTree(outputs$t_ae_sae_slide_SER, lpp = 200, cpp = 200)
 
-  expect_silent(black_format_ae(y[[1]]$ft))
+expect_silent(black_format_ae(y[[1]]$ft))
