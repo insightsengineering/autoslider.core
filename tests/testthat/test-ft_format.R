@@ -57,6 +57,13 @@ specs_entry <- '
   args:
     arm: "TRT01A"
     vars: ["SEX", "AGE", "RACE"]
+- program: t_ae_sae_slide
+  titles: AEs & Serious AEs
+  footnotes: ""
+  paper: L6
+  suffix: SER
+  args:
+    arm: "TRT01A"
 '
 
 # Create a temporary specs entry file
@@ -95,7 +102,7 @@ data <- list(
 outputs <- spec_file %>%
   read_spec() %>%
   # we can also filter for specific programs:
-  filter_spec(., program %in% c("t_ds_slide", "t_dm_slide")) %>%
+  filter_spec(., program %in% c("t_ds_slide", "t_dm_slide", "t_ae_sae_slide")) %>%
   # these filtered specs are now piped into the generate_outputs function.
   # this function also requires the data
   generate_outputs(datasets = data) %>%
@@ -108,10 +115,13 @@ outputs <- spec_file %>%
 
 
 
- y <- to_flextable.dVTableTree(outputs$t_dm_slide_ITT , lpp = 5, cpp = 5)
-
-  # The test simply confirms that the functions can be called on a flextable
-  # object without throwing an error.
+ y <- to_flextable.dVTableTree(outputs$t_dm_slide_ITT , lpp = 200, cpp = 200)
+# not sure what the intended effect is here
   expect_silent(autoslider_dose_format(y[[1]]$ft))
-  expect_silent(black_format_tb(y))
-  expect_silent(black_format_ae(y))
+  expect_silent(black_format_tb(y[[1]]$ft))
+
+# specifically called on a adverse event table for processing
+
+  y <- to_flextable.dVTableTree(outputs$t_ae_sae_slide_SER , lpp = 200, cpp = 200)
+
+  expect_silent(black_format_ae(y[[1]]$ft))
