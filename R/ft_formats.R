@@ -119,11 +119,13 @@ purple_format <- function(ft, ...) {
 #' @param header_vals Header
 #'
 #' @export
-autoslider_dose_format <- function(ft, header_vals = names(ft)) {
+autoslider_dose_format <- function(ft, header_vals = names(ft$body$dataset)) {
+  # The original implementation used delete_rows and add_header_row, which can be
+  # brittle. Using set_header_labels is the idiomatic and more robust way
+  # to simply change the text of the header row. This avoids the colwidths error.
   ft %>%
     theme_booktabs() %>%
-    delete_rows(i = 1, part = "header") %>%
-    add_header_row(top = TRUE, values = header_vals, colwidths = rep.int(1, length(header_vals))) %>%
+    set_header_labels(values = header_vals) %>%
     bold(part = "header") %>%
     border_remove()
 }
