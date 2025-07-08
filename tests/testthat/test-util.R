@@ -39,17 +39,13 @@ test_that("Test some functions in util.R", {
     .autoslider_config$paper_size_warning_issued <- stats::setNames(
       rep(FALSE, 2), c("a4r", "a4")
     )
-
-    # Test filtering warning
     expect_warning(warn_about_legacy_filtering("t_dm_IT"), "deprecated")
     # Second call should be silent
     expect_silent(warn_about_legacy_filtering("t_dm_IT"))
 
-    # Test paper size warning
     expect_warning(warn_about_legacy_paper_size("a4r", "L11"), "Paper size 'a4r' is deprecated")
     # Second call for the same legacy size should be silent
     expect_silent(warn_about_legacy_paper_size("a4r", "L11"))
-    # A different legacy size should still warn
     expect_warning(warn_about_legacy_paper_size("a4", "P11"), "Paper size 'a4' is deprecated")
   })
 
@@ -62,17 +58,14 @@ test_that("Test some functions in util.R", {
     expect_equal(vbar2newline(""), "")
   })
 
-  context("Testing munge_spaces")
 
   test_that("munge_spaces correctly replaces various whitespace", {
     expect_equal(munge_spaces("hello\tworld"), "hello world")
     expect_equal(munge_spaces("hello\nworld"), "hello world")
-    expect_equal(munge_spaces("hello  world"), "hello  world") # Note: munge_spaces doesn't collapse multiple spaces
+    expect_equal(munge_spaces("hello  world"), "hello  world")
     expect_equal(munge_spaces(" leading"), " leading")
     expect_equal(munge_spaces("trailing "), "trailing ")
   })
-
-  context("Testing split_chunk")
 
   test_that("split_chunk correctly splits text into words", {
     expect_equal(split_chunk("hello world"), c("hello", "world"))
@@ -82,29 +75,22 @@ test_that("Test some functions in util.R", {
     expect_equal(split_chunk(""), character(0))
   })
 
-  context("Testing wrap_chunk")
 
   test_that("wrap_chunk wraps text correctly", {
-    # Simple case that fits on one line
     chunks1 <- c("This", "is", "a", "test.")
     expect_equal(wrap_chunk(chunks1, 20), list("This is a test."))
 
-    # Case that requires wrapping
     chunks2 <- c("This", "is", "a", "longer", "test", "to", "see", "wrapping.")
     expect_equal(wrap_chunk(chunks2, 15), list("This is a", "longer test to", "see wrapping."))
 
-    # Case with a word longer than the width
     chunks3 <- c("A", "verylongword", "and", "some", "more.")
     expect_equal(wrap_chunk(chunks3, 8), list("A", "verylong", "word and", "some", "more."))
 
-    # Empty input
     expect_equal(wrap_chunk(character(0), 10), list())
 
-    # Text that fits exactly
     chunks4 <- c("one", "two", "three")
     expect_equal(wrap_chunk(chunks4, 13), list("one two three"))
 
-    # Text that wraps exactly at a space
     chunks5 <- c("one", "two", "three", "four")
     expect_equal(wrap_chunk(chunks5, 13), list("one two three", "four"))
   })
