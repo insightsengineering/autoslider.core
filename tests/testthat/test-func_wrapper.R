@@ -1,4 +1,3 @@
-
 filters::load_filters(
   yaml_file = system.file("filters.yml", package = "autoslider.core"),
   overwrite = TRUE
@@ -17,7 +16,7 @@ data <- list(
 test_that("legacy with datasets and spec", {
   test_func <- "t_aesi_slide"
   wrapped <- func_wrapper(match.fun(test_func), data, spec)
-  result <- wrapped( aesi = "CQ01NAM", grad_var = "AETOXGR")
+  result <- wrapped(aesi = "CQ01NAM", grad_var = "AETOXGR")
 
   expect_s4_class(result, "VTableTree")
 })
@@ -35,7 +34,6 @@ test_that("modern with named datasets and spec", {
   test_func <- function(dataset, spec, arg1 = "default") {}
   wrapped <- func_wrapper(test_func, data, spec)
   expect_silent(wrapped(arg1 = "custom"))
-
 })
 
 test_that("modern with named datasets but no spec", {
