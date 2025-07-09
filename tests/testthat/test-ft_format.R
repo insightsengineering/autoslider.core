@@ -103,7 +103,7 @@ data <- list(
 t_ae_sae_slide <- function(adsl, adae, arm = "TRT01A",
                            split_by_study = FALSE, side_by_side = NULL) {
   assert_that(has_name(adae, "AEDECOD"))
-  assert_that(has_name(adae, "ATOXGR"))
+  assert_that(has_name(adae, "AETOXGR"))
   assert_that(has_name(adae, "AEBODSYS"))
   slref_arm <- sort(unique(adsl[[arm]]))
   anl_arm <- sort(unique(adae[[arm]]))
