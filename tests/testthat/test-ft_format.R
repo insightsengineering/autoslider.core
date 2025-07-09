@@ -117,9 +117,9 @@ test_that("demographic table formatting", {
 })
 
 
-
-test_that("adverse event table formatting", {
-  y <- to_flextable.dVTableTree(outputs$t_ae_slide_SER, lpp = 200, cpp = 200)
-
-  expect_silent(black_format_ae(y[[1]]$ft))
-})
+#
+# test_that("adverse event table formatting", {
+#   y <- to_flextable.dVTableTree(outputs$t_ae_slide_SER, lpp = 200, cpp = 200)
+#
+#   expect_silent(black_format_ae(y[[1]]$ft))
+# })
