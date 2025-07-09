@@ -47,4 +47,3 @@ test_that("modern with named spec but no datasets", {
   wrapped <- func_wrapper(test_func, data, spec)
   expect_silent(wrapped(arg1 = "custom"))
 })
-
