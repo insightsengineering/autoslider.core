@@ -31,13 +31,13 @@ test_that("legacy with datasets but no spec", {
 })
 
 test_that("modern with named datasets and spec", {
-  test_func <- function(dataset, spec, arg1 = "default") {}
+  test_func <- function(datasets, spec, arg1 = "default") {}
   wrapped <- func_wrapper(test_func, data, spec)
   expect_silent(wrapped(arg1 = "custom"))
 })
 
 test_that("modern with named datasets but no spec", {
-  test_func <- function(dataset, arg1 = "default") {}
+  test_func <- function(datasets, arg1 = "default") {}
   wrapped <- func_wrapper(test_func, data, spec)
   expect_silent(wrapped(arg1 = "custom"))
 })
