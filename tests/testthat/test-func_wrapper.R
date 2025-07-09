@@ -41,3 +41,10 @@ test_that("modern with named datasets but no spec", {
   wrapped <- func_wrapper(test_func, data, spec)
   expect_silent(wrapped(arg1 = "custom"))
 })
+
+test_that("modern with named spec but no datasets", {
+  test_func <- function(spec, arg1 = "default") {}
+  wrapped <- func_wrapper(test_func, data, spec)
+  expect_silent(wrapped(arg1 = "custom"))
+})
+
