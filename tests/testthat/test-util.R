@@ -102,7 +102,7 @@ test_that("Test some functions in util.R", {
 
   test_that("on_master_branch", {
     # my local testing branch is called unittest
-    expect_silent(on_master_branch())
+    expect_warning(on_master_branch())
   })
 
   test_that("create_new_reporting_event", {
