@@ -1,0 +1,54 @@
+---
+title: "Deploy Ollama for AI prompting"
+date: "`r Sys.Date()`"
+output:
+    rmarkdown::html_document:
+        theme: "spacelab"
+        highlight: "kate"
+        toc: true
+        toc_float: true
+author: 
+  - Yolanda Zhou ([`yolandazzz13`])
+
+vignette: >
+  %\VignetteIndexEntry{Deploy LLM}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+editor_options:
+    markdown:
+        wrap: 72
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## Overview
+This vignette shows how to set up and use your own LLM model locally with Ollama.
+
+## Prerequisite
+
+
+### Running Your Local LLM
+
+First of all, we need to download the Ollama tool at https://ollama.com/download. Once Ollama is installed, you can run any model from its library with a single command. For this example, we'll use deepseek-r1:1.5b.
+
+Open your command-line tool (e.g., Terminal, Windows PowerShell).
+
+Type the following command and press Enter. Ollama will automatically download the model, which may take a few minutes.
+
+```{bash, eval=FALSE}
+$ ollama run deepseek-r1:1.5b
+```
+
+After the process completes, you will see a success message and a new prompt, like this:
+```{bash, eval=FALSE}
+$ >>> Send a message (/? for help)
+```
+This means you have successfully installed and are now running a local LLM. Feel free to start a conversation and play around with some prompts!
+

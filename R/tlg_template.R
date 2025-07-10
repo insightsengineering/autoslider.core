@@ -89,13 +89,13 @@ use_template <- function(template = "t_dm_slide",
   template_file <- file_list[basename(file_list) == paste0(template, ".R")]
 
 
-  if (template_file == "" || !file.exists(template_file)) {
-    err_msg <- sprintf(
-      "No templates named '%s' are available",
-      tolower(template)
-    )
-    abort(err_msg)
-  }
+  # if (template_file == "" || !file.exists(template_file)) {
+  #   err_msg <- sprintf(
+  #     "No templates named '%s' are available",
+  #     tolower(template)
+  #   )
+  #   abort(err_msg)
+  # }
   # print(save_path)
   if (file.copy(template_file, save_path, overwrite = TRUE)) {
     rlang::inform(sprintf("\u2713 File '%s' has been created successfully", save_path))

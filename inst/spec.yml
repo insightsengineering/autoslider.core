@@ -317,7 +317,7 @@
   titles: AEs & Serious AEs
   footnotes: ''
   paper: L6
-  suffix: SE
+  suffix: SER
   args:
     arm: "TRT01A"
 - program: t_aesi_slide

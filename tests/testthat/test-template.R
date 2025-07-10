@@ -20,7 +20,6 @@ test_that("list_all_templates test 1: returns all available templates", {
 })
 
 
-
 test_that("use_template test 2: saving when no path is specified", {
   expect_snapshot(use_template(
     template = "t_dm_slide",
@@ -85,10 +84,43 @@ test_that("use_template test 4: expected errors", {
       open = FALSE
     )
   )
+  expect_error(
+    use_template(
+      template = "ttt", # invalid template
+      function_name = "tryout",
+      save_path = test_path,
+      open = FALSE
+    )
+  )
+})
+
+test_that("use_template test 5: when template is contained in autoslideR", {
+  expect_true(
+    use_template(
+      template = "t_dm_slide",
+      function_name = "tryout",
+      overwrite = TRUE,
+      open = FALSE,
+      package = "autoslideR"
+    )
+  )
+})
+
+# test `use_template` error handling -----
+test_that("use_template test 6: invalid template", {
+  expect_error(
+    use_template(
+      template = "ttt",
+      function_name = "tryout",
+      save_path = test_path,
+      open = FALSE,
+      package = "autoslideR"
+    )
+  )
 })
 
 
-test_that("use_template test 5: all templates", {
+test_that("use_template test 7: all templates", {
   all_templates <- basename(list_all_templates())
   for (template in all_templates) {
     expect_true(

@@ -15,9 +15,11 @@ assert_is_valid_version_label <- function(x) {
 }
 
 
-assert_exists_in_spec_or_calling_env <- function(vars, output) {
+assert_exists_in_spec_or_calling_env <- function(vars, output, env = parent.frame()) {
   exist_in_spec <- vars %in% names(output)
-  exist_in_calling_env <- map_lgl(vars, exists, parent.frame(n = 2L))
+  # explicitly define env to use, better practice for testing
+  exist_in_calling_env <- map_lgl(vars, exists, envir = env)
+
   non_existing_vars <- vars[!(exist_in_spec | exist_in_calling_env)]
 
 

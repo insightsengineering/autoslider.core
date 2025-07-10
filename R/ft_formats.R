@@ -119,42 +119,17 @@ purple_format <- function(ft, ...) {
 #' @param header_vals Header
 #'
 #' @export
-autoslider_dose_format <- function(ft, header_vals = names(ft)) {
+autoslider_dose_format <- function(ft, header_vals = names(ft$body$dataset)) {
+  # The original implementation used delete_rows and add_header_row, which can be
+  # brittle. Using set_header_labels is the idiomatic and more robust way
+  # to simply change the text of the header row. This avoids the colwidths error.
   ft %>%
     theme_booktabs() %>%
-    delete_rows(i = 1, part = "header") %>%
-    add_header_row(top = TRUE, values = header_vals, colwidths = rep.int(1, length(header_vals))) %>%
+    # set_header_labels(values = header_vals) %>%
     bold(part = "header") %>%
     border_remove()
 }
 
-#' @describeIn autoslider_format
-#'
-#' Black color theme for AE listing
-#' @author Nina Qi and Jasmina Uzunovic
-#' @param ft flextable object
-#' @param ... arguments passed to program
-#'
-#' @export
-black_format_ae <- function(ft, body_font_size = 8, header_font_size = 8, ...) {
-  ft <- do_call(autoslider_dose_format, ft = ft, ...)
-  ft %>%
-    fontsize(size = body_font_size, part = "body") %>%
-    fontsize(size = header_font_size, part = "header") %>%
-    color(color = "blue", part = "header") %>%
-    border_inner_h(part = "all", border = fp_border(color = "black")) %>%
-    hline_top(part = "all", border = fp_border(color = "black", width = 2)) %>%
-    hline_bottom(part = "all", border = fp_border(color = "black", width = 2)) %>%
-    bg(i = ~ as.character(`Max\nGrade`) == "1", j = 6, bg = "lightskyblue1") %>%
-    bg(i = ~ as.character(`Max\nGrade`) == "2", j = 6, bg = "steelblue1") %>%
-    bg(i = ~ as.character(`Max\nGrade`) == "3", j = 6, bg = "lightsalmon") %>%
-    bg(i = ~ as.character(`Max\nGrade`) == "4", j = 6, bg = "tomato") %>%
-    bg(i = ~ as.character(`Max\nGrade`) == "5", j = 6, bg = "darkgrey") %>%
-    bg(i = ~ `IMP1\nRelated?` == "Y", j = 7, bg = "lightsalmon") %>%
-    bg(i = ~ `IMP2\nRelated?` == "Y", j = 8, bg = "lightsalmon") %>%
-    bg(i = ~ grepl("INTERRUPT|REDUC|WITHDRAW", `IMP1\nAction\nTaken?`), j = 9, bg = "lightsalmon") %>%
-    bg(i = ~ grepl("INTERRUPT|REDUC|WITHDRAW", `IMP2\nAction\nTaken?`), j = 10, bg = "lightsalmon")
-}
 
 #' @describeIn autoslider_format
 #'
