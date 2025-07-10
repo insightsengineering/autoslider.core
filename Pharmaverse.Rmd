@@ -438,11 +438,14 @@ filepath <- "outputs/tryout.pptx"
 generate_slides(outputs, outfile = filepath, template = "path/to/your/custom_template.pptx")
 ```
 
-Below is an example presentation output with placeholder slides, 
-```{r}
+Below is an example presentation output with placeholder slides (explained in the `generate_placeholder_slides` vignette ) and formatted tables:
+```{r, echo = FALSE}
 
 
-knitr::include_graphics("pharmaverse output 1.png")
+knitr::include_graphics("pharmaverse_output_1.png")
 
-knitr::include_graphics("pharmaverse output 2.png")
+knitr::include_graphics("pharmaverse_output_2.png")
+
+knitr::include_graphics("t_dm_output_slide.png")
+
 ```
