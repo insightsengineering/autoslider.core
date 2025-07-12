@@ -108,7 +108,7 @@ t_ae_sae_slide <- function(adsl, adae, arm = "TRT01A",
   slref_arm <- sort(unique(adsl[[arm]]))
   anl_arm <- sort(unique(adae[[arm]]))
   assert_that(identical(slref_arm, anl_arm),
-              msg = "The adsl and the analysis datasets should have the same treatment arm levels"
+    msg = "The adsl and the analysis datasets should have the same treatment arm levels"
   )
   anl <- adae %>%
     mutate_at(
@@ -130,8 +130,8 @@ t_ae_sae_slide <- function(adsl, adae, arm = "TRT01A",
     return(null_report())
   } else {
     lyt <- build_table_header(adsl, arm,
-                              split_by_study = split_by_study,
-                              side_by_side = side_by_side
+      split_by_study = split_by_study,
+      side_by_side = side_by_side
     )
     lyt <- lyt %>%
       split_rows_by(
