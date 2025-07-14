@@ -1,5 +1,3 @@
-library(testthat)
-
 test_path <- tempdir()
 
 test_that("initialize_to_page test 1: when to_page is null", {
@@ -69,12 +67,8 @@ test_that("initialize_doc_original test 1: returns existing doc_original", {
 })
 
 test_that("initialize_doc_original test 2: reads from file when doc_original is NULL", {
-  # Create a temporary file path for a dummy PowerPoint document
-  # tempfile() generates a unique temporary file name
   doc_o <- tempfile(fileext = ".pptx")
 
-  # Create a minimal PowerPoint document and save it to the temporary path
-  # This makes sure there's a valid file for read_pptx to open
   minimal_pptx <- officer::read_pptx() %>%
     officer::add_slide(layout = "Title and Content", master = "Office Theme")
   print(minimal_pptx, target = doc_o)

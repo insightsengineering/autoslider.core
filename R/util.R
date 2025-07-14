@@ -389,7 +389,7 @@ wrap_chunk <- function(chunks, width) {
     lines <- append(lines, current_line)
   }
 
-  return(lines)
+  lines
 }
 
 

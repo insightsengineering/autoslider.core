@@ -57,6 +57,7 @@ colspan
 dVTableTree
 decoratedGrob
 decoratedGrobSet
+deepseek
 df
 dgtsummary
 dm
@@ -76,6 +77,7 @@ https
 img
 insightsengineering
 io
+LLM
 labelled
 limk
 lineplot
@@ -83,6 +85,8 @@ lpp
 lubridate
 mng
 neitmant
+Ollama
+PowerShell
 ph
 ppt
 pptx

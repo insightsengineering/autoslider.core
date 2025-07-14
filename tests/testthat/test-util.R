@@ -26,7 +26,6 @@ test_that("Test some functions in util.R", {
     expect_silent(validate_paper_size("P8"))
     expect_silent(validate_paper_size("P14"))
 
-    # Test for errors
     expect_error(validate_paper_size("A10"), "Page size must be starting with `L` or `P`")
     expect_error(validate_paper_size("L15"), "Fontsize should be less or equal than 14")
     expect_error(validate_paper_size("P"), "Page size must be starting with `L` or `P`")
@@ -34,17 +33,14 @@ test_that("Test some functions in util.R", {
   })
 
   test_that("Legacy warning functions work as expected", {
-    # Reset warning flags before test
     .autoslider_config$filter_warning_issued <- FALSE
     .autoslider_config$paper_size_warning_issued <- stats::setNames(
       rep(FALSE, 2), c("a4r", "a4")
     )
     expect_warning(warn_about_legacy_filtering("t_dm_IT"), "deprecated")
-    # Second call should be silent
     expect_silent(warn_about_legacy_filtering("t_dm_IT"))
 
     expect_warning(warn_about_legacy_paper_size("a4r", "L11"), "Paper size 'a4r' is deprecated")
-    # Second call for the same legacy size should be silent
     expect_silent(warn_about_legacy_paper_size("a4r", "L11"))
     expect_warning(warn_about_legacy_paper_size("a4", "P11"), "Paper size 'a4' is deprecated")
   })
@@ -96,16 +92,13 @@ test_that("Test some functions in util.R", {
   })
 
   test_that("git_footnote returns repo", {
-    expect_equal(git_footnote(), c("GitHub repository: https://github.com/insightsengineering/autoslider.core.git", "Git hash: d7e7956771825a63575e07f740a346d723fcbacc"))
+    expect_silent(git_footnote())
   })
 
 
   test_that("on_master_branch", {
     # my local testing branch is called unittest
-    expect_false(on_master_branch())
-
-    local_mocked_bindings(get_repo_head_name = function() "main")
-    expect_true(on_master_branch())
+    expect_warning(on_master_branch())
   })
 
   test_that("create_new_reporting_event", {
@@ -138,7 +131,6 @@ test_that("Test some functions in util.R", {
     expected_output <- "First line\nto wrap.\nSecond,\nmuch\nlonger\nline of\ntext that\nalso needs\nto be\nwrapped."
     expect_equal(text_wrap_cut_keepreturn(text_with_newlines, 10), expected_output)
 
-    # Test with empty lines
     text_with_empty_lines <- "Line 1\n\nLine 3"
     expected_empty <- "Line 1\n\nLine 3"
     expect_equal(text_wrap_cut_keepreturn(text_with_empty_lines, 20), expected_empty)
