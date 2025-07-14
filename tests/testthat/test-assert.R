@@ -1,5 +1,3 @@
-library(testthat)
-
 test_that("assert_is_character_scalar works correctly", {
   x <- "a"
   expect_silent(assert_is_character_scalar(x))
@@ -17,7 +15,6 @@ test_that("assert_is_character_scalar works correctly", {
 })
 
 test_that("assert_exists_in_spec_or_calling_env is robustly testable", {
-  # Create a clean environment for testing
   test_env <- rlang::env(
     my_calling_env_var = "some_value"
   )
@@ -40,7 +37,6 @@ test_that("assert_exists_in_spec_or_calling_env is robustly testable", {
       env = test_env
     )
   )
-
 
   expect_error(
     assert_exists_in_spec_or_calling_env(

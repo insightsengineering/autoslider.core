@@ -1,9 +1,3 @@
-library(testthat)
-# library(rprojroot)
-
-# Define the project root and test path
-
-
 test_path <- tempdir()
 
 # test `list_all_templates` -----
@@ -36,9 +30,6 @@ test_that("use_template test 2: saving when no path is specified", {
       open = FALSE
     )
   )
-
-  # Clean up
-
 
 
 
