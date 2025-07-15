@@ -8,7 +8,8 @@ articles:
   generate_placeholder_slides: generate_placeholder_slides.html
   opensource: opensource.html
   tlg_templates: tlg_templates.html
-last_built: 2025-07-02T15:32Z
+  use_LLM: use_LLM.html
+last_built: 2025-07-15T01:28Z
 urls:
   reference: https://insightsengineering.github.io/autoslider.core/reference
   article: https://insightsengineering.github.io/autoslider.core/articles
