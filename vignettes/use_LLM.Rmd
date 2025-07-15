@@ -1,5 +1,5 @@
 ---
-title: "Deploy Ollama for AI prompting"
+title: "Generating AI-Powered Footnotes"
 date: "`r Sys.Date()`"
 output:
     rmarkdown::html_document:
@@ -32,6 +32,75 @@ knitr::opts_chunk$set(
 This vignette shows how to set up and use your own LLM model locally with Ollama.
 
 ## Prerequisite
+
+Before you begin, ensure you have the following ready:
+
+- A Specification File (spec.yml) that defines the slides to be generated.
+
+- A Prompt File (prompt.yml) containing the instructions for the AI model.
+
+- Access to a local LLM instance. 
+
+Please see `autoslideR.Rmd` for some readily available spec and filter examples and detailed instructions on how to use them. If you do not have an LLM model installed yet, see appendix on how to deploy your own local LLM.
+
+## The Workflow
+The process involves three main steps: generating the initial slide data, adding the AI footnotes, and then creating the final PowerPoint file.
+
+### Step 1: Initial Slide Generation
+First, generate the core slide outputs from your specification file. This process reads your spec, filters it for the desired programs, and generates the basic table and plot objects.
+
+```{r, eval = FALSE}
+spec <- read_spec("path/to/your/spec.yml")
+filters::load_filters("path/to/your/filter.yml")
+prompt_list <- get_prompt_list("path/to/your/prompt.yml")
+
+# Generate the initial outputs
+outputs <- spec %>%
+  filter_spec(program %in% c("t_dm_slide")) %>%
+  generate_outputs(datasets = my_datasets) %>%
+  decorate_outputs()
+```
+
+
+### Step 2: Adding AI Footnotes
+Next, pass the outputs object to the `adding_ai_footnotes()` function. This function iterates through your outputs, and for each one that has a corresponding prompt, it communicates with the specified LLM to generate response in the form of a footnote.
+
+You can configure the function to point to different AI platforms.
+
+Example 1: Using a Local LLM (Ollama)
+This is ideal for local development. It assumes you have Ollama running, for instance, in a Docker container.
+
+```{r, eval = FALSE}
+outputs_ai <- adding_ai_footnotes(
+  outputs = outputs,
+  prompt_list = prompt_list,
+  platform = "ollama",
+  base_url = "http://host.docker.internal:11434", # URL for Ollama if R in a Docker container
+  model = "deepseek-r1:1.5b" # The LLM model name
+)
+
+
+```
+The parameters you pass in might depend on your specific situation. In general:
+
+- `platform`: Set to "ollama".
+
+- `base_url`: Points to where your `Ollama` instance is running.
+
+- `model`: The name of a model you have pulled in `Ollama.`
+
+
+### Step 3: Create the Final PowerPoint File
+Finally, take the modified outputs_with_footnotes object and pass it to generate_slides() to create the presentation. The footnotes will be automatically included on the relevant slides.
+
+
+```{r, eval = FALSE}
+outputs_ai %>%
+  generate_slides(outfile = "My_AI_Presentation.pptx")
+
+```
+
+This will produce a PowerPoint file with your tables and plots, now enhanced with insightful AI-generated footnotes.
 
 
 ### Running Your Local LLM
