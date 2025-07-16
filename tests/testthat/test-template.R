@@ -127,7 +127,7 @@ test_that("use_template test 7: all templates", {
 
 
 test_that("use_template test 5: all templates", {
-  all_templates <- list_all_templates()
+  all_templates <- basename(list_all_templates())
   for (template in all_templates) {
     expect_true(
       use_template(
