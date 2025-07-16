@@ -32,6 +32,7 @@ knitr::opts_chunk$set(
 This guide will walk you through utilizing functions for styling your tables. We have implemented a base formatting function and several simple theme wrappers, and you can easily switch between different visual styles. For a complete list of implementations we have for you, please go to `R/ft_formats.R`.
 
 ### Pattern A: autoslider Base Theme
+
   The `autoslider_format` function is a great example of a base theme. It defines a "zebra-striped" layout and accepts many arguments for colors and fonts, giving you full control.
   
 
