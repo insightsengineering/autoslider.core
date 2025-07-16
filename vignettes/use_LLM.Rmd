@@ -80,7 +80,7 @@ outputs_ai <- adding_ai_footnotes(
 ```
 The parameters you pass in might depend on your specific situation. In general:
 
-- `platform`: Set to "ollama".
+- `platform`: Set to `ollama`.
 
 - `base_url`: Points to where your `Ollama` instance is running.
 

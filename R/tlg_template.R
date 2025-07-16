@@ -152,7 +152,7 @@ get_template_filepath <- function(package = "autoslider.core", full.names = FALS
   pattern <- "^(t_|l_|g_)"
   if (full.names == TRUE) {
     pattern <- paste0(paste0(template_dir, "/"), c("t_", "g_", "l_"),
-                      collapse = "|"
+      collapse = "|"
     )
   }
 

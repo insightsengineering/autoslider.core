@@ -47,17 +47,15 @@ autoslider_format <- function(ft,
       odd_body = odd_body,
       even_header = odd_header, # Use same color for even header
       even_body = even_body
-    ) %>%
-    # ... other general formatting ...
+    )
+  # ... other general formatting ...
 }
-
 ```
   
 ### Pattern B: Simple Theme Wrappers
-Wrapper functions call the base theme with pre-defined colors. This makes it easy to switch between styles.
+Wrapper functions call the base theme with predefined colors. This makes it easy to switch between styles.
 
 ```{r, eval = FALSE}
-
 blue_format <- function(ft, ...) {
   # Calls the base function with specific blue colors
   ft %>% autoslider_format(
@@ -67,8 +65,6 @@ blue_format <- function(ft, ...) {
     ...
   )
 }
-
-
 ```
 ### Pattern C: Standalone Formats
 For unique tables, you can create a standalone function that doesn't use the base theme at all, like `black_format_tb.`
@@ -77,8 +73,8 @@ For unique tables, you can create a standalone function that doesn't use the bas
 black_format_tb <- function(ft, ...) {
   ft %>%
     flextable::theme_booktabs() %>%
-    flextable::color(color = "blue", part = "header") %>%
-    # ... other specific formatting ...
+    flextable::color(color = "blue", part = "header")
+  # ... other specific formatting ...
 }
 ```
 
