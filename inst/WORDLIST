@@ -25,10 +25,13 @@ Flextable
 GlobalAsia
 GlobalAsiaChina
 LBT
+LLM
 Lil
 ORCID
+Ollama
 PARAM
 PARAMCD
+PowerShell
 Powerpoint
 Preprocess
 SAE
@@ -56,6 +59,7 @@ colspan
 dVTableTree
 decoratedGrob
 decoratedGrobSet
+deepseek
 df
 dgtsummary
 dm
@@ -84,9 +88,11 @@ mng
 neitmant
 ph
 ppt
+pptx
 rds
 reusability
 rlistings
+rpptx
 rtable
 rtables
 scaler

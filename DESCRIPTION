@@ -1,7 +1,7 @@
 Type: Package
 Package: autoslider.core
 Title: Slide Automation for Tables, Listings and Figures
-Version: 0.2.5.9001
+Version: 0.2.5.9006
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0001-7566-2787")),
@@ -21,7 +21,8 @@ Authors@R: c(
     person("Elisabeth", "Deutschmann", role = "ctb"),
     person("Chenkai", "Lv", role = "aut"),
     person("Nina", "Qi", role = "ctb"),
-    person("Jasmina", "Uzunovic", role = "aut")
+    person("Jasmina", "Uzunovic", role = "aut"),
+    person("Yolanda", "Zhou", role = "aut")
   )
 Description: The normal process of creating clinical study slides is that
     a statistician manually type in the numbers from outputs and a
@@ -53,12 +54,12 @@ Imports:
     methods,
     officer (>= 0.3.18),
     rlang (>= 1.1.1),
-    rlistings (>= 0.2.11),
-    rtables (>= 0.6.12),
+    rlistings (>= 0.2.12),
+    rtables (>= 0.6.13),
     rvg (>= 0.2.5),
     stringr (>= 1.5.0),
     survival,
-    tern (>= 0.9.8),
+    tern (>= 0.9.9),
     tidyr (>= 1.3.0),
     yaml (>= 2.3.7)
 Suggests:

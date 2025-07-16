@@ -265,7 +265,7 @@ git_footnote <- function(for_test = FALSE) {
       "Git hash:",
       get_last_gitcommit_sha()
     )
-    ret <- paste(repo, commit, sep = "\n")
+    ret <- c(repo, commit)
   } else {
     ret <- NULL
   }
@@ -308,8 +308,9 @@ map_chr <- function(x, f, ...) {
 
 
 on_master_branch <- function() {
-  get_repo_head_name() == "master"
+  get_repo_head_name() %in% c("master", "main")
 }
+
 
 create_new_reporting_event <- function(name) {
   dir.create(name)
@@ -338,42 +339,60 @@ munge_spaces <- function(text, wordboundary = "(\\t|\\n|\\x0b|\\x0c|\\r| )") {
   stringr::str_replace_all(text, wordboundary, " ")
 }
 
-split_chunk <- function(text, whitespace = "[\\t\\n\\x0b\\x0c\\r\\ ]") {
-  wordsep_re <- sprintf("(%s+)", whitespace)
-  strsplit(text, split = wordsep_re, perl = TRUE)
+# split_chunk <- function(text, whitespace = "[\\t\\n\\x0b\\x0c\\r\\ ]") {
+#   wordsep_re <- sprintf("(%s+)", whitespace)
+#   strsplit(text, split = wordsep_re, perl = TRUE)
+# }
+split_chunk <- function(text, whitespace = "\\s+") {
+  # Split the string by one or more whitespace characters.
+  chunks <- strsplit(text, split = whitespace, perl = TRUE)[[1]]
+  # Remove any empty strings that result from leading/trailing whitespace.
+  chunks[chunks != ""]
 }
 
-wrap_chunk <- function(chunks, width, wrapped_chunk = list(), current_line = "", width_left = width) {
+wrap_chunk <- function(chunks, width) {
   if (length(chunks) == 0) {
-    return(append(wrapped_chunk, current_line))
+    return(list())
   }
-  next_chunk <- chunks[1]
-  next_width <- nchar(next_chunk)
-  if (width_left <= 0) {
-    wrapped_chunk <- append(wrapped_chunk, current_line)
-    return(wrap_chunk(chunks, width, wrapped_chunk, "", width))
-  } else if (next_width <= width_left) {
-    if (current_line == "") {
-      current_line <- next_chunk
-    } else {
-      current_line <- paste(current_line, next_chunk)
+
+  lines <- list()
+  current_line <- ""
+
+  while (length(chunks) > 0) {
+    word <- chunks[1]
+    if (nchar(word) > width) {
+      # If there's content on the current line, bank it first.
+      if (current_line != "") {
+        lines <- append(lines, current_line)
+      }
+
+      lines <- append(lines, substr(word, 1, width))
+      chunks[1] <- substr(word, width + 1, nchar(word))
+      current_line <- ""
+      next
     }
-    return(wrap_chunk(chunks[-1], width, wrapped_chunk, current_line, width_left - next_width - 1))
-  } else if (next_width > width) {
-    next_chunk_sub <- substr(next_chunk, 1, width_left)
-    if (current_line == "") {
-      current_line <- next_chunk_sub
+
+    potential_line <- if (current_line == "") word else paste(current_line, word, sep = " ")
+
+    if (nchar(potential_line) <= width) {
+      current_line <- potential_line
+      chunks <- chunks[-1]
     } else {
-      current_line <- paste(current_line, next_chunk_sub)
+      # If it doesn't fit, bank the current line and start a new one with the word.
+      lines <- append(lines, current_line)
+      current_line <- word
+      chunks <- chunks[-1]
     }
-    chunks[1] <- substr(next_chunk, width_left + 1, next_width)
-    wrapped_chunk <- append(wrapped_chunk, current_line)
-    return(wrap_chunk(chunks, width, wrapped_chunk, "", width))
-  } else {
-    wrapped_chunk <- append(wrapped_chunk, current_line)
-    return(wrap_chunk(chunks, width, wrapped_chunk, "", width))
   }
+
+  if (current_line != "") {
+    lines <- append(lines, current_line)
+  }
+
+  lines
 }
+
+
 
 text_wrap_cut <- function(text, width) {
   width <- as.integer(width)
@@ -382,26 +401,25 @@ text_wrap_cut <- function(text, width) {
   }
   munged_text <- munge_spaces(text)
   chunks <- split_chunk(munged_text)
-  ret <- vapply(chunks, function(x) {
-    s <- wrap_chunk(x, width = width)
-    paste(unlist(s), collapse = "\n")
-  }, FUN.VALUE = "")
-
-  ret
+  wrapped_list <- wrap_chunk(chunks, width = width)
+  paste(unlist(wrapped_list), collapse = "\n")
 }
 
 text_wrap_cut_keepreturn <- function(text, width) {
   if (is.na(width)) {
     width <- 0
   }
-  texts <- strsplit(text, "\n")
-  ret <- vapply(texts, function(x) {
-    r <- text_wrap_cut(x, width)
-    paste0(r, collapse = "\n")
-  }, FUN.VALUE = "")
-
-  ret
+  lines <- strsplit(text, "\n")[[1]]
+  wrapped_lines_list <- lapply(lines, function(line) {
+    if (line == "") {
+      ""
+    } else {
+      text_wrap_cut(line, width)
+    }
+  })
+  paste(wrapped_lines_list, collapse = "\n")
 }
+
 
 #' @noRd
 fs <- function(paper) {
@@ -435,6 +453,9 @@ get_output_file_ext <- function(output, file_path) {
 
   ret
 }
+
+# make config global so that test-util recognizes it
+.autoslider_config <- new.env(parent = emptyenv())
 
 warn_about_legacy_filtering <- function(output) {
   if (.autoslider_config$filter_warning_issued) {
