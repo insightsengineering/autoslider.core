@@ -6,7 +6,6 @@
  * Added support for `use_templates` for specified packages.
  
  
-
 # autoslider.core 0.2.5
 
  * Dropping dependencies level.
