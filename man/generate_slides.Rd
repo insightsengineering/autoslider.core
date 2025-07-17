@@ -14,6 +14,7 @@ generate_slides(
   t_cpp = 200,
   l_lpp = 20,
   l_cpp = 150,
+  editable = FALSE,
   ...
 )
 }

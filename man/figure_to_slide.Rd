@@ -11,6 +11,7 @@ figure_to_slide(
   fig_width,
   fig_height,
   figure_loc = ph_location_type("body"),
+  editable = FALSE,
   ...
 )
 }
