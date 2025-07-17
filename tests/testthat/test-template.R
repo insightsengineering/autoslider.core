@@ -124,3 +124,18 @@ test_that("use_template test 7: all templates", {
     )
   }
 })
+
+
+test_that("use_template test 5: all templates", {
+  all_templates <- basename(list_all_templates())
+  for (template in all_templates) {
+    expect_true(
+      use_template(
+        template = template, # invalid template
+        function_name = paste0(template, "_test"),
+        open = FALSE,
+        overwrite = TRUE
+      )
+    )
+  }
+})
