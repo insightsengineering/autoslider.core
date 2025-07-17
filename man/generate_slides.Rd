@@ -14,6 +14,7 @@ generate_slides(
   t_cpp = 200,
   l_lpp = 20,
   l_cpp = 150,
+  fig_editable = FALSE,
   ...
 )
 }
@@ -39,6 +40,8 @@ Specify this optional argument to modify the length of all of the listings displ
 
 \item{l_cpp}{An integer specifying the listing columns per page\cr
 Specify this optional argument to modify the width of all of the listings display}
+
+\item{fig_editable}{whether we want the figure to be editable in pptx viewers}
 
 \item{...}{arguments passed to program}
 }
