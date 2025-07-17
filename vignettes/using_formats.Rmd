@@ -48,9 +48,8 @@ autoslider_format <- function(ft,
       even_header = odd_header, # Use same color for even header
       even_body = even_body
     )
-    # ... other general formatting ...
+  # ... other general formatting ...
 }
-
 ```
 
   
@@ -76,7 +75,7 @@ black_format_tb <- function(ft, ...) {
   ft %>%
     flextable::theme_booktabs() %>%
     flextable::color(color = "blue", part = "header")
-    # ... other specific formatting ...
+  # ... other specific formatting ...
 }
 ```
 

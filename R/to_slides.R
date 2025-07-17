@@ -47,7 +47,7 @@
 generate_slides <- function(outputs,
                             outfile = paste0(tempdir(), "/output.pptx"),
                             template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
-                            fig_width = 9, fig_height = 6, t_lpp = 20, t_cpp = 200, l_lpp = 20, l_cpp = 150, ...) {
+                            fig_width = 9, fig_height = 6, t_lpp = 20, t_cpp = 200, l_lpp = 20, l_cpp = 150, editable = FALSE, ...) {
   if (any(c(
     is(outputs, "VTableTree"),
     is(outputs, "listing_df")
@@ -126,7 +126,8 @@ generate_slides <- function(outputs,
 
         figure_to_slide(ppt,
           content = x, fig_width = fig_width, fig_height = fig_height,
-          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
+          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height),
+          editable = editable, ...
         )
       } else {
         if (is(x, "autoslider_error")) {
@@ -297,7 +298,7 @@ center_figure_loc <- function(fig_width, fig_height, ppt_width, ppt_height) {
 ph_with_img <- function(ppt, figure, fig_width, fig_height, figure_loc) {
   file_name <- tempfile(fileext = ".svg")
   svg(filename = file_name, width = fig_width * 1.5, height = fig_height * 1.5, onefile = TRUE)
-  grid.draw(figure)
+  grid.draw(figure$grob)
   dev.off()
   on.exit(unlink(file_name))
   ext_img <- external_img(file_name, width = fig_width, height = fig_height)
@@ -321,6 +322,7 @@ figure_to_slide <- function(ppt, content,
                             fig_width,
                             fig_height,
                             figure_loc = ph_location_type("body"),
+                            editable = FALSE,
                             ...) {
   ppt_master <- layout_summary(ppt)$master[1]
   args <- list(...)
@@ -334,10 +336,12 @@ figure_to_slide <- function(ppt, content,
 
   if ("decoratedGrob" %in% class(content)) {
     ppt <- do_call(add_slide, x = ppt, master = ppt_master, ...)
-    # old
-    # ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
-    content_list <- g_export(content)
-    ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type = "body"))
+    if (editable) {
+      content_list <- g_export(content)
+      ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type = "body"))
+    } else {
+      ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
+    }
 
     ph_with_args <- args[unlist(lapply(args, function(x) all(c("location", "value") %in% names(x))))]
     res <- lapply(ph_with_args, function(x) {
