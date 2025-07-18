@@ -26,9 +26,9 @@
 #' ) +
 #' ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
 #' # makes editable plots
-#' generate_slides(plot_vs, paste0("programs/R", "/g_vs.pptx"), fig_editable = TRUE)
+#' generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = TRUE)
 #' # not editable plots, which appear as images
-#' generate_slides(plot_vs, paste0("programs/R", "/g_vs.pptx"), fig_editable = FALSE)
+#' generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = FALSE)
 
 g_vs_slide <- function(adsl, advs, arm = "TRT01P", paramcd = "PARAM",
                        subtitle = "Plot of Mean and 95% Confidence Limits by Visit.", ...) {
