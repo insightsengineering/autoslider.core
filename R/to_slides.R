@@ -13,7 +13,7 @@
 #'    Specify this optional argument to modify the length of all of the listings display
 #' @param l_cpp An integer specifying the listing columns per page\cr
 #'    Specify this optional argument to modify the width of all of the listings display
-#' @param fig_editable whether we want the figure to be editable in pptx viewers
+#' @param fig_editable whether we want the figure to be editable in pptx viewers, defaults to TRUE
 #' @param ... arguments passed to program
 #' @return No return value, called for side effects
 #' @export
