@@ -41,7 +41,7 @@ Specify this optional argument to modify the length of all of the listings displ
 \item{l_cpp}{An integer specifying the listing columns per page\cr
 Specify this optional argument to modify the width of all of the listings display}
 
-\item{fig_editable}{whether we want the figure to be editable in pptx viewers, defaults to TRUE}
+\item{fig_editable}{whether we want the figure to be editable in pptx viewers, defaults to FALSE}
 
 \item{...}{arguments passed to program}
 }
