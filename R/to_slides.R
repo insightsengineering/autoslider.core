@@ -300,7 +300,7 @@ center_figure_loc <- function(fig_width, fig_height, ppt_width, ppt_height) {
 ph_with_img <- function(ppt, figure, fig_width, fig_height, figure_loc) {
   file_name <- tempfile(fileext = ".svg")
   svg(filename = file_name, width = fig_width * 1.5, height = fig_height * 1.5, onefile = TRUE)
-  grid.draw(figure)
+  grid.draw(figure$grob)
   dev.off()
   on.exit(unlink(file_name))
   ext_img <- external_img(file_name, width = fig_width, height = fig_height)
