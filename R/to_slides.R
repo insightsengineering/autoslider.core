@@ -13,7 +13,7 @@
 #'    Specify this optional argument to modify the length of all of the listings display
 #' @param l_cpp An integer specifying the listing columns per page\cr
 #'    Specify this optional argument to modify the width of all of the listings display
-#' @param fig_editable whether we want the figure to be editable in pptx viewers, defaults to TRUE
+#' @param fig_editable whether we want the figure to be editable in pptx viewers, defaults to FALSE
 #' @param ... arguments passed to program
 #' @return No return value, called for side effects
 #' @export
@@ -49,7 +49,7 @@ generate_slides <- function(outputs,
                             outfile = paste0(tempdir(), "/output.pptx"),
                             template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
                             fig_width = 9, fig_height = 6, t_lpp = 20, t_cpp = 200,
-                            l_lpp = 20, l_cpp = 150, fig_editable = TRUE, ...) {
+                            l_lpp = 20, l_cpp = 150, fig_editable = FALSE, ...) {
   if (any(c(
     is(outputs, "VTableTree"),
     is(outputs, "listing_df")
