@@ -45,9 +45,9 @@ subtitle_add_unit = FALSE
 ) +
 ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
 # makes editable plots
-generate_slides(plot_vs, paste0("programs/R", "/g_vs.pptx"), fig_editable = TRUE)
+generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = TRUE)
 # not editable plots, which appear as images
-generate_slides(plot_vs, paste0("programs/R", "/g_vs.pptx"), fig_editable = FALSE)
+generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = FALSE)
 }
 \author{
 Stefan Thoma (`thomas7`)
