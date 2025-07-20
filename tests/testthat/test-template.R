@@ -1,9 +1,3 @@
-library(testthat)
-# library(rprojroot)
-
-# Define the project root and test path
-
-
 test_path <- tempdir()
 
 # test `list_all_templates` -----
@@ -15,10 +9,9 @@ test_that("list_all_templates test 1: returns all available templates", {
     "t_dd_slide", "t_dm_slide", "t_dor_slide", "t_ds_slide"
   )
 
-  actual <- list_all_templates()
+  actual <- basename(list_all_templates())
   expect_setequal(actual, expected)
 })
-
 
 
 test_that("use_template test 2: saving when no path is specified", {
@@ -37,9 +30,6 @@ test_that("use_template test 2: saving when no path is specified", {
       open = FALSE
     )
   )
-
-  # Clean up
-
 
 
 
@@ -85,11 +75,59 @@ test_that("use_template test 4: expected errors", {
       open = FALSE
     )
   )
+  expect_error(
+    use_template(
+      template = "ttt", # invalid template
+      function_name = "tryout",
+      save_path = test_path,
+      open = FALSE
+    )
+  )
+})
+
+test_that("use_template test 5: when template is contained in autoslideR", {
+  expect_true(
+    use_template(
+      template = "t_dm_slide",
+      function_name = "tryout",
+      overwrite = TRUE,
+      open = FALSE,
+      package = "autoslideR"
+    )
+  )
+})
+
+# test `use_template` error handling -----
+test_that("use_template test 6: invalid template", {
+  expect_error(
+    use_template(
+      template = "ttt",
+      function_name = "tryout",
+      save_path = test_path,
+      open = FALSE,
+      package = "autoslideR"
+    )
+  )
+})
+
+
+test_that("use_template test 7: all templates", {
+  all_templates <- basename(list_all_templates())
+  for (template in all_templates) {
+    expect_true(
+      use_template(
+        template = template, # invalid template
+        function_name = paste0(template, "_test"),
+        open = FALSE,
+        overwrite = TRUE
+      )
+    )
+  }
 })
 
 
 test_that("use_template test 5: all templates", {
-  all_templates <- list_all_templates()
+  all_templates <- basename(list_all_templates())
   for (template in all_templates) {
     expect_true(
       use_template(

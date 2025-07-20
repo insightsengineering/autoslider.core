@@ -1,10 +1,15 @@
-# autoslider.core 0.2.5.9002
+# autoslider.core 0.2.5.9008
  * Added support for custom templates via symbolic links in `inst/templates/`.
  * Enabled function generation from templates.
  * Split out specific plot functions (e.g., `g_vs_slide`) from `g_mean_general() `.
- * Added vignette `tlg_templates` and `adding_templates`.
+ * Added vignette `tlg_templates` , `adding_templates`, `use_LLM`, and `using_format`.
+ * Added support for `use_templates` for specified packages.
+ * Added support for adding placeholder slides (e.g. title, section headers) using `append_all_slides()`
+ * Integrated AI insights to data analytics, written detailed instructions in vignette `use_LLM`.
+ * Provided the option of making plots editable or fixed on generated slides.
  
-
+ 
+ 
 # autoslider.core 0.2.5
 
  * Dropping dependencies level.
