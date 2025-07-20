@@ -38,7 +38,8 @@ test_that("Listing print correctly", {
   output_dir <- tempdir()
   testthat::expect_output({
     outputs %>%
-      generate_slides(outfile = paste0(output_dir, "/srep.pptx"), t_cpp = 250, t_lpp = 50)
+      generate_slides(outfile = paste0(output_dir, "/srep.pptx"), t_cpp = 250,
+                      t_lpp = 50, fig_editable = TRUE)
   })
 
   testthat::expect_no_error({
