@@ -48,7 +48,7 @@
 generate_slides <- function(outputs,
                             outfile = paste0(tempdir(), "/output.pptx"),
                             template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
-                            fig_width = 9, fig_height = 6, t_lpp = 20, t_cpp = 200,
+                            fig_width = 9, fig_height = 5, t_lpp = 20, t_cpp = 200,
                             l_lpp = 20, l_cpp = 150, fig_editable = FALSE, ...) {
   if (any(c(
     is(outputs, "VTableTree"),
@@ -75,7 +75,7 @@ generate_slides <- function(outputs,
       if (is.null(current_title)) {
         current_title <- ""
       }
-      outputs <- decorate.ggplot(outputs)
+      outputs <- decorate.ggplot(outputs, titles = current_title)
     } else if (is(outputs, "grob")) {
       outputs <- decorate.grob(outputs)
     }
@@ -128,7 +128,7 @@ generate_slides <- function(outputs,
 
         figure_to_slide(ppt,
           content = x, fig_width = fig_width, fig_height = fig_height,
-          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height),
+          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = 1.17 * height),
           fig_editable = fig_editable, ...
         )
       } else {
@@ -299,7 +299,7 @@ center_figure_loc <- function(fig_width, fig_height, ppt_width, ppt_height) {
 #' @export
 ph_with_img <- function(ppt, figure, fig_width, fig_height, figure_loc) {
   file_name <- tempfile(fileext = ".svg")
-  svg(filename = file_name, width = fig_width * 1.5, height = fig_height * 1.5, onefile = TRUE)
+  svg(filename = file_name, width = fig_width, height = fig_height, onefile = TRUE)
   grid.draw(figure$grob)
   dev.off()
   on.exit(unlink(file_name))
@@ -329,6 +329,7 @@ figure_to_slide <- function(ppt, content,
                             ...) {
   ppt_master <- layout_summary(ppt)$master[1]
   args <- list(...)
+
 
   if (decor) {
     args$arg_header <- list(

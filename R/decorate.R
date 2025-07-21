@@ -313,7 +313,7 @@ decorate_outputs <- function(outputs,
     }
 
     if ("ggplot" %in% class(output)) {
-      decorate.ggplot(output)
+      decorate.ggplot(output, titles = full_title)
     } else if ("grob" %in% class(output)) {
       decorate.grob(output)
     } else {
