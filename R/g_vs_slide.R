@@ -24,19 +24,11 @@
 #' paramcd = "PARAM",
 #' subtitle_add_unit = FALSE
 #' ) +
-<<<<<<< HEAD
-#'   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
-=======
 #' ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
->>>>>>> main
 #' # makes editable plots
 #' generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = TRUE)
 #' # not editable plots, which appear as images
 #' generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = FALSE)
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 g_vs_slide <- function(adsl, advs, arm = "TRT01P", paramcd = "PARAM",
                        subtitle = "Plot of Mean and 95% Confidence Limits by Visit.", ...) {
   # tern 0.9.4 added facet_var in control_lineplot_vars
