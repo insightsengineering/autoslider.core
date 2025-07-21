@@ -128,7 +128,7 @@ generate_slides <- function(outputs,
 
         figure_to_slide(ppt,
           content = x, fig_width = fig_width, fig_height = fig_height,
-          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = 1.15 * height),
+          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = 1.17 * height),
           fig_editable = fig_editable, ...
         )
       } else {
