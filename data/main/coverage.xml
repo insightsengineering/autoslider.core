@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.873395307658256" branch-rate="0" lines-covered="1973" lines-valid="2259" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-07-20 05:35:19.354811">
+<coverage line-rate="0.873395307658256" branch-rate="0" lines-covered="1973" lines-valid="2259" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-07-21 16:47:38.816012">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
@@ -1212,28 +1212,28 @@
           <methods>
             <method name="g_vs_slide" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
-                <line number="36" hits="4" branch="false"/>
+                <line number="35" hits="4" branch="false"/>
+                <line number="37" hits="3" branch="false"/>
                 <line number="38" hits="3" branch="false"/>
                 <line number="39" hits="3" branch="false"/>
                 <line number="40" hits="3" branch="false"/>
-                <line number="41" hits="3" branch="false"/>
+                <line number="42" hits="3" branch="false"/>
                 <line number="43" hits="3" branch="false"/>
                 <line number="44" hits="3" branch="false"/>
                 <line number="45" hits="3" branch="false"/>
-                <line number="46" hits="3" branch="false"/>
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="36" hits="4" branch="false"/>
+            <line number="35" hits="4" branch="false"/>
+            <line number="37" hits="3" branch="false"/>
             <line number="38" hits="3" branch="false"/>
             <line number="39" hits="3" branch="false"/>
             <line number="40" hits="3" branch="false"/>
-            <line number="41" hits="3" branch="false"/>
+            <line number="42" hits="3" branch="false"/>
             <line number="43" hits="3" branch="false"/>
             <line number="44" hits="3" branch="false"/>
             <line number="45" hits="3" branch="false"/>
-            <line number="46" hits="3" branch="false"/>
           </lines>
         </class>
         <class name="generate_output.R" filename="R/generate_output.R" line-rate="0.842105263157895" branch-rate="0" complexity="0">
@@ -4385,28 +4385,28 @@
               <lines>
                 <line number="330" hits="4" branch="false"/>
                 <line number="331" hits="4" branch="false"/>
-                <line number="333" hits="4" branch="false"/>
                 <line number="334" hits="4" branch="false"/>
                 <line number="335" hits="4" branch="false"/>
                 <line number="336" hits="4" branch="false"/>
                 <line number="337" hits="4" branch="false"/>
-                <line number="340" hits="4" branch="false"/>
+                <line number="338" hits="4" branch="false"/>
                 <line number="341" hits="4" branch="false"/>
                 <line number="342" hits="4" branch="false"/>
                 <line number="343" hits="4" branch="false"/>
                 <line number="344" hits="4" branch="false"/>
-                <line number="346" hits="0" branch="false"/>
-                <line number="349" hits="4" branch="false"/>
+                <line number="345" hits="4" branch="false"/>
+                <line number="347" hits="0" branch="false"/>
                 <line number="350" hits="4" branch="false"/>
                 <line number="351" hits="4" branch="false"/>
                 <line number="352" hits="4" branch="false"/>
                 <line number="353" hits="4" branch="false"/>
-                <line number="354" hits="0" branch="false"/>
-                <line number="356" hits="0" branch="false"/>
+                <line number="354" hits="4" branch="false"/>
+                <line number="355" hits="0" branch="false"/>
                 <line number="357" hits="0" branch="false"/>
                 <line number="358" hits="0" branch="false"/>
-                <line number="360" hits="0" branch="false"/>
-                <line number="362" hits="0" branch="false"/>
+                <line number="359" hits="0" branch="false"/>
+                <line number="361" hits="0" branch="false"/>
+                <line number="363" hits="0" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -4557,28 +4557,28 @@
             <line number="308" hits="1" branch="false"/>
             <line number="330" hits="4" branch="false"/>
             <line number="331" hits="4" branch="false"/>
-            <line number="333" hits="4" branch="false"/>
             <line number="334" hits="4" branch="false"/>
             <line number="335" hits="4" branch="false"/>
             <line number="336" hits="4" branch="false"/>
             <line number="337" hits="4" branch="false"/>
-            <line number="340" hits="4" branch="false"/>
+            <line number="338" hits="4" branch="false"/>
             <line number="341" hits="4" branch="false"/>
             <line number="342" hits="4" branch="false"/>
             <line number="343" hits="4" branch="false"/>
             <line number="344" hits="4" branch="false"/>
-            <line number="346" hits="0" branch="false"/>
-            <line number="349" hits="4" branch="false"/>
+            <line number="345" hits="4" branch="false"/>
+            <line number="347" hits="0" branch="false"/>
             <line number="350" hits="4" branch="false"/>
             <line number="351" hits="4" branch="false"/>
             <line number="352" hits="4" branch="false"/>
             <line number="353" hits="4" branch="false"/>
-            <line number="354" hits="0" branch="false"/>
-            <line number="356" hits="0" branch="false"/>
+            <line number="354" hits="4" branch="false"/>
+            <line number="355" hits="0" branch="false"/>
             <line number="357" hits="0" branch="false"/>
             <line number="358" hits="0" branch="false"/>
-            <line number="360" hits="0" branch="false"/>
-            <line number="362" hits="0" branch="false"/>
+            <line number="359" hits="0" branch="false"/>
+            <line number="361" hits="0" branch="false"/>
+            <line number="363" hits="0" branch="false"/>
           </lines>
         </class>
         <class name="util.R" filename="R/util.R" line-rate="0.77027027027027" branch-rate="0" complexity="0">
