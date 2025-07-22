@@ -1,4 +1,4 @@
-# autoslider.core 0.2.5.9009
+# autoslider.core 0.2.5.9010
  * Added support for custom templates via symbolic links in `inst/templates/`.
  * Added vignette `tlg_templates` , `adding_templates`, `use_LLM`, and `using_format`.
  * Added support for `use_templates` for specified packages.
