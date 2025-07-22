@@ -33,6 +33,7 @@ Wrapper for `g_mean_general()`.
 Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)
 }
 \examples{
+\dontshow{if (require('rsvg')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(dplyr)
 advs_filtered <- eg_advs \%>\% filter(
 PARAMCD == "SYSBP"
@@ -48,6 +49,7 @@ ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
 generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = TRUE)
 # not editable plots, which appear as images
 generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = FALSE)
+\dontshow{\}) # examplesIf}
 }
 \author{
 Stefan Thoma (`thomas7`)
