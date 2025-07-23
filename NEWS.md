@@ -1,4 +1,4 @@
-# autoslider.core 0.2.6.9000
+# autoslider.core 0.2.6.9001
 
 # autoslider.core 0.2.6
 
