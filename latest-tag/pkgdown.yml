@@ -1,11 +1,16 @@
-pandoc: 3.6.4
+pandoc: 3.7.0.2
 pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
+  adding_templates: adding_templates.html
   autoslideR: autoslideR.html
   downstream: downstream.html
+  generate_placeholder_slides: generate_placeholder_slides.html
   opensource: opensource.html
-last_built: 2025-06-13T13:44Z
+  tlg_templates: tlg_templates.html
+  use_LLM: use_LLM.html
+  using_formats: using_formats.html
+last_built: 2025-07-23T00:49Z
 urls:
   reference: https://insightsengineering.github.io/autoslider.core/reference
   article: https://insightsengineering.github.io/autoslider.core/articles
