@@ -1,3 +1,5 @@
+# autoslider.core 0.2.6.9000
+
 # autoslider.core 0.2.6
 
  * Added support for custom templates via symbolic links in `inst/templates/`.
