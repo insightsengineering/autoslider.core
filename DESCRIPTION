@@ -52,7 +52,7 @@ Imports:
     gridExtra (>= 2.3),
     gtsummary (>= 2.0.3),
     methods,
-    officer (>= 0.3.18),
+    officer (>= 0.6.10),
     rlang (>= 1.1.1),
     rlistings (>= 0.2.12),
     rtables (>= 0.6.13),
