@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.873065015479876" branch-rate="0" lines-covered="1974" lines-valid="2261" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-07-23 17:41:24.72784">
+<coverage line-rate="0.871908127208481" branch-rate="0" lines-covered="1974" lines-valid="2264" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-07-24 04:51:22.238479">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
   <packages>
-    <package name="autoslider.core" line-rate="0.873065015479876" branch-rate="0" complexity="0">
+    <package name="autoslider.core" line-rate="0.871908127208481" branch-rate="0" complexity="0">
       <classes>
         <class name="ai.R" filename="R/ai.R" line-rate="0" branch-rate="0" complexity="0">
           <methods>
@@ -87,6 +87,9 @@
                 <line number="100" hits="0" branch="false"/>
                 <line number="101" hits="0" branch="false"/>
                 <line number="102" hits="0" branch="false"/>
+                <line number="103" hits="0" branch="false"/>
+                <line number="104" hits="0" branch="false"/>
+                <line number="105" hits="0" branch="false"/>
               </lines>
             </method>
           </methods>
@@ -143,6 +146,9 @@
             <line number="100" hits="0" branch="false"/>
             <line number="101" hits="0" branch="false"/>
             <line number="102" hits="0" branch="false"/>
+            <line number="103" hits="0" branch="false"/>
+            <line number="104" hits="0" branch="false"/>
+            <line number="105" hits="0" branch="false"/>
           </lines>
         </class>
         <class name="appendix.R" filename="R/appendix.R" line-rate="1" branch-rate="0" complexity="0">
