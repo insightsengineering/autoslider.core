@@ -232,8 +232,7 @@ use_template(template = "l_ae_slide", function_name = "l_ae_slide_v2")
 
 
 ## Customize the template
-Once the script is generated, you can modify it to suit your dataset or statistical needs. For instance, you can:
-
+Feel free to modify the template script to suit your dataset or statistical needs. For instance, you can:
 
 - Add or remove table columns
 
