@@ -187,7 +187,7 @@ get_body_bottom_location <- function(ppt) {
 #' @param ppt_height Powerpoint height
 #' @return Location for a placeholder
 center_table_loc <- function(ft, ppt_width, ppt_height) {
-  top <- 0.17 * ppt_height
+  top <- (ppt_height - sum(dim(ft)$heights)) / 2
   left <- (ppt_width - sum(dim(ft)$widths)) / 2
   ph <- ph_location(left = left, top = top)
   ph
