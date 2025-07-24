@@ -93,8 +93,11 @@ adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_ke
       return(output)
     }
     if (output_name %in% names(prompt_list)) {
-      current_prompt <- integrate_prompt(prompt_list[[output_name]]$prompt, output@tbl)
-      output@footnotes <- c(output@footnotes, chat$chat(current_prompt)) # gather_ai_feedback()
+      base_prompt <- prompt_list[[output_name]]$prompt
+      current_prompt <- integrate_prompt(base_prompt, output@tbl)
+      raw_response <- chat$chat(current_prompt)
+      clean_response <- sub(".*?</think>\\s*", "", raw_response)
+      output@footnotes <- c(output@footnotes, clean_response)
     }
     output
   })
