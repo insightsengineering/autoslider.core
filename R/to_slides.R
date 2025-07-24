@@ -231,7 +231,7 @@ get_proper_title <- function(title, max_char = 60, title_color = "#1C2B39") {
 table_to_slide <- function(ppt, content, decor = TRUE, table_loc = ph_location_type("body"), ...) {
   ppt_master <- layout_summary(ppt)$master[1]
   args <- list(...)
-  ppt <- layout_default(ppt, "Title and Content")
+  # until officer 0.6.10 ppt <- layout_default(ppt, "Title and Content")
 
   if (decor) {
     print(content$header)
@@ -329,7 +329,7 @@ figure_to_slide <- function(ppt, content,
                             fig_editable = FALSE,
                             ...) {
   ppt_master <- layout_summary(ppt)$master[1]
-  ppt <- layout_default(ppt, "Title and Content")
+  # until officer 0.6.10 ppt <- layout_default(ppt, "Title and Content")
   args <- list(...)
 
 

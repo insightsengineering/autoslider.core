@@ -23,7 +23,7 @@
 #' @importFrom gridExtra arrangeGrob
 #' @importFrom gtsummary tbl_summary add_p modify_caption
 #' @importFrom methods is formalArgs new
-#' @importFrom officer fortify_location ph_location_label layout_default
+#' @importFrom officer fortify_location ph_location_label
 #' @importFrom rlang abort `:=`
 #' @importFrom rvg dml
 #' @importFrom stats setNames median na.omit pt sd as.formula
