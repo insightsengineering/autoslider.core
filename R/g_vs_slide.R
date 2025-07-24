@@ -13,7 +13,7 @@
 #' This lets you specify additional arguments to `tern::g_lineplot()`
 #' @author Stefan Thoma (`thomas7`)
 #' @export
-#' @examples
+#' @examplesIf require('rsvg')
 #' library(dplyr)
 #' advs_filtered <- eg_advs %>% filter(
 #'   PARAMCD == "SYSBP"

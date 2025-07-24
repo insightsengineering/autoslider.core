@@ -22,7 +22,7 @@ the presentation from the given file path.
 \examples{
 example <- tempfile(fileext = ".pptx")
 doc <- officer::read_pptx()
-doc <- officer::add_slide(doc)
+doc <- officer::add_slide(doc, layout = "Title and Content")
 print(doc, target = example)
 doc <- initialize_doc_original(NULL, example)
 }

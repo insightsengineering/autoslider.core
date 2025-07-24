@@ -15,7 +15,7 @@
 #' This lets you specify additional arguments to `tern::g_lineplot()`
 #' @author Stefan Thoma (`thomas7`)
 #' @export
-#' @examples
+#' @examplesIf require('rsvg')
 #' library(dplyr)
 #'
 #' adlb_filtered <- eg_adlb %>% filter(

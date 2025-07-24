@@ -14,7 +14,7 @@
 #' @author Stefan Thoma (`thomas7`)
 #' @importFrom forcats fct_reorder
 #' @export
-#' @examples
+#' @examplesIf require('rsvg')
 #' library(dplyr)
 #'
 #' adeg_filtered <- eg_adeg %>% filter(
