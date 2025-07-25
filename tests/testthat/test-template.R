@@ -15,6 +15,9 @@ test_that("list_all_templates test 1: returns all available templates", {
 
 
 test_that("use_template test 2: saving when no path is specified", {
+  file_location <- file.path("programs/R", "tryout.R")
+  file.remove(file_location)
+
   expect_snapshot(use_template(
     template = "t_dm_slide",
     function_name = "tryout",

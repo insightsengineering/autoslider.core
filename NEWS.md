@@ -1,4 +1,8 @@
-# autoslider.core 0.2.6.9006
+# autoslider.core 0.2.7
+
+ * Revert `officer` dependency on function `layout_default`.
+ * Realign table to the slide centre.
+ * Remove thinking messages.
 
 # autoslider.core 0.2.6
 
