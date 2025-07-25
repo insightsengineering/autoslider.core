@@ -86,7 +86,7 @@ postprocessing_doc <- function(doc, save_file, doc_o, type = "") {
 #' @examples
 #' example <- tempfile(fileext = ".pptx")
 #' doc <- officer::read_pptx()
-#' doc <- officer::add_slide(doc, layout = "Title and Content")
+#' doc <- officer::add_slide(doc)
 #' print(doc, target = example)
 #' doc <- initialize_doc_original(NULL, example)
 initialize_doc_original <- function(doc_original, doc_o) {

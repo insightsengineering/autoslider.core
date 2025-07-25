@@ -137,11 +137,9 @@ library(assertthat)   # For assert_that() you had issues with before
 
 ```{r_function_call, include = TRUE}
 use_template(template = "t_dm_slide", function_name = "demography")
-
 ```
 This will create a file with the demography template at `./programs/R/demography.R`, whose contents are displayed below.
 ```{r, include = TRUE}
-
 demography <- function(adsl,
                        arm = "TRT01P",
                        vars = c("AGE", "SEX", "RACE"),
@@ -196,12 +194,10 @@ demography <- function(adsl,
 ```{r, include = FALSE}
 library(autoslider.core)
 adsl <- eg_adsl
-
 ```
 Processing our data with the generated `t_dm_slide` script would look like：
 ```{r}
 demography(adsl)
-
 ```
 Following this process, you have successfully generated a reusable `demography` function that processes clinical data, and convert it into a standard demographic table, including statistical insights like range, median, and count fractions to variables AGE, SEX, and RACE.
  
