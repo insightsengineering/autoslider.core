@@ -1,3 +1,5 @@
+# autoslider.core 0.2.7.9000
+
 # autoslider.core 0.2.7
 
  * Revert `officer` dependency on function `layout_default`.
