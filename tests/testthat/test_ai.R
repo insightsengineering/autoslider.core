@@ -94,7 +94,8 @@ test_that("using ollama", {
     base_url = "http://host.docker.internal:11434",
     model = "deepseek-r1:1.5b"
   )
-  output_dir <- ""
+
+  output_dir <- tempdir()
   testthat::expect_output({
     outputs %>%
       generate_slides(outfile = paste0(output_dir, "ai_srep.pptx"), t_cpp = 250, t_lpp = 20)

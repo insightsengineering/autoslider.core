@@ -1,5 +1,6 @@
 test_that("Listing print correctly", {
   testthat::skip_if_not_installed("filters")
+  testthat::skip_if_not_installed("rsvg")
 
   # skip_if_too_deep(1)
   filters::load_filters(file.path(
@@ -36,9 +37,10 @@ test_that("Listing print correctly", {
     )
 
   output_dir <- tempdir()
-  testthat::expect_output({
+  testthat::expect_no_error({
     outputs %>%
-      generate_slides(outfile = paste0(output_dir, "/srep.pptx"), t_cpp = 250, t_lpp = 50)
+      generate_slides(outfile = paste0(output_dir, "/srep.pptx"), t_cpp = 250,
+                      t_lpp = 50, fig_editable = TRUE)
   })
 
   testthat::expect_no_error({

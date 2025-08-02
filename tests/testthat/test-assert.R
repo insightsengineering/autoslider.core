@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 library(testthat)
 
+=======
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
 test_that("assert_is_character_scalar works correctly", {
   x <- "a"
   expect_silent(assert_is_character_scalar(x))
@@ -17,7 +20,10 @@ test_that("assert_is_character_scalar works correctly", {
 })
 
 test_that("assert_exists_in_spec_or_calling_env is robustly testable", {
+<<<<<<< HEAD
   # Create a clean environment for testing
+=======
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
   test_env <- rlang::env(
     my_calling_env_var = "some_value"
   )
@@ -41,7 +47,10 @@ test_that("assert_exists_in_spec_or_calling_env is robustly testable", {
     )
   )
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
   expect_error(
     assert_exists_in_spec_or_calling_env(
       vars = "xxxx",

@@ -9,11 +9,12 @@ generate_slides(
   outfile = paste0(tempdir(), "/output.pptx"),
   template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
   fig_width = 9,
-  fig_height = 6,
+  fig_height = 5,
   t_lpp = 20,
   t_cpp = 200,
   l_lpp = 20,
   l_cpp = 150,
+  fig_editable = FALSE,
   ...
 )
 }
@@ -39,6 +40,8 @@ Specify this optional argument to modify the length of all of the listings displ
 
 \item{l_cpp}{An integer specifying the listing columns per page\cr
 Specify this optional argument to modify the width of all of the listings display}
+
+\item{fig_editable}{whether we want the figure to be editable in pptx viewers, defaults to FALSE}
 
 \item{...}{arguments passed to program}
 }

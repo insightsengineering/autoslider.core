@@ -101,7 +101,7 @@ adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_ke
 
 
       output@footnotes <- c(output@footnotes, clean_response)
-      #output@speaker_notes <- c(output@speaker_notes, clean_response)
+
     }
     output
   })

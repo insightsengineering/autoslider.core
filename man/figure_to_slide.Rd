@@ -11,6 +11,7 @@ figure_to_slide(
   fig_width,
   fig_height,
   figure_loc = ph_location_type("body"),
+  fig_editable = FALSE,
   ...
 )
 }
@@ -26,6 +27,8 @@ figure_to_slide(
 \item{fig_height}{user specified figure height}
 
 \item{figure_loc}{location of the figure. Defaults to `ph_location_type("body")`}
+
+\item{fig_editable}{whether we want the figure to be editable in pptx viewers}
 
 \item{...}{arguments passed to program}
 }

@@ -45,12 +45,14 @@ arm. Can be \code{NA} to indicate lack of groups.
 adapted from https://insightsengineering.github.io/tlg-catalog/stable/graphs/other/mng01.html
 }
 \examples{
+\dontshow{if (require('rsvg')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(dplyr)
 advs_filtered <- eg_advs \%>\% filter(
   PARAMCD == "SYSBP"
 )
 out1 <- g_mean_general(eg_adsl, advs_filtered)
 generate_slides(out1, paste0(tempdir(), "/g_mean.pptx"))
+\dontshow{\}) # examplesIf}
 }
 \author{
 Stefan Thoma (`thomas7`)

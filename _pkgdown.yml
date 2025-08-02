@@ -22,7 +22,10 @@ navbar:
           href: articles/adding_templates.html
         - text: How to generate placeholder slides for your presentation?
           href: articles/generate_placeholder_slides.html
-
+        - text: How to integrate your local LLM model for AI footnote generation?
+          href: articles/use_LLM.html
+        - text: How to customize the format of your TLG?
+          href: articles/using_formats.html
 
     reports:
       text: Reports
@@ -48,6 +51,9 @@ articles:
     - tlg_templates
     - adding_templates
     - generate_placeholder_slides
+    - use_LLM
+    - using_formats
+
 
 news:
   releases:

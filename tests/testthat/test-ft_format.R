@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 library(yaml)
 library(assertthat)
 library(tern)
 
 # Create the YAML content
+=======
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
 yaml_content <- '
 ITT:
   title: Intent to Treat Population
@@ -36,6 +39,7 @@ LBNOBAS:
   type: slref
 '
 
+<<<<<<< HEAD
 # Create a temporary YAML file
 filters <- tempfile(fileext = ".yaml")
 
@@ -43,6 +47,12 @@ filters <- tempfile(fileext = ".yaml")
 write(yaml_content, file = filters)
 
 # Create the specs entry
+=======
+filters <- tempfile(fileext = ".yaml")
+
+write(yaml_content, file = filters)
+
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
 specs_entry <- '
 - program: t_ds_slide
   titles: Patient Disposition ({filter_titles("adsl")})
@@ -57,7 +67,11 @@ specs_entry <- '
   args:
     arm: "TRT01A"
     vars: ["SEX", "AGE", "RACE"]
+<<<<<<< HEAD
 - program: t_ae_sae_slide
+=======
+- program: t_ae_slide
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
   titles: AEs & Serious AEs
   footnotes: ""
   paper: L6
@@ -65,6 +79,7 @@ specs_entry <- '
   args:
     arm: "TRT01A"
 '
+<<<<<<< HEAD
 
 # Create a temporary specs entry file
 spec_file <- tempfile(fileext = ".yaml")
@@ -92,12 +107,28 @@ data <- list(
       DISTRTFL = sample(c("Y", "N"), size = length(TRT01A), replace = TRUE, prob = c(.1, .9))
     ) %>%
     preprocess_t_ds(), # this preproccessing is required by one of the autoslider.core functions
+=======
+spec_file <- tempfile(fileext = ".yaml")
+
+write(specs_entry, file = spec_file)
+
+filters::load_filters(filters, overwrite = TRUE)
+
+data <- list(
+  "adsl" = eg_adsl %>%
+    mutate(
+      FASFL = SAFFL,
+      DISTRTFL = sample(c("Y", "N"), size = length(TRT01A), replace = TRUE, prob = c(.1, .9))
+    ) %>%
+    preprocess_t_ds(),
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
   "adae" = eg_adae,
   "adtte" = eg_adtte,
   "adrs" = eg_adrs,
   "adlb" = eg_adlb
 )
 
+<<<<<<< HEAD
 
 # specifically called on a adverse event table for processing
 t_ae_sae_slide <- function(adsl, adae, arm = "TRT01A",
@@ -194,10 +225,17 @@ outputs <- spec_file %>%
   # this function also requires the data
   generate_outputs(datasets = data) %>%
   # now we decorate based on the specs, i.e. add footnotes and titles
+=======
+outputs <- spec_file %>%
+  read_spec() %>%
+  filter_spec(., program %in% c("t_ds_slide", "t_dm_slide", "t_ae_slide")) %>%
+  generate_outputs(datasets = data) %>%
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c
   decorate_outputs(
     version_label = NULL
   )
 
+<<<<<<< HEAD
 
 
 
@@ -211,3 +249,10 @@ expect_silent(black_format_tb(y[[1]]$ft))
 y <- to_flextable.dVTableTree(outputs$t_ae_sae_slide_SER, lpp = 200, cpp = 200)
 
 expect_silent(black_format_ae(y[[1]]$ft))
+=======
+test_that("demographic table formatting", {
+  y <- to_flextable.dVTableTree(outputs$t_dm_slide_ITT, lpp = 200, cpp = 200)
+  expect_silent(autoslider_dose_format(y[[1]]$ft))
+  expect_silent(black_format_tb(y[[1]]$ft))
+})
+>>>>>>> a3ca2886c9e9041e2578ecff3d21972db13c626c

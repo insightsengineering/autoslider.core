@@ -23,6 +23,9 @@ R/util_experimental.R
 ^docs$
 ^pkgdown$
 LICENSE
+programs/
+pharmaverse_output_1.png
+pharmaverse_output_2.png
 
 # dev
 tmp/

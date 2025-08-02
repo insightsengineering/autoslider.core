@@ -37,6 +37,7 @@ Wrapper for `g_mean_general()`.
 Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)
 }
 \examples{
+\dontshow{if (require('rsvg')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(dplyr)
 
 adlb_filtered <- eg_adlb \%>\% filter(
@@ -60,7 +61,7 @@ plot_lb_chg <- g_lb_slide(
   subtitle = "Plot of change from baseline and 95\% Confidence Limit by Visit."
 )
 generate_slides(plot_lb_chg, paste0(tempdir(), "/g_lb_chg.pptx"))
-
+\dontshow{\}) # examplesIf}
 }
 \author{
 Stefan Thoma (`thomas7`)

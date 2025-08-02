@@ -30,6 +30,7 @@ Authors:
   \item Miles Almond
   \item Chenkai Lv
   \item Jasmina Uzunovic
+  \item Yolanda Zhou
 }
 
 Other contributors:

@@ -13,6 +13,7 @@
 #'    Specify this optional argument to modify the length of all of the listings display
 #' @param l_cpp An integer specifying the listing columns per page\cr
 #'    Specify this optional argument to modify the width of all of the listings display
+#' @param fig_editable whether we want the figure to be editable in pptx viewers, defaults to FALSE
 #' @param ... arguments passed to program
 #' @return No return value, called for side effects
 #' @export
@@ -47,7 +48,8 @@
 generate_slides <- function(outputs,
                             outfile = paste0(tempdir(), "/output.pptx"),
                             template = file.path(system.file(package = "autoslider.core"), "theme/basic.pptx"),
-                            fig_width = 9, fig_height = 6, t_lpp = 20, t_cpp = 200, l_lpp = 20, l_cpp = 150, ...) {
+                            fig_width = 9, fig_height = 5, t_lpp = 20, t_cpp = 200,
+                            l_lpp = 20, l_cpp = 150, fig_editable = FALSE, ...) {
   if (any(c(
     is(outputs, "VTableTree"),
     is(outputs, "listing_df")
@@ -73,7 +75,7 @@ generate_slides <- function(outputs,
       if (is.null(current_title)) {
         current_title <- ""
       }
-      outputs <- decorate.ggplot(outputs)
+      outputs <- decorate.ggplot(outputs, titles = current_title)
     } else if (is(outputs, "grob")) {
       outputs <- decorate.grob(outputs)
     }
@@ -126,7 +128,8 @@ generate_slides <- function(outputs,
 
         figure_to_slide(ppt,
           content = x, fig_width = fig_width, fig_height = fig_height,
-          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = height), ...
+          figure_loc = center_figure_loc(fig_width, fig_height, ppt_width = width, ppt_height = 1.17 * height),
+          fig_editable = fig_editable, ...
         )
       } else {
         if (is(x, "autoslider_error")) {
@@ -184,7 +187,7 @@ get_body_bottom_location <- function(ppt) {
 #' @param ppt_height Powerpoint height
 #' @return Location for a placeholder
 center_table_loc <- function(ft, ppt_width, ppt_height) {
-  top <- 0.17 * ppt_height
+  top <- (ppt_height - sum(dim(ft)$heights)) / 2
   left <- (ppt_width - sum(dim(ft)$widths)) / 2
   ph <- ph_location(left = left, top = top)
   ph
@@ -228,6 +231,7 @@ get_proper_title <- function(title, max_char = 60, title_color = "#1C2B39") {
 table_to_slide <- function(ppt, content, decor = TRUE, table_loc = ph_location_type("body"), ...) {
   ppt_master <- layout_summary(ppt)$master[1]
   args <- list(...)
+  # until officer 0.6.10 ppt <- layout_default(ppt, "Title and Content")
 
   if (decor) {
     print(content$header)
@@ -296,8 +300,8 @@ center_figure_loc <- function(fig_width, fig_height, ppt_width, ppt_height) {
 #' @export
 ph_with_img <- function(ppt, figure, fig_width, fig_height, figure_loc) {
   file_name <- tempfile(fileext = ".svg")
-  svg(filename = file_name, width = fig_width * 1.5, height = fig_height * 1.5, onefile = TRUE)
-  grid.draw(figure)
+  svg(filename = file_name, width = fig_width, height = fig_height, onefile = TRUE)
+  grid.draw(figure$grob)
   dev.off()
   on.exit(unlink(file_name))
   ext_img <- external_img(file_name, width = fig_width, height = fig_height)
@@ -313,6 +317,7 @@ ph_with_img <- function(ppt, figure, fig_width, fig_height, figure_loc) {
 #' @param fig_width user specified figure width
 #' @param fig_height user specified figure height
 #' @param figure_loc location of the figure. Defaults to `ph_location_type("body")`
+#' @param fig_editable whether we want the figure to be editable in pptx viewers
 #' @param ... arguments passed to program
 #'
 #' @return slide with the added content
@@ -321,9 +326,12 @@ figure_to_slide <- function(ppt, content,
                             fig_width,
                             fig_height,
                             figure_loc = ph_location_type("body"),
+                            fig_editable = FALSE,
                             ...) {
   ppt_master <- layout_summary(ppt)$master[1]
+  # until officer 0.6.10 ppt <- layout_default(ppt, "Title and Content")
   args <- list(...)
+
 
   if (decor) {
     args$arg_header <- list(
@@ -334,10 +342,12 @@ figure_to_slide <- function(ppt, content,
 
   if ("decoratedGrob" %in% class(content)) {
     ppt <- do_call(add_slide, x = ppt, master = ppt_master, ...)
-    # old
-    # ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
-    content_list <- g_export(content)
-    ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type = "body"))
+    if (fig_editable) {
+      content_list <- g_export(content)
+      ppt <- ph_with(ppt, content_list$dml, location = ph_location_type(type = "body"))
+    } else {
+      ppt <- ph_with_img(ppt, content, fig_width, fig_height, figure_loc)
+    }
 
     ph_with_args <- args[unlist(lapply(args, function(x) all(c("location", "value") %in% names(x))))]
     res <- lapply(ph_with_args, function(x) {

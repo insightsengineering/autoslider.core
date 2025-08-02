@@ -13,12 +13,11 @@
 #' This lets you specify additional arguments to `tern::g_lineplot()`
 #' @author Stefan Thoma (`thomas7`)
 #' @export
-#' @examples
+#' @examplesIf require('rsvg')
 #' library(dplyr)
 #' advs_filtered <- eg_advs %>% filter(
 #'   PARAMCD == "SYSBP"
 #' )
-#'
 #' plot_vs <- g_vs_slide(
 #'   adsl = eg_adsl,
 #'   advs = advs_filtered,
@@ -26,8 +25,10 @@
 #'   subtitle_add_unit = FALSE
 #' ) +
 #'   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
-#'
-#' generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"))
+#' # makes editable plots
+#' generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = TRUE)
+#' # not editable plots, which appear as images
+#' generate_slides(plot_vs, paste0(tempdir(), "/g_vs.pptx"), fig_editable = FALSE)
 g_vs_slide <- function(adsl, advs, arm = "TRT01P", paramcd = "PARAM",
                        subtitle = "Plot of Mean and 95% Confidence Limits by Visit.", ...) {
   # tern 0.9.4 added facet_var in control_lineplot_vars

@@ -14,7 +14,7 @@
 #' @import ggplot2
 #' @import dplyr tern assertthat
 #' @export
-#' @examples
+#' @examplesIf require('rsvg')
 #' library(dplyr)
 #' advs_filtered <- eg_advs %>% filter(
 #'   PARAMCD == "SYSBP"

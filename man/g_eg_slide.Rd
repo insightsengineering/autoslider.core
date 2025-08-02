@@ -33,6 +33,7 @@ Wrapper for `g_mean_general()`.
 Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)
 }
 \examples{
+\dontshow{if (require('rsvg')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 library(dplyr)
 
 adeg_filtered <- eg_adeg \%>\% filter(
@@ -48,6 +49,7 @@ plot_eg <- g_eg_slide(
   ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45, hjust = 1))
 
 generate_slides(plot_eg, paste0(tempdir(), "/g_eg.pptx"))
+\dontshow{\}) # examplesIf}
 }
 \author{
 Stefan Thoma (`thomas7`)
