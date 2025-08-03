@@ -96,10 +96,12 @@ generate_slides <- function(outputs,
   for (x in outputs) {
     if (is(x, "dVTableTree") || is(x, "VTableTree")) {
       y <- to_flextable(x, lpp = t_lpp, cpp = t_cpp, ...)
+      usernotes <- x@usernotes
       for (tt in y) {
         table_to_slide(ppt,
           content = tt,
-          table_loc = center_table_loc(tt$ft, ppt_width = width, ppt_height = height), ...
+          table_loc = center_table_loc(tt$ft, ppt_width = width, ppt_height = height),
+          usernotes = usernotes, ...
         )
       }
     } else if (is(x, "dlisting")) {
@@ -225,10 +227,12 @@ get_proper_title <- function(title, max_char = 60, title_color = "#1C2B39") {
 #' @param ppt Slide
 #' @param content Content to be added
 #' @param table_loc Table location
+#' @param usernotes User notes
 #' @param decor Should table be decorated
 #' @param ... additional arguments
 #' @return Slide with added content
-table_to_slide <- function(ppt, content, decor = TRUE, table_loc = ph_location_type("body"), ...) {
+table_to_slide <- function(ppt, content, decor = TRUE, table_loc = ph_location_type("body"),
+                           usernotes = "", ...) {
   ppt_master <- layout_summary(ppt)$master[1]
   args <- list(...)
   # until officer 0.6.10 ppt <- layout_default(ppt, "Title and Content")
@@ -264,7 +268,8 @@ table_to_slide <- function(ppt, content, decor = TRUE, table_loc = ph_location_t
 
   ppt <- do_call(add_slide, x = ppt, master = ppt_master, ...)
   ppt <- ph_with(ppt, value = out, location = table_loc)
-
+  ppt <- set_notes(ppt, value = usernotes,
+                   location = notes_location_type("body"))
   ph_with_args <- args[unlist(lapply(args, function(x) all(c("location", "value") %in% names(x))))]
   res <- lapply(ph_with_args, function(x) {
     ppt <- ph_with(ppt, value = x$value, location = x$location)

@@ -97,7 +97,7 @@ get_ai_notes <- function(outputs, prompt_list, platform, base_url, api_key, mode
       current_prompt <- integrate_prompt(base_prompt, output@tbl)
       raw_response <- chat$chat(current_prompt)
       clean_response <- sub(".*?</think>\\s*", "", raw_response)
-      output@usernotes <- paste(c(platform, model, "generated notes:", clean_response))
+      output@usernotes <- paste(platform, model, "generated notes:", clean_response)
     }
     output
   })

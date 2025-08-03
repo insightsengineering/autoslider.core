@@ -28,18 +28,18 @@ test_that("Listing print correctly", {
     system.file(package = "autoslider.core"),
     "prompt.yml"
   ))
-  # outputs <- get_ai_notes(outputs, prompt_list,
-  #   platform = "deepseek",
-  #   base_url = "https://api.deepseek.com",
-  #   api_key = get_deepseek_key("DEEPSEEK_KEY"),
-  #   model = "deepseek-chat"
-  # )
   outputs <- get_ai_notes(outputs, prompt_list,
-    platform = "galileo",
-    base_url = "https://us.aigw.galileo.roche.com/v1",
-    api_key = get_portkey_key("PORTKEY_KEY"),
-    model = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+    platform = "deepseek",
+    base_url = "https://api.deepseek.com",
+    api_key = get_deepseek_key("DEEPSEEK_KEY"),
+    model = "deepseek-chat"
   )
+  # outputs <- get_ai_notes(outputs, prompt_list,
+  #   platform = "galileo",
+  #   base_url = "https://us.aigw.galileo.roche.com/v1",
+  #   api_key = get_portkey_key("PORTKEY_KEY"),
+  #   model = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+  # )
   output_dir <- tempdir()
   testthat::expect_output({
     outputs %>%
