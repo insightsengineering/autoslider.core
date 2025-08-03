@@ -28,18 +28,18 @@ test_that("Listing print correctly", {
     system.file(package = "autoslider.core"),
     "prompt.yml"
   ))
-  # outputs <- adding_ai_footnotes(outputs, prompt_list,
-  #   platform = "deepseek",
-  #   base_url = "https://api.deepseek.com",
-  #   api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),
-  #   model = "deepseek-chat"
-  # )
-  outputs <- adding_ai_footnotes(outputs, prompt_list,
-    platform = "galileo",
-    base_url = "https://us.aigw.galileo.roche.com/v1",
-    api_key = get_portkey_key("~/autoslider.core/PORTKEY_KEY"),
-    model = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+  outputs <- get_ai_notes(outputs, prompt_list,
+    platform = "deepseek",
+    base_url = "https://api.deepseek.com",
+    api_key = get_deepseek_key("DEEPSEEK_KEY"),
+    model = "deepseek-chat"
   )
+  # outputs <- get_ai_notes(outputs, prompt_list,
+  #   platform = "galileo",
+  #   base_url = "https://us.aigw.galileo.roche.com/v1",
+  #   api_key = get_portkey_key("PORTKEY_API_KEY"),
+  #   model = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+  # )
   output_dir <- tempdir()
   testthat::expect_output({
     outputs %>%
@@ -89,7 +89,7 @@ test_that("using ollama", {
   #   api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),
   #   model = "deepseek-chat"
   # )
-  outputs <- adding_ai_footnotes(outputs, prompt_list,
+  outputs <- get_ai_notes(outputs, prompt_list,
     platform = "ollama",
     base_url = "http://host.docker.internal:11434",
     model = "deepseek-r1:1.5b"
