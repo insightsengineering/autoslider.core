@@ -1,7 +1,7 @@
 # autoslider.core 0.2.7.9003
 
- * Replacing AI-powered footnotes with speaker notes.
- * Reduce CRAN test run time.
+ * Renamed AI functionality from footnotes to speaker notes in documentation and function references
+ * Added CRAN test skips to reduce test execution time
  * Removed `styler` from suggests. 
 
 # autoslider.core 0.2.7
