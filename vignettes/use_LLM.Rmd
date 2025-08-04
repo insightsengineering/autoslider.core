@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 
 
 ## Overview
-This guide explains how to use the `get_ai_notes()` function to automatically add analytical annotations and summaries to your  slides using AI tool.
+This guide explains how to use the `get_ai_notes()` function to automatically add analytical annotations and summaries to your slides using AI tool.
 
 ## Prerequisite
 
@@ -61,7 +61,7 @@ outputs <- spec %>%
 
 
 ### Step 2: Adding AI Footnotes
-Next, pass the outputs object to the `get_ai_notes()` function. This function iterates through your outputs, and for each one that has a corresponding prompt, it communicates with the specified LLM model to generate response in the form of a footnote.
+Next, pass the outputs object to the `get_ai_notes()` function. This function iterates through your outputs, and for each one that has a corresponding prompt, it communicates with the specified LLM model to generate response in the form of a speaker note.
 
 You can configure the function to point to different AI platforms.
 
