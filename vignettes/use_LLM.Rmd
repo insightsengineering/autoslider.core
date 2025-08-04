@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 
 
 ## Overview
-This guide explains how to use the `get_ai_notes()` function to automatically add analytical annotations and summaries to your slides using AI tool.
+This guide explains how to use the `get_ai_notes()` function to automatically add analytical annotations and summaries to your slides using an AI tool.
 
 ## Prerequisite
 
