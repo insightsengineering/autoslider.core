@@ -14,7 +14,6 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/authors.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/index.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/news/index.html</loc></url>
-<url><loc>https://insightsengineering.github.io/autoslider.core/reference/adding_ai_footnotes.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/append_all_slides.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/append_section_header_slides.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/append_title_slides.html</loc></url>
@@ -59,6 +58,7 @@
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_output.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_outputs.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/generate_slides.html</loc></url>
+<url><loc>https://insightsengineering.github.io/autoslider.core/reference/get_ai_notes.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/get_ellmer_chat.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/get_prompt_list.html</loc></url>
 <url><loc>https://insightsengineering.github.io/autoslider.core/reference/get_proper_title.html</loc></url>
