@@ -83,7 +83,7 @@ test_that("using ollama", {
     system.file(package = "autoslider.core"),
     "prompt.yml"
   ))
-  # outputs <- adding_ai_footnotes(outputs, prompt_list,
+  # outputs <- get_ai_notes(outputs, prompt_list,
   #   platform = "deepseek",
   #   base_url = "https://api.deepseek.com",
   #   api_key = get_deepseek_key("~/autoslider.core/DEEPSEEK_KEY"),

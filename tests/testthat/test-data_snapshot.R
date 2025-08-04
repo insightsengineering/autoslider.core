@@ -1,4 +1,6 @@
 test_that("Test data snapshot", {
+  testthat::skip_on_cran()
+
   eg_dataname <- data(package = "autoslider.core")$results[, "Item"] %>%
     .[grep("eg_", .)] %>%
     sort()

@@ -1,5 +1,9 @@
 # autoslider.core 0.2.7.9003
 
+ * Replacing AI-powered footnotes with speaker notes.
+ * Reduce CRAN test run time.
+ * Removed `styler` from suggests. 
+
 # autoslider.core 0.2.7
 
  * Revert `officer` dependency on function `layout_default`.

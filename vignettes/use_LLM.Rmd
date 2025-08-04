@@ -1,5 +1,5 @@
 ---
-title: "Generating AI-Powered Footnotes"
+title: "Generating AI-Powered speaker notes"
 date: "`r Sys.Date()`"
 output:
     rmarkdown::html_document:
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 
 
 ## Overview
-This guide explains how to use the `adding_ai_footnotes()` function to automatically add analytical annotations and summaries to your  slides using AI tool.
+This guide explains how to use the `get_ai_notes()` function to automatically add analytical annotations and summaries to your  slides using AI tool.
 
 ## Prerequisite
 
@@ -61,7 +61,7 @@ outputs <- spec %>%
 
 
 ### Step 2: Adding AI Footnotes
-Next, pass the outputs object to the `adding_ai_footnotes()` function. This function iterates through your outputs, and for each one that has a corresponding prompt, it communicates with the specified LLM model to generate response in the form of a footnote.
+Next, pass the outputs object to the `get_ai_notes()` function. This function iterates through your outputs, and for each one that has a corresponding prompt, it communicates with the specified LLM model to generate response in the form of a footnote.
 
 You can configure the function to point to different AI platforms.
 
@@ -70,7 +70,7 @@ You can configure the function to point to different AI platforms.
 This is ideal for local development. It assumes you have Ollama on your local machine and is developing in a Docker container.
 
 ```{r, eval = FALSE}
-outputs_ai <- adding_ai_footnotes(
+outputs_ai <- get_ai_notes(
   outputs = outputs,
   prompt_list = prompt_list,
   platform = "ollama",
