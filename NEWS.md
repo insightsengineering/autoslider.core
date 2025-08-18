@@ -1,4 +1,4 @@
-# autoslider.core 0.2.7.9004
+# autoslider.core 0.2.7.9005
 
  * Renamed AI functionality from footnotes to speaker notes in documentation and function references
  * Added CRAN test skips to reduce test execution time
