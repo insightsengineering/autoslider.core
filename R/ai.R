@@ -38,6 +38,13 @@ get_ellmer_chat <- function(platform = "deepseek",
       api_key = api_key,
       model = model
     )
+  } else if (platform == "openai") {
+    chat <- ellmer::chat_openai(
+      system_prompt = get_system_prompt(),
+      base_url = base_url,
+      api_key = api_key,
+      model = model
+    )
   } else if (platform == "ollama") {
     chat <- ellmer::chat_ollama(
       system_prompt = get_system_prompt(),
