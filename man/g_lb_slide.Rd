@@ -37,7 +37,7 @@ Wrapper for `g_mean_general()`.
 Requires filtering of the datasets (e.g. using SUFFIX in spec.yml)
 }
 \examples{
-\dontshow{if (require('rsvg')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (require('rsvg')) withAutoprint(\{ # examplesIf}
 library(dplyr)
 
 adlb_filtered <- eg_adlb \%>\% filter(

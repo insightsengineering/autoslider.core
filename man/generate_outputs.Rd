@@ -26,7 +26,7 @@ By default, `2` will show all filter messages and show output generation message
 `0` will display no message.
 }
 \examples{
-\dontshow{if (require(filters)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (require(filters)) withAutoprint(\{ # examplesIf}
 library(dplyr, warn.conflicts = FALSE)
 data <- list(
   adsl = eg_adsl,
