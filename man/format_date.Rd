@@ -22,7 +22,7 @@ This `format_date()` function was tested with the inputs in the examples, all ga
 expected returned value, so there should be no issues.
 }
 \examples{
-\dontshow{if (require(lubridate)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (require(lubridate)) withAutoprint(\{ # examplesIf}
 require(lubridate)
 
 # expected to return "2019"

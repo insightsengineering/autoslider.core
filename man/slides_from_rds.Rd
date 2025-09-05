@@ -24,7 +24,7 @@ No return value, called for side effects
 Generate slides from rds files
 }
 \examples{
-\dontshow{if (require(filters)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (require(filters)) withAutoprint(\{ # examplesIf}
 library(dplyr, warn.conflicts = FALSE)
 
 data <- list(

@@ -52,7 +52,7 @@ No return value, called for side effects
 generate slides based on output
 }
 \examples{
-\dontshow{if (require(filters)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (require(filters)) withAutoprint(\{ # examplesIf}
 
 # Example 1. When applying to the whole pipeline
 library(dplyr)
