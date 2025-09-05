@@ -29,6 +29,9 @@
       Slot "footnotes":
       [1] ""
       
+      Slot "usernotes":
+      [1] ""
+      
       Slot "paper":
       [1] "P8"
       

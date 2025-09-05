@@ -9,6 +9,7 @@ table_to_slide(
   content,
   decor = TRUE,
   table_loc = ph_location_type("body"),
+  usernotes = "",
   ...
 )
 }
@@ -20,6 +21,8 @@ table_to_slide(
 \item{decor}{Should table be decorated}
 
 \item{table_loc}{Table location}
+
+\item{usernotes}{User notes}
 
 \item{...}{additional arguments}
 }

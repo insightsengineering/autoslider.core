@@ -1,5 +1,7 @@
 test_that("Listing print correctly", {
   testthat::skip_if_not_installed("filters")
+  testthat::skip_if_not_installed("rsvg")
+  testthat::skip_on_cran()
 
   # skip_if_too_deep(1)
   filters::load_filters(file.path(

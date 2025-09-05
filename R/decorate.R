@@ -62,6 +62,7 @@ setMethod(
       tbl = x,
       titles = glued_title,
       footnotes = footnotes,
+      usernotes = "",
       paper = paper,
       width = width
     )
@@ -94,6 +95,7 @@ decorate.ggplot <- function(x, titles = "", footnotes = "", paper = "L11", for_t
     grob = ggplot2::ggplotGrob(x),
     titles = glued_title,
     footnotes = footnotes,
+    usernotes = "",
     paper = paper,
     for_test = for_test
   )
@@ -135,6 +137,7 @@ setMethod(
       lst = x,
       titles = glued_title,
       footnotes = footnotes,
+      usernotes = "",
       paper = paper,
       width = width
     )

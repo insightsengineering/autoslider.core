@@ -4,6 +4,7 @@ setClass(
     tbl = "VTableTree",
     titles = "character",
     footnotes = "character",
+    usernotes = "character",
     paper = "character",
     width = "numeric"
   )
@@ -15,6 +16,7 @@ setClass(
     lst = "listing_df",
     titles = "character",
     footnotes = "character",
+    usernotes = "character",
     paper = "character",
     width = "numeric"
   )

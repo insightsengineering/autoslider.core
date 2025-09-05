@@ -38,6 +38,13 @@ get_ellmer_chat <- function(platform = "deepseek",
       api_key = api_key,
       model = model
     )
+  } else if (platform == "openai") {
+    chat <- ellmer::chat_openai(
+      system_prompt = get_system_prompt(),
+      base_url = base_url,
+      api_key = api_key,
+      model = model
+    )
   } else if (platform == "ollama") {
     chat <- ellmer::chat_ollama(
       system_prompt = get_system_prompt(),
@@ -84,7 +91,7 @@ integrate_prompt <- function(base_prompt, tlg) {
 #' @param model Model of choice
 #'
 #' @export
-adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_key, model) {
+get_ai_notes <- function(outputs, prompt_list, platform, base_url, api_key, model) {
   chat <- get_ellmer_chat(platform, base_url, api_key, model)
   names_outputs <- names(outputs)
   ret <- lapply(names_outputs, function(output_name) {
@@ -97,7 +104,7 @@ adding_ai_footnotes <- function(outputs, prompt_list, platform, base_url, api_ke
       current_prompt <- integrate_prompt(base_prompt, output@tbl)
       raw_response <- chat$chat(current_prompt)
       clean_response <- sub(".*?</think>\\s*", "", raw_response)
-      output@footnotes <- c(output@footnotes, clean_response)
+      output@usernotes <- paste(platform, model, "generated notes:", clean_response)
     }
     output
   })
