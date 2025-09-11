@@ -1,6 +1,7 @@
 test_that("Listing print correctly", {
   testthat::skip_if_not_installed("filters")
   testthat::skip_if_not_installed("ellmer")
+  testthat::skip_if(Sys.which("ollama") == "")
   testthat::skip_on_ci()
   testthat::skip_on_cran()
 
@@ -56,6 +57,7 @@ test_that("Listing print correctly", {
 test_that("using ollama", {
   testthat::skip_if_not_installed("filters")
   testthat::skip_if_not_installed("ellmer")
+  testthat::skip_if(Sys.which("ollama") == "")
   testthat::skip_on_ci()
   testthat::skip_on_cran()
 
