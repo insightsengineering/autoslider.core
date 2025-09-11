@@ -45,7 +45,7 @@ arm. Can be \code{NA} to indicate lack of groups.
 adapted from https://insightsengineering.github.io/tlg-catalog/stable/graphs/other/mng01.html
 }
 \examples{
-\dontshow{if (require('rsvg')) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (require('rsvg')) withAutoprint(\{ # examplesIf}
 library(dplyr)
 advs_filtered <- eg_advs \%>\% filter(
   PARAMCD == "SYSBP"
