@@ -235,7 +235,7 @@ table_to_slide <- function(ppt, content, decor = TRUE, table_loc = ph_location_t
                            usernotes = "", ...) {
   ppt_master <- layout_summary(ppt)$master[1]
   args <- list(...)
-  # until officer 0.6.10 ppt <- layout_default(ppt, "Title and Content")
+  ppt <- layout_default(ppt, "Title and Content")
 
   if (decor) {
     print(content$header)
@@ -334,7 +334,7 @@ figure_to_slide <- function(ppt, content,
                             fig_editable = FALSE,
                             ...) {
   ppt_master <- layout_summary(ppt)$master[1]
-  # until officer 0.6.10 ppt <- layout_default(ppt, "Title and Content")
+  ppt <- layout_default(ppt, "Title and Content")
   args <- list(...)
 
 
