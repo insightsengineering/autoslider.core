@@ -8,6 +8,7 @@ table_to_slide(
   ppt,
   content,
   decor = TRUE,
+  layout = "Title and Content",
   table_loc = ph_location_type("body"),
   usernotes = "",
   ...
@@ -19,6 +20,8 @@ table_to_slide(
 \item{content}{Content to be added}
 
 \item{decor}{Should table be decorated}
+
+\item{layout}{layout from theme}
 
 \item{table_loc}{Table location}
 

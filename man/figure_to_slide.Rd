@@ -10,6 +10,7 @@ figure_to_slide(
   decor = TRUE,
   fig_width,
   fig_height,
+  layout = "Title and Content",
   figure_loc = ph_location_type("body"),
   fig_editable = FALSE,
   ...
@@ -25,6 +26,8 @@ figure_to_slide(
 \item{fig_width}{user specified figure width}
 
 \item{fig_height}{user specified figure height}
+
+\item{layout}{theme layout}
 
 \item{figure_loc}{location of the figure. Defaults to `ph_location_type("body")`}
 

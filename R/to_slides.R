@@ -229,13 +229,14 @@ get_proper_title <- function(title, max_char = 60, title_color = "#1C2B39") {
 #' @param table_loc Table location
 #' @param usernotes User notes
 #' @param decor Should table be decorated
+#' @param layout layout from theme
 #' @param ... additional arguments
 #' @return Slide with added content
-table_to_slide <- function(ppt, content, decor = TRUE, table_loc = ph_location_type("body"),
+table_to_slide <- function(ppt, content, decor = TRUE, layout = "Title and Content", table_loc = ph_location_type("body"),
                            usernotes = "", ...) {
   ppt_master <- layout_summary(ppt)$master[1]
   args <- list(...)
-  ppt <- layout_default(ppt, "Title and Content")
+  ppt <- layout_default(ppt, layout)
 
   if (decor) {
     print(content$header)
@@ -322,6 +323,7 @@ ph_with_img <- function(ppt, figure, fig_width, fig_height, figure_loc) {
 #' @param fig_width user specified figure width
 #' @param fig_height user specified figure height
 #' @param figure_loc location of the figure. Defaults to `ph_location_type("body")`
+#' @param layout theme layout
 #' @param fig_editable whether we want the figure to be editable in pptx viewers
 #' @param ... arguments passed to program
 #'
@@ -330,11 +332,12 @@ figure_to_slide <- function(ppt, content,
                             decor = TRUE,
                             fig_width,
                             fig_height,
+                            layout = "Title and Content",
                             figure_loc = ph_location_type("body"),
                             fig_editable = FALSE,
                             ...) {
   ppt_master <- layout_summary(ppt)$master[1]
-  ppt <- layout_default(ppt, "Title and Content")
+  ppt <- layout_default(ppt, layout)
   args <- list(...)
 
 
