@@ -1,6 +1,6 @@
 # autoslider.core 0.2.9
 
- * Dependency version bump for `officer` version 0.7.0 and `flextable` version 0.9.10.
+ * Dependency version bump for `officer` version 0.7.0.
 
 # autoslider.core 0.2.8
 
