@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
-<coverage line-rate="0.869507908611599" branch-rate="0" lines-covered="1979" lines-valid="2276" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-09-11 03:38:29.985029">
+<coverage line-rate="0.869622475856014" branch-rate="0" lines-covered="1981" lines-valid="2278" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2025-09-17 06:32:56.881395">
   <sources>
     <source>/__w/autoslider.core/autoslider.core/autoslider.core</source>
   </sources>
   <packages>
-    <package name="autoslider.core" line-rate="0.869507908611599" branch-rate="0" complexity="0">
+    <package name="autoslider.core" line-rate="0.869622475856014" branch-rate="0" complexity="0">
       <classes>
         <class name="ai.R" filename="R/ai.R" line-rate="0" branch-rate="0" complexity="0">
           <methods>
@@ -4229,7 +4229,7 @@
             <line number="412" hits="18" branch="false"/>
           </lines>
         </class>
-        <class name="to_slides.R" filename="R/to_slides.R" line-rate="0.755813953488372" branch-rate="0" complexity="0">
+        <class name="to_slides.R" filename="R/to_slides.R" line-rate="0.758620689655172" branch-rate="0" complexity="0">
           <methods>
             <method name="generate_slides" signature="" line-rate="0.710144927536232" branch-rate="0" complexity="0">
               <lines>
@@ -4361,6 +4361,7 @@
               <lines>
                 <line number="236" hits="289" branch="false"/>
                 <line number="237" hits="289" branch="false"/>
+                <line number="238" hits="289" branch="false"/>
                 <line number="240" hits="289" branch="false"/>
                 <line number="241" hits="288" branch="false"/>
                 <line number="242" hits="288" branch="false"/>
@@ -4411,9 +4412,10 @@
                 <line number="314" hits="1" branch="false"/>
               </lines>
             </method>
-            <method name="figure_to_slide" signature="" line-rate="0.708333333333333" branch-rate="0" complexity="0">
+            <method name="figure_to_slide" signature="" line-rate="0.72" branch-rate="0" complexity="0">
               <lines>
                 <line number="336" hits="4" branch="false"/>
+                <line number="337" hits="4" branch="false"/>
                 <line number="338" hits="4" branch="false"/>
                 <line number="341" hits="4" branch="false"/>
                 <line number="342" hits="4" branch="false"/>
@@ -4549,6 +4551,7 @@
             <line number="222" hits="292" branch="false"/>
             <line number="236" hits="289" branch="false"/>
             <line number="237" hits="289" branch="false"/>
+            <line number="238" hits="289" branch="false"/>
             <line number="240" hits="289" branch="false"/>
             <line number="241" hits="288" branch="false"/>
             <line number="242" hits="288" branch="false"/>
@@ -4590,6 +4593,7 @@
             <line number="312" hits="1" branch="false"/>
             <line number="314" hits="1" branch="false"/>
             <line number="336" hits="4" branch="false"/>
+            <line number="337" hits="4" branch="false"/>
             <line number="338" hits="4" branch="false"/>
             <line number="341" hits="4" branch="false"/>
             <line number="342" hits="4" branch="false"/>
