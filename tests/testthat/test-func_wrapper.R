@@ -1,3 +1,5 @@
+testthat::skip_if_not_installed("filters")
+
 filters::load_filters(
   yaml_file = system.file("filters.yml", package = "autoslider.core"),
   overwrite = TRUE

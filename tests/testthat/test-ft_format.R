@@ -1,3 +1,5 @@
+testthat::skip_if_not_installed("filters")
+
 yaml_content <- '
 ITT:
   title: Intent to Treat Population
