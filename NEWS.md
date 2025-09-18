@@ -1,4 +1,4 @@
-# autoslider.core 0.2.9.9001
+# autoslider.core 0.2.9.9002
 
  * Dependency version bump for `officer` version 0.7.0.
 
