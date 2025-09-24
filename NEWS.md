@@ -1,4 +1,4 @@
-# autoslider.core 0.3.0
+# autoslider.core 0.3.0.9000
 
  * Fix layout, adding assertion.
 
