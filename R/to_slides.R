@@ -234,7 +234,9 @@ get_proper_title <- function(title, max_char = 60, title_color = "#1C2B39") {
 #' @return Slide with added content
 table_to_slide <- function(ppt, content, decor = TRUE, layout = "Title and Content", table_loc = ph_location_type("body"),
                            usernotes = "", ...) {
-  ppt_master <- layout_summary(ppt)$master[1]
+  layt_summary <- layout_summary(ppt)
+  assertthat::assert_that(layout %in% layt_summary$layout)
+  ppt_master <- layt_summary$master[1]
   args <- list(...)
   ppt <- layout_default(ppt, layout)
 
@@ -336,7 +338,9 @@ figure_to_slide <- function(ppt, content,
                             figure_loc = ph_location_type("body"),
                             fig_editable = FALSE,
                             ...) {
-  ppt_master <- layout_summary(ppt)$master[1]
+  layt_summary <- layout_summary(ppt)
+  assertthat::assert_that(layout %in% layt_summary$layout)
+  ppt_master <- layt_summary$master[1]
   ppt <- layout_default(ppt, layout)
   args <- list(...)
 
