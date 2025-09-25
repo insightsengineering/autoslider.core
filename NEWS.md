@@ -1,4 +1,8 @@
-# autoslider.core 0.3.0.9000
+# autoslider.core 0.3.1
+
+ * Fix vignette builder.
+
+# autoslider.core 0.3.0
 
  * Fix layout, adding assertion.
 
