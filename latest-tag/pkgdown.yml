@@ -10,7 +10,7 @@ articles:
   tlg_templates: tlg_templates.html
   use_LLM: use_LLM.html
   using_formats: using_formats.html
-last_built: 2025-09-24T03:13Z
+last_built: 2025-09-28T05:29Z
 urls:
   reference: https://insightsengineering.github.io/autoslider.core/reference
   article: https://insightsengineering.github.io/autoslider.core/articles
