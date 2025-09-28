@@ -1,8 +1,8 @@
 Type: Package
 Package: autoslider.core
 Title: Slide Automation for Tables, Listings and Figures
-Version: 0.3.1
-Date: 2025-09-24
+Version: 0.3.1.9000
+Date: 2025-09-28
 Authors@R: c(
     person("Joe", "Zhu", , "joe.zhu@roche.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0001-7566-2787")),
@@ -84,7 +84,8 @@ Suggests:
     testthat (>= 3.2.0),
     TMB (>= 1.9.1),
     withr
-VignetteBuilder: knitr
+VignetteBuilder: 
+    knitr
 Config/Needs/verdepcheck: insightsengineering/formatters,
     tidyverse/magrittr, mllg/checkmate, rstudio/htmltools,
     gagolews/stringi, tidymodels/broom, cran/car, tidyverse/dplyr,
