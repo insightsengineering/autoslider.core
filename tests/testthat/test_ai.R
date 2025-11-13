@@ -37,9 +37,9 @@ test_that("Listing print correctly", {
   )
   # outputs <- get_ai_notes(outputs, prompt_list,
   #   platform = "galileo",
-  #   base_url = "https://us.aigw.galileo.roche.com/v1",
+  #   base_url = "https://eu.aigw.galileo.roche.com/v1",
   #   api_key = get_portkey_key("PORTKEY_KEY"),
-  #   model = "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+  #   model = "@default-bedrock-a53564/anthropic.claude-3-7-sonnet-20250219"
   # )
   output_dir <- tempdir()
   testthat::expect_output({
