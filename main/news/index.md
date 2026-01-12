@@ -1,6 +1,6 @@
 # Changelog
 
-## autoslider.core 0.3.1.9002
+## autoslider.core 0.3.1.9003
 
 ## autoslider.core 0.3.1
 

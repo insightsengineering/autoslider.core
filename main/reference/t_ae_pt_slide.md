@@ -58,6 +58,7 @@ rtables object
 ## Examples
 
 ``` r
+
 library(dplyr)
 # Example 1
 adsl <- eg_adsl %>%

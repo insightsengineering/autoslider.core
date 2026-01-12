@@ -19,6 +19,7 @@ To get started, first navigate to your `autoslider.core` repo directory,
 make sure you have installed the `autoslider.core` package:
 
 ``` r
+
 setwd("~/path/to/autoslider.core")
 
 devtools::load_all()
@@ -45,6 +46,7 @@ This will create a file with the demography template at
 `./programs/R/demography.R`, whose contents are displayed below.
 
 ``` r
+
 library(dplyr)
 library(autoslider.core)
 demography <- function(adsl,
@@ -100,6 +102,7 @@ Processing our data with the generated `t_dm_slide` script would look
 like：
 
 ``` r
+
 filters::load_filters(filters, overwrite = TRUE)
 # read data
 data <- list(

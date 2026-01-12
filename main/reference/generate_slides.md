@@ -82,6 +82,7 @@ No return value, called for side effects
 ## Examples
 
 ``` r
+
 # Example 1. When applying to the whole pipeline
 library(dplyr)
 data <- list(

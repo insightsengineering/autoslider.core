@@ -51,6 +51,7 @@ An \`officer::rpptx\` object with the new section header slide appended.
 ## Examples
 
 ``` r
+
 tmp <- tempfile(fileext = ".pptx")
 doc <- officer::read_pptx()
 print(doc, target = tmp)

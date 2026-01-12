@@ -123,12 +123,14 @@ that further down.
 A typical workflow could look something like this:
 
 ``` r
+
 # define path to the yml files
 spec_file <- "spec.yml"
 filters <- "filters.yml"
 ```
 
 ``` r
+
 library("dplyr")
 # load all filters
 filters::load_filters(filters, overwrite = TRUE)
@@ -176,6 +178,7 @@ outputs <- spec_file %>%
 We can have a look at one of the outputs stored in the outputs file:
 
 ``` r
+
 outputs$t_dm_slide_ITT
 # An object of class "dVTableTree"
 # Slot "tbl":
@@ -220,7 +223,7 @@ outputs$t_dm_slide_ITT
 # t_dm_slide footnote
 # Confidential and for internal use only
 # GitHub repository: NA
-# Git hash: ddea898bcb05c9d9e920a143ececfa5276de7740
+# Git hash: 417b486a0926fc53c4aa0ce03728c3dc7981c469
 # 
 # Slot "titles":
 #  Patient Demographics and Baseline Characteristics, Intent to Treat Population
@@ -243,6 +246,7 @@ Now we can save it to a slide. For this example I store the output in a
 tempfile, you would likely store it in the `outputs/` folder.
 
 ``` r
+
 # Output to slides with template and color theme
 outputs %>%
   generate_slides(
@@ -287,6 +291,7 @@ Visit and Baseline
 Status](https://insightsengineering.github.io/tlg-catalog/stable/tables/lab-results/lbt06.html):
 
 ``` r
+
 lbt06 <- function(datasets) {
   # Ensure character variables are converted to factors and empty strings and NAs are explicit missing levels.
   adsl <- datasets$adsl %>% tern::df_explicit_na()
@@ -334,6 +339,7 @@ lbt06 <- function(datasets) {
 Let’s see if this works:
 
 ``` r
+
 lbt06(data)
 # Visit                                                                                  
 #   Analysis Reference Range Indicator     A: Drug X        B: Placebo     C: Combination
@@ -393,6 +399,7 @@ in the `filters.yml` file, I would recommend to remove most filtering
 processes from the function, namely the following chunk:
 
 ``` r
+
 adlb_f <- eg_adlb %>%
   dplyr::filter(ABLFL != "Y") %>%
   dplyr::filter(!(AVISIT %in% c("SCREENING", "BASELINE"))) %>%
@@ -430,6 +437,7 @@ filter to the ADSL data set but create the output on ADLB. To forward
 the filter to ADLB, we must semi-join the ADSL to ADLB.
 
 ``` r
+
 lbt06 <- function(datasets) {
   # Ensure character variables are converted to factors and empty strings and NAs are explicit missing levels.
   adsl <- datasets$adsl %>% tern::df_explicit_na()
@@ -477,6 +485,7 @@ lbt06 <- function(datasets) {
 lets do a dry-run before we integrate this function into the workflow:
 
 ``` r
+
 # filter data | this step will be performed by the workflow later on
 
 adsl <- eg_adsl
@@ -492,6 +501,7 @@ adsl_f <- adsl %>% filter(ITTFL == "Y")
 ```
 
 ``` r
+
 lbt06(list(adsl = adsl_f, adlb = adlb_f_crp))
 # Analysis Visit                                                                         
 #   Analysis Reference Range Indicator     A: Drug X        B: Placebo     C: Combination
@@ -560,6 +570,7 @@ If you store your custom function in a separate script, you would need
 to source that script at some point before calling the function, i.e.:
 
 ``` r
+
 source("programs/R/output_functions.R")
 ```
 
@@ -569,6 +580,7 @@ specified.
 Set the path to the `.yml` files.
 
 ``` r
+
 filters <- "filters.yml"
 spec_file <- "specs.yml"
 ```
@@ -576,6 +588,7 @@ spec_file <- "specs.yml"
 Then load the filters and generate the outputs.
 
 ``` r
+
 filters::load_filters(filters, overwrite = TRUE)
 
 outputs <- spec_file %>%
@@ -654,7 +667,7 @@ outputs$lbt06_ITT_LBCRP_LBNOBAS
 # t_ds footnotes
 # Confidential and for internal use only
 # GitHub repository: NA
-# Git hash: ddea898bcb05c9d9e920a143ececfa5276de7740
+# Git hash: 417b486a0926fc53c4aa0ce03728c3dc7981c469
 # 
 # Slot "titles":
 #  Patient Disposition (Intent to Treat Population)
@@ -676,6 +689,7 @@ outputs$lbt06_ITT_LBCRP_LBNOBAS
 Once this works, we can finally generate the slides.
 
 ``` r
+
 filepath <- tempfile(fileext = ".pptx")
 generate_slides(outputs, outfile = filepath)
 # [1] " Patient Disposition (Intent to Treat Population)"

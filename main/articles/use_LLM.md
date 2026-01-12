@@ -34,6 +34,7 @@ This process reads your spec, filters it for the desired programs, and
 generates the basic table and plot objects.
 
 ``` r
+
 spec <- read_spec("path/to/your/spec.yml")
 filters::load_filters("path/to/your/filter.yml")
 prompt_list <- get_prompt_list("path/to/your/prompt.yml")
@@ -61,6 +62,7 @@ This is ideal for local development. It assumes you have Ollama on your
 local machine and is developing in a Docker container.
 
 ``` r
+
 outputs_ai <- get_ai_notes(
   outputs = outputs,
   prompt_list = prompt_list,
@@ -87,6 +89,7 @@ to create the presentation. The footnotes will be automatically included
 on the relevant slides.
 
 ``` r
+
 outputs_ai %>%
   generate_slides(outfile = "My_AI_Presentation.pptx")
 ```

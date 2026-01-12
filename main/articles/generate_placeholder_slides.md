@@ -36,6 +36,7 @@ define a `page_list` for our slides, and then call `append_all_slides`
 to generate the final deck and save it to a file.
 
 ``` r
+
 library(officer)
 library(tools)
 

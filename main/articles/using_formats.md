@@ -15,6 +15,7 @@ defines a “zebra-striped” layout and accepts many arguments for colors
 and fonts, giving you full control.
 
 ``` r
+
 autoslider_format <- function(ft,
                               odd_header = "#0EAED5",
                               odd_body = "#EBF5FA",
@@ -37,6 +38,7 @@ Wrapper functions call the base theme with predefined colors. This makes
 it easy to switch between styles.
 
 ``` r
+
 blue_format <- function(ft, ...) {
   # Calls the base function with specific blue colors
   ft %>% autoslider_format(
@@ -54,6 +56,7 @@ For unique tables, you can create a standalone function that doesn’t use
 the base theme at all, like `black_format_tb.`
 
 ``` r
+
 black_format_tb <- function(ft, ...) {
   ft %>%
     flextable::theme_booktabs() %>%
@@ -81,6 +84,7 @@ The workflow involves three steps:
 ##### Example: Visualize the output of your format implementation
 
 ``` r
+
 outputs <- spec_file %>%
   read_spec() %>%
   filter_spec(program %in% c("t_dm_slide")) %>%

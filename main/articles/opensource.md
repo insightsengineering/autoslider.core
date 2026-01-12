@@ -31,6 +31,7 @@ For example, `t_dm_slide.R` contains `t_dm_slide` template function, as
 the following
 
 ``` r
+
 #' Demographic table
 #'
 #' @param adsl ADSL data set, dataframe
@@ -115,6 +116,7 @@ t_dm_slide <- function(adsl,
 3.  Add the following code to `autoslider.*` `R/autoslider_core.R` file.
 
 ``` r
+
 #' Demographic table
 #' @importFrom autoslider.core t_dm_slide
 #' @examples

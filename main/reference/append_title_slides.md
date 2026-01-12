@@ -48,6 +48,7 @@ An \`officer::rpptx\` object with the new title slide appended.
 ## Examples
 
 ``` r
+
 tmp <- tempfile(fileext = ".pptx")
 doc <- officer::read_pptx()
 doc <- officer::add_slide(doc, layout = "Title Slide", master = "Office Theme")

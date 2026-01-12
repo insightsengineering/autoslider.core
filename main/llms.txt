@@ -47,6 +47,7 @@ between statisticians and programmers.
 released version with:
 
 ``` r
+
 install.packages("autoslider.core")
 ```
 
@@ -54,6 +55,7 @@ or you can install the latest development version directly from GitHub
 by running the following:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("insightsengineering/autoslider.core")
 ```

@@ -46,6 +46,7 @@ autoslider.core doesn’t duplicate the file, but still picks it up.
 Load the package and call:
 
 ``` r
+
 devtools::load_all()
 list_all_templates()
 ```
@@ -57,6 +58,7 @@ Your new template `t_my_custom_table` should appear in the list.
 You can now use your template like any built-in one:
 
 ``` r
+
 use_template(
   template = "t_my_custom_table",
   function_name = "custom_table_slide",
