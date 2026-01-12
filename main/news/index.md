@@ -1,6 +1,8 @@
 # Changelog
 
-## autoslider.core 0.3.1.9003
+## autoslider.core 0.3.2
+
+- Update dependency version.
 
 ## autoslider.core 0.3.1
 
