@@ -16,6 +16,7 @@
 #' @importFrom dplyr mutate_at mutate rename filter select semi_join case_when all_of arrange
 #' @importFrom dplyr left_join distinct inner_join
 #' @importFrom dplyr %>%
+#' @importFrom formatters matrix_form propose_column_widths
 #' @importFrom ggpubr as_ggplot
 #' @importFrom graphics title
 #' @importFrom grDevices dev.off svg
