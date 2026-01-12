@@ -1,3 +1,5 @@
+# autoslider.core 0.3.2.9000
+
 # autoslider.core 0.3.2
 
  * Update dependency version.
