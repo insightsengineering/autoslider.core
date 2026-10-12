@@ -86,7 +86,10 @@ use_template <- function(template = "t_dm_slide",
     )
   }
 
-  template_file <- file_list[basename(file_list) == paste0(template, ".R")]
+  # A template can exist in both autoslideR and autoslider.core (e.g. `t_mh_slide`). `file_list`
+  # lists the requested package first, so take the first match: its own template takes
+  # precedence over the core one. Without this, `file.copy()` got two `from` files and errored.
+  template_file <- file_list[basename(file_list) == paste0(template, ".R")][1]
 
 
   if (file.copy(template_file, save_path, overwrite = TRUE)) {
